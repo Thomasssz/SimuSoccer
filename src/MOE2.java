@@ -5,6 +5,7 @@ public class MOE2 {
 		
 		System.out.println("Code de MOE 2");
 		System.out.println("Modification de QA");
+		System.out.println("Modification par RVR");
 	}
 
 }
