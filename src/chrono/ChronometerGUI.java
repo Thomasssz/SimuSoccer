@@ -112,7 +112,14 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	}
 
 	private void updateValues() {
-		
+		CyclicCounter hour = chronometer.getHour();
+		hourValue.setText(hour.toString() + " ");
+
+		CyclicCounter minute = chronometer.getMinute();
+		minuteValue.setText(minute.toString() + " ");
+
+		CyclicCounter second = chronometer.getSecond();
+		secondValue.setText(second.toString() + " ");
 		dashboard.setDefault_x_attaquant1_bleu(dashboard.getDefault_x_attaquant1_bleu()+10);
 		
 		
