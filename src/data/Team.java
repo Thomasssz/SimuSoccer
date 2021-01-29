@@ -113,6 +113,33 @@ public class Team {
 	}
 */	
 	
+	Player p21 = new Player (40,50,30,40,60,1);
+	Player p22 = new Player (30,45,40,30,65,2);
+	Player p23 = new Player (35,40,50,45,70,3);
+	Player p24 = new Player (45,40,45,35,70,4);
+	
+	Player p25 = new Player (60,30,60,80,0,5);
+	Player p26 = new Player (65,40,50,85,0,6);
+	Player p27 = new Player (70,45,65,90,0,7);
+	Player p28 = new Player (75,50,55,70,0,8);
+	
+	Player p29 = new Player (90,85,85,55,90,9);
+	Player p210 = new Player (95,90,80,50,100,10);
+	
+	Player p211 = new Player (50,60,30,90,90,11);
+	
+	players2.add(p21);
+	players2.add(p22);
+	players2.add(p23);
+	players2.add(p24);
+	players2.add(p25);
+	players2.add(p26);
+	players2.add(p27);
+	players2.add(p28);
+	players2.add(p29);
+	players2.add(p210);
+	players2.add(p211);
+	
 	}
 
 	
