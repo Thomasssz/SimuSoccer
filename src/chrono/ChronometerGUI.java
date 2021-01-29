@@ -137,18 +137,18 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		dashboard.setDefault_x_defenseur3_bleu(dashboard.getDefault_x_defenseur3_bleu()+10);
 		dashboard.setDefault_x_defenseur4_bleu(dashboard.getDefault_x_defenseur4_bleu()+10);
 		
-		dashboard.setDefault_x_attaquant1_rouge(dashboard.getDefault_x_attaquant1_rouge()-10);
-		dashboard.setDefault_x_attaquant2_rouge(dashboard.getDefault_x_attaquant2_rouge()-10);
+		dashboard.setDefault_x_attaquant1_rouge(dashboard.getDefault_x_attaquant1_rouge()+10);
+		dashboard.setDefault_x_attaquant2_rouge(dashboard.getDefault_x_attaquant2_rouge()+10);
 		
-		dashboard.setDefault_x_milieu1_rouge(dashboard.getDefault_x_milieu1_rouge()-10);
-		dashboard.setDefault_x_milieu2_rouge(dashboard.getDefault_x_milieu2_rouge()-10);
-		dashboard.setDefault_x_milieu3_rouge(dashboard.getDefault_x_milieu3_rouge()-10);
-		dashboard.setDefault_x_milieu4_rouge(dashboard.getDefault_x_milieu4_rouge()-10);
+		dashboard.setDefault_x_milieu1_rouge(dashboard.getDefault_x_milieu1_rouge()+10);
+		dashboard.setDefault_x_milieu2_rouge(dashboard.getDefault_x_milieu2_rouge()+10);
+		dashboard.setDefault_x_milieu3_rouge(dashboard.getDefault_x_milieu3_rouge()+10);
+		dashboard.setDefault_x_milieu4_rouge(dashboard.getDefault_x_milieu4_rouge()+10);
 		
-		dashboard.setDefault_x_defenseur1_rouge(dashboard.getDefault_x_defenseur1_rouge()-10);
-		dashboard.setDefault_x_defenseur2_rouge(dashboard.getDefault_x_defenseur2_rouge()-10);
-		dashboard.setDefault_x_defenseur3_rouge(dashboard.getDefault_x_defenseur3_rouge()-10);
-		dashboard.setDefault_x_defenseur4_rouge(dashboard.getDefault_x_defenseur4_rouge()-10);
+		dashboard.setDefault_x_defenseur1_rouge(dashboard.getDefault_x_defenseur1_rouge()+10);
+		dashboard.setDefault_x_defenseur2_rouge(dashboard.getDefault_x_defenseur2_rouge()+10);
+		dashboard.setDefault_x_defenseur3_rouge(dashboard.getDefault_x_defenseur3_rouge()+10);
+		dashboard.setDefault_x_defenseur4_rouge(dashboard.getDefault_x_defenseur4_rouge()+10);
 
 		// The dashboard needs to be reprinted when hour, minute or second values change.
 		dashboard.repaint();
