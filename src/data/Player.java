@@ -1,6 +1,7 @@
 package data;
 
 public class Player {
+
 	private int speed;
 	private int pass;
 	private int dribbles;
@@ -8,12 +9,17 @@ public class Player {
 	private int shoot;
 	private int number;
 
-	private enum position {
-		ATTACK, DEFENSE, MIDDLE,
+	private int x;
+	private int y;
 
-	};
+	enum position {
+		ATTACK, DEFENSE, MIDDLE, GOALKEEPER;
+	}
 
-	public Player(int speed, int pass, int dribbles, int defense, int shoot, int number) {
+	private position player_position;
+
+	public Player(int speed, int pass, int dribbles, int defense, int shoot, int number, position player_position,
+			int x, int y) {
 
 		this.speed = speed;
 		this.pass = pass;
@@ -21,6 +27,9 @@ public class Player {
 		this.defense = defense;
 		this.shoot = shoot;
 		this.number = number;
+		this.player_position = player_position;
+		this.x = x;
+		this.y = y;
 	}
 
 	public int getSpeed() {
@@ -69,6 +78,37 @@ public class Player {
 
 	public void setNumber(int number) {
 		this.number = number;
+	}
+	
+	public position getPosition() {
+		return player_position;
+	}
+
+	public void setPosition(position new_player_position) {
+		player_position = new_player_position ;
+	}
+	
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+	
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
+
+	@Override
+	public String toString() {
+		return "Player [speed=" + speed + ", pass=" + pass + ", dribbles=" + dribbles + ", defense=" + defense
+				+ ", shoot=" + shoot + ", number=" + number + ", x=" + x + ", y=" + y + ", player_position="
+				+ player_position + "]";
 	}
 
 }

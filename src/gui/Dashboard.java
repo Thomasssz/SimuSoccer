@@ -6,7 +6,6 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import javax.swing.ImageIcon;
 
 /**
  * This class manages the dashboard (minute, second) of chronometer GUI.
@@ -27,82 +26,78 @@ public class Dashboard extends JPanel {
 	/**
 	 * Hour, minute and second have their initial positions.
 	 */
-	
-	private ImageIcon icon = new ImageIcon("src/img/stade.jpg");      
+
+	private ImageIcon icon = new ImageIcon("src/img/stade.jpg");
 	Image pitch = icon.getImage();
-	
+
 	private int test_dimension_x = 800;
 	private int test_dimension_y = 561;
-	
-	private int default_x_gardien_bleu = 100 ;
-	private int default_y_gardien_bleu = 305 ;
-	
-	private int default_x_defenseur1_bleu = 200 ;
-	private int default_y_defenseur1_bleu = 100 ;
-	
-	private int default_x_defenseur2_bleu = 200 ;
-	private int default_y_defenseur2_bleu = 265 ;
-	
-	private int default_x_defenseur3_bleu = 200 ;
-	private int default_y_defenseur3_bleu = 350 ;
-	
-	private int default_x_defenseur4_bleu = 200 ;
-	private int default_y_defenseur4_bleu = 500 ;
-	
-	private int default_x_milieu1_bleu = 300 ;
-	private int default_y_milieu1_bleu = 100 ;
-	
-	private int default_x_milieu2_bleu = 300 ;
-	private int default_y_milieu2_bleu = 265 ;
-	
-	private int default_x_milieu3_bleu = 300 ;
-	private int default_y_milieu3_bleu = 350 ;
-	
-	private int default_x_milieu4_bleu = 300 ;
-	private int default_y_milieu4_bleu = 500 ;
-	
-	private int default_x_attaquant1_bleu = 415 ;
-	private int default_y_attaquant1_bleu = 265 ;
-	
-	private int default_x_attaquant2_bleu = 415 ;
-	private int default_y_attaquant2_bleu = 350 ;
-	
-	
-	
-	private int default_x_gardien_rouge = 790 ;
-	private int default_y_gardien_rouge = 305 ;
-	
-	private int default_x_defenseur1_rouge = 690 ;
-	private int default_y_defenseur1_rouge = 100 ;
-	
-	private int default_x_defenseur2_rouge = 690 ;
-	private int default_y_defenseur2_rouge = 265 ;
-	
-	private int default_x_defenseur3_rouge = 690 ;
-	private int default_y_defenseur3_rouge = 350 ;
-	
-	private int default_x_defenseur4_rouge = 690 ;
-	private int default_y_defenseur4_rouge = 500 ;
-	
-	private int default_x_milieu1_rouge = 590 ;
-	private int default_y_milieu1_rouge = 100 ;
-	
-	private int default_x_milieu2_rouge = 590 ;
-	private int default_y_milieu2_rouge = 265 ;
-	
-	private int default_x_milieu3_rouge = 590 ;
-	private int default_y_milieu3_rouge = 350 ;
-	
-	private int default_x_milieu4_rouge = 590 ;
-	private int default_y_milieu4_rouge = 500 ;
-	
-	private int default_x_attaquant1_rouge = 475 ;
-	private int default_y_attaquant1_rouge = 265 ;
-	
-	private int default_x_attaquant2_rouge = 475 ;
-	private int default_y_attaquant2_rouge = 350 ;
-	
 
+	private int default_x_gardien_bleu = 100;
+	private int default_y_gardien_bleu = 305;
+
+	private int default_x_defenseur1_bleu = 200;
+	private int default_y_defenseur1_bleu = 100;
+
+	private int default_x_defenseur2_bleu = 200;
+	private int default_y_defenseur2_bleu = 265;
+
+	private int default_x_defenseur3_bleu = 200;
+	private int default_y_defenseur3_bleu = 350;
+
+	private int default_x_defenseur4_bleu = 200;
+	private int default_y_defenseur4_bleu = 500;
+
+	private int default_x_milieu1_bleu = 270;
+	private int default_y_milieu1_bleu = 100;
+
+	private int default_x_milieu2_bleu = 270;
+	private int default_y_milieu2_bleu = 265;
+
+	private int default_x_milieu3_bleu = 270;
+	private int default_y_milieu3_bleu = 350;
+
+	private int default_x_milieu4_bleu = 270;
+	private int default_y_milieu4_bleu = 500;
+
+	private int default_x_attaquant1_bleu = 430;
+	private int default_y_attaquant1_bleu = 305;
+
+	private int default_x_attaquant2_bleu = 360;
+	private int default_y_attaquant2_bleu = 350;
+
+	private int default_x_gardien_rouge = 790;
+	private int default_y_gardien_rouge = 305;
+
+	private int default_x_defenseur1_rouge = 690;
+	private int default_y_defenseur1_rouge = 100;
+
+	private int default_x_defenseur2_rouge = 690;
+	private int default_y_defenseur2_rouge = 265;
+
+	private int default_x_defenseur3_rouge = 690;
+	private int default_y_defenseur3_rouge = 350;
+
+	private int default_x_defenseur4_rouge = 690;
+	private int default_y_defenseur4_rouge = 500;
+
+	private int default_x_milieu1_rouge = 620;
+	private int default_y_milieu1_rouge = 100;
+
+	private int default_x_milieu2_rouge = 620;
+	private int default_y_milieu2_rouge = 265;
+
+	private int default_x_milieu3_rouge = 620;
+	private int default_y_milieu3_rouge = 350;
+
+	private int default_x_milieu4_rouge = 620;
+	private int default_y_milieu4_rouge = 500;
+
+	private int default_x_attaquant1_rouge = 530;
+	private int default_y_attaquant1_rouge = 265;
+
+	private int default_x_attaquant2_rouge = 530;
+	private int default_y_attaquant2_rouge = 350;
 
 	/**
 	 * Defines what to do when the repaint() method is called.
@@ -110,68 +105,95 @@ public class Dashboard extends JPanel {
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		
-		g.drawImage(pitch,20,20,850,590,null);
-		
-		/*Test dimension*/
-		
+
+		g.drawImage(pitch, 20, 20, 850, 590, null);
+
+		/* Test dimension */
+
 		g.setColor(Color.BLACK);
 		g.drawRect(test_dimension_x, test_dimension_y, 10, 10);
-		
-		
-		/*Equipe bleu*/
-		
+
+		/* Equipe bleu */
+
 		// Attaquants
-		
+
 		g.setColor(Color.BLUE);
-		
+
 		g.drawRect(default_x_attaquant1_bleu, default_y_attaquant1_bleu, 10, 10);
 		g.drawRect(default_x_attaquant2_bleu, default_y_attaquant2_bleu, 10, 10);
-		
-		//Milieux
-		
-		g.drawRect(default_x_milieu3_bleu, default_y_milieu3_bleu, 10, 10);
-		g.drawRect(default_x_milieu2_bleu, default_y_milieu2_bleu, 10, 10);
-		g.drawRect(default_x_milieu1_bleu, default_y_milieu1_bleu, 10, 10);
-		g.drawRect(default_x_milieu4_bleu, default_y_milieu4_bleu, 10, 10);
-		
-		// Defenseurs
-		
-		g.drawRect(default_x_defenseur3_bleu, default_y_defenseur3_bleu, 10, 10);
-		g.drawRect(default_x_defenseur2_bleu, default_y_defenseur2_bleu, 10, 10);
-		g.drawRect(default_x_defenseur1_bleu, default_y_defenseur1_bleu, 10, 10);
-		g.drawRect(default_x_defenseur4_bleu, default_y_defenseur4_bleu, 10, 10);
-		
-		//Gardien
-		
-		g.drawRect(default_x_gardien_bleu, default_y_gardien_bleu, 10, 10);
 
-		/*Equipe rouge*/
-		
+		g.fillRect(default_x_attaquant1_bleu, default_y_attaquant1_bleu, 10, 10);
+		g.fillRect(default_x_attaquant2_bleu, default_y_attaquant2_bleu, 10, 10);
+
+		// Milieux
+
+		g.drawRect(default_x_milieu3_bleu, default_y_milieu1_bleu, 10, 10);
+		g.drawRect(default_x_milieu2_bleu, default_y_milieu2_bleu, 10, 10);
+		g.drawRect(default_x_milieu1_bleu, default_y_milieu3_bleu, 10, 10);
+		g.drawRect(default_x_milieu4_bleu, default_y_milieu4_bleu, 10, 10);
+
+		g.fillRect(default_x_milieu3_bleu, default_y_milieu1_bleu, 10, 10);
+		g.fillRect(default_x_milieu2_bleu, default_y_milieu2_bleu, 10, 10);
+		g.fillRect(default_x_milieu1_bleu, default_y_milieu3_bleu, 10, 10);
+		g.fillRect(default_x_milieu4_bleu, default_y_milieu4_bleu, 10, 10);
+
+		// Defenseurs
+
+		g.drawRect(default_x_defenseur3_bleu, default_y_defenseur1_bleu, 10, 10);
+		g.drawRect(default_x_defenseur2_bleu, default_y_defenseur2_bleu, 10, 10);
+		g.drawRect(default_x_defenseur1_bleu, default_y_defenseur3_bleu, 10, 10);
+		g.drawRect(default_x_defenseur4_bleu, default_y_defenseur4_bleu, 10, 10);
+
+		g.fillRect(default_x_defenseur3_bleu, default_y_defenseur1_bleu, 10, 10);
+		g.fillRect(default_x_defenseur2_bleu, default_y_defenseur2_bleu, 10, 10);
+		g.fillRect(default_x_defenseur1_bleu, default_y_defenseur3_bleu, 10, 10);
+		g.fillRect(default_x_defenseur4_bleu, default_y_defenseur4_bleu, 10, 10);
+
+		// Gardien
+
+		g.drawRect(default_x_gardien_bleu, default_y_gardien_bleu, 10, 10);
+		g.fillRect(default_x_gardien_bleu, default_y_gardien_bleu, 10, 10);
+
+		/* Equipe rouge */
+
 		// Attaquants
+
+		g.setColor(Color.RED);
+
+		g.drawRect(default_x_attaquant1_rouge, default_y_attaquant1_rouge, 10, 10);
+		g.drawRect(default_x_attaquant2_rouge, default_y_attaquant2_rouge, 10, 10);
 		
-				g.setColor(Color.RED);
-				
-				g.drawRect(default_x_attaquant1_rouge, default_y_attaquant1_rouge, 10, 10);
-				g.drawRect(default_x_attaquant2_rouge, default_y_attaquant2_rouge, 10, 10);
-				
-				//Milieux
-				
-				g.drawRect(default_x_milieu3_rouge, default_y_milieu3_rouge, 10, 10);
-				g.drawRect(default_x_milieu2_rouge, default_y_milieu2_rouge, 10, 10);
-				g.drawRect(default_x_milieu1_rouge, default_y_milieu1_rouge, 10, 10);
-				g.drawRect(default_x_milieu4_rouge, default_y_milieu4_rouge, 10, 10);
-				
-				// Defenseurs
-				
-				g.drawRect(default_x_defenseur3_rouge, default_y_defenseur3_rouge, 10, 10);
-				g.drawRect(default_x_defenseur2_rouge, default_y_defenseur2_rouge, 10, 10);
-				g.drawRect(default_x_defenseur1_rouge, default_y_defenseur1_rouge, 10, 10);
-				g.drawRect(default_x_defenseur4_rouge, default_y_defenseur4_rouge, 10, 10);
-				
-				//Gardien
-				
-				g.drawRect(default_x_gardien_rouge, default_y_gardien_rouge, 10, 10) ;
+		g.fillRect(default_x_attaquant1_rouge, default_y_attaquant1_rouge, 10, 10);
+		g.fillRect(default_x_attaquant2_rouge, default_y_attaquant2_rouge, 10, 10);
+
+		// Milieux
+
+		g.drawRect(default_x_milieu3_rouge, default_y_milieu1_rouge, 10, 10);
+		g.drawRect(default_x_milieu2_rouge, default_y_milieu2_rouge, 10, 10);
+		g.drawRect(default_x_milieu1_rouge, default_y_milieu3_rouge, 10, 10);
+		g.drawRect(default_x_milieu4_rouge, default_y_milieu4_rouge, 10, 10);
+		
+		g.fillRect(default_x_milieu3_rouge, default_y_milieu1_rouge, 10, 10);
+		g.fillRect(default_x_milieu2_rouge, default_y_milieu2_rouge, 10, 10);
+		g.fillRect(default_x_milieu1_rouge, default_y_milieu3_rouge, 10, 10);
+		g.fillRect(default_x_milieu4_rouge, default_y_milieu4_rouge, 10, 10);
+
+		// Defenseurs
+
+		g.drawRect(default_x_defenseur3_rouge, default_y_defenseur1_rouge, 10, 10);
+		g.drawRect(default_x_defenseur2_rouge, default_y_defenseur2_rouge, 10, 10);
+		g.drawRect(default_x_defenseur1_rouge, default_y_defenseur3_rouge, 10, 10);
+		g.drawRect(default_x_defenseur4_rouge, default_y_defenseur4_rouge, 10, 10);
+		
+		g.fillRect(default_x_defenseur3_rouge, default_y_defenseur1_rouge, 10, 10);
+		g.fillRect(default_x_defenseur2_rouge, default_y_defenseur2_rouge, 10, 10);
+		g.fillRect(default_x_defenseur1_rouge, default_y_defenseur3_rouge, 10, 10);
+		g.fillRect(default_x_defenseur4_rouge, default_y_defenseur4_rouge, 10, 10);
+
+		// Gardien
+
+		g.drawRect(default_x_gardien_rouge, default_y_gardien_rouge, 10, 10);
+		g.fillRect(default_x_gardien_rouge, default_y_gardien_rouge, 10, 10);
 
 	}
 
@@ -522,8 +544,6 @@ public class Dashboard extends JPanel {
 	public int getDefault_x_attaquant1_bleu() {
 		return default_x_attaquant1_bleu;
 	}
-
-
 
 	public void setDefault_x_attaquant1_bleu(int default_x_attaquant1_bleu) {
 		this.default_x_attaquant1_bleu = default_x_attaquant1_bleu;

@@ -2,8 +2,12 @@ package data;
 import java.util.ArrayList;
 
 public class Match {
-	private Team team1 = new Team("team1", players, "blue");
-	private Team team2 = new Team("team2", players, "red");
+	
+	public static ArrayList<Player> players1 = new ArrayList<>();
+	public static ArrayList<Player> players2 = new ArrayList<>();
+	
+	private Team team1 = new Team("team1", players1, "blue");
+	private Team team2 = new Team("team2", players2, "red");
 	private int scoreteam1;
 	private int scoreteam2;
 	private int time_match=90;
