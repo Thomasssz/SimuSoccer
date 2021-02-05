@@ -5,7 +5,7 @@ package chrono;
  * 
  * We can set freely these two values when creating the bounded counter.
  * 
- * @author Tianxiao.Liu@u-cergy.fr
+ * @author simu soccer
  **/
 public class BoundedCounter extends Counter {
 	private int max;

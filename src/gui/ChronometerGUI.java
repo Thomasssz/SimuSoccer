@@ -1,4 +1,4 @@
-package chrono;
+package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -12,6 +12,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import chrono.Chronometer;
+import chrono.CyclicCounter;
 
 /**
  * Main GUI class for chronometer.
@@ -37,13 +40,17 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	private Chronometer chronometer = new Chronometer();
 
 	private JButton startButton = new JButton(" Start ");
-	private JButton clearButton = new JButton(" Clear ");
+	//private JButton clearButton = new JButton(" Clear ");
+	
+	private JLabel scoreteam1Label = new JLabel("Team1");
+    private JLabel scoreteam2Label = new JLabel("Team2");
 
-	private JLabel hourLabel = new JLabel("Hour:");
+    private JLabel scoreteam1Value = new JLabel("");
+    private JLabel scoreteam2Value = new JLabel("");
+
 	private JLabel minuteLabel = new JLabel("Minute:");
 	private JLabel secondLabel = new JLabel("Second:");
 
-	private JLabel hourValue = new JLabel("");
 	private JLabel minuteValue = new JLabel("");
 	private JLabel secondValue = new JLabel("");
 
@@ -74,12 +81,18 @@ public class ChronometerGUI extends JFrame implements Runnable {
 
 		Container contentPane = getContentPane();
 		contentPane.setLayout(new BorderLayout());
+		
+		scoreteam1Label.setFont(font);
+        control.add(scoreteam1Label);
+        scoreteam2Label.setFont(font);
+        control.add(scoreteam2Label);
 
+        scoreteam1Value.setFont(font);
+        control.add(scoreteam1Value);
+        scoreteam2Value.setFont(font);
+        control.add(scoreteam2Value);
+        
 		control.setLayout(new FlowLayout(FlowLayout.CENTER));
-		hourLabel.setFont(font);
-		control.add(hourLabel);
-		hourValue.setFont(font);
-		control.add(hourValue);
 
 		minuteLabel.setFont(font);
 		control.add(minuteLabel);
@@ -95,9 +108,9 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		startButton.addActionListener(new StartStopAction());
 		control.add(startButton);
 
-		clearButton.setFont(font);
+		/*clearButton.setFont(font);
 		clearButton.addActionListener(new ClearAction());
-		control.add(clearButton);
+		control.add(clearButton);*/
 
 		contentPane.add(BorderLayout.NORTH, control);
 
@@ -112,10 +125,17 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	}
 
 	private void updateValues() {
+		
+		// this part is for textual score printing.
+		
+		/* Match scoreteam1 = match.getScore();
+		scoreteam1Value.setText(scoreteam1.toString() + " ");
+		
+		Match scoreteam2 = match.getScore();
+		scoreteam2Value.setText(scoreteam2.toString() + " "); */
+		
 		// This part is for textual time printing.
-		CyclicCounter hour = chronometer.getHour();
-		hourValue.setText(hour.toString() + " ");
-
+	
 		CyclicCounter minute = chronometer.getMinute();
 		minuteValue.setText(minute.toString() + " ");
 
@@ -152,10 +172,6 @@ public class ChronometerGUI extends JFrame implements Runnable {
 
 		// The dashboard needs to be reprinted when hour, minute or second values change.
 		dashboard.repaint();
-	}
-
-	private double calculateRadian(float value) {
-		return ((-value / 30) * Math.PI) + (Math.PI / 2);
 	}
 
 	/**
@@ -206,7 +222,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	}
 
 	public static void main(String[] args) {
-		new ChronometerGUI("Chronometer");
+		new ChronometerGUI("Simu soccer");
 	}
 
 }

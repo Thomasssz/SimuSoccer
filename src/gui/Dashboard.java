@@ -1,4 +1,4 @@
-package chrono;
+package gui;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -9,13 +9,13 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 
 /**
- * This class manages the dashboard (hour, minute, second) of chronometer GUI.
+ * This class manages the dashboard (minute, second) of chronometer GUI.
  * 
  * This class is only responsible of graphical result printing.
  * 
  * There is no algorithmic processing in this class.
  * 
- * @author tliu@u-cergy.fr
+ * @author simu soccer
  * 
  */
 public class Dashboard extends JPanel {
@@ -30,6 +30,9 @@ public class Dashboard extends JPanel {
 	
 	private ImageIcon icon = new ImageIcon("src/img/stade.jpg");      
 	Image pitch = icon.getImage();
+	
+	private int test_dimension_x = 800;
+	private int test_dimension_y = 561;
 	
 	private int default_x_gardien_bleu = 100 ;
 	private int default_y_gardien_bleu = 305 ;
@@ -109,6 +112,12 @@ public class Dashboard extends JPanel {
 		super.paintComponent(g);
 		
 		g.drawImage(pitch,20,20,850,590,null);
+		
+		/*Test dimension*/
+		
+		g.setColor(Color.BLACK);
+		g.drawRect(test_dimension_x, test_dimension_y, 10, 10);
+		
 		
 		/*Equipe bleu*/
 		
@@ -519,9 +528,5 @@ public class Dashboard extends JPanel {
 	public void setDefault_x_attaquant1_bleu(int default_x_attaquant1_bleu) {
 		this.default_x_attaquant1_bleu = default_x_attaquant1_bleu;
 	}
-	
-	
-	
-	
 
 }
