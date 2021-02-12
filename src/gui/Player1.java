@@ -21,7 +21,7 @@ public class Player1 extends JFrame {
 		  this.setSize(500,500);
 		
 				   
-		  
+		 
 
 		
 		   panel.add(text);
