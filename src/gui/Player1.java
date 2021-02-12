@@ -20,7 +20,7 @@ public class Player1 extends JFrame {
 		  this.setTitle("Joueur 1");
 		  this.setSize(500,500);
 		
-				   
+				 
 		 
 		  
 

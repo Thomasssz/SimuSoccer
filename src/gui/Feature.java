@@ -53,7 +53,7 @@ public class Feature extends JFrame {
 	   
 	   j1.addActionListener(new ActionJ());
 	  
-	   
+	  
 	  panel.add(j1);
 	  panel.add(j2);
 	  panel.add(j3);
