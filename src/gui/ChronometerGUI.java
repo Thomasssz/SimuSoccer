@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 
 import chrono.Chronometer;
 import chrono.CyclicCounter;
+import data.Match;
 
 /**
  * Main GUI class for chronometer.
@@ -144,7 +145,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 
 		// This part is for graphical time printing.
 		
-		dashboard.setDefault_x_attaquant1_bleu(dashboard.getDefault_x_attaquant1_bleu()+10);
+		/*dashboard.setDefault_x_attaquant1_bleu(dashboard.getDefault_x_attaquant1_bleu()+10);
 		dashboard.setDefault_x_attaquant2_bleu(dashboard.getDefault_x_attaquant2_bleu()+10);
 		
 		dashboard.setDefault_x_milieu1_bleu(dashboard.getDefault_x_milieu1_bleu()+10);
@@ -170,7 +171,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		dashboard.setDefault_x_defenseur3_rouge(dashboard.getDefault_x_defenseur3_rouge()-10);
 		dashboard.setDefault_x_defenseur4_rouge(dashboard.getDefault_x_defenseur4_rouge()-10);
 
-		// The dashboard needs to be reprinted when hour, minute or second values change.
+		// The dashboard needs to be reprinted when hour, minute or second values change.*/
 		dashboard.repaint();
 	}
 
@@ -205,6 +206,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 				startButton.setText(" Pause ");
 				Thread chronoThread = new Thread(instance);
 				chronoThread.start();
+				Match.engagement();
 			}
 		}
 	}
