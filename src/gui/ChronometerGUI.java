@@ -33,6 +33,19 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	 */
 	private static final int CHRONO_SPEED = 100;
 
+	private static final int CHRONO_SPEED1 = 10;
+	
+	private static final int CHRONO_SPEED2 = 1;	
+
+
+	private JRadioButton fiveButton=new JRadioButton("five");
+	private JRadioButton tenButton=new JRadioButton("ten");
+
+
+	public Chronometer getChronometer() {
+		return chronometer;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -108,6 +121,14 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		startButton.setFont(font);
 		startButton.addActionListener(new StartStopAction());
 		control.add(startButton);
+		
+		fiveButton.setFont(font);
+		fiveButton.addActionListener(new SpeedAction1());
+		control.add(fiveButton);
+		
+		tenButton.setFont(font);
+		tenButton.addActionListener(new SpeedAction2());
+		control.add(tenButton);
 
 		/*clearButton.setFont(font);
 		clearButton.addActionListener(new ClearAction());
@@ -191,10 +212,41 @@ public class ChronometerGUI extends JFrame implements Runnable {
 			// Ensure that the chronometer is not stopped during the iteration.
 			if (!stop) {
 				updateValues();
+				ChangePlayers(chronometer);
 			}
 		}
 	}
 
+	public void ChangePlayers(Chronometer chrono) {
+	
+		CyclicCounter minute = chronometer.getMinute();
+		MiddleTime middletime =new MiddleTime();
+		boolean middle=middletime.middletime(minute);
+		if(middle==true) {
+			Team.players2.get(10).setX(Team.players1.get(10).getX());
+        Team.players2.get(9).setX(Team.players1.get(9).getX());
+        Team.players2.get(8).setX(Team.players1.get(8).getX());
+        Team.players2.get(7).setX(Team.players1.get(7).getX());
+        Team.players2.get(6).setX(Team.players1.get(6).getX());
+        Team.players2.get(5).setX(Team.players1.get(5).getX());
+        Team.players2.get(4).setX(Team.players1.get(4).getX());
+        Team.players2.get(3).setX(Team.players1.get(3).getX());
+        Team.players2.get(2).setX(Team.players1.get(2).getX());
+        Team.players2.get(1).setX(Team.players1.get(1).getX());
+        Team.players2.get(0).setX(Team.players1.get(0).getX());
+        Team.players1.get(10).setX(Team.players2.get(10).getX());
+        Team.players1.get(9).setX(Team.players2.get(9).getX());
+        Team.players1.get(8).setX(Team.players2.get(8).getX());
+        Team.players1.get(7).setX(Team.players2.get(7).getX());
+        Team.players1.get(6).setX(Team.players2.get(6).getX());
+        Team.players1.get(5).setX(Team.players2.get(5).getX());
+        Team.players1.get(4).setX(Team.players2.get(4).getX());
+        Team.players1.get(3).setX(Team.players2.get(3).getX());
+        Team.players1.get(2).setX(Team.players2.get(2).getX());
+        Team.players1.get(1).setX(Team.players2.get(1).getX());
+        Team.players1.get(0).setX(Team.players2.get(0).getX());
+		}
+	}
 	private class StartStopAction implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
