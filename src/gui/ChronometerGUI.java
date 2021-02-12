@@ -12,10 +12,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 
 import chrono.Chronometer;
 import chrono.CyclicCounter;
 import data.Match;
+import data.Team;
+import process.MiddleTime;
 
 /**
  * Main GUI class for chronometer.
@@ -23,6 +26,7 @@ import data.Match;
  * @author Tianxiao.Liu@u-cergy.fr
  **/
 public class ChronometerGUI extends JFrame implements Runnable {
+	
 	private static final Dimension IDEAL_MAIN_DIMENSION = new Dimension(1100, 800);
 	private static final Dimension IDEAL_DASHBOARD_DIMENSION = new Dimension(900, 650);
 
@@ -222,8 +226,12 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		CyclicCounter minute = chronometer.getMinute();
 		MiddleTime middletime =new MiddleTime();
 		boolean middle=middletime.middletime(minute);
+		
 		if(middle==true) {
-			Team.players2.get(10).setX(Team.players1.get(10).getX());
+			
+		Team.createteams();
+		
+		Team.players2.get(10).setX(Team.players1.get(10).getX());
         Team.players2.get(9).setX(Team.players1.get(9).getX());
         Team.players2.get(8).setX(Team.players1.get(8).getX());
         Team.players2.get(7).setX(Team.players1.get(7).getX());
@@ -274,7 +282,45 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		}
 
 	}
+	
+	private class SpeedAction1 implements ActionListener {
 
+        @Override
+        public void actionPerformed(ActionEvent arg0) {
+            // TODO Auto-generated method stub
+
+            try {
+                Thread.sleep(CHRONO_SPEED1);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+
+
+        }
+
+    }
+	
+	 private class SpeedAction2 implements ActionListener {
+
+	        @Override
+	        public void actionPerformed(ActionEvent arg0) {
+	            // TODO Auto-generated method stub
+
+	            try {
+	                Thread.sleep(CHRONO_SPEED2);
+	            } catch (InterruptedException e) {
+	                // TODO Auto-generated catch block
+	                e.printStackTrace();
+	            }
+
+
+
+	        }
+	       
+	 }
+	 
 	public static void main(String[] args) {
 		new ChronometerGUI("Simu soccer");
 	}
