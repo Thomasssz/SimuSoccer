@@ -10,7 +10,8 @@ public class Match {
 	private Team team2 = new Team("team2", players2, "red");
 	private int scoreteam1;
 	private int scoreteam2;
-	private int time_match=90;
+	private int time_match= 90;
+	
 	private Ball ball = new Ball();
 	public Team getTeam1() {
 		return team1;

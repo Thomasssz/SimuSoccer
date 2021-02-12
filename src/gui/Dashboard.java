@@ -7,6 +7,9 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
+import data.Ball;
+import delimitations.Sortie;
+
 /**
  * This class manages the dashboard (minute, second) of chronometer GUI.
  * 
@@ -111,7 +114,18 @@ public class Dashboard extends JPanel {
 		/* Test dimension */
 
 		g.setColor(Color.BLACK);
-		g.drawRect(test_dimension_x, test_dimension_y, 10, 10);
+		
+		Ball ballon = new Ball() ;
+		
+		g.drawOval(ballon.getPositionx_Ball(), ballon.getPositiony_Ball(), 10, 10);
+		g.fillOval(ballon.getPositionx_Ball(), ballon.getPositiony_Ball(), 10, 10);
+		
+		g.setColor(Color.PINK);
+		
+		g.drawLine(Sortie.getSortieHautGaucheX(), Sortie.getSortieHautGaucheY(), Sortie.getSortieHautDroiteX(), Sortie.getSortieHautDroiteY());
+		g.drawLine(Sortie.getSortieHautGaucheX(), Sortie.getSortieHautGaucheY(), Sortie.getSortieBasGaucheX(), Sortie.getSortieBasGaucheY());
+		g.drawLine(Sortie.getSortieBasDroiteX(), Sortie.getSortieBasDroiteY(), Sortie.getSortieHautDroiteX(), Sortie.getSortieHautDroiteY());
+		g.drawLine(Sortie.getSortieBasGaucheX(), Sortie.getSortieBasGaucheY(), Sortie.getSortieBasDroiteX(), Sortie.getSortieBasDroiteY());
 
 		/* Equipe bleu */
 
