@@ -6,6 +6,7 @@ public class Team {
 	public String nameTeam;
 	public String color;
 	
+	
 	private static int default_x_gardien_bleu = 100;
 	private static int default_y_gardien_bleu = 305;
 
@@ -33,8 +34,8 @@ public class Team {
 	private static int default_x_milieu4_bleu = 270;
 	private static int default_y_milieu4_bleu = 500;
 
-	private static int default_x_attaquant1_bleu = 430;
-	private static int default_y_attaquant1_bleu = 305;
+	private static int default_x_attaquant1_bleu = 360;
+	private static int default_y_attaquant1_bleu = 260;
 
 	private static int default_x_attaquant2_bleu = 360;
 	private static int default_y_attaquant2_bleu = 350;
@@ -126,11 +127,17 @@ public class Team {
 	private static Player.position MID = Enum.valueOf(Player.position.class, "MIDDLE");
 
 	private static Player.position ATT = Enum.valueOf(Player.position.class, "ATTACK");
+	
+	
+	
+	
+			
+	
 
 	public static void createteams() {
+		
 
 		Player p1 = new Player(20, 30, 40, 80, 90, 1, GOAL, default_x_gardien_bleu, default_y_gardien_bleu);
-
 		Player p2 = new Player(30, 50, 40, 70, 60, 2, DEF, default_x_defenseur1_bleu, default_y_defenseur1_bleu);
 		Player p3 = new Player(20, 40, 40, 70, 60, 3, DEF, default_x_defenseur2_bleu, default_y_defenseur2_bleu);
 		Player p4 = new Player(30, 30, 40, 70, 70, 4, DEF, default_x_defenseur3_bleu, default_y_defenseur3_bleu);
@@ -174,6 +181,7 @@ public class Team {
 
 		Player p211 = new Player(50, 60, 30, 90, 90, 11, GOAL, default_x_gardien_rouge, default_y_gardien_rouge);
 
+		players2.add(p211);
 		players2.add(p21);
 		players2.add(p22);
 		players2.add(p23);
@@ -184,10 +192,10 @@ public class Team {
 		players2.add(p28);
 		players2.add(p29);
 		players2.add(p210);
-		players2.add(p211);
+		
 
-		Team.parcoursListPlayer(players1);
-		Team.parcoursListPlayer(players2);
+	//	Team.parcoursListPlayer(players1);
+	//	Team.parcoursListPlayer(players2);
 
 	}
 
