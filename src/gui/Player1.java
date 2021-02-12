@@ -22,6 +22,7 @@ public class Player1 extends JFrame {
 		
 				   
 		 
+		  
 
 		
 		   panel.add(text);
