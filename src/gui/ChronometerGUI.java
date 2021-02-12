@@ -223,7 +223,8 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		MiddleTime middletime =new MiddleTime();
 		boolean middle=middletime.middletime(minute);
 		if(middle==true) {
-			Team.players2.get(10).setX(Team.players1.get(10).getX());
+	Team.createteams();
+	Team.players2.get(10).setX(Team.players1.get(10).getX());
         Team.players2.get(9).setX(Team.players1.get(9).getX());
         Team.players2.get(8).setX(Team.players1.get(8).getX());
         Team.players2.get(7).setX(Team.players1.get(7).getX());
