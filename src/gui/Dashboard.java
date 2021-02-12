@@ -33,74 +33,6 @@ public class Dashboard extends JPanel {
 	private ImageIcon icon = new ImageIcon("src/img/stade.jpg");
 	Image pitch = icon.getImage();
 
-	private int test_dimension_x = 800;
-	private int test_dimension_y = 561;
-
-	private int default_x_gardien_bleu = 100;
-	private int default_y_gardien_bleu = 305;
-
-	private int default_x_defenseur1_bleu = 200;
-	private int default_y_defenseur1_bleu = 100;
-
-	private int default_x_defenseur2_bleu = 200;
-	private int default_y_defenseur2_bleu = 265;
-
-	private int default_x_defenseur3_bleu = 200;
-	private int default_y_defenseur3_bleu = 350;
-
-	private int default_x_defenseur4_bleu = 200;
-	private int default_y_defenseur4_bleu = 500;
-
-	private int default_x_milieu1_bleu = 270;
-	private int default_y_milieu1_bleu = 100;
-
-	private int default_x_milieu2_bleu = 270;
-	private int default_y_milieu2_bleu = 265;
-
-	private int default_x_milieu3_bleu = 270;
-	private int default_y_milieu3_bleu = 350;
-
-	private int default_x_milieu4_bleu = 270;
-	private int default_y_milieu4_bleu = 500;
-
-	private int default_x_attaquant1_bleu = 430;
-	private int default_y_attaquant1_bleu = 305;
-
-	private int default_x_attaquant2_bleu = 360;
-	private int default_y_attaquant2_bleu = 350;
-
-	private int default_x_gardien_rouge = 790;
-	private int default_y_gardien_rouge = 305;
-
-	private int default_x_defenseur1_rouge = 690;
-	private int default_y_defenseur1_rouge = 100;
-
-	private int default_x_defenseur2_rouge = 690;
-	private int default_y_defenseur2_rouge = 265;
-
-	private int default_x_defenseur3_rouge = 690;
-	private int default_y_defenseur3_rouge = 350;
-
-	private int default_x_defenseur4_rouge = 690;
-	private int default_y_defenseur4_rouge = 500;
-
-	private int default_x_milieu1_rouge = 620;
-	private int default_y_milieu1_rouge = 100;
-
-	private int default_x_milieu2_rouge = 620;
-	private int default_y_milieu2_rouge = 265;
-
-	private int default_x_milieu3_rouge = 620;
-	private int default_y_milieu3_rouge = 350;
-
-	private int default_x_milieu4_rouge = 620;
-	private int default_y_milieu4_rouge = 500;
-
-	private int default_x_attaquant1_rouge = 530;
-	private int default_y_attaquant1_rouge = 265;
-
-	private int default_x_attaquant2_rouge = 530;
-	private int default_y_attaquant2_rouge = 350;
 
 	/**
 	 * Defines what to do when the repaint() method is called.
@@ -129,438 +61,85 @@ public class Dashboard extends JPanel {
 
 		/* Equipe bleu */
 
-		// Attaquants
-
-		g.setColor(Color.BLUE);
-
-		g.drawRect(default_x_attaquant1_bleu, default_y_attaquant1_bleu, 10, 10);
-		g.drawRect(default_x_attaquant2_bleu, default_y_attaquant2_bleu, 10, 10);
-
-		g.fillRect(default_x_attaquant1_bleu, default_y_attaquant1_bleu, 10, 10);
-		g.fillRect(default_x_attaquant2_bleu, default_y_attaquant2_bleu, 10, 10);
-
-		// Milieux
-
-		g.drawRect(default_x_milieu3_bleu, default_y_milieu1_bleu, 10, 10);
-		g.drawRect(default_x_milieu2_bleu, default_y_milieu2_bleu, 10, 10);
-		g.drawRect(default_x_milieu1_bleu, default_y_milieu3_bleu, 10, 10);
-		g.drawRect(default_x_milieu4_bleu, default_y_milieu4_bleu, 10, 10);
-
-		g.fillRect(default_x_milieu3_bleu, default_y_milieu1_bleu, 10, 10);
-		g.fillRect(default_x_milieu2_bleu, default_y_milieu2_bleu, 10, 10);
-		g.fillRect(default_x_milieu1_bleu, default_y_milieu3_bleu, 10, 10);
-		g.fillRect(default_x_milieu4_bleu, default_y_milieu4_bleu, 10, 10);
-
-		// Defenseurs
-
-		g.drawRect(default_x_defenseur3_bleu, default_y_defenseur1_bleu, 10, 10);
-		g.drawRect(default_x_defenseur2_bleu, default_y_defenseur2_bleu, 10, 10);
-		g.drawRect(default_x_defenseur1_bleu, default_y_defenseur3_bleu, 10, 10);
-		g.drawRect(default_x_defenseur4_bleu, default_y_defenseur4_bleu, 10, 10);
-
-		g.fillRect(default_x_defenseur3_bleu, default_y_defenseur1_bleu, 10, 10);
-		g.fillRect(default_x_defenseur2_bleu, default_y_defenseur2_bleu, 10, 10);
-		g.fillRect(default_x_defenseur1_bleu, default_y_defenseur3_bleu, 10, 10);
-		g.fillRect(default_x_defenseur4_bleu, default_y_defenseur4_bleu, 10, 10);
-
-		// Gardien
-
-		g.drawRect(default_x_gardien_bleu, default_y_gardien_bleu, 10, 10);
-		g.fillRect(default_x_gardien_bleu, default_y_gardien_bleu, 10, 10);
-
-		/* Equipe rouge */
-
-		// Attaquants
-
-		g.setColor(Color.RED);
-
-		g.drawRect(default_x_attaquant1_rouge, default_y_attaquant1_rouge, 10, 10);
-		g.drawRect(default_x_attaquant2_rouge, default_y_attaquant2_rouge, 10, 10);
 		
-		g.fillRect(default_x_attaquant1_rouge, default_y_attaquant1_rouge, 10, 10);
-		g.fillRect(default_x_attaquant2_rouge, default_y_attaquant2_rouge, 10, 10);
-
-		// Milieux
-
-		g.drawRect(default_x_milieu3_rouge, default_y_milieu1_rouge, 10, 10);
-		g.drawRect(default_x_milieu2_rouge, default_y_milieu2_rouge, 10, 10);
-		g.drawRect(default_x_milieu1_rouge, default_y_milieu3_rouge, 10, 10);
-		g.drawRect(default_x_milieu4_rouge, default_y_milieu4_rouge, 10, 10);
-		
-		g.fillRect(default_x_milieu3_rouge, default_y_milieu1_rouge, 10, 10);
-		g.fillRect(default_x_milieu2_rouge, default_y_milieu2_rouge, 10, 10);
-		g.fillRect(default_x_milieu1_rouge, default_y_milieu3_rouge, 10, 10);
-		g.fillRect(default_x_milieu4_rouge, default_y_milieu4_rouge, 10, 10);
-
-		// Defenseurs
-
-		g.drawRect(default_x_defenseur3_rouge, default_y_defenseur1_rouge, 10, 10);
-		g.drawRect(default_x_defenseur2_rouge, default_y_defenseur2_rouge, 10, 10);
-		g.drawRect(default_x_defenseur1_rouge, default_y_defenseur3_rouge, 10, 10);
-		g.drawRect(default_x_defenseur4_rouge, default_y_defenseur4_rouge, 10, 10);
-		
-		g.fillRect(default_x_defenseur3_rouge, default_y_defenseur1_rouge, 10, 10);
-		g.fillRect(default_x_defenseur2_rouge, default_y_defenseur2_rouge, 10, 10);
-		g.fillRect(default_x_defenseur1_rouge, default_y_defenseur3_rouge, 10, 10);
-		g.fillRect(default_x_defenseur4_rouge, default_y_defenseur4_rouge, 10, 10);
-
-		// Gardien
-
-		g.drawRect(default_x_gardien_rouge, default_y_gardien_rouge, 10, 10);
-		g.fillRect(default_x_gardien_rouge, default_y_gardien_rouge, 10, 10);
+        // Attaquants
 
-	}
-
-	public int getDefault_x_gardien_bleu() {
-		return default_x_gardien_bleu;
-	}
-
-	public void setDefault_x_gardien_bleu(int default_x_gardien_bleu) {
-		this.default_x_gardien_bleu = default_x_gardien_bleu;
-	}
-
-	public int getDefault_y_gardien_bleu() {
-		return default_y_gardien_bleu;
-	}
-
-	public void setDefault_y_gardien_bleu(int default_y_gardien_bleu) {
-		this.default_y_gardien_bleu = default_y_gardien_bleu;
-	}
-
-	public int getDefault_x_defenseur1_bleu() {
-		return default_x_defenseur1_bleu;
-	}
-
-	public void setDefault_x_defenseur1_bleu(int default_x_defenseur1_bleu) {
-		this.default_x_defenseur1_bleu = default_x_defenseur1_bleu;
-	}
-
-	public int getDefault_y_defenseur1_bleu() {
-		return default_y_defenseur1_bleu;
-	}
-
-	public void setDefault_y_defenseur1_bleu(int default_y_defenseur1_bleu) {
-		this.default_y_defenseur1_bleu = default_y_defenseur1_bleu;
-	}
-
-	public int getDefault_x_defenseur2_bleu() {
-		return default_x_defenseur2_bleu;
-	}
-
-	public void setDefault_x_defenseur2_bleu(int default_x_defenseur2_bleu) {
-		this.default_x_defenseur2_bleu = default_x_defenseur2_bleu;
-	}
-
-	public int getDefault_y_defenseur2_bleu() {
-		return default_y_defenseur2_bleu;
-	}
-
-	public void setDefault_y_defenseur2_bleu(int default_y_defenseur2_bleu) {
-		this.default_y_defenseur2_bleu = default_y_defenseur2_bleu;
-	}
-
-	public int getDefault_x_defenseur3_bleu() {
-		return default_x_defenseur3_bleu;
-	}
-
-	public void setDefault_x_defenseur3_bleu(int default_x_defenseur3_bleu) {
-		this.default_x_defenseur3_bleu = default_x_defenseur3_bleu;
-	}
-
-	public int getDefault_y_defenseur3_bleu() {
-		return default_y_defenseur3_bleu;
-	}
-
-	public void setDefault_y_defenseur3_bleu(int default_y_defenseur3_bleu) {
-		this.default_y_defenseur3_bleu = default_y_defenseur3_bleu;
-	}
-
-	public int getDefault_x_defenseur4_bleu() {
-		return default_x_defenseur4_bleu;
-	}
-
-	public void setDefault_x_defenseur4_bleu(int default_x_defenseur4_bleu) {
-		this.default_x_defenseur4_bleu = default_x_defenseur4_bleu;
-	}
-
-	public int getDefault_y_defenseur4_bleu() {
-		return default_y_defenseur4_bleu;
-	}
-
-	public void setDefault_y_defenseur4_bleu(int default_y_defenseur4_bleu) {
-		this.default_y_defenseur4_bleu = default_y_defenseur4_bleu;
-	}
-
-	public int getDefault_x_milieu1_bleu() {
-		return default_x_milieu1_bleu;
-	}
-
-	public void setDefault_x_milieu1_bleu(int default_x_milieu1_bleu) {
-		this.default_x_milieu1_bleu = default_x_milieu1_bleu;
-	}
-
-	public int getDefault_y_milieu1_bleu() {
-		return default_y_milieu1_bleu;
-	}
-
-	public void setDefault_y_milieu1_bleu(int default_y_milieu1_bleu) {
-		this.default_y_milieu1_bleu = default_y_milieu1_bleu;
-	}
-
-	public int getDefault_x_milieu2_bleu() {
-		return default_x_milieu2_bleu;
-	}
-
-	public void setDefault_x_milieu2_bleu(int default_x_milieu2_bleu) {
-		this.default_x_milieu2_bleu = default_x_milieu2_bleu;
-	}
-
-	public int getDefault_y_milieu2_bleu() {
-		return default_y_milieu2_bleu;
-	}
-
-	public void setDefault_y_milieu2_bleu(int default_y_milieu2_bleu) {
-		this.default_y_milieu2_bleu = default_y_milieu2_bleu;
-	}
-
-	public int getDefault_x_milieu3_bleu() {
-		return default_x_milieu3_bleu;
-	}
-
-	public void setDefault_x_milieu3_bleu(int default_x_milieu3_bleu) {
-		this.default_x_milieu3_bleu = default_x_milieu3_bleu;
-	}
-
-	public int getDefault_y_milieu3_bleu() {
-		return default_y_milieu3_bleu;
-	}
-
-	public void setDefault_y_milieu3_bleu(int default_y_milieu3_bleu) {
-		this.default_y_milieu3_bleu = default_y_milieu3_bleu;
-	}
-
-	public int getDefault_x_milieu4_bleu() {
-		return default_x_milieu4_bleu;
-	}
-
-	public void setDefault_x_milieu4_bleu(int default_x_milieu4_bleu) {
-		this.default_x_milieu4_bleu = default_x_milieu4_bleu;
-	}
-
-	public int getDefault_y_milieu4_bleu() {
-		return default_y_milieu4_bleu;
-	}
-
-	public void setDefault_y_milieu4_bleu(int default_y_milieu4_bleu) {
-		this.default_y_milieu4_bleu = default_y_milieu4_bleu;
-	}
-
-	public int getDefault_y_attaquant1_bleu() {
-		return default_y_attaquant1_bleu;
-	}
-
-	public void setDefault_y_attaquant1_bleu(int default_y_attaquant1_bleu) {
-		this.default_y_attaquant1_bleu = default_y_attaquant1_bleu;
-	}
-
-	public int getDefault_x_attaquant2_bleu() {
-		return default_x_attaquant2_bleu;
-	}
-
-	public void setDefault_x_attaquant2_bleu(int default_x_attaquant2_bleu) {
-		this.default_x_attaquant2_bleu = default_x_attaquant2_bleu;
-	}
-
-	public int getDefault_y_attaquant2_bleu() {
-		return default_y_attaquant2_bleu;
-	}
-
-	public void setDefault_y_attaquant2_bleu(int default_y_attaquant2_bleu) {
-		this.default_y_attaquant2_bleu = default_y_attaquant2_bleu;
-	}
-
-	public int getDefault_x_gardien_rouge() {
-		return default_x_gardien_rouge;
-	}
-
-	public void setDefault_x_gardien_rouge(int default_x_gardien_rouge) {
-		this.default_x_gardien_rouge = default_x_gardien_rouge;
-	}
-
-	public int getDefault_y_gardien_rouge() {
-		return default_y_gardien_rouge;
-	}
-
-	public void setDefault_y_gardien_rouge(int default_y_gardien_rouge) {
-		this.default_y_gardien_rouge = default_y_gardien_rouge;
-	}
-
-	public int getDefault_x_defenseur1_rouge() {
-		return default_x_defenseur1_rouge;
-	}
-
-	public void setDefault_x_defenseur1_rouge(int default_x_defenseur1_rouge) {
-		this.default_x_defenseur1_rouge = default_x_defenseur1_rouge;
-	}
-
-	public int getDefault_y_defenseur1_rouge() {
-		return default_y_defenseur1_rouge;
-	}
-
-	public void setDefault_y_defenseur1_rouge(int default_y_defenseur1_rouge) {
-		this.default_y_defenseur1_rouge = default_y_defenseur1_rouge;
-	}
-
-	public int getDefault_x_defenseur2_rouge() {
-		return default_x_defenseur2_rouge;
-	}
-
-	public void setDefault_x_defenseur2_rouge(int default_x_defenseur2_rouge) {
-		this.default_x_defenseur2_rouge = default_x_defenseur2_rouge;
-	}
-
-	public int getDefault_y_defenseur2_rouge() {
-		return default_y_defenseur2_rouge;
-	}
-
-	public void setDefault_y_defenseur2_rouge(int default_y_defenseur2_rouge) {
-		this.default_y_defenseur2_rouge = default_y_defenseur2_rouge;
-	}
-
-	public int getDefault_x_defenseur3_rouge() {
-		return default_x_defenseur3_rouge;
-	}
-
-	public void setDefault_x_defenseur3_rouge(int default_x_defenseur3_rouge) {
-		this.default_x_defenseur3_rouge = default_x_defenseur3_rouge;
-	}
-
-	public int getDefault_y_defenseur3_rouge() {
-		return default_y_defenseur3_rouge;
-	}
-
-	public void setDefault_y_defenseur3_rouge(int default_y_defenseur3_rouge) {
-		this.default_y_defenseur3_rouge = default_y_defenseur3_rouge;
-	}
+        g.setColor(Color.BLUE);
 
-	public int getDefault_x_defenseur4_rouge() {
-		return default_x_defenseur4_rouge;
-	}
-
-	public void setDefault_x_defenseur4_rouge(int default_x_defenseur4_rouge) {
-		this.default_x_defenseur4_rouge = default_x_defenseur4_rouge;
-	}
-
-	public int getDefault_y_defenseur4_rouge() {
-		return default_y_defenseur4_rouge;
-	}
-
-	public void setDefault_y_defenseur4_rouge(int default_y_defenseur4_rouge) {
-		this.default_y_defenseur4_rouge = default_y_defenseur4_rouge;
-	}
-
-	public int getDefault_x_milieu1_rouge() {
-		return default_x_milieu1_rouge;
-	}
-
-	public void setDefault_x_milieu1_rouge(int default_x_milieu1_rouge) {
-		this.default_x_milieu1_rouge = default_x_milieu1_rouge;
-	}
-
-	public int getDefault_y_milieu1_rouge() {
-		return default_y_milieu1_rouge;
-	}
-
-	public void setDefault_y_milieu1_rouge(int default_y_milieu1_rouge) {
-		this.default_y_milieu1_rouge = default_y_milieu1_rouge;
-	}
-
-	public int getDefault_x_milieu2_rouge() {
-		return default_x_milieu2_rouge;
-	}
-
-	public void setDefault_x_milieu2_rouge(int default_x_milieu2_rouge) {
-		this.default_x_milieu2_rouge = default_x_milieu2_rouge;
-	}
+        g.drawRect(Team.players1.get(10).getX(), Team.players1.get(10).getY(), 10, 10);
+        g.drawRect(Team.players1.get(9).getX(), Team.players1.get(9).getY(), 10, 10);
 
-	public int getDefault_y_milieu2_rouge() {
-		return default_y_milieu2_rouge;
-	}
+        g.fillRect(Team.players1.get(10).getX(), Team.players1.get(10).getY(), 10, 10);
+        g.fillRect(Team.players1.get(9).getX(), Team.players1.get(9).getY(), 10, 10);
 
-	public void setDefault_y_milieu2_rouge(int default_y_milieu2_rouge) {
-		this.default_y_milieu2_rouge = default_y_milieu2_rouge;
-	}
+        // Milieux
 
-	public int getDefault_x_milieu3_rouge() {
-		return default_x_milieu3_rouge;
-	}
+        g.drawRect(Team.players1.get(8).getX(), Team.players1.get(8).getY(), 10, 10);
+        g.drawRect(Team.players1.get(7).getX(), Team.players1.get(7).getY(), 10, 10);
+        g.drawRect(Team.players1.get(6).getX(), Team.players1.get(6).getY(), 10, 10);
+        g.drawRect(Team.players1.get(5).getX(), Team.players1.get(5).getY(), 10, 10);
 
-	public void setDefault_x_milieu3_rouge(int default_x_milieu3_rouge) {
-		this.default_x_milieu3_rouge = default_x_milieu3_rouge;
-	}
+        g.fillRect(Team.players1.get(8).getX(), Team.players1.get(8).getY(), 10, 10);
+        g.fillRect(Team.players1.get(7).getX(), Team.players1.get(7).getY(), 10, 10);
+        g.fillRect(Team.players1.get(6).getX(), Team.players1.get(6).getY(), 10, 10);
+        g.fillRect(Team.players1.get(5).getX(), Team.players1.get(5).getY(), 10, 10);
 
-	public int getDefault_y_milieu3_rouge() {
-		return default_y_milieu3_rouge;
-	}
+        // Defenseurs
 
-	public void setDefault_y_milieu3_rouge(int default_y_milieu3_rouge) {
-		this.default_y_milieu3_rouge = default_y_milieu3_rouge;
-	}
+        g.drawRect(Team.players1.get(4).getX(), Team.players1.get(4).getY(), 10, 10);
+        g.drawRect(Team.players1.get(3).getX(), Team.players1.get(3).getY(), 10, 10);
+        g.drawRect(Team.players1.get(2).getX(), Team.players1.get(2).getY(), 10, 10);
+        g.drawRect(Team.players1.get(1).getX(), Team.players1.get(1).getY(), 10, 10);
 
-	public int getDefault_x_milieu4_rouge() {
-		return default_x_milieu4_rouge;
-	}
+        g.fillRect(Team.players1.get(4).getX(), Team.players1.get(4).getY(), 10, 10);
+        g.fillRect(Team.players1.get(3).getX(), Team.players1.get(3).getY(), 10, 10);
+        g.fillRect(Team.players1.get(2).getX(), Team.players1.get(2).getY(), 10, 10);
+        g.fillRect(Team.players1.get(1).getX(), Team.players1.get(1).getY(), 10, 10);
+        // Gardien
 
-	public void setDefault_x_milieu4_rouge(int default_x_milieu4_rouge) {
-		this.default_x_milieu4_rouge = default_x_milieu4_rouge;
-	}
+        g.drawRect(Team.players1.get(0).getX(), Team.players1.get(0).getY(), 10, 10);
+        g.fillRect(Team.players1.get(0).getX(), Team.players1.get(0).getY(), 10, 10);
 
-	public int getDefault_y_milieu4_rouge() {
-		return default_y_milieu4_rouge;
-	}
+        /* Equipe rouge */
 
-	public void setDefault_y_milieu4_rouge(int default_y_milieu4_rouge) {
-		this.default_y_milieu4_rouge = default_y_milieu4_rouge;
-	}
+        // Attaquants
 
-	public int getDefault_x_attaquant1_rouge() {
-		return default_x_attaquant1_rouge;
-	}
+        g.setColor(Color.RED);
 
-	public void setDefault_x_attaquant1_rouge(int default_x_attaquant1_rouge) {
-		this.default_x_attaquant1_rouge = default_x_attaquant1_rouge;
-	}
+        g.drawRect(Team.players2.get(10).getX(), Team.players2.get(10).getY(), 10, 10);
+        g.drawRect(Team.players2.get(9).getX(), Team.players2.get(9).getY(), 10, 10);
 
-	public int getDefault_y_attaquant1_rouge() {
-		return default_y_attaquant1_rouge;
-	}
+        g.fillRect(Team.players2.get(10).getX(), Team.players2.get(10).getY(), 10, 10);
+        g.fillRect(Team.players2.get(9).getX(), Team.players2.get(9).getY(), 10, 10);
 
-	public void setDefault_y_attaquant1_rouge(int default_y_attaquant1_rouge) {
-		this.default_y_attaquant1_rouge = default_y_attaquant1_rouge;
-	}
+        // Milieux
 
-	public int getDefault_x_attaquant2_rouge() {
-		return default_x_attaquant2_rouge;
-	}
+        g.drawRect(Team.players2.get(8).getX(), Team.players2.get(8).getY(), 10, 10);
+        g.drawRect(Team.players2.get(7).getX(), Team.players2.get(7).getY(), 10, 10);
+        g.drawRect(Team.players2.get(6).getX(), Team.players2.get(6).getY(), 10, 10);
+        g.drawRect(Team.players2.get(5).getX(), Team.players2.get(5).getY(), 10, 10);
 
-	public void setDefault_x_attaquant2_rouge(int default_x_attaquant2_rouge) {
-		this.default_x_attaquant2_rouge = default_x_attaquant2_rouge;
-	}
+        g.fillRect(Team.players2.get(8).getX(), Team.players2.get(8).getY(), 10, 10);
+        g.fillRect(Team.players2.get(7).getX(), Team.players2.get(7).getY(), 10, 10);
+        g.fillRect(Team.players2.get(6).getX(), Team.players2.get(6).getY(), 10, 10);
+        g.fillRect(Team.players2.get(5).getX(), Team.players2.get(5).getY(), 10, 10);
 
-	public int getDefault_y_attaquant2_rouge() {
-		return default_y_attaquant2_rouge;
-	}
+        // Defenseurs
 
-	public void setDefault_y_attaquant2_rouge(int default_y_attaquant2_rouge) {
-		this.default_y_attaquant2_rouge = default_y_attaquant2_rouge;
-	}
+        g.drawRect(Team.players2.get(4).getX(), Team.players2.get(4).getY(), 10, 10);
+        g.drawRect(Team.players2.get(3).getX(), Team.players2.get(3).getY(), 10, 10);
+        g.drawRect(Team.players2.get(2).getX(), Team.players2.get(2).getY(), 10, 10);
+        g.drawRect(Team.players2.get(1).getX(), Team.players2.get(1).getY(), 10, 10);
 
-	public int getDefault_x_attaquant1_bleu() {
-		return default_x_attaquant1_bleu;
-	}
+        g.fillRect(Team.players2.get(4).getX(), Team.players2.get(4).getY(), 10, 10);
+        g.fillRect(Team.players2.get(3).getX(), Team.players2.get(3).getY(), 10, 10);
+        g.fillRect(Team.players2.get(2).getX(), Team.players2.get(2).getY(), 10, 10);
+        g.fillRect(Team.players2.get(1).getX(), Team.players2.get(1).getY(), 10, 10);
+        
+        // Gardien
 
-	public void setDefault_x_attaquant1_bleu(int default_x_attaquant1_bleu) {
-		this.default_x_attaquant1_bleu = default_x_attaquant1_bleu;
+        g.drawRect(Team.players2.get(0).getX(), Team.players2.get(0).getY(), 10, 10);
+        g.fillRect(Team.players2.get(0).getX(), Team.players2.get(0).getY(), 10, 10);
+	
 	}
-
 }
