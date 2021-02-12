@@ -49,4 +49,24 @@ public class Match {
 	public void setBall(Ball ball) {
 		this.ball = ball;
 	}
+	
+	public static void engagement() {
+        Random random = new Random();
+        int nb;
+        nb = random.nextInt(2);
+        Team.createteams();
+        //si le nombre aléatoire génère 1, ce sera l'équipe bleu qui engagera
+        if (nb==1) {
+        Team.players2.get(10).setX(440);
+        Team.players2.get(10).setY(305);
+        Team.players2.get(9).setX(440);
+        Team.players2.get(9).setY(325);
+        }
+        else{
+            Team.players1.get(10).setX(440);
+            Team.players1.get(10).setY(305);
+            Team.players1.get(9).setX(440);
+            Team.players1.get(9).setY(325);
+        }
+    }
 }
