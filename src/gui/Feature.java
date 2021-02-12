@@ -17,7 +17,7 @@ public class Feature extends JFrame {
      
    GridLayout grid = new GridLayout(3,4);
    
- 
+
    JButton j1 = new JButton("joueur 1");
    JButton j2 = new JButton("joueur 2");
    JButton j3 = new JButton("joueur 3");
@@ -52,7 +52,7 @@ public class Feature extends JFrame {
 	   j1.setBackground(Color.BLUE);
 	   
 	   j1.addActionListener(new ActionJ());
-	   
+	  
 	  panel.add(j1);
 	  panel.add(j2);
 	  panel.add(j3);
