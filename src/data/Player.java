@@ -126,7 +126,7 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return "Player " +name+ ":\n speed=" + speed + "\n pass=" + pass + "\n dribbles=" + dribbles + "\n defense=" + defense
+		return "Player " +name+ " :\n speed=" + speed + "\n pass=" + pass + "\n dribbles=" + dribbles + "\n defense=" + defense
 				+ "\n shoot=" + shoot + "\n number=" + number + "\n player_position="
 				+ player_position + "";
 	}

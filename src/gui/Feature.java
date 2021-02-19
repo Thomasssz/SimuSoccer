@@ -56,18 +56,18 @@ public class Feature extends JFrame {
 	   team1.setLayout(grid);
 	   team2.setLayout(grid);
 	  
-	   
-	   j1.setBackground(Color.BLUE);
-	   j2.setBackground(Color.BLUE);
-	   j3.setBackground(Color.BLUE);
-	   j4.setBackground(Color.BLUE);
-	   j5.setBackground(Color.BLUE);
-	   j6.setBackground(Color.BLUE);
-	   j7.setBackground(Color.BLUE);
-	   j8.setBackground(Color.BLUE);
-	   j9.setBackground(Color.BLUE);
-	   j10.setBackground(Color.BLUE);
-	   j11.setBackground(Color.BLUE);
+
+	   j1.setBackground(Color.CYAN);
+	   j2.setBackground(Color.CYAN);
+	   j3.setBackground(Color.CYAN);
+	   j4.setBackground(Color.CYAN);
+	   j5.setBackground(Color.CYAN);
+	   j6.setBackground(Color.CYAN);
+	   j7.setBackground(Color.CYAN);
+	   j8.setBackground(Color.CYAN);
+	   j9.setBackground(Color.CYAN);
+	   j10.setBackground(Color.CYAN);
+	   j11.setBackground(Color.CYAN);
 	   j12.setBackground(Color.RED);
 	   j13.setBackground(Color.RED);
 	   j14.setBackground(Color.RED);
@@ -80,28 +80,28 @@ public class Feature extends JFrame {
 	   j21.setBackground(Color.RED);
 	   j22.setBackground(Color.RED);
 	   
-	   j1.addActionListener(new ActionJ());
-	   j2.addActionListener(new ActionJ());
-	   j3.addActionListener(new ActionJ());
-	   j4.addActionListener(new ActionJ());
-	   j5.addActionListener(new ActionJ());
-	   j6.addActionListener(new ActionJ());
-	   j7.addActionListener(new ActionJ());
-	   j8.addActionListener(new ActionJ());
-	   j9.addActionListener(new ActionJ());
-	   j10.addActionListener(new ActionJ());
-	   j11.addActionListener(new ActionJ());
-	   j12.addActionListener(new ActionJ());
-	   j13.addActionListener(new ActionJ());
-	   j14.addActionListener(new ActionJ());
-	   j15.addActionListener(new ActionJ());
-	   j16.addActionListener(new ActionJ());
-	   j17.addActionListener(new ActionJ());
-	   j18.addActionListener(new ActionJ());
-	   j19.addActionListener(new ActionJ());
-	   j20.addActionListener(new ActionJ());
-	   j21.addActionListener(new ActionJ());
-	   j22.addActionListener(new ActionJ());
+	   j1.addActionListener(new ActionPlayer1());
+	   j2.addActionListener(new ActionPlayer2());
+	   j3.addActionListener(new ActionPlayer3());
+	   j4.addActionListener(new ActionPlayer4());
+	   j5.addActionListener(new ActionPlayer5());
+	   j6.addActionListener(new ActionPlayer6());
+	   j7.addActionListener(new ActionPlayer7());
+	   j8.addActionListener(new ActionPlayer8());
+	   j9.addActionListener(new ActionPlayer9());
+	   j10.addActionListener(new ActionPlayer10());
+	   j11.addActionListener(new ActionPlayer11());
+	   j12.addActionListener(new ActionPlayer12());
+	   j13.addActionListener(new ActionPlayer13());
+	   j14.addActionListener(new ActionPlayer14());
+	   j15.addActionListener(new ActionPlayer15());
+	   j16.addActionListener(new ActionPlayer16());
+	   j17.addActionListener(new ActionPlayer17());
+	   j18.addActionListener(new ActionPlayer18());
+	   j19.addActionListener(new ActionPlayer19());
+	   j20.addActionListener(new ActionPlayer20());
+	   j21.addActionListener(new ActionPlayer21());
+	   j22.addActionListener(new ActionPlayer22());
 	   match.addActionListener(new ActionMatch());
 	   
 	   
@@ -146,14 +146,161 @@ public class Feature extends JFrame {
 	   
    }
    
-   private class ActionJ implements ActionListener {
+   private class ActionPlayer1 implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 				Player1 player = new Player1();
 				player.setVisible(true);
-			
-			
 		}
 	}
+   
+   private class ActionPlayer2 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player2 player = new Player2();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer3 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player3 player = new Player3();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer4 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player4 player = new Player4();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer5 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player5 player = new Player5();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer6 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player6 player = new Player6();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer7 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player7 player = new Player7();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer8 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player8 player = new Player8();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer9 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player9 player = new Player9();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer10 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player10 player = new Player10();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer11 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player11 player = new Player11();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer12 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player12 player = new Player12();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer13 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player13 player = new Player13();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer14 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player14 player = new Player14();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer15 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player15 player = new Player15();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer16 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player16 player = new Player16();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer17 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player17 player = new Player17();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer18 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player18 player = new Player18();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer19 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player19 player = new Player19();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer20 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player20 player = new Player20();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer21 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player21 player = new Player21();
+				player.setVisible(true);
+		}
+	}
+   
+   private class ActionPlayer22 implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+				Player22 player = new Player22();
+				player.setVisible(true);
+		}
+	}
+   
+   
    
    private class ActionMatch implements ActionListener {
 		public void actionPerformed(ActionEvent e) {

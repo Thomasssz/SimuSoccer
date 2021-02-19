@@ -1,24 +1,21 @@
 package gui;
 
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-import data.Player;
 import data.Team;
 
-public class Player1 extends JFrame {
-	
-	private String name = "1";
+public class Player5 extends JFrame{
+	private String name = "5";
 	private JPanel panel = new JPanel();
 	private JLabel label = new JLabel("Caractéristique");
 	private JTextArea h;
 
-	public Player1() {
+	public Player5() {
 		
-		this.setTitle("Joueur 1");
+		this.setTitle("Joueur 5");
 		this.setSize(500,500);
 		h = new JTextArea(10,50);
 		h.setText(toString(name));
@@ -40,9 +37,5 @@ public class Player1 extends JFrame {
 	    	}
 			return result;
 		}
-
-	
-	
-	
 
 }
