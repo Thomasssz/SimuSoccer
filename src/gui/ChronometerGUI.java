@@ -232,6 +232,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 			
 		Team.createteams();
 		
+		
 		Team.players2.get(10).setX(Team.players1.get(10).getX());
 
 	Team.createteams();
@@ -257,6 +258,9 @@ public class ChronometerGUI extends JFrame implements Runnable {
         Team.players1.get(2).setX(Team.players2.get(2).getX());
         Team.players1.get(1).setX(Team.players2.get(1).getX());
         Team.players1.get(0).setX(Team.players2.get(0).getX());
+        
+       
+        
 		}
 	}
 	private class StartStopAction implements ActionListener {

@@ -63,10 +63,15 @@ public class Dashboard extends JPanel {
 		
 		g.setColor(Color.CYAN);
 		
-		g.drawLine(Surface.getSurfaceHautGaucheX(), Surface.getSurfaceHautGaucheY(), Surface.getSurfaceHautDroiteX(), Surface.getSurfaceHautDroiteY());
-		g.drawLine(Surface.getSurfaceHautGaucheX(), Surface.getSurfaceHautGaucheY(), Surface.getSurfaceBasGaucheX(), Surface.getSurfaceBasGaucheY());
-		g.drawLine(Surface.getSurfaceBasDroiteX(), Surface.getSurfaceBasDroiteY(), Surface.getSurfaceHautDroiteX(), Surface.getSurfaceHautDroiteY());
-		g.drawLine(Surface.getSurfaceBasGaucheX(), Surface.getSurfaceBasGaucheY(), Surface.getSurfaceBasDroiteX(), Surface.getSurfaceBasDroiteY());
+		g.drawLine(Surface.getSurfacegaucheHautGaucheX(), Surface.getSurfacegaucheHautGaucheY(), Surface.getSurfacegaucheHautDroiteX(), Surface.getSurfacegaucheHautDroiteY());
+		g.drawLine(Surface.getSurfacegaucheHautGaucheX(), Surface.getSurfacegaucheHautGaucheY(), Surface.getSurfacegaucheBasGaucheX(), Surface.getSurfacegaucheBasGaucheY());
+		g.drawLine(Surface.getSurfacegaucheBasDroiteX(), Surface.getSurfacegaucheBasDroiteY(), Surface.getSurfacegaucheHautDroiteX(), Surface.getSurfacegaucheHautDroiteY());
+		g.drawLine(Surface.getSurfacegaucheBasGaucheX(), Surface.getSurfacegaucheBasGaucheY(), Surface.getSurfacegaucheBasDroiteX(), Surface.getSurfacegaucheBasDroiteY());
+		
+		g.drawLine(Surface.getSurfacedroiteHautGaucheX(), Surface.getSurfacedroiteHautGaucheY(), Surface.getSurfacedroiteHautDroiteX(), Surface.getSurfacedroiteHautDroiteY());
+		g.drawLine(Surface.getSurfacedroiteHautGaucheX(), Surface.getSurfacedroiteHautGaucheY(), Surface.getSurfacedroiteBasGaucheX(), Surface.getSurfacedroiteBasGaucheY());
+		g.drawLine(Surface.getSurfacedroiteBasDroiteX(), Surface.getSurfacedroiteBasDroiteY(), Surface.getSurfacedroiteHautDroiteX(), Surface.getSurfacedroiteHautDroiteY());
+		g.drawLine(Surface.getSurfacedroiteBasGaucheX(), Surface.getSurfacedroiteBasGaucheY(), Surface.getSurfacedroiteBasDroiteX(), Surface.getSurfacedroiteBasDroiteY());
 		
 		Team.createteams();
 

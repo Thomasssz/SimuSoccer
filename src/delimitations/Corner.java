@@ -5,6 +5,7 @@ import java.util.Random;
 
 import data.Ball;
 import data.Player;
+import data.Team;
 
 public class Corner {
 
@@ -46,8 +47,8 @@ public class Corner {
 
 		for (int i = 0; i <= players.size(); i++) {
 
-			if (i != borne) {
-
+			if (i != borne && i>=6) {
+				Team.players2.get(i).setX(440);
 			}
 		}
 
