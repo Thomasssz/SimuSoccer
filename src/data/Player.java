@@ -12,6 +12,7 @@ public class Player {
 
 	private int x;
 	private int y;
+	private boolean ball ;
 
 	enum position {
 		ATTACK, DEFENSE, MIDDLE, GOALKEEPER;
@@ -20,7 +21,7 @@ public class Player {
 	private position player_position;
 
 	public Player(String name, int speed, int pass, int dribbles, int defense, int shoot, int number, position player_position,
-			int x, int y) {
+			int x, int y, boolean ball) {
 
 		this.speed = speed;
 		this.pass = pass;
@@ -32,6 +33,15 @@ public class Player {
 		this.x = x;
 		this.y = y;
 		this.name = name;
+		this.ball = ball ;
+	}
+
+	public boolean isBall() {
+		return ball;
+	}
+
+	public void setBall(boolean ball) {
+		this.ball = ball;
 	}
 
 	public int getSpeed() {
