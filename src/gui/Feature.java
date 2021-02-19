@@ -56,7 +56,7 @@ public class Feature extends JFrame {
 	   team1.setLayout(grid);
 	   team2.setLayout(grid);
 	  
-	  
+	   
 	   j1.setBackground(Color.BLUE);
 	   j2.setBackground(Color.BLUE);
 	   j3.setBackground(Color.BLUE);
