@@ -73,6 +73,8 @@ public class Dashboard extends JPanel {
 		g.drawLine(Surface.getSurfacedroiteBasDroiteX(), Surface.getSurfacedroiteBasDroiteY(), Surface.getSurfacedroiteHautDroiteX(), Surface.getSurfacedroiteHautDroiteY());
 		g.drawLine(Surface.getSurfacedroiteBasGaucheX(), Surface.getSurfacedroiteBasGaucheY(), Surface.getSurfacedroiteBasDroiteX(), Surface.getSurfacedroiteBasDroiteY());
 		
+		g.setColor(Color.ORANGE);
+		
 		Team.createteams();
 
 		/* Equipe bleu */

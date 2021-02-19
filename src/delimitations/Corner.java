@@ -8,6 +8,9 @@ import data.Player;
 
 public class Corner {
 
+	/*Cette classe simule un corner, on génere un attaquant aléatoire qu'on place au corner avec la balle.
+	 * Ensuite les attaquant se placent dans la surface de réparation de manière aléatoire */
+	
 	public static void CornerHautGauche(Ball ballon, ArrayList<Player> players) {
 
 		ballon.setPositionx_Ball(Sortie.getSortieHautGaucheX() + 5);
@@ -24,6 +27,31 @@ public class Corner {
 
 		p.setX(Sortie.getSortieHautGaucheX());
 		p.setY(Sortie.getSortieHautGaucheY());
+		
+		for (int i = 0; i <= players.size(); i++) {
+
+			// x 75 et 195 y 165 et 458
+			// x 195 et 815 y 165 et 458
+
+			if (i != borne && i >= 6) {
+
+				Random corner_place1_x = new Random();
+				int placeX = 75;
+
+				placeX = corner_place1_x.nextInt(120);
+
+				players.get(i).setX(placeX);
+				
+				Random corner_place1_y = new Random();
+				int placeY = 165;
+
+				placeY = corner_place1_y.nextInt(293);
+				
+				players.get(i).setY(placeY);
+
+			}
+
+		}
 
 	}
 
@@ -52,11 +80,18 @@ public class Corner {
 			if (i != borne && i >= 6) {
 
 				Random corner_place1_x = new Random();
-				int place = 75;
+				int placeX = 695;
 
-				place = corner_place1_x.nextInt(120);
+				placeX = corner_place1_x.nextInt(120);
 
-				players.get(i);
+				players.get(i).setX(placeX);
+				
+				Random corner_place1_y = new Random();
+				int placeY = 165;
+
+				placeY = corner_place1_y.nextInt(293);
+				
+				players.get(i).setY(placeY);
 
 			}
 
@@ -79,6 +114,33 @@ public class Corner {
 
 		p.setX(Sortie.getSortieBasGaucheX());
 		p.setY(Sortie.getSortieBasGaucheY());
+		
+		for (int i = 0; i <= players.size(); i++) {
+
+			// x 75 et 195 y 165 et 458
+			// x 195 et 815 y 165 et 458
+
+			if (i != borne && i >= 6) {
+
+				Random corner_place1_x = new Random();
+				int placeX = 75;
+
+				placeX = corner_place1_x.nextInt(120);
+
+				players.get(i).setX(placeX);
+				
+				Random corner_place1_y = new Random();
+				int placeY = 165;
+
+				placeY = corner_place1_y.nextInt(293);
+				
+				players.get(i).setY(placeY);
+
+			}
+
+		}
+		
+		
 
 	}
 
@@ -98,6 +160,31 @@ public class Corner {
 
 		p.setX(Sortie.getSortieBasDroiteX());
 		p.setY(Sortie.getSortieBasDroiteY());
+		
+		for (int i = 0; i <= players.size(); i++) {
+
+			// x 75 et 195 y 165 et 458
+			// x 195 et 815 y 165 et 458
+
+			if (i != borne && i >= 6) {
+
+				Random corner_place1_x = new Random();
+				int placeX = 695;
+
+				placeX = corner_place1_x.nextInt(120);
+
+				players.get(i).setX(placeX);
+				
+				Random corner_place1_y = new Random();
+				int placeY = 165;
+
+				placeY = corner_place1_y.nextInt(293);
+				
+				players.get(i).setY(placeY);
+
+			}
+
+		}
 	}
 
 	public static void main(String[] args) {
