@@ -14,7 +14,7 @@ public class Match {
 	private int scoreteam2;
 	private int time_match = 90;
 
-	private Ball ball = new Ball();
+	private Ball ball = new Ball(250,150);
 
 	public Team getTeam1() {
 		return team1;

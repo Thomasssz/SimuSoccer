@@ -2,17 +2,12 @@ package data;
 
 public class Ball {
 	
-	private int positionx_Ball = 440 ;
-	private int positiony_Ball = 315 ;
+	private int positionx_Ball = 250 ;
+	private int positiony_Ball = 150;
+
 
 	public int getPositionx_Ball() {
 		return positionx_Ball;
-	}
-	
-	public Ball() {
-		super();
-		this.positionx_Ball = 440 ;
-		this.positiony_Ball = 315 ;
 	}
 
 	public Ball(int positionx_Ball, int positiony_Ball) {

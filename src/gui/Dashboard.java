@@ -49,7 +49,7 @@ public class Dashboard extends JPanel {
 
 		g.setColor(Color.BLACK);
 		
-		Ball ballon = new Ball() ;
+		Ball ballon = new Ball(250,150) ;
 		
 		g.drawOval(ballon.getPositionx_Ball(), ballon.getPositiony_Ball(), 10, 10);
 		g.fillOval(ballon.getPositionx_Ball(), ballon.getPositiony_Ball(), 10, 10);

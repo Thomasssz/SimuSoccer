@@ -127,18 +127,11 @@ public class Team {
 	private static Player.position MID = Enum.valueOf(Player.position.class, "MIDDLE");
 
 	private static Player.position ATT = Enum.valueOf(Player.position.class, "ATTACK");
-	
-	
-	
-	
-			
-	
 
 	public static void createteams() {
 		
-
 		Player p1 = new Player("1",20, 30, 40, 80, 90, 1, GOAL, default_x_gardien_bleu, default_y_gardien_bleu,false);
-		Player p2 = new Player("2",30, 50, 40, 70, 60, 2, DEF, default_x_defenseur1_bleu, default_y_defenseur1_bleu,false);
+		Player p2 = new Player("2",30, 50, 40, 70, 60, 2, DEF, default_x_defenseur1_bleu, default_y_defenseur1_bleu,true);
 		Player p3 = new Player("3",20, 40, 40, 70, 60, 3, DEF, default_x_defenseur2_bleu, default_y_defenseur2_bleu,false);
 		Player p4 = new Player("4",30, 30, 40, 70, 70, 4, DEF, default_x_defenseur3_bleu, default_y_defenseur3_bleu,false);
 		Player p5 = new Player("5",30, 40, 40, 70, 60, 5, DEF, default_x_defenseur4_bleu, default_y_defenseur4_bleu,false);

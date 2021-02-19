@@ -7,6 +7,7 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,9 +17,11 @@ import javax.swing.JRadioButton;
 
 import chrono.Chronometer;
 import chrono.CyclicCounter;
+import data.Ball;
 import data.Match;
+import data.Player;
 import data.Team;
-import process.MiddleTime;
+import process.Pass;
 
 /**
  * Main GUI class for chronometer.
@@ -40,6 +43,11 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	private static final int CHRONO_SPEED1 = 10;
 	
 	private static final int CHRONO_SPEED2 = 1;	
+	
+	private Ball ballon = new Ball(250,150);
+	
+	public  ArrayList<Player> team1 = new ArrayList<>();
+	public  ArrayList<Player> team2 = new ArrayList<>();
 
 
 	private JRadioButton fiveButton=new JRadioButton("five");
@@ -96,6 +104,10 @@ public class ChronometerGUI extends JFrame implements Runnable {
 
 	private void init() {
 		updateValues();
+		
+		Team.createteams();
+		team1 = Team.players1 ;
+		team2 = Team.players2 ;
 
 		Container contentPane = getContentPane();
 		contentPane.setLayout(new BorderLayout());
@@ -195,8 +207,12 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		dashboard.setDefault_x_defenseur2_rouge(dashboard.getDefault_x_defenseur2_rouge()-10);
 		dashboard.setDefault_x_defenseur3_rouge(dashboard.getDefault_x_defenseur3_rouge()-10);
 		dashboard.setDefault_x_defenseur4_rouge(dashboard.getDefault_x_defenseur4_rouge()-10);
+		
+		
 
 		// The dashboard needs to be reprinted when hour, minute or second values change.*/
+		
+		Pass.get_Player_Ball(ballon,team1,team2 );
 		dashboard.repaint();
 	}
 
@@ -216,53 +232,11 @@ public class ChronometerGUI extends JFrame implements Runnable {
 			// Ensure that the chronometer is not stopped during the iteration.
 			if (!stop) {
 				updateValues();
-				ChangePlayers(chronometer);
+				//ChangePlayers(chronometer);
 			}
 		}
 	}
-
-	public void ChangePlayers(Chronometer chrono) {
 	
-		CyclicCounter minute = chronometer.getMinute();
-		MiddleTime middletime =new MiddleTime();
-		boolean middle=middletime.middletime(minute);
-		
-		if(middle==true) {
-
-			
-		Team.createteams();
-		
-		
-		Team.players2.get(10).setX(Team.players1.get(10).getX());
-
-	Team.createteams();
-	Team.players2.get(10).setX(Team.players1.get(10).getX());
-        Team.players2.get(9).setX(Team.players1.get(9).getX());
-        Team.players2.get(8).setX(Team.players1.get(8).getX());
-        Team.players2.get(7).setX(Team.players1.get(7).getX());
-        Team.players2.get(6).setX(Team.players1.get(6).getX());
-        Team.players2.get(5).setX(Team.players1.get(5).getX());
-        Team.players2.get(4).setX(Team.players1.get(4).getX());
-        Team.players2.get(3).setX(Team.players1.get(3).getX());
-        Team.players2.get(2).setX(Team.players1.get(2).getX());
-        Team.players2.get(1).setX(Team.players1.get(1).getX());
-        Team.players2.get(0).setX(Team.players1.get(0).getX());
-        Team.players1.get(10).setX(Team.players2.get(10).getX());
-        Team.players1.get(9).setX(Team.players2.get(9).getX());
-        Team.players1.get(8).setX(Team.players2.get(8).getX());
-        Team.players1.get(7).setX(Team.players2.get(7).getX());
-        Team.players1.get(6).setX(Team.players2.get(6).getX());
-        Team.players1.get(5).setX(Team.players2.get(5).getX());
-        Team.players1.get(4).setX(Team.players2.get(4).getX());
-        Team.players1.get(3).setX(Team.players2.get(3).getX());
-        Team.players1.get(2).setX(Team.players2.get(2).getX());
-        Team.players1.get(1).setX(Team.players2.get(1).getX());
-        Team.players1.get(0).setX(Team.players2.get(0).getX());
-        
-       
-        
-		}
-	}
 	private class StartStopAction implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -274,7 +248,12 @@ public class ChronometerGUI extends JFrame implements Runnable {
 				startButton.setText(" Pause ");
 				Thread chronoThread = new Thread(instance);
 				chronoThread.start();
-				Match.engagement();
+				
+				//Match.engagement();
+				
+			//	Ball ballon = new Ball(250,150);
+			//	Pass.get_Player_Ball(ballon,Team.players1,Team.players2 );
+			//	Pass.pass_sequence(ballon,Team.players1,Team.players2 );
 			}
 		}
 	}
