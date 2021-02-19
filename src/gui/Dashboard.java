@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import data.Ball;
 import data.Team;
 import delimitations.Sortie;
+import delimitations.Surface;
 
 /**
  * This class manages the dashboard (minute, second) of chronometer GUI.
@@ -59,6 +60,13 @@ public class Dashboard extends JPanel {
 		g.drawLine(Sortie.getSortieHautGaucheX(), Sortie.getSortieHautGaucheY(), Sortie.getSortieBasGaucheX(), Sortie.getSortieBasGaucheY());
 		g.drawLine(Sortie.getSortieBasDroiteX(), Sortie.getSortieBasDroiteY(), Sortie.getSortieHautDroiteX(), Sortie.getSortieHautDroiteY());
 		g.drawLine(Sortie.getSortieBasGaucheX(), Sortie.getSortieBasGaucheY(), Sortie.getSortieBasDroiteX(), Sortie.getSortieBasDroiteY());
+		
+		g.setColor(Color.CYAN);
+		
+		g.drawLine(Surface.getSurfaceHautGaucheX(), Surface.getSurfaceHautGaucheY(), Surface.getSurfaceHautDroiteX(), Surface.getSurfaceHautDroiteY());
+		g.drawLine(Surface.getSurfaceHautGaucheX(), Surface.getSurfaceHautGaucheY(), Surface.getSurfaceBasGaucheX(), Surface.getSurfaceBasGaucheY());
+		g.drawLine(Surface.getSurfaceBasDroiteX(), Surface.getSurfaceBasDroiteY(), Surface.getSurfaceHautDroiteX(), Surface.getSurfaceHautDroiteY());
+		g.drawLine(Surface.getSurfaceBasGaucheX(), Surface.getSurfaceBasGaucheY(), Surface.getSurfaceBasDroiteX(), Surface.getSurfaceBasDroiteY());
 		
 		Team.createteams();
 
