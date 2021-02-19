@@ -5,7 +5,6 @@ import java.util.Random;
 
 import data.Ball;
 import data.Player;
-import data.Team;
 
 public class Corner {
 
@@ -47,11 +46,21 @@ public class Corner {
 
 		for (int i = 0; i <= players.size(); i++) {
 
-			if (i != borne && i>=6) {
-				Team.players2.get(i).setX(440);
-			}
-		}
+			// x 75 et 195 y 165 et 458
+			// x 195 et 815 y 165 et 458
 
+			if (i != borne && i >= 6) {
+
+				Random corner_place1_x = new Random();
+				int place = 75;
+
+				place = corner_place1_x.nextInt(120);
+
+				players.get(i);
+
+			}
+
+		}
 	}
 
 	public void CornerBasGauche(Ball ballon, ArrayList<Player> players) {
