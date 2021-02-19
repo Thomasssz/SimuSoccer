@@ -1,6 +1,5 @@
 package gui;
 
-import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,29 +11,54 @@ import data.Team;
 
 public class Player1 extends JFrame {
 	
-	JPanel panel = new JPanel();
-	JTextArea text = new JTextArea("salut");
-	
-	public Player1() {
-		 
-		  this.setTitle("Joueur 1");
-		  this.setSize(500,500);
-		
-				 
-		 
-		  
+	private String name = "1";
+	private JPanel panel = new JPanel();
+	private JLabel label = new JLabel("Caractéristique");
+	private JTextArea h;
 
+	public Player1() {
 		
-		   panel.add(text);
-		 
+		this.setTitle("Joueur 1");
+		this.setSize(500,500);
+		h = new JTextArea(10,50);
+		h.setText(toString(name));
+		
+		panel.add(label);
+		panel.add(h);
 		  
+		 
+		  this.setContentPane(panel);
 	}
 	
-	public static void stat(){
-		 Team.createteams();
-		for(int i=0; i<Team.players1.size(); i++) {
-			System.out.println(Team.players1.get(i));
+	public String toString(String name) {
+		Team.createteams();
+		String result = "";
+			for(int i = 0; i < Team.players1.size(); i++) { 
+	    		if(Team.players1.get(i).getName().equals(name)) {
+	    			result = Team.players1.get(i).toString();
+	    		}
+	    	}
+			return result;
 		}
+
+	
+	public Player recherchenom(String name) { 
+    	for(int i = 0; i < Team.players1.size(); i++) { 
+    		if(Team.players1.get(i).getName().equals(name)) {
+    			return Team.players1.get(i);
+    		}
+    	}
+    	return null;
+	}
+
+	
+	public Player stat(String name){
+		for(int i=0; i<Team.players1.size(); i++) {
+			if(Team.players1.get(i).getName().equals(name)) {
+    			return Team.players1.get(i) ;
+    		}
+		}
+		return null;
 	}
 	
 	/*public static void parcoursListPlayer(ArrayList<Player> list) {

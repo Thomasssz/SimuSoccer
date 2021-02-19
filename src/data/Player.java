@@ -1,7 +1,8 @@
 package data;
 
 public class Player {
-
+	
+	private String name;
 	private int speed;
 	private int pass;
 	private int dribbles;
@@ -18,7 +19,7 @@ public class Player {
 
 	private position player_position;
 
-	public Player(int speed, int pass, int dribbles, int defense, int shoot, int number, position player_position,
+	public Player(String name, int speed, int pass, int dribbles, int defense, int shoot, int number, position player_position,
 			int x, int y) {
 
 		this.speed = speed;
@@ -30,6 +31,7 @@ public class Player {
 		this.player_position = player_position;
 		this.x = x;
 		this.y = y;
+		this.name = name;
 	}
 
 	public int getSpeed() {
@@ -38,6 +40,14 @@ public class Player {
 
 	public void setSpeed(int speed) {
 		this.speed = speed;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public int getPass() {
@@ -106,9 +116,9 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return "Player [speed=" + speed + ", pass=" + pass + ", dribbles=" + dribbles + ", defense=" + defense
-				+ ", shoot=" + shoot + ", number=" + number + ", x=" + x + ", y=" + y + ", player_position="
-				+ player_position + "]";
+		return "Player " +name+ ":\n speed=" + speed + "\n pass=" + pass + "\n dribbles=" + dribbles + "\n defense=" + defense
+				+ "\n shoot=" + shoot + "\n number=" + number + "\n player_position="
+				+ player_position + "";
 	}
 
 }
