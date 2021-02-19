@@ -1,5 +1,6 @@
 package data;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Match {
 	
@@ -51,6 +52,7 @@ public class Match {
 	}
 	
 	public static void engagement() {
+		
         Random random = new Random();
         int nb;
         nb = random.nextInt(2);
