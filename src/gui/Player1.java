@@ -28,7 +28,7 @@ public class Player1 extends JFrame {
 		  
 		 
 		  this.setContentPane(panel);
-	}
+	} 
 	
 	public String toString(String name) {
 		Team.createteams();
