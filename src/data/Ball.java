@@ -2,12 +2,17 @@ package data;
 
 public class Ball {
 	
-	private int positionx_Ball = 250 ;
-	private int positiony_Ball = 150;
-
+	private int positionx_Ball ;
+	private int positiony_Ball ;
 
 	public int getPositionx_Ball() {
 		return positionx_Ball;
+	}
+	
+	public Ball() {
+		
+		positionx_Ball = 440;
+		positiony_Ball = 305 ;
 	}
 
 	public Ball(int positionx_Ball, int positiony_Ball) {
@@ -26,5 +31,21 @@ public class Ball {
 
 	public void setPositiony_Ball(int positiony_Ball) {
 		this.positiony_Ball = positiony_Ball;
+	}
+		
+	public void setBallPositionxWithBluePlayer (Player blue_ball_player) {
+		positionx_Ball = blue_ball_player.getX()+10 ;
+	}
+	
+	public void setBallPositionyWithBluePlayer (Player blue_ball_player) {
+		positiony_Ball = blue_ball_player.getY() ;
+	}
+	
+	public void setBallPositionxWithRedPlayer (Player red_ball_player) {
+		positionx_Ball = red_ball_player.getX()-10 ;
+	}
+	
+	public void setBallPositionyWithRedPlayer (Player red_ball_player) {
+		positiony_Ball = red_ball_player.getY() ;
 	}
 }

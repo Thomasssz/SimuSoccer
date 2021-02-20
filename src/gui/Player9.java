@@ -1,10 +1,13 @@
 package gui;
 
+import java.util.ArrayList;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import data.Player;
 import data.Team;
 
 public class Player9 extends JFrame{
@@ -13,7 +16,11 @@ public class Player9 extends JFrame{
 	private JLabel label = new JLabel("Caractéristique");
 	private JTextArea h;
 
-	public Player9() {
+	private static ArrayList<Player> team1 = new ArrayList<Player>();
+	
+	public Player9(ArrayList<Player> player_team) {
+		
+		team1 = player_team ;
 		
 		this.setTitle("Joueur 9");
 		this.setSize(500,500);
@@ -28,11 +35,11 @@ public class Player9 extends JFrame{
 	} 
 	
 	public String toString(String name) {
-		Team.createteams();
+		
 		String result = "";
-			for(int i = 0; i < Team.players1.size(); i++) { 
-	    		if(Team.players1.get(i).getName().equals(name)) {
-	    			result = Team.players1.get(i).toString();
+			for(int i = 0; i < team1.size(); i++) { 
+	    		if(team1.get(i).getName().equals(name)) {
+	    			result = team1.get(i).toString();
 	    		}
 	    	}
 			return result;

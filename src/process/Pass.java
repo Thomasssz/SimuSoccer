@@ -9,7 +9,7 @@ import data.Player;
 public class Pass {
 
 	private static int ball_player_x;
-	private static int ball_player_y;
+	private static int ball_player_y ;
 
 	public static Player get_Player_Ball(Ball ballon, ArrayList<Player> players1, ArrayList<Player> players2) {
 

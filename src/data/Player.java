@@ -14,7 +14,7 @@ public class Player {
 	private int y;
 	private boolean ball ;
 
-	enum position {
+	public enum position {
 		ATTACK, DEFENSE, MIDDLE, GOALKEEPER;
 	}
 
@@ -126,9 +126,9 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return "Player " +name+ " :\n speed=" + speed + "\n pass=" + pass + "\n dribbles=" + dribbles + "\n defense=" + defense
-				+ "\n shoot=" + shoot + "\n number=" + number + "\n player_position="
-				+ player_position + "";
+		return "Player [name=" + name + ", speed=" + speed + ", pass=" + pass + ", dribbles=" + dribbles + ", defense="
+				+ defense + ", shoot=" + shoot + ", number=" + number + ", x=" + x + ", y=" + y + ", ball=" + ball
+				+ ", player_position=" + player_position + "]";
 	}
 
 }

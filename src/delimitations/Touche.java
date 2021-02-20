@@ -51,7 +51,7 @@ public class Touche {
 		for (int i = 0; i <= players.size(); i++) {
 
 			// x 75 et 195 y 165 et 458
-			// x 195 et 815 y 165 et 458
+			// x 195 et 813 y 165 et 458
 
 			if (i != borne && i != 0) {
 

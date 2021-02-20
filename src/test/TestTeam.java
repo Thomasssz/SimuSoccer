@@ -1,24 +1,26 @@
 package test;
 
+import java.util.ArrayList;
+
 import data.Player;
 import data.Team;
 
 public class TestTeam {
+	
+	private static String nameTeam = "1" ;
+	private static ArrayList<Player> team = new ArrayList <Player>();
+	private static String color = "blue" ;
+	
+	
 
 	public static void main(String[] args) {
 
-		//TestTeam test = new TestTeam();
-
-		Team.createteams();
-		String result = "";
-		for (Player player : Team.players1) {
-			result += player.toString() + "\n";
-		}
+		Team training = new Team (nameTeam,team,color);
+		training.createteams(training);
 		
-		System.out.println(result);
+		training.parcoursListPlayer(training.getPlayers()); //sera affiche if color = blue
+		training.parcoursListPlayer(training.getPlayers()); // sera affiche if color = red
 		
-	
-
 	}
 
 }

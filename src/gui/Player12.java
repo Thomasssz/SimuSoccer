@@ -1,5 +1,7 @@
 package gui;
 
+import java.util.ArrayList;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,7 +16,11 @@ public class Player12 extends JFrame{
 	private JLabel label = new JLabel("Caractéristique");
 	private JTextArea h;
 
-	public Player12() {
+	private static ArrayList<Player> team2 = new ArrayList<Player>();
+	
+	public Player12(ArrayList<Player> player_team) {
+		
+		team2 = player_team ;
 		
 		this.setTitle("Joueur 12");
 		this.setSize(500,500);
@@ -29,11 +35,11 @@ public class Player12 extends JFrame{
 	} 
 	
 	public String toString(String name) {
-		Team.createteams();
+		
 		String result = "";
-			for(int i = 0; i < Team.players2.size(); i++) { 
-	    		if(Team.players2.get(i).getName().equals(name)) {
-	    			result = Team.players2.get(i).toString();
+			for(int i = 0; i < team2.size(); i++) { 
+	    		if(team2.get(i).getName().equals(name)) {
+	    			result = team2.get(i).toString();
 	    		}
 	    	}
 			return result;

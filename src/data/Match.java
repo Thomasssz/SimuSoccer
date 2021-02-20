@@ -3,6 +3,8 @@ package data;
 import java.util.ArrayList;
 import java.util.Random;
 
+import gui.Dashboard;
+
 public class Match {
 
 	public static ArrayList<Player> players1 = new ArrayList<>();
@@ -14,7 +16,7 @@ public class Match {
 	private int scoreteam2;
 	private int time_match = 90;
 
-	private Ball ball = new Ball(250,150);
+	private Ball ball = new Ball(250, 150);
 
 	public Team getTeam1() {
 		return team1;
@@ -64,25 +66,35 @@ public class Match {
 		this.ball = ball;
 	}
 
-	public static void engagement() {
+	public void engagement(Dashboard dash) {
 
 		Random random = new Random();
-		int nb;
+		int nb ;
 		nb = random.nextInt(2);
-		Team.createteams();
-		// si le nombre aléatoire génère 1, ce sera l'équipe bleu qui engagera
+
+		// si le nombre aleatoire genere 1, ce sera l'equipe bleu qui engagera
+
 		if (nb == 1) {
-			Team.players2.get(10).setX(440);
-			Team.players2.get(10).setY(305);
-			Team.players2.get(9).setX(440);
-			Team.players2.get(9).setY(325);
-			Team.players2.get(10).setBall(true);
+
+			dash.getTeam1().get(10).setX(430);
+			dash.getTeam1().get(10).setY(300);
+			dash.getTeam1().get(9).setX(430);
+			dash.getTeam1().get(9).setY(330);
+			dash.getTeam1().get(10).setBall(true);
+
+			dash.getBallon().setBallPositionxWithBluePlayer(dash.getTeam1().get(10));
+			dash.getBallon().setBallPositionyWithBluePlayer(dash.getTeam1().get(10));
+
 		} else {
-			Team.players1.get(10).setX(440);
-			Team.players1.get(10).setY(305);
-			Team.players1.get(9).setX(440);
-			Team.players1.get(9).setY(325);
-			Team.players1.get(10).setBall(true);
+			dash.getTeam2().get(10).setX(450);
+			dash.getTeam2().get(10).setY(300);
+			dash.getTeam2().get(9).setX(450);
+			dash.getTeam2().get(9).setY(330);
+			dash.getTeam2().get(10).setBall(true);
+
+			dash.getBallon().setBallPositionxWithRedPlayer(dash.getTeam2().get(10));
+			dash.getBallon().setBallPositionyWithRedPlayer(dash.getTeam2().get(10));
+
 		}
 
 	}

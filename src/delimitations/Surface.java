@@ -17,13 +17,13 @@ public class Surface {
 	protected static final int SurfaceDroite_Haut_Gauche_x = 695 ;
 	protected static final int SurfaceDroite_Haut_Gauche_y = 165 ;
 	
-	protected static final int SurfaceDroite_Haut_Droite_x = 815;
+	protected static final int SurfaceDroite_Haut_Droite_x = 813;
 	protected static final int SurfaceDroite_Haut_Droite_y = 165 ;
 	
 	protected static final int SurfaceDroite_Bas_Gauche_x = 695 ;
 	protected static final int SurfaceDroite_Bas_Gauche_y = 458 ;
 	
-	protected static final int SurfaceDroite_Bas_Droite_x = 815 ;
+	protected static final int SurfaceDroite_Bas_Droite_x = 813 ;
 	protected static final int SurfaceDroite_Bas_Droite_y = 458 ;
 	
 	public static int getSurfacedroiteHautGaucheX() {
