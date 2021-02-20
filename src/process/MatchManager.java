@@ -37,7 +37,11 @@ public class MatchManager {
 			
 			cornertest.CornerHautGauche(dash);
 			
-			corner = true ;
+			if (dash.isStop_action() == true) {
+			
+				corner = true ;
+				
+			} 
 			
 		}
 		

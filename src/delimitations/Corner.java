@@ -28,6 +28,8 @@ public class Corner {
 		Ball ballon = dash.getBallon();
 
 		ArrayList<Player> players = dash.getTeam2();
+		
+		while (receveur_corner != true) {
 
 		ballon.setPositionx_Ball(Sortie.getSortieHautGaucheX() + 5);
 		ballon.setPositiony_Ball(Sortie.getSortieHautGaucheY() + 10);
@@ -65,7 +67,7 @@ public class Corner {
 		Random tirage_receveur = new Random();
 		int tirage_re = 6;
 
-		while (receveur_corner != true) {
+		
 
 			tirage_re = tirage_receveur.nextInt(5);
 
@@ -116,11 +118,11 @@ public class Corner {
 				receveur_corner = true;
 
 			}
+			
+			receveur = players.get(tirage_re);
 		}
 
-		receveur = players.get(tirage_re);
-
-		testPass.pass(dash, receveur);
+		testPass.pass(dash,receveur);
 
 	}
 

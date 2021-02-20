@@ -39,6 +39,8 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	 * The normal speed is 1000, e.q. one refresh per second (1000 milliseconds).
 	 */
 	private static final int CHRONO_SPEED = 100;
+	
+	public static final int SIMULATION_CHRONO_SPEED = 1 ;
 
 	private Ball ballon = new Ball();
 
@@ -202,10 +204,19 @@ public class ChronometerGUI extends JFrame implements Runnable {
 			// Ensure that the chronometer is not stopped during the iteration.
 			if (!stop) {
 				updateValues();
+				CronoUnitTime();
 			}
 		}
 
 	}
+	
+	public static void CronoUnitTime() {
+        try {
+            Thread.sleep(SIMULATION_CHRONO_SPEED);
+        } catch (InterruptedException e) {
+            System.err.println(e.getMessage());
+        }
+    }
 
 	private class StartStopAction implements ActionListener {
 		@Override

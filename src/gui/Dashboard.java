@@ -31,6 +31,7 @@ public class Dashboard extends JPanel {
 	private ArrayList<Player> team2 ;
 	private Ball ballon ;
 	private Corner testcorner ;
+	private boolean stop_action = false ;
 	
 	public Dashboard(ArrayList<Player> team1, ArrayList<Player> team2, Ball ballon, Corner testcorner) {
 		this.team1 = team1 ;
@@ -206,4 +207,17 @@ public class Dashboard extends JPanel {
 	public void setTestcorner(Corner testcorner) {
 		this.testcorner = testcorner;
 	}
+
+
+	public boolean isStop_action() {
+		return stop_action;
+	}
+
+
+	public void setStop_action(boolean stop_action) {
+		this.stop_action = stop_action;
+	}
+	
+	
 }
+
