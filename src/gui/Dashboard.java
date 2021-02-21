@@ -13,6 +13,7 @@ import data.Player;
 import delimitations.Corner;
 import delimitations.Sortie;
 import delimitations.Surface;
+import delimitations.Touche;
 import process.MatchManager;
 
 /**
@@ -31,13 +32,16 @@ public class Dashboard extends JPanel {
 	private ArrayList<Player> team2 ;
 	private Ball ballon ;
 	private Corner testcorner ;
+	private Touche testtouche ;
+	
 	private boolean stop_action = false ;
 	
-	public Dashboard(ArrayList<Player> team1, ArrayList<Player> team2, Ball ballon, Corner testcorner) {
+	public Dashboard(ArrayList<Player> team1, ArrayList<Player> team2, Ball ballon, Corner testcorner, Touche testtouche) {
 		this.team1 = team1 ;
 		this.team2 = team2 ;
 		this.ballon = ballon ;
 		this.testcorner = testcorner ;
+		this.testtouche = testtouche ;
 	}
 
 	private static final long serialVersionUID = 1L;
@@ -79,6 +83,11 @@ public class Dashboard extends JPanel {
 		g.drawLine(Surface.getSurfacedroiteBasGaucheX(), Surface.getSurfacedroiteBasGaucheY(), Surface.getSurfacedroiteBasDroiteX(), Surface.getSurfacedroiteBasDroiteY());
 		
 		g.setColor(Color.ORANGE);
+		
+		g.drawLine(Sortie.getSortieHautGaucheX()+250, Sortie.getSortieHautGaucheY()+2, Sortie.getSortieHautGaucheX()+450, Sortie.getSortieHautDroiteY()+2);
+		g.drawLine(Sortie.getSortieHautGaucheX()+250, Sortie.getSortieHautGaucheY()+2, Sortie.getSortieHautGaucheX()+250, Sortie.getSortieHautDroiteY()+100);
+		g.drawLine(Sortie.getSortieHautGaucheX()+250, Sortie.getSortieHautGaucheY()+100, Sortie.getSortieHautGaucheX()+450, Sortie.getSortieHautDroiteY()+100);
+		g.drawLine(Sortie.getSortieHautGaucheX()+450, Sortie.getSortieHautGaucheY()+2, Sortie.getSortieHautGaucheX()+450, Sortie.getSortieHautDroiteY()+100);
 
 		/* Equipe bleu */
 
@@ -206,6 +215,15 @@ public class Dashboard extends JPanel {
 
 	public void setTestcorner(Corner testcorner) {
 		this.testcorner = testcorner;
+	}
+	
+	public Touche getTesttouche() {
+		return testtouche;
+	}
+
+
+	public void setTesttouche(Touche testtouche) {
+		this.testtouche = testtouche;
 	}
 
 

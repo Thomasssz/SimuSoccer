@@ -18,7 +18,7 @@ public class Passe {
 		super();
 	}
 
-	public void pass(Dashboard dash) {
+	public void testPass(Dashboard dash) {
 
 		ArrayList<Player> team1 = dash.getTeam1();
 		ArrayList<Player> team2 = dash.getTeam2();
@@ -80,20 +80,6 @@ public class Passe {
 
 	public void pass(Dashboard dash, Player receveur) {
 
-		/*
-		 * int res_x = (dash.getBallon().getPositionx_Ball()) - receveur.getX(); int
-		 * res_y = (dash.getBallon().getPositiony_Ball()) - receveur.getY();
-		 * 
-		 * int result_x = Math.abs(res_x); int result_y = Math.abs(res_y);
-		 * 
-		 * while ((result_x > 10) || (result_y > 10)) {
-		 * 
-		 * res_x = dash.getBallon().getPositionx_Ball() - receveur.getX(); res_y =
-		 * dash.getBallon().getPositiony_Ball() - receveur.getY();
-		 * 
-		 * result_x = Math.abs(res_x); result_y = Math.abs(res_y);
-		 */
-		
 		int res_x = (dash.getBallon().getPositionx_Ball()) - receveur.getX(); 
 		int res_y = (dash.getBallon().getPositiony_Ball()) - receveur.getY();
 		  
@@ -136,9 +122,6 @@ public class Passe {
 			}
 
 		}
-
-		System.out.println(receveur.getX());
-		System.out.println(receveur.getY());
 
 	}
 

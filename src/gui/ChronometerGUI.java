@@ -21,6 +21,7 @@ import data.Ball;
 import data.Player;
 import data.Team;
 import delimitations.Corner;
+import delimitations.Touche;
 import process.MatchManager;
 
 /**
@@ -48,6 +49,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	private static ArrayList<Player> team2 = new ArrayList<Player>();
 	
 	private Corner cornertest = new Corner() ;
+	private Touche touchetest = new Touche() ;
 
 	public Chronometer getChronometer() {
 		return chronometer;
@@ -80,7 +82,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	/**
 	 * The dashboard part is managed in a separate class.
 	 */
-	private Dashboard dashboard = new Dashboard(team1, team2, ballon,cornertest);
+	private Dashboard dashboard = new Dashboard(team1, team2, ballon,cornertest,touchetest);
 	
 	private MatchManager matchprocess = new MatchManager();
 
@@ -182,7 +184,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		// The dashboard needs to be reprinted when hour, minute or second values
 		// change.
 
-		matchprocess.beginMatch(dashboard);
+		matchprocess.matchProcess(dashboard);
 
 		dashboard.repaint();
 	}

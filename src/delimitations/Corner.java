@@ -12,7 +12,6 @@ public class Corner {
 
 	private boolean receveur_corner = false;
 
-	private Player passeur;
 	private Player receveur;
 
 	Passe testPass = new Passe();
@@ -28,46 +27,44 @@ public class Corner {
 		Ball ballon = dash.getBallon();
 
 		ArrayList<Player> players = dash.getTeam2();
-		
+
 		while (receveur_corner != true) {
 
-		ballon.setPositionx_Ball(Sortie.getSortieHautGaucheX() + 5);
-		ballon.setPositiony_Ball(Sortie.getSortieHautGaucheY() + 10);
+			ballon.setPositionx_Ball(Sortie.getSortieHautGaucheX() + 5);
+			ballon.setPositiony_Ball(Sortie.getSortieHautGaucheY() + 10);
 
-		Random tirage = new Random();
-		int borne = 6;
+			Random tirage = new Random();
+			int borne = 6;
 
-		borne = tirage.nextInt(5);
+			borne = tirage.nextInt(5);
 
-		borne += 5;
+			borne += 5;
 
-		Player p = players.get(borne);
+			Player p = players.get(borne);
 
-		p.setX(Sortie.getSortieHautGaucheX());
-		p.setY(Sortie.getSortieHautGaucheY());
+			p.setX(Sortie.getSortieHautGaucheX());
+			p.setY(Sortie.getSortieHautGaucheY());
 
-		// Tirage de la position de la balle
+			// Tirage de la position de la balle
 
-		Random corner_place1_x = new Random();
-		int placeX = 75; // 75
+			Random corner_place1_x = new Random();
+			int placeX = 75;
 
-		placeX = corner_place1_x.nextInt(118);
+			placeX = corner_place1_x.nextInt(118);
 
-		placeX += 75;
+			placeX += 75;
 
-		Random corner_place1_y = new Random();
-		int placeY = 165;
+			Random corner_place1_y = new Random();
+			int placeY = 165;
 
-		placeY = corner_place1_y.nextInt(293);
+			placeY = corner_place1_y.nextInt(293);
 
-		placeY += 165;
+			placeY += 165;
 
-		// Tirage joueur qui va recevoir la balle
+			// Tirage joueur qui va recevoir la balle
 
-		Random tirage_receveur = new Random();
-		int tirage_re = 6;
-
-		
+			Random tirage_receveur = new Random();
+			int tirage_re = 6;
 
 			tirage_re = tirage_receveur.nextInt(5);
 
@@ -78,14 +75,9 @@ public class Corner {
 				players.get(tirage_re).setX(placeX);
 				players.get(tirage_re).setY(placeY);
 
-				System.out.println("receveur x " + placeX);
-				System.out.println("receveur y " + placeY);
-
 			}
 
 			for (int i = 0; i < players.size(); i++) {
-
-				// x 75 et 195 y 165 et 458 // x 195 et 813 y 165 et 458
 
 				if ((i != borne) && (i != tirage_re) && (i >= 5)) {
 
@@ -112,17 +104,17 @@ public class Corner {
 				}
 
 			}
-			
+
 			if (tirage_re != borne) {
 
 				receveur_corner = true;
 
 			}
-			
+
 			receveur = players.get(tirage_re);
 		}
 
-		testPass.pass(dash,receveur);
+		testPass.pass(dash, receveur);
 
 	}
 
@@ -132,45 +124,43 @@ public class Corner {
 
 		ArrayList<Player> players = dash.getTeam1();
 
-		ballon.setPositionx_Ball(Sortie.getSortieHautDroiteX() - 10);
-		ballon.setPositiony_Ball(Sortie.getSortieHautDroiteY() + 10);
-
-		Random tirage = new Random();
-		int borne = 6;
-
-		borne = tirage.nextInt(5);
-
-		borne += 5;
-
-		System.out.println(borne);
-
-		Player p = players.get(borne);
-
-		p.setX(Sortie.getSortieHautDroiteX() - 10);
-		p.setY(Sortie.getSortieHautDroiteY());
-
-		// Tirage de la position de la balle
-
-		Random corner_place1_x = new Random();
-		int placeX = 685; // 685
-
-		placeX = corner_place1_x.nextInt(118);
-
-		placeX += 685;
-
-		Random corner_place1_y = new Random();
-		int placeY = 165;
-
-		placeY = corner_place1_y.nextInt(293);
-
-		placeY += 165;
-
-		// Tirage joueur qui va recevoir la balle
-
-		Random tirage_receveur = new Random();
-		int tirage_re = 6;
-
 		while (receveur_corner != true) {
+
+			ballon.setPositionx_Ball(Sortie.getSortieHautDroiteX() - 10);
+			ballon.setPositiony_Ball(Sortie.getSortieHautDroiteY() + 10);
+
+			Random tirage = new Random();
+			int borne = 6;
+
+			borne = tirage.nextInt(5);
+
+			borne += 5;
+
+			Player p = players.get(borne);
+
+			p.setX(Sortie.getSortieHautDroiteX() - 10);
+			p.setY(Sortie.getSortieHautDroiteY());
+
+			// Tirage de la position de la balle
+
+			Random corner_place1_x = new Random();
+			int placeX = 685;
+
+			placeX = corner_place1_x.nextInt(118);
+
+			placeX += 685;
+
+			Random corner_place1_y = new Random();
+			int placeY = 165;
+
+			placeY = corner_place1_y.nextInt(293);
+
+			placeY += 165;
+
+			// Tirage joueur qui va recevoir la balle
+
+			Random tirage_receveur = new Random();
+			int tirage_re = 6;
 
 			tirage_re = tirage_receveur.nextInt(5);
 
@@ -181,46 +171,45 @@ public class Corner {
 				players.get(tirage_re).setX(placeX);
 				players.get(tirage_re).setY(placeY);
 
-				System.out.println(placeX);
-				System.out.println(placeY);
+			}
 
+			for (int i = 0; i < players.size(); i++) {
+
+				if ((i != borne) && (i != tirage_re) && (i >= 5)) {
+
+					Random corner_place_other_x = new Random();
+
+					int place_other_x = 685;
+
+					place_other_x = corner_place_other_x.nextInt(118);
+
+					place_other_x += 685;
+
+					players.get(i).setX(place_other_x);
+
+					Random corner_place_other_y = new Random();
+
+					int place_other_y = 165;
+
+					place_other_y = corner_place_other_y.nextInt(293);
+
+					place_other_y += 165;
+
+					players.get(i).setY(place_other_y);
+
+				}
+
+			}
+
+			if (tirage_re != borne) {
 				receveur_corner = true;
 			}
 
+			receveur = players.get(tirage_re);
 		}
 
-		for (int i = 0; i < players.size(); i++) {
+		testPass.pass(dash, receveur);
 
-			// x 685 et 195 y 165 et 458 // x 195 et 813 y 165 et 458
-
-			if ((i != borne) && (i != tirage_re) && (i >= 5)) {
-
-				Random corner_place_other_x = new Random();
-
-				int place_other_x = 685;
-
-				place_other_x = corner_place_other_x.nextInt(118);
-
-				place_other_x += 685;
-
-				players.get(i).setX(place_other_x);
-
-				Random corner_place_other_y = new Random();
-
-				int place_other_y = 165;
-
-				place_other_y = corner_place_other_y.nextInt(293);
-
-				place_other_y += 165;
-
-				players.get(i).setY(place_other_y);
-
-			}
-
-		}
-
-		passeur = players.get(borne);
-		receveur = players.get(tirage_re);
 	}
 
 	public void CornerBasGauche(Dashboard dash) {
@@ -229,45 +218,43 @@ public class Corner {
 
 		ArrayList<Player> players = dash.getTeam2();
 
-		ballon.setPositionx_Ball(Sortie.getSortieBasGaucheX() + 5);
-		ballon.setPositiony_Ball(Sortie.getSortieBasGaucheY() - 10);
-
-		Random tirage = new Random();
-		int borne = 6;
-
-		borne = tirage.nextInt(5);
-
-		borne += 5;
-
-		System.out.println(borne);
-
-		Player p = players.get(borne);
-
-		p.setX(Sortie.getSortieBasGaucheX());
-		p.setY(Sortie.getSortieBasGaucheY());
-
-		// Tirage de la position de la balle
-
-		Random corner_place1_x = new Random();
-		int placeX = 75; // 75
-
-		placeX = corner_place1_x.nextInt(118);
-
-		placeX += 75;
-
-		Random corner_place1_y = new Random();
-		int placeY = 165;
-
-		placeY = corner_place1_y.nextInt(293);
-
-		placeY += 165;
-
-		// Tirage joueur qui va recevoir la balle
-
-		Random tirage_receveur = new Random();
-		int tirage_re = 6;
-
 		while (receveur_corner != true) {
+
+			ballon.setPositionx_Ball(Sortie.getSortieBasGaucheX() + 5);
+			ballon.setPositiony_Ball(Sortie.getSortieBasGaucheY() - 10);
+
+			Random tirage = new Random();
+			int borne = 6;
+
+			borne = tirage.nextInt(5);
+
+			borne += 5;
+
+			Player p = players.get(borne);
+
+			p.setX(Sortie.getSortieBasGaucheX());
+			p.setY(Sortie.getSortieBasGaucheY());
+
+			// Tirage de la position de la balle
+
+			Random corner_place1_x = new Random();
+			int placeX = 75;
+
+			placeX = corner_place1_x.nextInt(118);
+
+			placeX += 75;
+
+			Random corner_place1_y = new Random();
+			int placeY = 165;
+
+			placeY = corner_place1_y.nextInt(293);
+
+			placeY += 165;
+
+			// Tirage joueur qui va recevoir la balle
+
+			Random tirage_receveur = new Random();
+			int tirage_re = 6;
 
 			tirage_re = tirage_receveur.nextInt(5);
 
@@ -278,46 +265,44 @@ public class Corner {
 				players.get(tirage_re).setX(placeX);
 				players.get(tirage_re).setY(placeY);
 
-				System.out.println(placeX);
-				System.out.println(placeY);
+			}
 
+			for (int i = 0; i < players.size(); i++) {
+
+				if ((i != borne) && (i != tirage_re) && (i >= 5)) {
+
+					Random corner_place_other_x = new Random();
+
+					int place_other_x = 75;
+
+					place_other_x = corner_place_other_x.nextInt(118);
+
+					place_other_x += 75;
+
+					players.get(i).setX(place_other_x);
+
+					Random corner_place_other_y = new Random();
+
+					int place_other_y = 165;
+
+					place_other_y = corner_place_other_y.nextInt(293);
+
+					place_other_y += 165;
+
+					players.get(i).setY(place_other_y);
+
+				}
+
+			}
+
+			if (tirage_re != borne) {
 				receveur_corner = true;
 			}
 
+			receveur = players.get(tirage_re);
 		}
 
-		for (int i = 0; i < players.size(); i++) {
-
-			// x 75 et 195 y 165 et 458 // x 195 et 813 y 165 et 458
-
-			if ((i != borne) && (i != tirage_re) && (i >= 5)) {
-
-				Random corner_place_other_x = new Random();
-
-				int place_other_x = 75;
-
-				place_other_x = corner_place_other_x.nextInt(118);
-
-				place_other_x += 75;
-
-				players.get(i).setX(place_other_x);
-
-				Random corner_place_other_y = new Random();
-
-				int place_other_y = 165;
-
-				place_other_y = corner_place_other_y.nextInt(293);
-
-				place_other_y += 165;
-
-				players.get(i).setY(place_other_y);
-
-			}
-
-		}
-
-		passeur = players.get(borne);
-		receveur = players.get(tirage_re);
+		testPass.pass(dash, receveur);
 
 	}
 
@@ -327,45 +312,41 @@ public class Corner {
 
 		ArrayList<Player> players = dash.getTeam1();
 
-		ballon.setPositionx_Ball(Sortie.getSortieBasDroiteX() - 5);
-		ballon.setPositiony_Ball(Sortie.getSortieBasDroiteY() - 10);
-
-		Random tirage = new Random();
-		int borne = 6;
-
-		borne = tirage.nextInt(5);
-
-		borne += 5;
-
-		System.out.println(borne);
-
-		Player p = players.get(borne);
-
-		p.setX(Sortie.getSortieBasDroiteX());
-		p.setY(Sortie.getSortieBasDroiteY());
-
-		// Tirage de la position de la balle
-
-		Random corner_place1_x = new Random();
-		int placeX = 685; // 685
-
-		placeX = corner_place1_x.nextInt(118);
-
-		placeX += 685;
-
-		Random corner_place1_y = new Random();
-		int placeY = 165;
-
-		placeY = corner_place1_y.nextInt(293);
-
-		placeY += 165;
-
-		// Tirage joueur qui va recevoir la balle
-
-		Random tirage_receveur = new Random();
-		int tirage_re = 6;
-
 		while (receveur_corner != true) {
+
+			ballon.setPositionx_Ball(Sortie.getSortieBasDroiteX() - 5);
+			ballon.setPositiony_Ball(Sortie.getSortieBasDroiteY() - 10);
+
+			Random tirage = new Random();
+			int borne = 6;
+
+			borne = tirage.nextInt(5);
+
+			borne += 5;
+
+			Player p = players.get(borne);
+
+			p.setX(Sortie.getSortieBasDroiteX());
+			p.setY(Sortie.getSortieBasDroiteY());
+
+			Random corner_place1_x = new Random();
+			int placeX = 685;
+
+			placeX = corner_place1_x.nextInt(118);
+
+			placeX += 685;
+
+			Random corner_place1_y = new Random();
+			int placeY = 165;
+
+			placeY = corner_place1_y.nextInt(293);
+
+			placeY += 165;
+
+			// Tirage joueur qui va recevoir la balle
+
+			Random tirage_receveur = new Random();
+			int tirage_re = 6;
 
 			tirage_re = tirage_receveur.nextInt(5);
 
@@ -376,55 +357,47 @@ public class Corner {
 				players.get(tirage_re).setX(placeX);
 				players.get(tirage_re).setY(placeY);
 
-				System.out.println(placeX);
-				System.out.println(placeY);
+			}
 
+			for (int i = 0; i < players.size(); i++) {
+
+				// x 685 et 195 y 165 et 458 // x 195 et 813 y 165 et 458
+
+				if ((i != borne) && (i != tirage_re) && (i >= 5)) {
+
+					Random corner_place_other_x = new Random();
+
+					int place_other_x = 685;
+
+					place_other_x = corner_place_other_x.nextInt(118);
+
+					place_other_x += 685;
+
+					players.get(i).setX(place_other_x);
+
+					Random corner_place_other_y = new Random();
+
+					int place_other_y = 165;
+
+					place_other_y = corner_place_other_y.nextInt(293);
+
+					place_other_y += 165;
+
+					players.get(i).setY(place_other_y);
+
+				}
+
+			}
+
+			if (tirage_re != borne) {
 				receveur_corner = true;
 			}
 
+			receveur = players.get(tirage_re);
 		}
 
-		for (int i = 0; i < players.size(); i++) {
+		testPass.pass(dash, receveur);
 
-			// x 685 et 195 y 165 et 458 // x 195 et 813 y 165 et 458
-
-			if ((i != borne) && (i != tirage_re) && (i >= 5)) {
-
-				Random corner_place_other_x = new Random();
-
-				int place_other_x = 685;
-
-				place_other_x = corner_place_other_x.nextInt(118);
-
-				place_other_x += 685;
-
-				players.get(i).setX(place_other_x);
-
-				Random corner_place_other_y = new Random();
-
-				int place_other_y = 165;
-
-				place_other_y = corner_place_other_y.nextInt(293);
-
-				place_other_y += 165;
-
-				players.get(i).setY(place_other_y);
-
-			}
-
-		}
-
-		passeur = players.get(borne);
-		receveur = players.get(tirage_re);
-
-	}
-
-	public Player getPasseur() {
-		return passeur;
-	}
-
-	public void setPasseur(Player passeur) {
-		this.passeur = passeur;
 	}
 
 	public Player getReceveur() {
@@ -456,11 +429,6 @@ public class Corner {
 	}
 
 	public static void main(String[] args) {
-
-		/*
-		 * creer dashboard Corner testcorner = new Corner();
-		 * testcorner.CornerHautGauche(dash);
-		 */
 
 	}
 
