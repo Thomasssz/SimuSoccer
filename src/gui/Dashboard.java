@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import data.Ball;
+import data.Match;
 import data.Player;
 import delimitations.Corner;
 import delimitations.Sortie;
@@ -33,15 +34,22 @@ public class Dashboard extends JPanel {
 	private Ball ballon ;
 	private Corner testcorner ;
 	private Touche testtouche ;
+	private Match match ;
 	
 	private boolean stop_action = false ;
+	private boolean goal = false ;
+	private boolean begin = false;
+	private boolean corner = false;
+	private boolean touche = false;
+	private boolean shoot = false;
 	
-	public Dashboard(ArrayList<Player> team1, ArrayList<Player> team2, Ball ballon, Corner testcorner, Touche testtouche) {
+	public Dashboard(ArrayList<Player> team1, ArrayList<Player> team2, Ball ballon, Corner testcorner, Touche testtouche, Match match) {
 		this.team1 = team1 ;
 		this.team2 = team2 ;
 		this.ballon = ballon ;
 		this.testcorner = testcorner ;
 		this.testtouche = testtouche ;
+		this.match = match ;
 	}
 
 	private static final long serialVersionUID = 1L;
@@ -227,6 +235,16 @@ public class Dashboard extends JPanel {
 	}
 
 
+	public Match getMatch() {
+		return match;
+	}
+
+
+	public void setMatch(Match match) {
+		this.match = match;
+	}
+
+
 	public boolean isStop_action() {
 		return stop_action;
 	}
@@ -235,7 +253,56 @@ public class Dashboard extends JPanel {
 	public void setStop_action(boolean stop_action) {
 		this.stop_action = stop_action;
 	}
-	
+
+
+	public boolean isGoal() {
+		return goal;
+	}
+
+
+	public void setGoal(boolean goal) {
+		this.goal = goal;
+	}
+
+
+	public boolean isBegin() {
+		return begin;
+	}
+
+
+	public void setBegin(boolean begin) {
+		this.begin = begin;
+	}
+
+
+	public boolean isCorner() {
+		return corner;
+	}
+
+
+	public void setCorner(boolean corner) {
+		this.corner = corner;
+	}
+
+
+	public boolean isTouche() {
+		return touche;
+	}
+
+
+	public void setTouche(boolean touche) {
+		this.touche = touche;
+	}
+
+
+	public boolean isShoot() {
+		return shoot;
+	}
+
+
+	public void setShoot(boolean shoot) {
+		this.shoot = shoot;
+	}
 	
 }
 

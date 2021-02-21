@@ -8,7 +8,7 @@ public class Team {
 	private ArrayList<Player> players = new ArrayList<>();
 	private String color;
 	
-	private static int default_x_gardien_bleu = 100;
+	private static int default_x_gardien_bleu = 90;
 	private static int default_y_gardien_bleu = 305;
 
 	private static int default_x_defenseur1_bleu = 200;
@@ -164,30 +164,30 @@ public class Team {
 
 		} else if (equipe.getColor().equals("red")) {
 			
-			Player p12 = new Player("12", 50, 60, 30, 90, 90, 12, GOAL, default_x_gardien_rouge,
+			Player p12 = new Player("12", 50, 60, 30, 90, 90, 1, GOAL, default_x_gardien_rouge,
 					default_y_gardien_rouge, false);
 
-			Player p13 = new Player("13", 40, 50, 30, 40, 60, 13, DEF, default_x_defenseur1_rouge,
+			Player p13 = new Player("13", 40, 50, 30, 40, 60, 2, DEF, default_x_defenseur1_rouge,
 					default_y_defenseur1_rouge, false);
-			Player p14 = new Player("14", 30, 45, 40, 30, 65, 14, DEF, default_x_defenseur2_rouge,
+			Player p14 = new Player("14", 30, 45, 40, 30, 65, 3, DEF, default_x_defenseur2_rouge,
 					default_y_defenseur2_rouge, false);
-			Player p15 = new Player("15", 35, 40, 50, 45, 70, 15, DEF, default_x_defenseur3_rouge,
+			Player p15 = new Player("15", 35, 40, 50, 45, 70, 4, DEF, default_x_defenseur3_rouge,
 					default_y_defenseur3_rouge, false);
-			Player p16 = new Player("16", 45, 40, 45, 35, 70, 16, DEF, default_x_defenseur4_rouge,
+			Player p16 = new Player("16", 45, 40, 45, 35, 70, 5, DEF, default_x_defenseur4_rouge,
 					default_y_defenseur4_rouge, false);
 
-			Player p17 = new Player("17", 60, 30, 60, 80, 0, 17, MID, default_x_milieu1_rouge, default_y_milieu1_rouge,
+			Player p17 = new Player("17", 60, 30, 60, 80, 0, 6, MID, default_x_milieu1_rouge, default_y_milieu1_rouge,
 					false);
-			Player p18 = new Player("18", 65, 40, 50, 85, 0, 18, MID, default_x_milieu2_rouge, default_y_milieu2_rouge,
+			Player p18 = new Player("18", 65, 40, 50, 85, 0, 7, MID, default_x_milieu2_rouge, default_y_milieu2_rouge,
 					false);
-			Player p19 = new Player("19", 70, 45, 65, 90, 0, 19, MID, default_x_milieu3_rouge, default_y_milieu3_rouge,
+			Player p19 = new Player("19", 70, 45, 65, 90, 0, 8, MID, default_x_milieu3_rouge, default_y_milieu3_rouge,
 					false);
-			Player p20 = new Player("20", 75, 50, 55, 70, 0, 20, MID, default_x_milieu4_rouge, default_y_milieu4_rouge,
+			Player p20 = new Player("20", 75, 50, 55, 70, 0, 9, MID, default_x_milieu4_rouge, default_y_milieu4_rouge,
 					false);
 
-			Player p21 = new Player("21", 90, 85, 85, 55, 90, 21, ATT, default_x_attaquant1_rouge,
+			Player p21 = new Player("21", 90, 85, 85, 55, 90, 10, ATT, default_x_attaquant1_rouge,
 					default_y_attaquant1_rouge, false);
-			Player p22 = new Player("22", 95, 90, 80, 50, 100, 22, ATT, default_x_attaquant2_rouge,
+			Player p22 = new Player("22", 95, 90, 80, 50, 100, 11, ATT, default_x_attaquant2_rouge,
 					default_y_attaquant2_rouge, false);
 
 			players.add(p12);

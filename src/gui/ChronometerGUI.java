@@ -18,6 +18,7 @@ import chrono.Chronometer;
 import chrono.CyclicCounter;
 
 import data.Ball;
+import data.Match;
 import data.Player;
 import data.Team;
 import delimitations.Corner;
@@ -50,6 +51,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	
 	private Corner cornertest = new Corner() ;
 	private Touche touchetest = new Touche() ;
+	private Match match = new Match();
 
 	public Chronometer getChronometer() {
 		return chronometer;
@@ -82,7 +84,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	/**
 	 * The dashboard part is managed in a separate class.
 	 */
-	private Dashboard dashboard = new Dashboard(team1, team2, ballon,cornertest,touchetest);
+	private Dashboard dashboard = new Dashboard(team1, team2, ballon,cornertest,touchetest,match);
 	
 	private MatchManager matchprocess = new MatchManager();
 
@@ -111,6 +113,8 @@ public class ChronometerGUI extends JFrame implements Runnable {
 
 		team1 = blue.getPlayers();
 		team2 = red.getPlayers();
+		
+		
 
 		updateValues();
 

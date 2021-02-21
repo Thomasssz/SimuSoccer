@@ -6,6 +6,72 @@ import java.util.Random;
 import gui.Dashboard;
 
 public class Match {
+	
+	private static int default_x_gardien_bleu = 90;
+	private static int default_y_gardien_bleu = 305;
+
+	private static int default_x_defenseur1_bleu = 200;
+	private static int default_y_defenseur1_bleu = 100;
+
+	private static int default_x_defenseur2_bleu = 200;
+	private static int default_y_defenseur2_bleu = 265;
+
+	private static int default_x_defenseur3_bleu = 200;
+	private static int default_y_defenseur3_bleu = 350;
+
+	private static int default_x_defenseur4_bleu = 200;
+	private static int default_y_defenseur4_bleu = 500;
+
+	private static int default_x_milieu1_bleu = 270;
+	private static int default_y_milieu1_bleu = 100;
+
+	private static int default_x_milieu2_bleu = 270;
+	private static int default_y_milieu2_bleu = 265;
+
+	private static int default_x_milieu3_bleu = 270;
+	private static int default_y_milieu3_bleu = 350;
+
+	private static int default_x_milieu4_bleu = 270;
+	private static int default_y_milieu4_bleu = 500;
+
+	private static int default_x_attaquant1_bleu = 360;
+	private static int default_y_attaquant1_bleu = 260;
+
+	private static int default_x_attaquant2_bleu = 360;
+	private static int default_y_attaquant2_bleu = 350;
+
+	private static int default_x_gardien_rouge = 790;
+	private static int default_y_gardien_rouge = 305;
+
+	private static int default_x_defenseur1_rouge = 690;
+	private static int default_y_defenseur1_rouge = 100;
+
+	private static int default_x_defenseur2_rouge = 690;
+	private static int default_y_defenseur2_rouge = 265;
+
+	private static int default_x_defenseur3_rouge = 690;
+	private static int default_y_defenseur3_rouge = 350;
+
+	private static int default_x_defenseur4_rouge = 690;
+	private static int default_y_defenseur4_rouge = 500;
+
+	private static int default_x_milieu1_rouge = 620;
+	private static int default_y_milieu1_rouge = 100;
+
+	private static int default_x_milieu2_rouge = 620;
+	private static int default_y_milieu2_rouge = 265;
+
+	private static int default_x_milieu3_rouge = 620;
+	private static int default_y_milieu3_rouge = 350;
+
+	private static int default_x_milieu4_rouge = 620;
+	private static int default_y_milieu4_rouge = 500;
+
+	private static int default_x_attaquant1_rouge = 530;
+	private static int default_y_attaquant1_rouge = 265;
+
+	private static int default_x_attaquant2_rouge = 530;
+	private static int default_y_attaquant2_rouge = 350;
 
 	public static ArrayList<Player> players1 = new ArrayList<>();
 	public static ArrayList<Player> players2 = new ArrayList<>();
@@ -20,6 +86,10 @@ public class Match {
 
 	public Team getTeam1() {
 		return team1;
+	}
+
+	public Match() {
+		super();
 	}
 
 	public void setTeam1(Team team1) {
@@ -69,7 +139,7 @@ public class Match {
 	public void engagement(Dashboard dash) {
 
 		Random random = new Random();
-		int nb ;
+		int nb;
 		nb = random.nextInt(2);
 
 		// si le nombre aleatoire genere 1, ce sera l'equipe bleu qui engagera
@@ -86,6 +156,7 @@ public class Match {
 			dash.getBallon().setBallPositionyWithBluePlayer(dash.getTeam1().get(10));
 
 		} else {
+
 			dash.getTeam2().get(10).setX(450);
 			dash.getTeam2().get(10).setY(300);
 			dash.getTeam2().get(9).setX(450);
@@ -97,5 +168,131 @@ public class Match {
 
 		}
 
+		dash.setGoal(false);
+
+	}
+
+	public void blueEngagement(Dashboard dash) {
+		
+		dash.getTeam1().get(0).setX(default_x_gardien_bleu);
+		dash.getTeam1().get(0).setY(default_y_gardien_bleu);
+		
+		dash.getTeam1().get(1).setX(default_x_defenseur1_bleu);
+		dash.getTeam1().get(1).setY(default_y_defenseur1_bleu);
+		dash.getTeam1().get(2).setX(default_x_defenseur2_bleu);
+		dash.getTeam1().get(2).setY(default_y_defenseur2_bleu);
+		dash.getTeam1().get(3).setX(default_x_defenseur3_bleu);
+		dash.getTeam1().get(3).setY(default_y_defenseur3_bleu);
+		dash.getTeam1().get(4).setX(default_x_defenseur4_bleu);
+		dash.getTeam1().get(4).setY(default_y_defenseur4_bleu);
+		
+		dash.getTeam1().get(5).setX(default_x_milieu1_bleu);
+		dash.getTeam1().get(5).setY(default_y_milieu1_bleu);
+		dash.getTeam1().get(6).setX(default_x_milieu2_bleu);
+		dash.getTeam1().get(6).setY(default_y_milieu2_bleu);
+		dash.getTeam1().get(7).setX(default_x_milieu3_bleu);
+		dash.getTeam1().get(7).setY(default_y_milieu3_bleu);
+		dash.getTeam1().get(8).setX(default_x_milieu4_bleu);
+		dash.getTeam1().get(8).setY(default_y_milieu4_bleu);
+		
+		dash.getTeam2().get(0).setX(default_x_gardien_rouge);
+		dash.getTeam2().get(0).setY(default_y_gardien_rouge);
+		
+		dash.getTeam2().get(1).setX(default_x_defenseur1_rouge);
+		dash.getTeam2().get(1).setY(default_y_defenseur1_rouge);
+		dash.getTeam2().get(2).setX(default_x_defenseur2_rouge);
+		dash.getTeam2().get(2).setY(default_y_defenseur2_rouge);
+		dash.getTeam2().get(3).setX(default_x_defenseur3_rouge);
+		dash.getTeam2().get(3).setY(default_y_defenseur3_rouge);
+		dash.getTeam2().get(4).setX(default_x_defenseur4_rouge);
+		dash.getTeam2().get(4).setY(default_y_defenseur4_rouge);
+		
+		dash.getTeam2().get(5).setX(default_x_milieu1_rouge);
+		dash.getTeam2().get(5).setY(default_y_milieu1_rouge);
+		dash.getTeam2().get(6).setX(default_x_milieu2_rouge);
+		dash.getTeam2().get(6).setY(default_y_milieu2_rouge);
+		dash.getTeam2().get(7).setX(default_x_milieu3_rouge);
+		dash.getTeam2().get(7).setY(default_y_milieu3_rouge);
+		dash.getTeam2().get(8).setX(default_x_milieu4_rouge);
+		dash.getTeam2().get(8).setY(default_y_milieu4_rouge);
+		
+		dash.getTeam2().get(9).setX(default_x_attaquant1_rouge);
+		dash.getTeam2().get(10).setX(default_x_attaquant2_rouge);
+		dash.getTeam2().get(9).setY(default_y_attaquant1_rouge);
+		dash.getTeam2().get(10).setY(default_y_attaquant2_rouge);
+		
+
+		dash.getTeam1().get(9).setX(430);
+		dash.getTeam1().get(9).setY(330);
+		dash.getTeam1().get(10).setX(430);
+		dash.getTeam1().get(10).setY(300);
+		
+		dash.getTeam1().get(10).setBall(true);
+
+		dash.getBallon().setBallPositionxWithBluePlayer(dash.getTeam1().get(10));
+		dash.getBallon().setBallPositionyWithBluePlayer(dash.getTeam1().get(10));
+
+		dash.setGoal(false);
+	}
+
+	public void redEngagement(Dashboard dash) {
+		
+		dash.getTeam1().get(0).setX(default_x_gardien_bleu);
+		dash.getTeam1().get(0).setY(default_y_gardien_bleu);
+		
+		dash.getTeam1().get(1).setX(default_x_defenseur1_bleu);
+		dash.getTeam1().get(1).setY(default_y_defenseur1_bleu);
+		dash.getTeam1().get(2).setX(default_x_defenseur2_bleu);
+		dash.getTeam1().get(2).setY(default_y_defenseur2_bleu);
+		dash.getTeam1().get(3).setX(default_x_defenseur3_bleu);
+		dash.getTeam1().get(3).setY(default_y_defenseur3_bleu);
+		dash.getTeam1().get(4).setX(default_x_defenseur4_bleu);
+		dash.getTeam1().get(4).setY(default_y_defenseur4_bleu);
+		
+		dash.getTeam1().get(5).setX(default_x_milieu1_bleu);
+		dash.getTeam1().get(5).setY(default_y_milieu1_bleu);
+		dash.getTeam1().get(6).setX(default_x_milieu2_bleu);
+		dash.getTeam1().get(6).setY(default_y_milieu2_bleu);
+		dash.getTeam1().get(7).setX(default_x_milieu3_bleu);
+		dash.getTeam1().get(7).setY(default_y_milieu3_bleu);
+		dash.getTeam1().get(8).setX(default_x_milieu4_bleu);
+		dash.getTeam1().get(8).setY(default_y_milieu4_bleu);
+		
+		dash.getTeam1().get(9).setX(default_x_attaquant1_bleu);
+		dash.getTeam1().get(10).setX(default_x_attaquant2_bleu);
+		dash.getTeam1().get(9).setY(default_y_attaquant1_bleu);
+		dash.getTeam1().get(10).setY(default_y_attaquant2_bleu);
+		
+		dash.getTeam2().get(0).setX(default_x_gardien_rouge);
+		dash.getTeam2().get(0).setY(default_y_gardien_rouge);
+		
+		dash.getTeam2().get(1).setX(default_x_defenseur1_rouge);
+		dash.getTeam2().get(1).setY(default_y_defenseur1_rouge);
+		dash.getTeam2().get(2).setX(default_x_defenseur2_rouge);
+		dash.getTeam2().get(2).setY(default_y_defenseur2_rouge);
+		dash.getTeam2().get(3).setX(default_x_defenseur3_rouge);
+		dash.getTeam2().get(3).setY(default_y_defenseur3_rouge);
+		dash.getTeam2().get(4).setX(default_x_defenseur4_rouge);
+		dash.getTeam2().get(4).setY(default_y_defenseur4_rouge);
+		
+		dash.getTeam2().get(5).setX(default_x_milieu1_rouge);
+		dash.getTeam2().get(5).setY(default_y_milieu1_rouge);
+		dash.getTeam2().get(6).setX(default_x_milieu2_rouge);
+		dash.getTeam2().get(6).setY(default_y_milieu2_rouge);
+		dash.getTeam2().get(7).setX(default_x_milieu3_rouge);
+		dash.getTeam2().get(7).setY(default_y_milieu3_rouge);
+		dash.getTeam2().get(8).setX(default_x_milieu4_rouge);
+		dash.getTeam2().get(8).setY(default_y_milieu4_rouge);
+		
+		dash.getTeam2().get(10).setX(450);
+		dash.getTeam2().get(10).setY(300);
+		dash.getTeam2().get(9).setX(450);
+		dash.getTeam2().get(9).setY(330);
+		dash.getTeam2().get(10).setBall(true);
+
+		dash.getBallon().setBallPositionxWithRedPlayer(dash.getTeam2().get(10));
+		dash.getBallon().setBallPositionyWithRedPlayer(dash.getTeam2().get(10));
+
+		dash.setGoal(false);
 	}
 }

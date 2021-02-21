@@ -3,6 +3,7 @@ package process;
 import java.util.Random;
 
 import data.Match;
+import data.Player;
 import delimitations.Corner;
 import delimitations.Sortie;
 import delimitations.Touche;
@@ -20,16 +21,31 @@ public class MatchManager {
 	private Corner cornertest = null;
 	private Touche touchetest = null;
 
-	private Passe testPasse = new Passe();
+	private Passe testpasse = new Passe();
+	private Shoot testshoot = new Shoot();
+
+	private int test_blue_shoot_x_position = 700;
+	private int test_blue_shoot_y_position = 160;
+	
+	private int test_red_shoot_x_position = 200;
+	private int test_red_shoot_y_position = 160;
+
+	private Player tireur;
+	private boolean shoot = false;
+	
+	private Match match = new Match();
 
 	public void matchProcess(Dashboard dash) {
+		
+		begin = dash.isBegin() ;
 
 		if (begin == false) {
 
-			Match match = new Match();
+			match = dash.getMatch();
 
 			match.engagement(dash);
-			begin = true;
+			
+			dash.setBegin(true);
 
 		}
 
@@ -38,9 +54,13 @@ public class MatchManager {
 
 		// doTestPrototype(dash);
 
-		 doTestPasse(dash);
-		// doCorner(dash);
-		// doTouche(dash);
+		//doTestPasse(dash);
+		//doCorner(dash);
+		//doTouche(dash);
+
+		
+		//doTestBlueShoot(dash, 10);
+		//doTestRedShoot(dash, 10);
 
 	}
 
@@ -50,11 +70,71 @@ public class MatchManager {
 
 	public void doTestPasse(Dashboard dash) {
 
-		testPasse.testPass(dash);
+		testpasse.testPass(dash);
+
+	}
+
+	public void doTestBlueShoot(Dashboard dash, int index_tireur) {
+		
+		shoot = dash.isShoot() ;
+
+		if (shoot == false) {
+
+			tireur = dash.getTeam1().get(index_tireur);
+
+			tireur.setX(test_blue_shoot_x_position);
+			tireur.setY(test_blue_shoot_y_position);
+
+			dash.getBallon().setBallPositionxWithRedPlayer(tireur);
+			dash.getBallon().setBallPositionyWithRedPlayer(tireur);
+
+			dash.setShoot(true);
+
+		}
+		
+		int aim_x = dash.getTeam2().get(0).getX() +30 ;
+		int aim_y = dash.getTeam2().get(0).getY() -30 ;
+
+		testshoot.testShootBlue(dash, index_tireur,aim_x,aim_y);
+		
+		if (dash.isGoal() == true) {
+			match.redEngagement(dash);
+		}
+
+	}
+	
+	public void doTestRedShoot(Dashboard dash, int index_tireur) {
+		
+		shoot = dash.isShoot();
+
+		if (shoot == false) {
+
+			tireur = dash.getTeam2().get(index_tireur);
+
+			tireur.setX(test_red_shoot_x_position);
+			tireur.setY(test_red_shoot_y_position);
+
+			dash.getBallon().setBallPositionxWithRedPlayer(tireur);
+			dash.getBallon().setBallPositionyWithRedPlayer(tireur);
+
+			dash.setShoot(true);
+
+		}
+		
+		int aim_x = dash.getTeam1().get(0).getX() - 30 ;
+		int aim_y = dash.getTeam1().get(0).getY() - 30 ;
+
+		testshoot.testShootBlue(dash, index_tireur,aim_x,aim_y);
+		
+		if (dash.isGoal() == true) {
+			match.blueEngagement(dash);
+		}
 
 	}
 
 	public void doCorner(Dashboard dash) {
+		
+		corner = dash.isCorner();
 
 		if (corner == false) {
 
@@ -66,12 +146,10 @@ public class MatchManager {
 				int choix_corner = rand.nextInt(4);
 
 				choix_corner += 1;
-				
-				first_choice_corner = choix_corner ;
+
+				first_choice_corner = choix_corner;
 
 			}
-
-			System.out.println(first_choice_corner);
 
 			if (first_choice_corner == 1) {
 
@@ -93,7 +171,7 @@ public class MatchManager {
 
 			if (dash.isStop_action() == true) {
 
-				corner = true;
+				dash.setCorner(true);
 
 			}
 
@@ -101,6 +179,8 @@ public class MatchManager {
 	}
 
 	public void doTouche(Dashboard dash) {
+		
+		touche = dash.isTouche();
 
 		if (touche == false) {
 
@@ -109,21 +189,13 @@ public class MatchManager {
 			touchetest.runTouche(Sortie.getSortieHautGaucheX() + 350, Sortie.getSortieHautGaucheY(), dash);
 
 			if (dash.isStop_action() == true) {
-
-				touche = true;
+				
+				dash.setTouche(true);
 
 			}
 
 		}
 
-	}
-
-	public boolean isCorner() {
-		return corner;
-	}
-
-	public void setCorner(boolean corner) {
-		this.corner = corner;
 	}
 
 }
