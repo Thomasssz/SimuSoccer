@@ -32,8 +32,8 @@ import process.MatchManager;
  **/
 public class ChronometerGUI extends JFrame implements Runnable {
 
-	private static final Dimension IDEAL_MAIN_DIMENSION = new Dimension(1100, 800);
-	private static final Dimension IDEAL_DASHBOARD_DIMENSION = new Dimension(900, 650);
+	private static final Dimension IDEAL_MAIN_DIMENSION = new Dimension(1400, 800);
+	private static final Dimension IDEAL_DASHBOARD_DIMENSION = new Dimension(1200, 650);
 
 	private static Font font = new Font(Font.MONOSPACED, Font.BOLD, 20);
 
@@ -113,8 +113,6 @@ public class ChronometerGUI extends JFrame implements Runnable {
 
 		team1 = blue.getPlayers();
 		team2 = red.getPlayers();
-		
-		
 
 		updateValues();
 

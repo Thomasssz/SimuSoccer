@@ -42,6 +42,7 @@ public class Dashboard extends JPanel {
 	private boolean corner = false;
 	private boolean touche = false;
 	private boolean shoot = false;
+	private boolean mi_temps = false ;
 	
 	public Dashboard(ArrayList<Player> team1, ArrayList<Player> team2, Ball ballon, Corner testcorner, Touche testtouche, Match match) {
 		this.team1 = team1 ;
@@ -302,6 +303,16 @@ public class Dashboard extends JPanel {
 
 	public void setShoot(boolean shoot) {
 		this.shoot = shoot;
+	}
+
+
+	public boolean isMi_temps() {
+		return mi_temps;
+	}
+
+
+	public void setMi_temps(boolean mi_temps) {
+		this.mi_temps = mi_temps;
 	}
 	
 }

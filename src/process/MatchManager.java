@@ -15,6 +15,7 @@ public class MatchManager {
 	private boolean begin = false;
 	private boolean corner = false;
 	private boolean touche = false;
+	private boolean mi_temps = false ;
 
 	private int first_choice_corner = 0;
 
@@ -52,11 +53,11 @@ public class MatchManager {
 		// conditions pour decider de quelle action effectuer type corner, touche, 6
 		// metres, passes, frappe etc
 
-		// doTestPrototype(dash);
+		//doTestPrototype(dash);
 
 		//doTestPasse(dash);
 		//doCorner(dash);
-		//doTouche(dash);
+		doTouche(dash);
 
 		
 		//doTestBlueShoot(dash, 10);
@@ -197,5 +198,10 @@ public class MatchManager {
 		}
 
 	}
+	
+	public void doMiTemps (Dashboard dash) {
+		mi_temps = dash.isMi_temps();
+	}
+
 
 }
