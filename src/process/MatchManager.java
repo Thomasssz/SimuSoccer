@@ -38,7 +38,7 @@ public class MatchManager {
 	private Match match = new Match();
 
 	public void matchProcess(Dashboard dash) {
-
+		
 		begin = dash.isBegin();
 
 		if (begin == false) {
@@ -52,7 +52,12 @@ public class MatchManager {
 			
 
 		}
+		
+		System.out.println("avant methode");
+
 		closestPlayer(dash);
+		
+		System.out.println("apres methode");
 
 		// conditions pour decider de quelle action effectuer type corner, touche, 6
 		// metres, passes, frappe etc
@@ -205,25 +210,61 @@ public class MatchManager {
 	public void doMiTemps(Dashboard dash) {
 		mi_temps = dash.isMi_temps();
 	}
+	
+	public int PlayerBall(ArrayList<Player> players1) {
 
-	public Player closestPlayer(Dashboard dash) {
+		int res = 1 ;
+
+		boolean stop = false;
+		int i = 0 ;
+
+		while ( i < players1.size() && (stop == false)) {
+
+			if (players1.get(i).isBall() == true) {
+
+				stop = true;
+				res = i ;
+
+			}
+			
+		}
+		
+		return res ;
+		
+	}
+
+	public void closestPlayer(Dashboard dash) {
+		
+		System.out.println("debut methode");
+
 
 		ArrayList<Player> players1 = dash.getTeam1();
 		ArrayList<Player> players2 = dash.getTeam2();
 
 		ArrayList<Player> ball_team = TeamBall(players1, players2); // équipe qui a la balle
+		
+		System.out.println("apres definition des arraylist");
+		
+		int index_player_ball = PlayerBall(ball_team);
 
-		Player player = ball_team.get(PlayerBall(ball_team)); // joueur qui a la balle
+		Player player = ball_team.get(index_player_ball); // joueur qui a la balle
+		
+		System.out.println("apres definition du player qui a la balle");
 
 		// recuperer les coordonnées du joueur ayant la balle
 		int player_x = player.getX();
 		int player_y = player.getY();
+		
+		System.out.println("apres definition des coordonnes player qui a la balle");
+
 
 		Player distance_min = ball_team.get(1);
+		
+		System.out.println("avant for");
 
 		for (int i = 1; i < ball_team.size(); i++) {
 
-			if (i != PlayerBall(ball_team)) {
+			if (i != index_player_ball) {
 				int x = ball_team.get(i).getX();
 				int y = ball_team.get(i).getY();
 				// calculer la disance entre le joueur ayant la balle et le joueur i
@@ -235,29 +276,7 @@ public class MatchManager {
 			}
 		}
 
-		return null;
-
 		// formule distance math.sqrt et math.pow
-
-	}
-
-	public int PlayerBall(ArrayList<Player> players1) {
-
-		int i = 0;
-
-		boolean stop = false;
-
-		while (i < players1.size() && (stop == false)) {
-
-			if (players1.get(i).isBall() == true) {
-
-				stop = true;
-				return i;
-
-			}
-
-		}
-		return 0;
 
 	}
 
