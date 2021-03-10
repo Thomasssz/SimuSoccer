@@ -222,6 +222,7 @@ public class MatchManager {
 			if (i != PlayerBall(ball_team) )  {
 				ball_team.get(i).getX();
 				// a continuer calcul de distance
+				
 			}
 		}
 		
