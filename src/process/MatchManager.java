@@ -287,6 +287,30 @@ public class MatchManager {
 		// formule distance math.sqrt et math.pow
 
 	}
+	
+	/* Parametrer la probabilité que le client soit VIP
+	int parametrerProbabilite(){
+	    int chance;
+	    printf("le pourcentage de chance que le client soit VIP \n");
+
+	    do{
+	        scanf("%d",&chance);
+	    }while((chance<=100)&&(chance>0));
+
+	}
+	 Determiner le privilege par rapport à la probabilité que le client soit VIP ou non
+
+	char* probabilitePrivilege (int chance){
+
+	 int proba = randomInt(1,100);
+	 if (proba <= chance){
+	    return "VIP";
+	 }else{
+	 return "nonVIP";
+	 }
+	}
+	
+	*/
 
 	public ArrayList<Player> TeamBall(ArrayList<Player> players1, ArrayList<Player> players2) {
 
