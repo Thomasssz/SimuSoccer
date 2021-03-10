@@ -104,9 +104,6 @@ public class Touche {
 					place_other_y += Sortie.getSortieHautGaucheY()+2;
 
 					players.get(i).setY(place_other_y);
-					
-					System.out.println(i + " Place a X = " + players.get(i).getX() ) ;
-					System.out.println(i + " Place a Y = " + players.get(i).getY() ) ;
 
 				}
 
