@@ -48,8 +48,11 @@ public class MatchManager {
 			match.engagement(dash);
 
 			dash.setBegin(true);
+			
+			
 
 		}
+		closestPlayer(dash);
 
 		// conditions pour decider de quelle action effectuer type corner, touche, 6
 		// metres, passes, frappe etc
@@ -58,7 +61,7 @@ public class MatchManager {
 
 		// doTestPasse(dash);
 		// doCorner(dash);
-		doTouche(dash);
+		// doTouche(dash);
 
 		// doTestBlueShoot(dash, 10);
 		// doTestRedShoot(dash, 10);
@@ -208,25 +211,31 @@ public class MatchManager {
 		ArrayList<Player> players1 = dash.getTeam1();
 		ArrayList<Player> players2 = dash.getTeam2();
 
-		ArrayList<Player> ball_team = TeamBall(players1, players2);
-		
-		Player player = ball_team.get(PlayerBall(ball_team)) ;
-		
+		ArrayList<Player> ball_team = TeamBall(players1, players2); // équipe qui a la balle
+
+		Player player = ball_team.get(PlayerBall(ball_team)); // joueur qui a la balle
+
+		// recuperer les coordonnées du joueur ayant la balle
 		int player_x = player.getX();
 		int player_y = player.getY();
-		
-		Player distance_min = ball_team.get(1) ;
-		
+
+		Player distance_min = ball_team.get(1);
+
 		for (int i = 1; i < ball_team.size(); i++) {
-			
-			if (i != PlayerBall(ball_team) )  {
-				ball_team.get(i).getX();
+
+			if (i != PlayerBall(ball_team)) {
+				int x = ball_team.get(i).getX();
+				int y = ball_team.get(i).getY();
+				// calculer la disance entre le joueur ayant la balle et le joueur i
+				float distance = (float) Math.sqrt(Math.pow(player_x - x, 2) + Math.pow(player_y - y, 2));
+				System.out.println("playerBallX = "+ player_x + "playerBallY = " + player_y + "playerX = "+ x + "playerY = " + y +
+				"Distance = "+distance);
 				// a continuer calcul de distance
-				
+
 			}
 		}
-		
-		return null ;
+
+		return null;
 
 		// formule distance math.sqrt et math.pow
 
