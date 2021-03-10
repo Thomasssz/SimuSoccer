@@ -213,7 +213,7 @@ public class MatchManager {
 	
 	public int PlayerBall(ArrayList<Player> players1) {
 
-		int res = 1 ;
+		int res = 12 ;
 
 		boolean stop = false;
 		int i = 0 ;
@@ -226,14 +226,16 @@ public class MatchManager {
 				res = i ;
 
 			}
+			i++;
 			
 		}
 		
+		System.out.println(res);
 		return res ;
 		
 	}
 
-	public void closestPlayer(Dashboard dash) {
+	public Player closestPlayer(Dashboard dash) {
 		
 		System.out.println("debut methode");
 
@@ -258,7 +260,9 @@ public class MatchManager {
 		System.out.println("apres definition des coordonnes player qui a la balle");
 
 
-		Player distance_min = ball_team.get(1);
+		Player player_min = ball_team.get(1);
+		
+		float distance_min = (float) Math.sqrt(Math.pow(player_x - player_min.getX() , 2) + Math.pow(player_y - player_min.getY(), 2)) ;
 		
 		System.out.println("avant for");
 
@@ -271,11 +275,15 @@ public class MatchManager {
 				float distance = (float) Math.sqrt(Math.pow(player_x - x, 2) + Math.pow(player_y - y, 2));
 				System.out.println("playerBallX = "+ player_x + "playerBallY = " + player_y + "playerX = "+ x + "playerY = " + y +
 				"Distance = "+distance);
-				// a continuer calcul de distance
+				
+				if (distance < distance_min) {
+					 player_min = ball_team.get(i);
+				}
 
 			}
 		}
 
+		return player_min ;
 		// formule distance math.sqrt et math.pow
 
 	}
@@ -307,6 +315,10 @@ public class MatchManager {
 
 		return null;
 
+	}
+	
+	public void shotSituation () {
+		
 	}
 
 }
