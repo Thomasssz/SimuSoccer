@@ -12,7 +12,7 @@ import gui.Dashboard;
 import test.TestPrototype;
 
 public class MatchManager {
-
+	private final int chance = 40;
 	private boolean begin = false;
 	private boolean corner = false;
 	private boolean touche = false;
@@ -288,29 +288,19 @@ public class MatchManager {
 
 	}
 	
-	/* Parametrer la probabilité que le client soit VIP
-	int parametrerProbabilite(){
-	    int chance;
-	    printf("le pourcentage de chance que le client soit VIP \n");
-
-	    do{
-	        scanf("%d",&chance);
-	    }while((chance<=100)&&(chance>0));
-
-	}
-	 Determiner le privilege par rapport à la probabilité que le client soit VIP ou non
-
-	char* probabilitePrivilege (int chance){
-
-	 int proba = randomInt(1,100);
+	// probabililté qu'un tir soit un but
+	boolean probabiliteBut (){
+		int proba;
+	 do {
+		  proba = (int) Math.random();
+	 }while(proba <= 0 && proba > 100 );
 	 if (proba <= chance){
-	    return "VIP";
+	    return true;
 	 }else{
-	 return "nonVIP";
+	 return false;
 	 }
 	}
 	
-	*/
 
 	public ArrayList<Player> TeamBall(ArrayList<Player> players1, ArrayList<Player> players2) {
 
