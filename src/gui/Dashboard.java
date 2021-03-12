@@ -12,6 +12,7 @@ import data.Ball;
 import data.Match;
 import data.Player;
 import delimitations.Corner;
+import delimitations.Goal;
 import delimitations.Sortie;
 import delimitations.Surface;
 import delimitations.Touche;
@@ -71,7 +72,7 @@ public class Dashboard extends JPanel {
 		super.paintComponent(g);
 
 		g.drawImage(pitch, 20, 20, 850, 590, null);
-
+		
 		g.setColor(Color.PINK);
 		
 		g.drawLine(Sortie.getSortieHautGaucheX(), Sortie.getSortieHautGaucheY(), Sortie.getSortieHautDroiteX(), Sortie.getSortieHautDroiteY());
@@ -98,6 +99,10 @@ public class Dashboard extends JPanel {
 		g.drawLine(Sortie.getSortieHautGaucheX()+250, Sortie.getSortieHautGaucheY()+100, Sortie.getSortieHautGaucheX()+450, Sortie.getSortieHautDroiteY()+100);
 		g.drawLine(Sortie.getSortieHautGaucheX()+450, Sortie.getSortieHautGaucheY()+2, Sortie.getSortieHautGaucheX()+450, Sortie.getSortieHautDroiteY()+100);
 
+		g.setColor(Color.BLACK);
+		
+		g.drawLine(Goal.getGoalHautGaucheX(), Goal.getGoalHautGaucheY(), Goal.getGoalBasGaucheX(), Goal.getGoalBasGaucheY());
+		g.drawLine(Goal.getGoalHautDroitX(), Goal.getGoalHautDroitY(), Goal.getGoalBasDroitX(), Goal.getGoalBasDroitY());
 		/* Equipe bleu */
 
 		

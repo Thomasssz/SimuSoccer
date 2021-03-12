@@ -144,7 +144,7 @@ public class Team {
 
 			Player p10 = new Player("10", 80, 80, 50, 40, 80, 10, ATT, default_x_attaquant1_bleu,
 					default_y_attaquant1_bleu, false);
-			Player p11 = new Player("11", 100, 90, 100, 50, 100, 11, ATT, default_x_attaquant2_bleu,
+			Player p11 = new Player("11", 100, 90, 100, 50, 50, 11, ATT, default_x_attaquant2_bleu,
 					default_y_attaquant2_bleu, false);
 
 			players.add(p1);
@@ -185,9 +185,9 @@ public class Team {
 			Player p20 = new Player("20", 75, 50, 55, 70, 0, 9, MID, default_x_milieu4_rouge, default_y_milieu4_rouge,
 					false);
 
-			Player p21 = new Player("21", 90, 85, 85, 55, 90, 10, ATT, default_x_attaquant1_rouge,
+			Player p21 = new Player("21", 90, 85, 85, 55, 50, 10, ATT, default_x_attaquant1_rouge,
 					default_y_attaquant1_rouge, false);
-			Player p22 = new Player("22", 95, 90, 80, 50, 100, 11, ATT, default_x_attaquant2_rouge,
+			Player p22 = new Player("22", 95, 90, 80, 50, 50, 11, ATT, default_x_attaquant2_rouge,
 					default_y_attaquant2_rouge, false);
 
 			players.add(p12);

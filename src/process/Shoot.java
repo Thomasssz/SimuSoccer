@@ -11,7 +11,7 @@ public class Shoot {
 		super();
 	}
 
-	public void testShootBlue(Dashboard dash, int index_tireur, int aim_x, int aim_y) {
+	public void ShootBlue(Dashboard dash, int index_tireur, int aim_x, int aim_y, boolean goal) {
 
 		int res_x = (dash.getBallon().getPositionx_Ball()) - aim_x;
 		int res_y = (dash.getBallon().getPositiony_Ball()) - aim_y;
@@ -21,7 +21,12 @@ public class Shoot {
 
 		if ((result_x < 6) && (result_y < 6)) {
 			dash.setStop_action(true);
-			dash.setGoal(true);
+			
+			if (goal == true) {
+
+				dash.setGoal(true);
+
+			}
 		}
 
 		if (dash.isStop_action() == false) {
@@ -60,7 +65,7 @@ public class Shoot {
 
 	}
 
-	public void testShootRed(Dashboard dash, int index_tireur, int aim_x, int aim_y) {
+	public void ShootRed(Dashboard dash, int index_tireur, int aim_x, int aim_y, boolean goal) {
 
 		int res_x = (dash.getBallon().getPositionx_Ball()) - aim_x;
 		int res_y = (dash.getBallon().getPositiony_Ball()) - aim_y;
@@ -70,7 +75,12 @@ public class Shoot {
 
 		if ((result_x < 6) && (result_y < 6)) {
 			dash.setStop_action(true);
-			dash.setGoal(true);
+			
+			if (goal == true) {
+
+				dash.setGoal(true);
+
+			}
 		}
 
 		if (dash.isStop_action() == false) {

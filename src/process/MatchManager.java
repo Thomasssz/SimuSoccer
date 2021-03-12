@@ -12,13 +12,14 @@ import gui.Dashboard;
 import test.TestPrototype;
 
 public class MatchManager {
-	private final int chance = 40;
+
 	private boolean begin = false;
 	private boolean corner = false;
 	private boolean touche = false;
-	private boolean mi_temps = false;
 
 	private int first_choice_corner = 0;
+
+	private boolean goal = false;
 
 	private Corner cornertest = null;
 	private Touche touchetest = null;
@@ -26,19 +27,25 @@ public class MatchManager {
 	private Passe testpasse = new Passe();
 	private Shoot testshoot = new Shoot();
 
-	private int test_blue_shoot_x_position = 700;
-	private int test_blue_shoot_y_position = 160;
-
-	private int test_red_shoot_x_position = 200;
-	private int test_red_shoot_y_position = 160;
+	private ArrayList<Player> players1 = null;
+	private ArrayList<Player> players2 = null;
+	private ArrayList<Player> ball_team = null;
 
 	private Player tireur;
 	private boolean shoot = false;
 
+	private int aim_x = 0;
+	private int aim_y = 0;
+
+	private Player passeur = null;
+	private Player receveur = null;
+
+	private int proba = 200;
+
 	private Match match = new Match();
 
 	public void matchProcess(Dashboard dash) {
-		
+
 		begin = dash.isBegin();
 
 		if (begin == false) {
@@ -48,28 +55,21 @@ public class MatchManager {
 			match.engagement(dash);
 
 			dash.setBegin(true);
-			
-			
 
 		}
-		
-		System.out.println("avant methode");
-
-		closestPlayer(dash);
-		
-		System.out.println("apres methode");
 
 		// conditions pour decider de quelle action effectuer type corner, touche, 6
 		// metres, passes, frappe etc
 
 		// doTestPrototype(dash);
 
-		// doTestPasse(dash);
 		// doCorner(dash);
 		// doTouche(dash);
 
-		// doTestBlueShoot(dash, 10);
-		// doTestRedShoot(dash, 10);
+		// doBlueShoot(dash);
+		// doRedShoot(dash);
+		
+		doPass(dash, passeur, receveur);
 
 	}
 
@@ -77,13 +77,45 @@ public class MatchManager {
 		TestPrototype.testMovement(dash);
 	}
 
-	public void doTestPasse(Dashboard dash) {
+	public void doPass(Dashboard dash, Player passeur, Player receveur) {
 
-		testpasse.testPass(dash);
+		players1 = dash.getTeam1();
+		players2 = dash.getTeam2();
+
+		ball_team = TeamBall(players1, players2);
+
+		int index_passeur = PlayerBall(ball_team);
+
+		passeur = ball_team.get(index_passeur);
+
+		receveur = closestPlayer(dash);
+
+		if (dash.isStop_action() == false) {
+
+			testpasse.pass(dash, passeur, receveur);
+			
+		} else {
+			dash.setStop_action(false);
+
+			ball_team = TeamBall(players1, players2);
+
+			int index_new_passeur = PlayerBall(ball_team);
+
+			passeur = ball_team.get(index_new_passeur);
+			receveur = closestPlayer(dash);
+			testpasse.pass(dash, passeur, receveur);
+		}
 
 	}
 
-	public void doTestBlueShoot(Dashboard dash, int index_tireur) {
+	public void doBlueShoot(Dashboard dash) {
+
+		players1 = dash.getTeam1();
+		players2 = dash.getTeam2();
+
+		ball_team = TeamBall(players1, players2);
+
+		int index_tireur = PlayerBall(ball_team);
 
 		shoot = dash.isShoot();
 
@@ -91,20 +123,39 @@ public class MatchManager {
 
 			tireur = dash.getTeam1().get(index_tireur);
 
-			tireur.setX(test_blue_shoot_x_position);
-			tireur.setY(test_blue_shoot_y_position);
+			aim_x = 830;
 
-			dash.getBallon().setBallPositionxWithRedPlayer(tireur);
-			dash.getBallon().setBallPositionyWithRedPlayer(tireur);
+			Random tir = new Random();
+
+			aim_y = tir.nextInt(293);
+
+			aim_y += 165;
 
 			dash.setShoot(true);
 
 		}
 
-		int aim_x = dash.getTeam2().get(0).getX() + 30;
-		int aim_y = dash.getTeam2().get(0).getY() - 30;
+		if ((aim_y <= 375) && (aim_y > 250)) {
 
-		testshoot.testShootBlue(dash, index_tireur, aim_x, aim_y);
+			if (proba == 200) {
+				goal = probabilite_succes(tireur.getShoot());
+			}
+
+			if (goal == true) {
+
+				testshoot.ShootBlue(dash, index_tireur, aim_x, aim_y, goal);
+
+			} else {
+
+				int x_gardien = dash.getTeam2().get(0).getX();
+				int y_gardien = dash.getTeam2().get(0).getY();
+
+				testshoot.ShootBlue(dash, index_tireur, x_gardien, y_gardien, goal);
+			}
+
+		} else {
+			testshoot.ShootBlue(dash, index_tireur, aim_x, aim_y, goal);
+		}
 
 		if (dash.isGoal() == true) {
 			match.redEngagement(dash);
@@ -112,7 +163,14 @@ public class MatchManager {
 
 	}
 
-	public void doTestRedShoot(Dashboard dash, int index_tireur) {
+	public void doRedShoot(Dashboard dash) {
+
+		players1 = dash.getTeam1();
+		players2 = dash.getTeam2();
+
+		ball_team = TeamBall(players1, players2);
+
+		int index_tireur = PlayerBall(ball_team);
 
 		shoot = dash.isShoot();
 
@@ -120,20 +178,39 @@ public class MatchManager {
 
 			tireur = dash.getTeam2().get(index_tireur);
 
-			tireur.setX(test_red_shoot_x_position);
-			tireur.setY(test_red_shoot_y_position);
+			aim_x = 50;
 
-			dash.getBallon().setBallPositionxWithRedPlayer(tireur);
-			dash.getBallon().setBallPositionyWithRedPlayer(tireur);
+			Random tir = new Random();
+
+			aim_y = tir.nextInt(293);
+
+			aim_y += 165;
 
 			dash.setShoot(true);
 
 		}
 
-		int aim_x = dash.getTeam1().get(0).getX() - 30;
-		int aim_y = dash.getTeam1().get(0).getY() - 30;
+		if ((aim_y <= 375) && (aim_y > 250)) {
 
-		testshoot.testShootBlue(dash, index_tireur, aim_x, aim_y);
+			if (proba == 200) {
+				goal = probabilite_succes(tireur.getShoot());
+			}
+
+			if (goal == true) {
+
+				testshoot.ShootRed(dash, index_tireur, aim_x, aim_y, goal);
+
+			} else {
+
+				int x_gardien = dash.getTeam1().get(0).getX();
+				int y_gardien = dash.getTeam1().get(0).getY();
+
+				testshoot.ShootRed(dash, index_tireur, x_gardien, y_gardien, goal);
+			}
+
+		} else {
+			testshoot.ShootRed(dash, index_tireur, aim_x, aim_y, goal);
+		}
 
 		if (dash.isGoal() == true) {
 			match.blueEngagement(dash);
@@ -207,100 +284,90 @@ public class MatchManager {
 
 	}
 
-	public void doMiTemps(Dashboard dash) {
-		mi_temps = dash.isMi_temps();
-	}
-	
 	public int PlayerBall(ArrayList<Player> players1) {
 
-		int res = 12 ;
+		int res = 12;
 
 		boolean stop = false;
-		int i = 0 ;
+		int i = 0;
 
-		while ( i < players1.size() && (stop == false)) {
+		while (i < players1.size() && (stop == false)) {
 
 			if (players1.get(i).isBall() == true) {
 
 				stop = true;
-				res = i ;
+				res = i;
 
 			}
 			i++;
-			
+
 		}
-		
-		System.out.println(res);
-		return res ;
-		
+
+		return res;
+
 	}
 
 	public Player closestPlayer(Dashboard dash) {
-		
-		System.out.println("debut methode");
-
 
 		ArrayList<Player> players1 = dash.getTeam1();
 		ArrayList<Player> players2 = dash.getTeam2();
 
 		ArrayList<Player> ball_team = TeamBall(players1, players2); // équipe qui a la balle
-		
-		System.out.println("apres definition des arraylist");
-		
+
 		int index_player_ball = PlayerBall(ball_team);
 
 		Player player = ball_team.get(index_player_ball); // joueur qui a la balle
-		
-		System.out.println("apres definition du player qui a la balle");
 
 		// recuperer les coordonnées du joueur ayant la balle
 		int player_x = player.getX();
 		int player_y = player.getY();
-		
-		System.out.println("apres definition des coordonnes player qui a la balle");
-
 
 		Player player_min = ball_team.get(1);
-		
-		float distance_min = (float) Math.sqrt(Math.pow(player_x - player_min.getX() , 2) + Math.pow(player_y - player_min.getY(), 2)) ;
-		
-		System.out.println("avant for");
+
+		float distance_min = (float) Math
+				.sqrt(Math.pow(player_x - player_min.getX(), 2) + Math.pow(player_y - player_min.getY(), 2));
 
 		for (int i = 1; i < ball_team.size(); i++) {
 
 			if (i != index_player_ball) {
 				int x = ball_team.get(i).getX();
 				int y = ball_team.get(i).getY();
-				// calculer la disance entre le joueur ayant la balle et le joueur i
+
 				float distance = (float) Math.sqrt(Math.pow(player_x - x, 2) + Math.pow(player_y - y, 2));
-				System.out.println("playerBallX = "+ player_x + "playerBallY = " + player_y + "playerX = "+ x + "playerY = " + y +
-				"Distance = "+distance);
-				
+
 				if (distance < distance_min) {
-					 player_min = ball_team.get(i);
+					player_min = ball_team.get(i);
 				}
 
 			}
 		}
 
-		return player_min ;
-		// formule distance math.sqrt et math.pow
+		return player_min;
+	}
 
-	}
-	
 	// probabililté qu'un tir soit un but
-	boolean probabiliteBut (){
-		int proba;
-	 do {
-		  proba = (int) Math.random();
-	 }while(proba <= 0 && proba > 100 );
-	 if (proba <= chance){
-	    return true;
-	 }else{
-	 return false;
-	 }
+	/*
+	 * public boolean probabilite_succes(int chance) { int proba ; do { proba =
+	 * (int) Math.random(); } while (proba >= 0 && proba < 100); if (proba <=
+	 * chance) { System.out.println("proba = " + proba); return true; } else {
+	 * System.out.println("proba = " + proba); return false; } }
+	 */
+
+	public boolean probabilite_succes(int chance) {
+
+		System.out.println("chance = " + chance);
+
+		Random prob = new Random();
+		proba = prob.nextInt(100);
+
+		System.out.println("proba = " + proba);
+
+		if (proba <= chance) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-	
 
 	public ArrayList<Player> TeamBall(ArrayList<Player> players1, ArrayList<Player> players2) {
 
@@ -330,9 +397,31 @@ public class MatchManager {
 		return null;
 
 	}
-	
-	public void shotSituation () {
-		
+
+	public boolean blueShotSituation(Player tireur) {
+
+		int x_tireur = tireur.getX();
+		int y_tireur = tireur.getY();
+
+		if (((x_tireur > 710) && (x_tireur <= 798)) && ((y_tireur > 180) && (y_tireur <= 443))) { // 695, 813, 165, 458
+																									// (+- 15 chacun)
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean redShotSituation(Player tireur) {
+
+		int x_tireur = tireur.getX();
+		int y_tireur = tireur.getY();
+
+		if (((x_tireur > 90) && (x_tireur <= 180)) && ((y_tireur > 180) && (y_tireur <= 443))) { // 75 , 195 , 165 , 458
+																									// (+- 15 chacun)
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }

@@ -12,7 +12,8 @@ public class Corner {
 
 	private boolean receveur_corner = false;
 
-	private Player receveur;
+	private Player passeur = null ;
+	private Player receveur = null ;
 
 	Passe testPass = new Passe();
 
@@ -40,10 +41,12 @@ public class Corner {
 
 			borne += 5;
 
-			Player p = players.get(borne);
+			Player player_corner = players.get(borne);
+			
+			passeur = player_corner ;
 
-			p.setX(Sortie.getSortieHautGaucheX());
-			p.setY(Sortie.getSortieHautGaucheY());
+			player_corner.setX(Sortie.getSortieHautGaucheX());
+			player_corner.setY(Sortie.getSortieHautGaucheY());
 
 			// Tirage de la position de la balle
 
@@ -114,7 +117,7 @@ public class Corner {
 			receveur = players.get(tirage_re);
 		}
 
-		testPass.pass(dash, receveur);
+		testPass.pass(dash,passeur,receveur);
 
 	}
 
@@ -136,10 +139,12 @@ public class Corner {
 
 			borne += 5;
 
-			Player p = players.get(borne);
+			Player player_corner = players.get(borne);
+			
+			passeur = player_corner ;
 
-			p.setX(Sortie.getSortieHautDroiteX() - 10);
-			p.setY(Sortie.getSortieHautDroiteY());
+			player_corner.setX(Sortie.getSortieHautDroiteX() - 10);
+			player_corner.setY(Sortie.getSortieHautDroiteY());
 
 			// Tirage de la position de la balle
 
@@ -208,7 +213,7 @@ public class Corner {
 			receveur = players.get(tirage_re);
 		}
 
-		testPass.pass(dash, receveur);
+		testPass.pass(dash,passeur, receveur);
 
 	}
 
@@ -230,10 +235,12 @@ public class Corner {
 
 			borne += 5;
 
-			Player p = players.get(borne);
+			Player player_corner = players.get(borne);
+			
+			passeur = player_corner ;
 
-			p.setX(Sortie.getSortieBasGaucheX());
-			p.setY(Sortie.getSortieBasGaucheY());
+			player_corner.setX(Sortie.getSortieHautDroiteX() - 10);
+			player_corner.setY(Sortie.getSortieHautDroiteY());
 
 			// Tirage de la position de la balle
 
@@ -302,7 +309,7 @@ public class Corner {
 			receveur = players.get(tirage_re);
 		}
 
-		testPass.pass(dash, receveur);
+		testPass.pass(dash,passeur, receveur);
 
 	}
 
@@ -324,10 +331,12 @@ public class Corner {
 
 			borne += 5;
 
-			Player p = players.get(borne);
+			Player player_corner = players.get(borne);
+			
+			passeur = player_corner ;
 
-			p.setX(Sortie.getSortieBasDroiteX());
-			p.setY(Sortie.getSortieBasDroiteY());
+			player_corner.setX(Sortie.getSortieHautDroiteX() - 10);
+			player_corner.setY(Sortie.getSortieHautDroiteY());
 
 			Random corner_place1_x = new Random();
 			int placeX = 685;
@@ -396,7 +405,7 @@ public class Corner {
 			receveur = players.get(tirage_re);
 		}
 
-		testPass.pass(dash, receveur);
+		testPass.pass(dash,passeur, receveur);
 
 	}
 

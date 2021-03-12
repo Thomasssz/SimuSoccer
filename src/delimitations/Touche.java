@@ -12,7 +12,8 @@ public class Touche {
 	
 	private boolean receveur_touche = false ;
 	
-	private Player receveur;
+	private Player passeur_touche = null ; 
+	private Player receveur = null;
 	
 	Passe testPass = new Passe();
 
@@ -40,6 +41,8 @@ public class Touche {
 
 			Player passeur = players.get(borne);
 
+			passeur_touche = passeur ;
+			
 			passeur.setX(x);
 			passeur.setY(y-2);
 
@@ -118,7 +121,7 @@ public class Touche {
 			receveur = players.get(tirage_re);
 		}
 		
-		 testPass.pass(dash,receveur);
+		 testPass.pass(dash,passeur_touche,receveur);
 		
 	}
 

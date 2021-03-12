@@ -103,7 +103,7 @@ public class Passe {
 
 	}
 
-	public void pass(Dashboard dash, Player receveur) {
+	public void pass(Dashboard dash,Player passeur,Player receveur) {
 
 		int res_x = (dash.getBallon().getPositionx_Ball()) - receveur.getX();
 		int res_y = (dash.getBallon().getPositiony_Ball()) - receveur.getY();
@@ -112,7 +112,11 @@ public class Passe {
 		int result_y = Math.abs(res_y);
 
 		if ((result_x < 6) && (result_y < 6)) {
+			
 			dash.setStop_action(true);
+			
+			passeur.setBall(false);
+			receveur.setBall(true);
 		}
 
 		if (dash.isStop_action() == false) {
