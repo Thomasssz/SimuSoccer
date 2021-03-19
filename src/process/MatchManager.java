@@ -28,18 +28,22 @@ public class MatchManager {
 
 	private Passe testpasse = new Passe();
 	private Shoot testshoot = new Shoot();
-	
-	private int aim_x = 0 ;
-	private int aim_y = 0 ;
-	
+
+	private Player receveur1 = null;
+	private Player receveur2 = null;
+	private Player receveur3 = null;
+
+	private int aim_x = 0;
+	private int aim_y = 0;
+
 	private Move testmove = new Move();
-	private Player player_ball = null ;
+	private Player player_ball = null;
 
 	private ArrayList<Player> players1 = null;
 	private ArrayList<Player> players2 = null;
 	private ArrayList<Player> ball_team = null;
 
-	private Player tireur= null;
+	private Player tireur = null;
 
 	private Player passeur = null;
 	private Player receveur = null;
@@ -48,17 +52,15 @@ public class MatchManager {
 
 	private Match match = new Match();
 	private ChronometerGUI chronometergui;
-	private LinkedList<Integer> pass_list = null ;
-	
+
 	public MatchManager(ChronometerGUI chronometergui) {
-		this.chronometergui=chronometergui;
+		this.chronometergui = chronometergui;
 	}
 
-
 	public void matchProcess(Dashboard dash, ChronometerGUI chronometergui) {
-		
+
 		begin = dash.isBegin();
-		
+
 		if (begin == false) {
 
 			match = dash.getMatch();
@@ -68,75 +70,76 @@ public class MatchManager {
 			dash.setBegin(true);
 
 		}
-		
+
 		players1 = dash.getTeam1();
 		players2 = dash.getTeam2();
-		
-		ball_team = TeamBall(players1, players2);
-		
-		int index_player_ball = PlayerBall(ball_team);
-		
-		player_ball = ball_team.get(index_player_ball) ; 
 
-	/*	
+		ball_team = TeamBall(players1, players2);
+
+		int index_player_ball = PlayerBall(ball_team);
+
+		player_ball = ball_team.get(index_player_ball);
+
 		if (ball_team.equals(players1)) {
 			
-			if (blueShotSituation(player_ball) == true ) {
+			if (blueShotSituation(player_ball) == true) {
+				dash.setStop_action(false);
+				dash.setShoot(false);
+
 				doBlueShoot(dash);
 			} else {
-				doMove(dash);
+				doPass(dash);
 			}
-			
+
 		} else if (ball_team.equals(players2)) {
-			    
-			if (redShotSituation(player_ball) == true ) {
+			
+			if (redShotSituation(player_ball) == true) {
+				dash.setStop_action(false);
+				dash.setShoot(false);
+
 				doRedShoot(dash);
-			}else {
-				doMove(dash);
+			} else {
+				doPass(dash);
 			}
-		} 
-	*/	
+		}
+
 		// conditions pour decider de quelle action effectuer type corner, touche, 6
 		// metres, passes, frappe etc
 
 		// doCorner(dash);
 		// doTouche(dash);
 
-		//doBlueShoot(dash);
-		//doRedShoot(dash);
-		
-		doMiTemps(dash,chronometergui);
-		
-		//doMove(dash);
-		//doPass(dash, passeur, receveur);
-		
-		//		pass_list = doPassList();
-		//	parcoursPassList(dash,pass_list) ;
+		// doBlueShoot(dash);
+		// doRedShoot(dash);
 
+		// doMiTemps(dash,chronometergui);
+
+		// doMove(dash);
+		// doPass(dash, passeur, receveur);
 
 	}
 
 	public void doMove(Dashboard dash) {
-		
+
 		players1 = dash.getTeam1();
 		players2 = dash.getTeam2();
-		
+
 		ball_team = TeamBall(players1, players2);
-		
+
 		int index_player_ball = PlayerBall(ball_team);
-		
-		player_ball = ball_team.get(index_player_ball) ;
+
+		player_ball = ball_team.get(index_player_ball);
 
 		if (ball_team.equals(players1)) {
-			testmove.Movement(dash,"blue",player_ball);
-			
+			testmove.Movement(dash, "blue", player_ball);
+
 		} else if (ball_team.equals(players2)) {
-			testmove.Movement(dash,"red",player_ball);
+			testmove.Movement(dash, "red", player_ball);
 		}
 	}
 
-	public void doPass(Dashboard dash, Player passeur, Player receveur) {
-		
+	public void doPass(Dashboard dash) {
+
 		players1 = dash.getTeam1();
 		players2 = dash.getTeam2();
 
@@ -146,97 +149,74 @@ public class MatchManager {
 
 		passeur = ball_team.get(index_passeur);
 
-		receveur = closestPlayer(dash);
+		if (receveur1 == null && receveur2 == null && receveur3 == null) {
+
+			receveur1 = closestPlayer(dash, Player.position.DEFENSE);
+			receveur2 = closestPlayer(dash, Player.position.MIDDLE);
+			receveur3 = closestPlayer(dash, Player.position.ATTACK);
+
+			Random rand = new Random();
+
+			int choix_receveur = rand.nextInt(3);
+
+			if (choix_receveur == 0) {
+				receveur = receveur1;
+
+				/*
+				 * if (passeur.getPosition().equals(Player.position.ATTACK) &&
+				 * receveur.getPosition().equals(Player.position.MIDDLE)) {
+				 * 
+				 * }
+				 */
+
+			} else if (choix_receveur == 1) {
+				receveur = receveur2;
+			} else if (choix_receveur == 2) {
+				receveur = receveur3;
+			}
+
+		}
 
 		if (dash.isStop_action() == false) {
 
 			testpasse.pass(dash, passeur, receveur);
-			
-		} else {
-			
-			dash.setStop_action(false);
 
-			ball_team = TeamBall(players1, players2);
+		} else {
+
+			dash.setStop_action(false);
 
 			int index_new_passeur = PlayerBall(ball_team);
 
 			passeur = ball_team.get(index_new_passeur);
-			receveur = closestPlayer(dash);
+
+			receveur1 = closestPlayer(dash, Player.position.DEFENSE);
+			receveur2 = closestPlayer(dash, Player.position.MIDDLE);
+			receveur3 = closestPlayer(dash, Player.position.ATTACK);
+
+			Random rand = new Random();
+
+			int choix_receveur = rand.nextInt(3);
+
+			if (choix_receveur == 0) {
+				receveur = receveur1;
+			} else if (choix_receveur == 1) {
+				receveur = receveur2;
+			} else if (choix_receveur == 2) {
+				receveur = receveur3;
+			}
+
 			testpasse.pass(dash, passeur, receveur);
+			doMove(dash);
+
 		}
 
 	}
-	
-	public void doMiTemps(Dashboard dash,ChronometerGUI chronometergui) {
-	 	//mi_temps = dash.isMi_temps();
-		MiTemps middle=new MiTemps();
-		middle.middletime(chronometergui,dash);
-	
-	}
 
-	
-	public LinkedList<Integer> doPassList () {
-		
-		LinkedList<Integer> pass = new LinkedList<Integer>();
-		
-		pass.addLast(10);
-		pass.addLast(8);
-		pass.addLast(4);
-		pass.addLast(5);
-	//	pass.addLast(8);
-	//	pass.addLast(6);
-		//pass.addLast(1); 
-		
-		
-		afficherpassList(pass);
-		return pass ;
-		
-	}
-	
-	public void parcoursPassList (Dashboard dash, LinkedList<Integer> pass_list) {
-		
-		players1 = dash.getTeam1();
-		players2 = dash.getTeam2();
+	public void doMiTemps(Dashboard dash, ChronometerGUI chronometergui) {
+		// mi_temps = dash.isMi_temps();
+		MiTemps middle = new MiTemps();
+		middle.middletime(chronometergui, dash);
 
-		ball_team = TeamBall(players1, players2);
-
-		for(int i = 0 ; i < pass_list.size() ; i++ ) {
-			
-			passeur = ball_team.get(pass_list.get(i));
-			
-			if (i< pass_list.size()-1) {
-			
-				receveur = ball_team.get(pass_list.get(i+1)) ;
-			
-			
-			
-			System.out.println("index passeur "+ pass_list.get(i));
-			System.out.println("index receveur "+ pass_list.get(i+1));
-			System.out.println(dash.isStop_action());
-
-			
-			if (dash.isStop_action() == false) {
-
-				testpasse.pass(dash, passeur, receveur);
-				
-			} else {
-				dash.setStop_action(false);
-			}
-
-			
-			}
-		}
-		
-		System.out.println("boucle stoppe");
-		
-		
-	}
-	
-	public void afficherpassList (LinkedList<Integer> pass_list) {
-		
-		for (int i = 0 ; i < pass_list.size() ; i++) {
-			System.out.println(pass_list.get(i)) ;
-		}
 	}
 
 	public void doBlueShoot(Dashboard dash) {
@@ -247,13 +227,13 @@ public class MatchManager {
 		ball_team = TeamBall(players1, players2);
 
 		int index_tireur = PlayerBall(ball_team);
-		
+
 		player_ball = ball_team.get(index_tireur);
-		
+
 		shoot = dash.isShoot();
 
 		if (shoot == false) {
-			
+
 			tireur = dash.getTeam1().get(index_tireur);
 
 			aim_x = 830;
@@ -275,8 +255,6 @@ public class MatchManager {
 			}
 
 			if (goal == true) {
-				
-				System.out.println("cadre but");
 
 				testshoot.ShootBlue(dash, index_tireur, aim_x, aim_y, goal);
 
@@ -284,20 +262,19 @@ public class MatchManager {
 
 				int x_gardien = dash.getTeam2().get(0).getX();
 				int y_gardien = dash.getTeam2().get(0).getY();
-				
-				System.out.println("cadre pas but");
 
 				testshoot.ShootBlue(dash, index_tireur, x_gardien, y_gardien, goal);
 			}
 
 		} else {
 			testshoot.ShootBlue(dash, index_tireur, aim_x, aim_y, goal);
-			System.out.println("pas cadre");
 		}
 
 		if (dash.isGoal() == true) {
-			match.redEngagement(dash,player_ball);
+			match.redEngagement(dash, player_ball);
 		}
+
+		dash.setStop_action(false);
 
 	}
 
@@ -309,9 +286,9 @@ public class MatchManager {
 		ball_team = TeamBall(players1, players2);
 
 		int index_tireur = PlayerBall(ball_team);
-		
+
 		player_ball = ball_team.get(index_tireur);
-		
+
 		shoot = dash.isShoot();
 
 		if (shoot == false) {
@@ -353,7 +330,7 @@ public class MatchManager {
 		}
 
 		if (dash.isGoal() == true) {
-			match.blueEngagement(dash,player_ball);
+			match.blueEngagement(dash, player_ball);
 		}
 
 	}
@@ -447,7 +424,7 @@ public class MatchManager {
 
 	}
 
-	public Player closestPlayer(Dashboard dash) {
+	public Player closestPlayer(Dashboard dash, Player.position poste) {
 
 		ArrayList<Player> players1 = dash.getTeam1();
 		ArrayList<Player> players2 = dash.getTeam2();
@@ -464,11 +441,12 @@ public class MatchManager {
 
 		Player player_min = ball_team.get(1);
 
-		float distance_min = (float) Math.sqrt(Math.pow(player_x - player_min.getX(), 2) + Math.pow(player_y - player_min.getY(), 2));
+		float distance_min = (float) Math
+				.sqrt(Math.pow(player_x - player_min.getX(), 2) + Math.pow(player_y - player_min.getY(), 2));
 
 		for (int i = 1; i < ball_team.size(); i++) {
 
-			if (i != index_player_ball) {
+			if (i != index_player_ball && ball_team.get(i).getPosition().equals(poste)) {
 				int x = ball_team.get(i).getX();
 				int y = ball_team.get(i).getY();
 
@@ -494,12 +472,8 @@ public class MatchManager {
 
 	public boolean probabilite_succes(int chance) {
 
-		System.out.println("chance = " + chance);
-
 		Random prob = new Random();
 		proba = prob.nextInt(100);
-
-		System.out.println("proba = " + proba);
 
 		if (proba <= chance) {
 			return true;
@@ -518,6 +492,7 @@ public class MatchManager {
 
 			if (players1.get(i).isBall() == true) {
 
+				System.out.println("Blue got the BALL");
 				stop = true;
 				return players1;
 
@@ -525,8 +500,10 @@ public class MatchManager {
 
 			if (players2.get(i).isBall() == true) {
 
+				System.out.println("Red got the BALL");
 				stop = true;
 				return players2;
+				
 			}
 
 			i++;

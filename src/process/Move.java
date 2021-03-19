@@ -28,7 +28,7 @@ public class Move {
 				boolean limit = blueCheckForwardLimit(player);
 
 				if (limit == true) {
-					player.setX(player.getX() + 3);
+					player.setX(player.getX() + 10);
 					
 					if (player.equals(player_ball)) {
 						dash.getBallon().setPositionx_Ball(player_ball.getX()+10);
@@ -43,7 +43,7 @@ public class Move {
 				boolean limit = redCheckBackwardLimit(player);
 
 				if (limit == true) {
-					player.setX(player.getX() + 3);
+					player.setX(player.getX() + 10);
 				}
 			}
 
@@ -56,7 +56,7 @@ public class Move {
 				boolean limit = redCheckForwardLimit(player);
 
 				if (limit == true) {
-					player.setX(player.getX() - 3);
+					player.setX(player.getX() - 10);
 					if (player.equals(player_ball)) {
 						dash.getBallon().setPositionx_Ball(player_ball.getX()-10);
 					}
@@ -70,7 +70,7 @@ public class Move {
 				boolean limit = blueCheckBackwardLimit(player);
 
 				if (limit == true) {
-					player.setX(player.getX() - 3);
+					player.setX(player.getX() - 10);
 				}
 			}
 
@@ -83,7 +83,7 @@ public class Move {
 		
 		if (poste == position.DEFENSE) {
 			
-			if ((player.getX() + 3) < 440) {
+			if ((player.getX() + 10) < 440) {
 				return true;
 			} else {
 				return false;
@@ -91,7 +91,7 @@ public class Move {
 			
 		} else if (poste == position.MIDDLE) {
 			
-			if ((player.getX() + 3) < 600) {
+			if ((player.getX() + 10) < 600) {
 				return true;
 			} else {
 				return false;
@@ -99,7 +99,7 @@ public class Move {
 			
 		} else if (poste == position.ATTACK) {
 			
-			if ((player.getX() + 3) < 760) {
+			if ((player.getX() + 10) < 760) {
 				return true;
 			} else {
 				return false;
@@ -115,7 +115,7 @@ public class Move {
 		
 		if (poste == position.DEFENSE) {
 			
-			if ((player.getX() - 3) > 120) {
+			if ((player.getX() - 10) > 120) {
 				return true;
 			} else {
 				return false;
@@ -123,7 +123,7 @@ public class Move {
 			
 		} else if (poste == position.MIDDLE) {
 			
-			if ((player.getX() - 3) > 230) {
+			if ((player.getX() - 10) > 2100) {
 				return true;
 			} else {
 				return false;
@@ -131,7 +131,7 @@ public class Move {
 			
 		} else if (poste == position.ATTACK) {
 			
-			if ((player.getX() - 3) > 440) {
+			if ((player.getX() - 10) > 440) {
 				return true;
 			} else {
 				return false;
@@ -147,7 +147,7 @@ public class Move {
 		
 		if (poste == position.DEFENSE) {
 			
-			if ((player.getX() + 3) < 760) {
+			if ((player.getX() + 10) < 760) {
 				return true;
 			} else {
 				return false;
@@ -155,7 +155,7 @@ public class Move {
 			
 		} else if (poste == position.MIDDLE) {
 			
-			if ((player.getX() + 3) < 650) {
+			if ((player.getX() + 10) < 650) {
 				return true;
 			} else {
 				return false;
@@ -163,7 +163,7 @@ public class Move {
 			
 		} else if (poste == position.ATTACK) {
 			
-			if ((player.getX() + 3) < 440) {
+			if ((player.getX() + 10) < 440) {
 				return true;
 			} else {
 				return false;
@@ -179,7 +179,7 @@ public class Move {
 		
 		if (poste == position.DEFENSE) {
 			
-			if ((player.getX() - 3) > 440) {  
+			if ((player.getX() - 10) > 440) {  
 				return true;
 			} else {
 				return false;
@@ -187,7 +187,7 @@ public class Move {
 			
 		} else if (poste == position.MIDDLE) {
 			
-			if ((player.getX() - 3) > 280) { 
+			if ((player.getX() - 10) > 280) { 
 				return true;
 			} else {
 				return false;
@@ -195,7 +195,7 @@ public class Move {
 			
 		} else if (poste == position.ATTACK) {
 			
-			if ((player.getX() - 3) > 120) { 
+			if ((player.getX() - 10) > 120) { 
 				return true;
 			} else {
 				return false;

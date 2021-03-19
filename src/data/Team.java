@@ -498,7 +498,7 @@ public class Team {
 			Player p10 = new Player("10", 80, 80, 50, 40, 80, 100, 60, 10, ATT, default_x_attaquant1_bleu,
 					default_y_attaquant1_bleu, false);
 			Player p11 = new Player("11", 100, 90, 100, 50, 100, 100, 70, 11, ATT, default_x_attaquant2_bleu,
-					default_y_attaquant2_bleu, true);
+					default_y_attaquant2_bleu, false);
 
 			players.add(p1);
 

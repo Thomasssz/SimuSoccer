@@ -21,6 +21,7 @@ public class Shoot {
 
 		if ((result_x < 6) && (result_y < 6)) {
 			dash.setStop_action(true);
+			dash.getTeam1().get(index_tireur).setBall(false);
 			
 			if (goal == true) {
 
@@ -75,6 +76,7 @@ public class Shoot {
 
 		if ((result_x < 6) && (result_y < 6)) {
 			dash.setStop_action(true);
+			dash.getTeam2().get(index_tireur).setBall(false);
 			
 			if (goal == true) {
 
