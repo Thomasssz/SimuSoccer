@@ -34,7 +34,7 @@ public class Ball {
 	}
 		
 	public void setBallPositionxWithBluePlayer (Player blue_ball_player) {
-		positionx_Ball = blue_ball_player.getX()+10 ;
+		positionx_Ball = blue_ball_player.getX()+5 ;
 	}
 	
 	public void setBallPositionyWithBluePlayer (Player blue_ball_player) {
@@ -42,7 +42,7 @@ public class Ball {
 	}
 	
 	public void setBallPositionxWithRedPlayer (Player red_ball_player) {
-		positionx_Ball = red_ball_player.getX()-10 ;
+		positionx_Ball = red_ball_player.getX()-5 ;
 	}
 	
 	public void setBallPositionyWithRedPlayer (Player red_ball_player) {

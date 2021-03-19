@@ -40,7 +40,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	/**
 	 * The normal speed is 1000, e.q. one refresh per second (1000 milliseconds).
 	 */
-	private static final int CHRONO_SPEED = 100;
+	private static final int CHRONO_SPEED = 100 ;
 	
 	public static final int SIMULATION_CHRONO_SPEED = 1 ;
 

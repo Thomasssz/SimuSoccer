@@ -164,15 +164,18 @@ public class Match {
 			dash.getTeam2().get(10).setBall(true);
 
 			dash.getBallon().setBallPositionxWithRedPlayer(dash.getTeam2().get(10));
-			dash.getBallon().setBallPositionyWithRedPlayer(dash.getTeam2().get(10));
+			dash.getBallon().setBallPositionxWithBluePlayer(dash.getTeam2().get(10));
 
 		}
 
 		dash.setGoal(false);
+		dash.setShoot(false);
 
 	}
 
-	public void blueEngagement(Dashboard dash) {
+	public void blueEngagement(Dashboard dash, Player player_ball) {
+		
+		player_ball.setBall(false);
 		
 		dash.getTeam1().get(0).setX(default_x_gardien_bleu);
 		dash.getTeam1().get(0).setY(default_y_gardien_bleu);
@@ -227,15 +230,20 @@ public class Match {
 		dash.getTeam1().get(10).setX(430);
 		dash.getTeam1().get(10).setY(300);
 		
-		dash.getTeam1().get(10).setBall(true);
+		dash.getTeam1().get(10).setBall(true);   
 
 		dash.getBallon().setBallPositionxWithBluePlayer(dash.getTeam1().get(10));
-		dash.getBallon().setBallPositionyWithBluePlayer(dash.getTeam1().get(10));
-
+		dash.getBallon().setBallPositionxWithBluePlayer(dash.getTeam1().get(10));
+		
 		dash.setGoal(false);
+		dash.setShoot(false);
 	}
 
-	public void redEngagement(Dashboard dash) {
+	public void redEngagement(Dashboard dash, Player player_ball) {
+		
+		player_ball.setBall(false);
+		
+		System.out.println("red engagement");
 		
 		dash.getTeam1().get(0).setX(default_x_gardien_bleu);
 		dash.getTeam1().get(0).setY(default_y_gardien_bleu);
@@ -288,11 +296,13 @@ public class Match {
 		dash.getTeam2().get(10).setY(300);
 		dash.getTeam2().get(9).setX(450);
 		dash.getTeam2().get(9).setY(330);
+		
 		dash.getTeam2().get(10).setBall(true);
 
 		dash.getBallon().setBallPositionxWithRedPlayer(dash.getTeam2().get(10));
-		dash.getBallon().setBallPositionyWithRedPlayer(dash.getTeam2().get(10));
+		dash.getBallon().setBallPositionxWithRedPlayer(dash.getTeam2().get(10));
 
 		dash.setGoal(false);
+		dash.setShoot(false);
 	}
 }
