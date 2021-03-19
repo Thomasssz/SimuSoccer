@@ -13,14 +13,15 @@ import data.Team;
 
 public class Player1 extends JFrame {
 	
-	private String name = "1";
+	private String name;
 	private JPanel panel = new JPanel();
 	private JLabel label = new JLabel("Caractéristique");
 	private JTextArea h;
 	
 	private static ArrayList<Player> team1 = new ArrayList<Player>();
 	
-	public Player1(ArrayList<Player> player_team) {
+	
+	public Player1(ArrayList<Player> player_team, String name) {
 		
 		team1 = player_team ;
 		

@@ -9,6 +9,8 @@ public class Player {
 	private int defense;
 	private int shoot;
 	private int number;
+	private int endurance;
+	private int energie;
 
 	private int x;
 	private int y;
@@ -20,7 +22,7 @@ public class Player {
 
 	private position player_position;
 
-	public Player(String name, int speed, int pass, int dribbles, int defense, int shoot, int number, position player_position,
+	public Player(String name, int speed, int pass, int dribbles, int defense, int shoot, int energie, int endurance, int number, position player_position,
 			int x, int y, boolean ball) {
 
 		this.speed = speed;
@@ -28,6 +30,8 @@ public class Player {
 		this.dribbles = dribbles;
 		this.defense = defense;
 		this.shoot = shoot;
+		this.energie = energie;
+		this.endurance = endurance;
 		this.number = number;
 		this.player_position = player_position;
 		this.x = x;
@@ -91,6 +95,14 @@ public class Player {
 	public void setShoot(int shoot) {
 		this.shoot = shoot;
 	}
+	
+	public int getEndurance() {
+		return endurance;
+	}
+	
+	public void setEndurance(int endurance) {
+		this.endurance = endurance;
+	}
 
 	public int getNumber() {
 		return number;
@@ -123,12 +135,20 @@ public class Player {
 	public void setY(int y) {
 		this.y = y;
 	}
+	
+	public int getEnergie() {
+		return energie;
+	}
+
+	public void setEnergie(int energie) {
+		this.energie = energie;
+	}
 
 	@Override
 	public String toString() {
-		return "Player [name=" + name + ", speed=" + speed + ", pass=" + pass + ", dribbles=" + dribbles + ", defense="
-				+ defense + ", shoot=" + shoot + ", number=" + number + ", x=" + x + ", y=" + y + ", ball=" + ball
-				+ ", player_position=" + player_position + "]";
+		return "Player " + name + "\n speed= "+ speed + "\n pass=" + pass + "\n dribbles=" + dribbles + "\n defense="
+				+ defense + "\n shoot=" + shoot + "\n number=" + number + "\n x=" + x + "\n y=" + y + "\n ball=" + ball
+				+ "\n player_position=" + player_position + "";
 	}
 
 }

@@ -1,6 +1,7 @@
 package gui;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -13,6 +14,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 
 import chrono.Chronometer;
 import chrono.CyclicCounter;
@@ -40,7 +43,16 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	/**
 	 * The normal speed is 1000, e.q. one refresh per second (1000 milliseconds).
 	 */
-	private static final int CHRONO_SPEED = 100 ;
+	private int CHRONO_SPEED = 100 ;
+	
+	public int getCHRONO_SPEED() {
+		return CHRONO_SPEED;
+	}
+
+	public void setCHRONO_SPEED(int cHRONO_SPEED) {
+		CHRONO_SPEED = cHRONO_SPEED;
+	}
+
 	
 	public static final int SIMULATION_CHRONO_SPEED = 1 ;
 
@@ -66,6 +78,11 @@ public class ChronometerGUI extends JFrame implements Runnable {
 
 	private JButton startButton = new JButton("Start");
 	private JButton CharacteristicsButton = new JButton("Characteristics");
+	
+	private JRadioButton rdbtns0=new JRadioButton("speed 1 (x1)");
+	private JRadioButton rdbtns1=new JRadioButton("speed 2 (x2)");
+	private JRadioButton rdbtns2=new JRadioButton("speed 3 (x4)");
+	private JRadioButton rdbtns3=new JRadioButton("speed 4 (x10)");
 
 	private JLabel scoreteam1Label = new JLabel("Blue 0");
 	private JLabel scoreteam2Label = new JLabel("0 Red");
@@ -78,6 +95,10 @@ public class ChronometerGUI extends JFrame implements Runnable {
 
 	private JLabel minuteValue = new JLabel("");
 	private JLabel secondValue = new JLabel("");
+	
+	private JPanel endurance = new JPanel();
+	private JTextArea teamB = new JTextArea(15,25);
+	private JTextArea teamR = new JTextArea(15,25);
 
 	private JPanel control = new JPanel();
 
@@ -86,7 +107,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	 */
 	private Dashboard dashboard = new Dashboard(team1, team2, ballon,cornertest,touchetest,match);
 	
-	private MatchManager matchprocess = new MatchManager();
+	private MatchManager matchprocess = new MatchManager(this);
 
 	/**
 	 * This instance is used in the inner classes for different action listeners.
@@ -129,7 +150,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		scoreteam2Value.setFont(font);
 		control.add(scoreteam2Value);
 
-		control.setLayout(new FlowLayout(FlowLayout.CENTER));
+		control.setLayout(new FlowLayout(FlowLayout.LEFT));
 
 		minuteLabel.setFont(font);
 		control.add(minuteLabel);
@@ -148,11 +169,45 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		CharacteristicsButton.setFont(font);
 		CharacteristicsButton.addActionListener(new CharacteristicsAction());
 		control.add(CharacteristicsButton);
+		
+		rdbtns0.setFont(font);
+		rdbtns0.addActionListener(new SpeedAction0());
+		control.add(rdbtns0);
+		
+		rdbtns1.setFont(font);
+		rdbtns1.addActionListener(new SpeedAction1());
+		control.add(rdbtns1);
+		
+		rdbtns2.setFont(font);
+		rdbtns2.addActionListener(new SpeedAction2());
+		control.add(rdbtns2);
+		
+		rdbtns3.setFont(font);
+		rdbtns3.addActionListener(new SpeedAction3());
+		control.add(rdbtns3);
 
-		contentPane.add(BorderLayout.NORTH, control);
+		
+		dashboard.setPreferredSize(IDEAL_DASHBOARD_DIMENSION);
+		contentPane.add(BorderLayout.WEST, dashboard);
+
+		contentPane.add(BorderLayout.NORTH,control);
+		
+	
+		teamB.setBackground(Color.CYAN);
+		teamB.setText(toStringB());
+		
+		teamR.setBackground(Color.RED);
+		teamR.setText(toStringR());
+		endurance.setPreferredSize(new Dimension(250,500));
+		endurance.add(BorderLayout.NORTH,teamB);
+		endurance.add(BorderLayout.SOUTH,teamR);
+		
+		contentPane.add(BorderLayout.EAST,endurance);
+
+		/*contentPane.add(BorderLayout.NORTH, control);
 
 		dashboard.setPreferredSize(IDEAL_DASHBOARD_DIMENSION);
-		contentPane.add(BorderLayout.SOUTH, dashboard);
+		contentPane.add(BorderLayout.SOUTH, dashboard);*/
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		pack();
@@ -186,7 +241,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		// The dashboard needs to be reprinted when hour, minute or second values
 		// change.
 
-		matchprocess.matchProcess(dashboard);
+		matchprocess.matchProcess(dashboard,this);
 
 		dashboard.repaint();
 	}
@@ -251,6 +306,73 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		}
 
 	}
+	
+	private class SpeedAction0 implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			
+			setCHRONO_SPEED(100);
+		}
+		
+		
+	}
+	
+	private class SpeedAction1 implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			
+			setCHRONO_SPEED(50);
+		}
+		
+		
+	}
+	
+	private class SpeedAction2 implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			
+			setCHRONO_SPEED(25);
+		}
+		
+		
+	}
+	
+	private class SpeedAction3 implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			
+			setCHRONO_SPEED(10);
+		}
+		
+		
+	}
+
+	
+public String toStringB() {
+		
+		String result = "Energie equipe bleu : \n \n";
+			for(int i = 0; i < team1.size(); i++) { 
+	    			result += "Joueur " + team1.get(i).getNumber() + " = " + team1.get(i).getEnergie() + "% \n";
+	    	}
+			return result;
+		}
+	
+	public String toStringR() {
+		
+		String result = "Energie equipe rouge : \n \n";
+			for(int i = 0; i < team2.size(); i++) { 
+	    			result += "Joueur " + team2.get(i).getNumber() + " = " + team2.get(i).getEnergie() + "% \n";
+	    	}
+			return result;
+		}
 
 	public static void main(String[] args) {
 		new ChronometerGUI("Simu soccer");

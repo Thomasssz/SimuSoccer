@@ -143,6 +143,20 @@ public class Dashboard extends JPanel {
 
         g.drawRect(team1.get(0).getX(), team1.get(0).getY(), 10, 10);
         g.fillRect(team1.get(0).getX(), team1.get(0).getY(), 10, 10);
+        
+        g.setColor(Color.WHITE);
+        g.drawString(Integer.toString(team1.get(0).getNumber()), team1.get(0).getX()+1 , team1.get(0).getY()+10);
+        g.drawString(Integer.toString(team1.get(1).getNumber()), team1.get(1).getX()+1 , team1.get(1).getY()+10);
+        g.drawString(Integer.toString(team1.get(2).getNumber()), team1.get(2).getX()+1 , team1.get(2).getY()+10);
+        g.drawString(Integer.toString(team1.get(3).getNumber()), team1.get(3).getX()+1 , team1.get(3).getY()+10);
+        g.drawString(Integer.toString(team1.get(4).getNumber()), team1.get(4).getX()+1 , team1.get(4).getY()+10);
+        g.drawString(Integer.toString(team1.get(5).getNumber()), team1.get(5).getX()+1 , team1.get(5).getY()+10);
+        g.drawString(Integer.toString(team1.get(6).getNumber()), team1.get(6).getX()+1 , team1.get(6).getY()+10);
+        g.drawString(Integer.toString(team1.get(7).getNumber()), team1.get(7).getX()+1 , team1.get(7).getY()+10);
+        g.drawString(Integer.toString(team1.get(8).getNumber()), team1.get(8).getX()+1 , team1.get(8).getY()+10);
+        g.drawString(Integer.toString(team1.get(9).getNumber()), team1.get(9).getX()+1 , team1.get(9).getY()+10);
+        g.drawString(Integer.toString(team1.get(10).getNumber()), team1.get(10).getX()+1 , team1.get(10).getY()+10);
+        
 
         /* Equipe rouge */
 
@@ -189,6 +203,19 @@ public class Dashboard extends JPanel {
 		
 		g.drawOval(ballon.getPositionx_Ball(), ballon.getPositiony_Ball(), 10, 10);
 		g.fillOval(ballon.getPositionx_Ball(), ballon.getPositiony_Ball(), 10, 10);
+		
+		g.setColor(Color.WHITE);
+		g.drawString(Integer.toString(team2.get(0).getNumber()), team2.get(0).getX()+1 , team2.get(0).getY()+10);
+	    g.drawString(Integer.toString(team2.get(1).getNumber()), team2.get(1).getX()+1 , team2.get(1).getY()+10);
+	    g.drawString(Integer.toString(team2.get(2).getNumber()), team2.get(2).getX()+1 , team2.get(2).getY()+10);
+	    g.drawString(Integer.toString(team2.get(3).getNumber()), team2.get(3).getX()+1 , team2.get(3).getY()+10);
+	    g.drawString(Integer.toString(team2.get(4).getNumber()), team2.get(4).getX()+1 , team2.get(4).getY()+10);
+	    g.drawString(Integer.toString(team2.get(5).getNumber()), team2.get(5).getX()+1 , team2.get(5).getY()+10);
+	    g.drawString(Integer.toString(team2.get(6).getNumber()), team2.get(6).getX()+1 , team2.get(6).getY()+10);
+	    g.drawString(Integer.toString(team2.get(7).getNumber()), team2.get(7).getX()+1 , team2.get(7).getY()+10);
+	    g.drawString(Integer.toString(team2.get(8).getNumber()), team2.get(8).getX()+1 , team2.get(8).getY()+10);
+	    g.drawString(Integer.toString(team2.get(9).getNumber()), team2.get(9).getX()+1 , team2.get(9).getY()+10);
+	    g.drawString(Integer.toString(team2.get(10).getNumber()), team2.get(10).getX()+1 , team2.get(10).getY()+10);
 	
 	}
 

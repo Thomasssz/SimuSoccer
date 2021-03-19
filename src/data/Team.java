@@ -73,6 +73,359 @@ public class Team {
 
 	private static int default_x_attaquant2_rouge = 530;
 	private static int default_y_attaquant2_rouge = 350;
+	
+	public  int getDefault_x_gardien_bleu() {
+		return default_x_gardien_bleu;
+	}
+
+	public  void setDefault_x_gardien_bleu(int default_x_gardien_bleu) {
+		Team.default_x_gardien_bleu = default_x_gardien_bleu;
+	}
+
+	public  int getDefault_y_gardien_bleu() {
+		return default_y_gardien_bleu;
+	}
+
+	public  void setDefault_y_gardien_bleu(int default_y_gardien_bleu) {
+		Team.default_y_gardien_bleu = default_y_gardien_bleu;
+	}
+
+	public  int getDefault_x_defenseur1_bleu() {
+		return default_x_defenseur1_bleu;
+	}
+
+	public  void setDefault_x_defenseur1_bleu(int default_x_defenseur1_bleu) {
+		Team.default_x_defenseur1_bleu = default_x_defenseur1_bleu;
+	}
+
+	public  int getDefault_y_defenseur1_bleu() {
+		return default_y_defenseur1_bleu;
+	}
+
+	public  void setDefault_y_defenseur1_bleu(int default_y_defenseur1_bleu) {
+		Team.default_y_defenseur1_bleu = default_y_defenseur1_bleu;
+	}
+
+	public  int getDefault_x_defenseur2_bleu() {
+		return default_x_defenseur2_bleu;
+	}
+
+	public  void setDefault_x_defenseur2_bleu(int default_x_defenseur2_bleu) {
+		Team.default_x_defenseur2_bleu = default_x_defenseur2_bleu;
+	}
+
+	public  int getDefault_y_defenseur2_bleu() {
+		return default_y_defenseur2_bleu;
+	}
+
+	public  void setDefault_y_defenseur2_bleu(int default_y_defenseur2_bleu) {
+		Team.default_y_defenseur2_bleu = default_y_defenseur2_bleu;
+	}
+
+	public  int getDefault_x_defenseur3_bleu() {
+		return default_x_defenseur3_bleu;
+	}
+
+	public  void setDefault_x_defenseur3_bleu(int default_x_defenseur3_bleu) {
+		Team.default_x_defenseur3_bleu = default_x_defenseur3_bleu;
+	}
+
+	public  int getDefault_y_defenseur3_bleu() {
+		return default_y_defenseur3_bleu;
+	}
+
+	public  void setDefault_y_defenseur3_bleu(int default_y_defenseur3_bleu) {
+		Team.default_y_defenseur3_bleu = default_y_defenseur3_bleu;
+	}
+
+	public  int getDefault_x_defenseur4_bleu() {
+		return default_x_defenseur4_bleu;
+	}
+
+	public  void setDefault_x_defenseur4_bleu(int default_x_defenseur4_bleu) {
+		Team.default_x_defenseur4_bleu = default_x_defenseur4_bleu;
+	}
+
+	public  int getDefault_y_defenseur4_bleu() {
+		return default_y_defenseur4_bleu;
+	}
+
+	public  void setDefault_y_defenseur4_bleu(int default_y_defenseur4_bleu) {
+		Team.default_y_defenseur4_bleu = default_y_defenseur4_bleu;
+	}
+
+	public  int getDefault_x_milieu1_bleu() {
+		return default_x_milieu1_bleu;
+	}
+
+	public  void setDefault_x_milieu1_bleu(int default_x_milieu1_bleu) {
+		Team.default_x_milieu1_bleu = default_x_milieu1_bleu;
+	}
+
+	public  int getDefault_y_milieu1_bleu() {
+		return default_y_milieu1_bleu;
+	}
+
+	public  void setDefault_y_milieu1_bleu(int default_y_milieu1_bleu) {
+		Team.default_y_milieu1_bleu = default_y_milieu1_bleu;
+	}
+
+	public  int getDefault_x_milieu2_bleu() {
+		return default_x_milieu2_bleu;
+	}
+
+	public  void setDefault_x_milieu2_bleu(int default_x_milieu2_bleu) {
+		Team.default_x_milieu2_bleu = default_x_milieu2_bleu;
+	}
+
+	public  int getDefault_y_milieu2_bleu() {
+		return default_y_milieu2_bleu;
+	}
+
+	public  void setDefault_y_milieu2_bleu(int default_y_milieu2_bleu) {
+		Team.default_y_milieu2_bleu = default_y_milieu2_bleu;
+	}
+
+	public  int getDefault_x_milieu3_bleu() {
+		return default_x_milieu3_bleu;
+	}
+
+	public  void setDefault_x_milieu3_bleu(int default_x_milieu3_bleu) {
+		Team.default_x_milieu3_bleu = default_x_milieu3_bleu;
+	}
+
+	public  int getDefault_y_milieu3_bleu() {
+		return default_y_milieu3_bleu;
+	}
+
+	public  void setDefault_y_milieu3_bleu(int default_y_milieu3_bleu) {
+		Team.default_y_milieu3_bleu = default_y_milieu3_bleu;
+	}
+
+	public  int getDefault_x_milieu4_bleu() {
+		return default_x_milieu4_bleu;
+	}
+
+	public  void setDefault_x_milieu4_bleu(int default_x_milieu4_bleu) {
+		Team.default_x_milieu4_bleu = default_x_milieu4_bleu;
+	}
+
+	public  int getDefault_y_milieu4_bleu() {
+		return default_y_milieu4_bleu;
+	}
+
+	public  void setDefault_y_milieu4_bleu(int default_y_milieu4_bleu) {
+		Team.default_y_milieu4_bleu = default_y_milieu4_bleu;
+	}
+
+	public  int getDefault_x_attaquant1_bleu() {
+		return default_x_attaquant1_bleu;
+	}
+
+	public  void setDefault_x_attaquant1_bleu(int default_x_attaquant1_bleu) {
+		Team.default_x_attaquant1_bleu = default_x_attaquant1_bleu;
+	}
+
+	public  int getDefault_y_attaquant1_bleu() {
+		return default_y_attaquant1_bleu;
+	}
+
+	public  void setDefault_y_attaquant1_bleu(int default_y_attaquant1_bleu) {
+		Team.default_y_attaquant1_bleu = default_y_attaquant1_bleu;
+	}
+
+	public  int getDefault_x_attaquant2_bleu() {
+		return default_x_attaquant2_bleu;
+	}
+
+	public  void setDefault_x_attaquant2_bleu(int default_x_attaquant2_bleu) {
+		Team.default_x_attaquant2_bleu = default_x_attaquant2_bleu;
+	}
+
+	public  int getDefault_y_attaquant2_bleu() {
+		return default_y_attaquant2_bleu;
+	}
+
+	public  void setDefault_y_attaquant2_bleu(int default_y_attaquant2_bleu) {
+		Team.default_y_attaquant2_bleu = default_y_attaquant2_bleu;
+	}
+
+	public  int getDefault_x_gardien_rouge() {
+		return default_x_gardien_rouge;
+	}
+
+	public  void setDefault_x_gardien_rouge(int default_x_gardien_rouge) {
+		Team.default_x_gardien_rouge = default_x_gardien_rouge;
+	}
+
+	public  int getDefault_y_gardien_rouge() {
+		return default_y_gardien_rouge;
+	}
+
+	public  void setDefault_y_gardien_rouge(int default_y_gardien_rouge) {
+		Team.default_y_gardien_rouge = default_y_gardien_rouge;
+	}
+
+	public  int getDefault_x_defenseur1_rouge() {
+		return default_x_defenseur1_rouge;
+	}
+
+	public  void setDefault_x_defenseur1_rouge(int default_x_defenseur1_rouge) {
+		Team.default_x_defenseur1_rouge = default_x_defenseur1_rouge;
+	}
+
+	public  int getDefault_y_defenseur1_rouge() {
+		return default_y_defenseur1_rouge;
+	}
+
+	public  void setDefault_y_defenseur1_rouge(int default_y_defenseur1_rouge) {
+		Team.default_y_defenseur1_rouge = default_y_defenseur1_rouge;
+	}
+
+	public  int getDefault_x_defenseur2_rouge() {
+		return default_x_defenseur2_rouge;
+	}
+
+	public  void setDefault_x_defenseur2_rouge(int default_x_defenseur2_rouge) {
+		Team.default_x_defenseur2_rouge = default_x_defenseur2_rouge;
+	}
+
+	public  int getDefault_y_defenseur2_rouge() {
+		return default_y_defenseur2_rouge;
+	}
+
+	public  void setDefault_y_defenseur2_rouge(int default_y_defenseur2_rouge) {
+		Team.default_y_defenseur2_rouge = default_y_defenseur2_rouge;
+	}
+
+	public  int getDefault_x_defenseur3_rouge() {
+		return default_x_defenseur3_rouge;
+	}
+
+	public  void setDefault_x_defenseur3_rouge(int default_x_defenseur3_rouge) {
+		Team.default_x_defenseur3_rouge = default_x_defenseur3_rouge;
+	}
+
+	public  int getDefault_y_defenseur3_rouge() {
+		return default_y_defenseur3_rouge;
+	}
+
+	public  void setDefault_y_defenseur3_rouge(int default_y_defenseur3_rouge) {
+		Team.default_y_defenseur3_rouge = default_y_defenseur3_rouge;
+	}
+
+	public  int getDefault_x_defenseur4_rouge() {
+		return default_x_defenseur4_rouge;
+	}
+
+	public  void setDefault_x_defenseur4_rouge(int default_x_defenseur4_rouge) {
+		Team.default_x_defenseur4_rouge = default_x_defenseur4_rouge;
+	}
+
+	public  int getDefault_y_defenseur4_rouge() {
+		return default_y_defenseur4_rouge;
+	}
+
+	public  void setDefault_y_defenseur4_rouge(int default_y_defenseur4_rouge) {
+		Team.default_y_defenseur4_rouge = default_y_defenseur4_rouge;
+	}
+
+	public  int getDefault_x_milieu1_rouge() {
+		return default_x_milieu1_rouge;
+	}
+
+	public  void setDefault_x_milieu1_rouge(int default_x_milieu1_rouge) {
+		Team.default_x_milieu1_rouge = default_x_milieu1_rouge;
+	}
+
+	public  int getDefault_y_milieu1_rouge() {
+		return default_y_milieu1_rouge;
+	}
+
+	public  void setDefault_y_milieu1_rouge(int default_y_milieu1_rouge) {
+		Team.default_y_milieu1_rouge = default_y_milieu1_rouge;
+	}
+
+	public  int getDefault_x_milieu2_rouge() {
+		return default_x_milieu2_rouge;
+	}
+
+	public  void setDefault_x_milieu2_rouge(int default_x_milieu2_rouge) {
+		Team.default_x_milieu2_rouge = default_x_milieu2_rouge;
+	}
+
+	public  int getDefault_y_milieu2_rouge() {
+		return default_y_milieu2_rouge;
+	}
+
+	public  void setDefault_y_milieu2_rouge(int default_y_milieu2_rouge) {
+		Team.default_y_milieu2_rouge = default_y_milieu2_rouge;
+	}
+
+	public  int getDefault_x_milieu3_rouge() {
+		return default_x_milieu3_rouge;
+	}
+
+	public  void setDefault_x_milieu3_rouge(int default_x_milieu3_rouge) {
+		Team.default_x_milieu3_rouge = default_x_milieu3_rouge;
+	}
+
+	public  int getDefault_y_milieu3_rouge() {
+		return default_y_milieu3_rouge;
+	}
+
+	public  void setDefault_y_milieu3_rouge(int default_y_milieu3_rouge) {
+		Team.default_y_milieu3_rouge = default_y_milieu3_rouge;
+	}
+
+	public  int getDefault_x_milieu4_rouge() {
+		return default_x_milieu4_rouge;
+	}
+
+	public  void setDefault_x_milieu4_rouge(int default_x_milieu4_rouge) {
+		Team.default_x_milieu4_rouge = default_x_milieu4_rouge;
+	}
+
+	public  int getDefault_y_milieu4_rouge() {
+		return default_y_milieu4_rouge;
+	}
+
+	public  void setDefault_y_milieu4_rouge(int default_y_milieu4_rouge) {
+		Team.default_y_milieu4_rouge = default_y_milieu4_rouge;
+	}
+
+	public  int getDefault_x_attaquant1_rouge() {
+		return default_x_attaquant1_rouge;
+	}
+
+	public  void setDefault_x_attaquant1_rouge(int default_x_attaquant1_rouge) {
+		Team.default_x_attaquant1_rouge = default_x_attaquant1_rouge;
+	}
+
+	public  int getDefault_y_attaquant1_rouge() {
+		return default_y_attaquant1_rouge;
+	}
+
+	public  void setDefault_y_attaquant1_rouge(int default_y_attaquant1_rouge) {
+		Team.default_y_attaquant1_rouge = default_y_attaquant1_rouge;
+	}
+
+	public  int getDefault_x_attaquant2_rouge() {
+		return default_x_attaquant2_rouge;
+	}
+
+	public  void setDefault_x_attaquant2_rouge(int default_x_attaquant2_rouge) {
+		Team.default_x_attaquant2_rouge = default_x_attaquant2_rouge;
+	}
+
+	public  int getDefault_y_attaquant2_rouge() {
+		return default_y_attaquant2_rouge;
+	}
+
+	public  void setDefault_y_attaquant2_rouge(int default_y_attaquant2_rouge) {
+		Team.default_y_attaquant2_rouge = default_y_attaquant2_rouge;
+	}
+
 
 	private static Player.position GOAL = Enum.valueOf(Player.position.class, "GOALKEEPER");
 	private static Player.position DEF = Enum.valueOf(Player.position.class, "DEFENSE");
@@ -122,30 +475,30 @@ public class Team {
 
 		if (equipe.getColor().equals("blue")) {
 
-			Player p1 = new Player("1", 20, 30, 40, 80, 90, 1, GOAL, default_x_gardien_bleu, default_y_gardien_bleu,
+			Player p1 = new Player("1", 20, 30, 40, 80, 90, 100, 70, 1, GOAL, default_x_gardien_bleu, default_y_gardien_bleu,
 					false);
-			Player p2 = new Player("2", 30, 50, 40, 70, 60, 2, DEF, default_x_defenseur1_bleu,
+			Player p2 = new Player("2", 30, 50, 40, 70, 60, 100, 50, 2, DEF, default_x_defenseur1_bleu,
 					default_y_defenseur1_bleu, false);
-			Player p3 = new Player("3", 20, 40, 40, 70, 60, 3, DEF, default_x_defenseur2_bleu,
+			Player p3 = new Player("3", 20, 40, 40, 70, 60, 100, 60, 3, DEF, default_x_defenseur2_bleu,
 					default_y_defenseur2_bleu, false);
-			Player p4 = new Player("4", 30, 30, 40, 70, 70, 4, DEF, default_x_defenseur3_bleu,
+			Player p4 = new Player("4", 30, 30, 40, 70, 70, 100, 40, 4, DEF, default_x_defenseur3_bleu,
 					default_y_defenseur3_bleu, false);
-			Player p5 = new Player("5", 30, 40, 40, 70, 60, 5, DEF, default_x_defenseur4_bleu,
+			Player p5 = new Player("5", 30, 40, 40, 70, 60, 100, 80, 5, DEF, default_x_defenseur4_bleu,
 					default_y_defenseur4_bleu, false);
 
-			Player p6 = new Player("6", 60, 40, 60, 20, 70, 7, MID, default_x_milieu1_bleu, default_y_milieu1_bleu,
+			Player p6 = new Player("6", 60, 40, 60, 20, 70, 100, 70, 7, MID, default_x_milieu1_bleu, default_y_milieu1_bleu,
 					false);
-			Player p7 = new Player("7", 60, 50, 70, 30, 60, 8, MID, default_x_milieu2_bleu, default_y_milieu2_bleu,
+			Player p7 = new Player("7", 60, 50, 70, 30, 60, 100, 90, 8, MID, default_x_milieu2_bleu, default_y_milieu2_bleu,
 					false);
-			Player p8 = new Player("8", 50, 30, 50, 40, 80, 9, MID, default_x_milieu3_bleu, default_y_milieu3_bleu,
+			Player p8 = new Player("8", 50, 30, 50, 40, 80, 100, 40, 9, MID, default_x_milieu3_bleu, default_y_milieu3_bleu,
 					false);
-			Player p9 = new Player("9", 60, 40, 60, 20, 70, 7, MID, default_x_milieu4_bleu, default_y_milieu4_bleu,
+			Player p9 = new Player("9", 60, 40, 60, 20, 70, 100, 50, 7, MID, default_x_milieu4_bleu, default_y_milieu4_bleu,
 					false);
 
-			Player p10 = new Player("10", 80, 80, 50, 40, 100, 10, ATT, default_x_attaquant1_bleu,
+			Player p10 = new Player("10", 80, 80, 50, 40, 80, 100, 60, 10, ATT, default_x_attaquant1_bleu,
 					default_y_attaquant1_bleu, false);
-			Player p11 = new Player("11", 100, 90, 100, 50, 100, 11, ATT, default_x_attaquant2_bleu,
-					default_y_attaquant2_bleu, false);
+			Player p11 = new Player("11", 100, 90, 100, 50, 100, 100, 70, 11, ATT, default_x_attaquant2_bleu,
+					default_y_attaquant2_bleu, true);
 
 			players.add(p1);
 
@@ -164,30 +517,30 @@ public class Team {
 
 		} else if (equipe.getColor().equals("red")) {
 			
-			Player p12 = new Player("12", 50, 60, 30, 90, 90, 1, GOAL, default_x_gardien_rouge,
+			Player p12 = new Player("12", 50, 60, 30, 90, 90, 100, 70, 12, GOAL, default_x_gardien_rouge,
 					default_y_gardien_rouge, false);
 
-			Player p13 = new Player("13", 40, 50, 30, 40, 60, 2, DEF, default_x_defenseur1_rouge,
+			Player p13 = new Player("13", 40, 50, 30, 40, 60, 100, 60, 13, DEF, default_x_defenseur1_rouge,
 					default_y_defenseur1_rouge, false);
-			Player p14 = new Player("14", 30, 45, 40, 30, 65, 3, DEF, default_x_defenseur2_rouge,
+			Player p14 = new Player("14", 30, 45, 40, 30, 65, 100, 50, 14, DEF, default_x_defenseur2_rouge,
 					default_y_defenseur2_rouge, false);
-			Player p15 = new Player("15", 35, 40, 50, 45, 70, 4, DEF, default_x_defenseur3_rouge,
+			Player p15 = new Player("15", 35, 40, 50, 45, 70, 100, 40, 15, DEF, default_x_defenseur3_rouge,
 					default_y_defenseur3_rouge, false);
-			Player p16 = new Player("16", 45, 40, 45, 35, 70, 5, DEF, default_x_defenseur4_rouge,
+			Player p16 = new Player("16", 45, 40, 45, 35, 70, 100, 80, 16, DEF, default_x_defenseur4_rouge,
 					default_y_defenseur4_rouge, false);
 
-			Player p17 = new Player("17", 60, 30, 60, 80, 0, 6, MID, default_x_milieu1_rouge, default_y_milieu1_rouge,
+			Player p17 = new Player("17", 60, 30, 60, 80, 0, 100, 90, 17, MID, default_x_milieu1_rouge, default_y_milieu1_rouge,
 					false);
-			Player p18 = new Player("18", 65, 40, 50, 85, 0, 7, MID, default_x_milieu2_rouge, default_y_milieu2_rouge,
+			Player p18 = new Player("18", 65, 40, 50, 85, 0, 100, 60, 18, MID, default_x_milieu2_rouge, default_y_milieu2_rouge,
 					false);
-			Player p19 = new Player("19", 70, 45, 65, 90, 0, 8, MID, default_x_milieu3_rouge, default_y_milieu3_rouge,
+			Player p19 = new Player("19", 70, 45, 65, 90, 0, 100, 70, 19, MID, default_x_milieu3_rouge, default_y_milieu3_rouge,
 					false);
-			Player p20 = new Player("20", 75, 50, 55, 70, 0, 9, MID, default_x_milieu4_rouge, default_y_milieu4_rouge,
+			Player p20 = new Player("20", 75, 50, 55, 70, 0, 100, 50, 20, MID, default_x_milieu4_rouge, default_y_milieu4_rouge,
 					false);
 
-			Player p21 = new Player("21", 90, 85, 85, 55, 100, 10, ATT, default_x_attaquant1_rouge,
+			Player p21 = new Player("21", 90, 85, 85, 55, 90, 100, 40, 21, ATT, default_x_attaquant1_rouge,
 					default_y_attaquant1_rouge, false);
-			Player p22 = new Player("22", 95, 90, 80, 50, 100, 11, ATT, default_x_attaquant2_rouge,
+			Player p22 = new Player("22", 95, 90, 80, 50, 100, 100, 80, 22, ATT, default_x_attaquant2_rouge,
 					default_y_attaquant2_rouge, false);
 
 			players.add(p12);

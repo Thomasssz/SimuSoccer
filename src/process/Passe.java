@@ -11,8 +11,8 @@ public class Passe {
 
 	private static Player.position DEF = Enum.valueOf(Player.position.class, "DEFENSE");
 
-	private Player passeur = new Player("2", 30, 50, 40, 70, 60, 2, DEF, 200, 100, false);
-	private Player receveur = new Player("3", 20, 40, 40, 70, 60, 3, DEF, 200, 265, false);
+	private Player passeur = new Player("2", 30, 50, 40, 70, 60, 100, 50, 2, DEF, 200, 100, false);
+	private Player receveur = new Player("3", 20, 40, 40, 70, 60, 100, 60, 3, DEF, 200, 265, false);
 
 	public Passe() {
 		super();

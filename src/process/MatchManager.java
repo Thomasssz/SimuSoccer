@@ -9,6 +9,7 @@ import data.Player;
 import delimitations.Corner;
 import delimitations.Sortie;
 import delimitations.Touche;
+import gui.ChronometerGUI;
 import gui.Dashboard;
 
 public class MatchManager {
@@ -46,9 +47,15 @@ public class MatchManager {
 	private int proba = 200;
 
 	private Match match = new Match();
+	private ChronometerGUI chronometergui;
 	private LinkedList<Integer> pass_list = null ;
+	
+	public MatchManager(ChronometerGUI chronometergui) {
+		this.chronometergui=chronometergui;
+	}
 
-	public void matchProcess(Dashboard dash) {
+
+	public void matchProcess(Dashboard dash, ChronometerGUI chronometergui) {
 		
 		begin = dash.isBegin();
 		
@@ -98,11 +105,14 @@ public class MatchManager {
 		//doBlueShoot(dash);
 		//doRedShoot(dash);
 		
+		doMiTemps(dash,chronometergui);
+		
 		//doMove(dash);
 		//doPass(dash, passeur, receveur);
 		
-		pass_list = doPassList();
-		parcoursPassList(dash,pass_list) ;
+		//		pass_list = doPassList();
+		//	parcoursPassList(dash,pass_list) ;
+
 
 	}
 
@@ -156,6 +166,14 @@ public class MatchManager {
 		}
 
 	}
+	
+	public void doMiTemps(Dashboard dash,ChronometerGUI chronometergui) {
+	 	//mi_temps = dash.isMi_temps();
+		MiTemps middle=new MiTemps();
+		middle.middletime(chronometergui,dash);
+	
+	}
+
 	
 	public LinkedList<Integer> doPassList () {
 		
