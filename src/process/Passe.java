@@ -10,9 +10,10 @@ public class Passe {
 	private int index_of_ball_player;
 
 	private static Player.position DEF = Enum.valueOf(Player.position.class, "DEFENSE");
+	private static Player.temps SO = Enum.valueOf(Player.temps.class, "SOLEIL");
 
-	private Player passeur = new Player("2", 30, 50, 40, 70, 60, 100, 50, 2, DEF, 200, 100, false);
-	private Player receveur = new Player("3", 20, 40, 40, 70, 60, 100, 60, 3, DEF, 200, 265, false);
+	private Player passeur = new Player("2", 30, 50, 40, 70, 60, 100, 50, 2, DEF, 200, 100, false,SO);
+	private Player receveur = new Player("3", 20, 40, 40, 70, 60, 100, 60, 3, DEF, 200, 265, false,SO);
 
 	public Passe() {
 		super();
