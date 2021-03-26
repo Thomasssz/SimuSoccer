@@ -47,6 +47,14 @@ public class Player {
 		this.player_temps=player_temps;
 	}
 
+	public temps getPlayer_temps() {
+		return player_temps;
+	}
+
+	public void setPlayer_temps(temps player_temps) {
+		this.player_temps = player_temps;
+	}
+
 	public boolean isBall() {
 		return ball;
 	}
