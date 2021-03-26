@@ -242,7 +242,6 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		// change.
 
 		matchprocess.matchProcess(dashboard,this);
-
 		dashboard.repaint();
 	}
 

@@ -52,34 +52,42 @@ public class MatchManager {
 
 	private Match match = new Match();
 	private ChronometerGUI chronometergui;
+	
+	private static Player.temps PL=Enum.valueOf(Player.temps.class, "PLUIE");
+	private static Player.temps NE=Enum.valueOf(Player.temps.class, "NEIGE");
+	private static Player.temps SO=Enum.valueOf(Player.temps.class, "SOLEIL");
 
 	public MatchManager(ChronometerGUI chronometergui) {
 		this.chronometergui = chronometergui;
 	}
 
 	public void matchProcess(Dashboard dash, ChronometerGUI chronometergui) {
-
+		
+		
 		begin = dash.isBegin();
+		players1 = dash.getTeam1();
+		players2 = dash.getTeam2();
+		
 
 		if (begin == false) {
-
+			Temps(players1, players2);
 			match = dash.getMatch();
 
 			match.engagement(dash);
 
 			dash.setBegin(true);
+			
 
 		}
 
-		players1 = dash.getTeam1();
-		players2 = dash.getTeam2();
-
+		
+		
+		
 		ball_team = TeamBall(players1, players2);
 
 		int index_player_ball = PlayerBall(ball_team);
 
 		player_ball = ball_team.get(index_player_ball);
-
 		if (ball_team.equals(players1)) {
 			
 			if (blueShotSituation(player_ball) == true) {
@@ -116,8 +124,7 @@ public class MatchManager {
 
 		// doMove(dash);
 		// doPass(dash, passeur, receveur);
-
-	}
+			}
 
 	public void doMove(Dashboard dash) {
 
@@ -539,5 +546,167 @@ public class MatchManager {
 			return false;
 		}
 	}
+	
+	public void Temps (ArrayList<Player> players1, ArrayList<Player> players2) {
+		
+		Random prob = new Random();
+		proba = prob.nextInt(2);
+	
+		boolean stop=false;
+		int i=0;
+		
+		if (proba==0) {
+			System.out.println("Soleil");
+		while (i < players1.size() && (stop == false)) {
 
-}
+			if (players1.get(i).getPlayer_temps() == SO) {
+				players1.get(i).setDefense(players1.get(i).getDefense()+5);
+				players1.get(i).setEndurance(players1.get(i).getEndurance()+5);
+				players1.get(i).setDribbles(players1.get(i).getDribbles()+5);
+				players1.get(i).setShoot(players1.get(i).getShoot()+5);
+				players1.get(i).setSpeed(players1.get(i).getSpeed()+5);
+				players1.get(i).setPass(players1.get(i).getPass()+5);
+
+			}
+			else {
+				players1.get(i).setDefense(players1.get(i).getDefense()-5);
+				players1.get(i).setEndurance(players1.get(i).getEndurance()-5);
+				players1.get(i).setDribbles(players1.get(i).getDribbles()-5);
+				players1.get(i).setShoot(players1.get(i).getShoot()-5);
+				players1.get(i).setSpeed(players1.get(i).getSpeed()-5);
+				players1.get(i).setPass(players1.get(i).getPass()-5);
+
+			}
+			stop=true;
+		}
+		stop=false;
+		while (i < players2.size() && (stop == false)) {
+
+			if (players2.get(i).getPlayer_temps() == SO) {
+				players2.get(i).setDefense(players2.get(i).getDefense()+5);
+				players2.get(i).setEndurance(players2.get(i).getEndurance()+5);
+				players2.get(i).setDribbles(players2.get(i).getDribbles()+5);
+				players2.get(i).setShoot(players2.get(i).getShoot()+5);
+				players2.get(i).setSpeed(players2.get(i).getSpeed()+5);
+				players2.get(i).setPass(players2.get(i).getPass()+5);
+
+			}
+			else {
+				players2.get(i).setDefense(players2.get(i).getDefense()-5);
+				players2.get(i).setEndurance(players2.get(i).getEndurance()-5);
+				players2.get(i).setDribbles(players2.get(i).getDribbles()-5);
+				players2.get(i).setShoot(players2.get(i).getShoot()-5);
+				players2.get(i).setSpeed(players2.get(i).getSpeed()-5);
+				players2.get(i).setPass(players2.get(i).getPass()-5);
+
+			}
+			stop=true;
+		}
+	}
+		else if (proba==1) {
+			System.out.println("Neige");
+			while (i < players1.size() && (stop == false)) {
+				
+				if (players1.get(i).getPlayer_temps() == NE) {
+					players1.get(i).setDefense(players1.get(i).getDefense()+5);
+					players1.get(i).setEndurance(players1.get(i).getEndurance()+5);
+					players1.get(i).setDribbles(players1.get(i).getDribbles()+5);
+					players1.get(i).setShoot(players1.get(i).getShoot()+5);
+					players1.get(i).setSpeed(players1.get(i).getSpeed()+5);
+					players1.get(i).setPass(players1.get(i).getPass()+5);
+
+				}
+				else {
+					players1.get(i).setDefense(players1.get(i).getDefense()-5);
+					players1.get(i).setEndurance(players1.get(i).getEndurance()-5);
+					players1.get(i).setDribbles(players1.get(i).getDribbles()-5);
+					players1.get(i).setShoot(players1.get(i).getShoot()-5);
+					players1.get(i).setSpeed(players1.get(i).getSpeed()-5);
+					players1.get(i).setPass(players1.get(i).getPass()-5);
+
+				}
+				stop=true;
+			}
+			stop=false;
+			while (i < players2.size() && (stop == false)) {
+
+				if (players2.get(i).getPlayer_temps() == NE) {
+					players2.get(i).setDefense(players2.get(i).getDefense()+5);
+					players2.get(i).setEndurance(players2.get(i).getEndurance()+5);
+					players2.get(i).setDribbles(players2.get(i).getDribbles()+5);
+					players2.get(i).setShoot(players2.get(i).getShoot()+5);
+					players2.get(i).setSpeed(players2.get(i).getSpeed()+5);
+					players2.get(i).setPass(players2.get(i).getPass()+5);
+
+				}
+				else {
+					players2.get(i).setDefense(players2.get(i).getDefense()-5);
+					players2.get(i).setEndurance(players2.get(i).getEndurance()-5);
+					players2.get(i).setDribbles(players2.get(i).getDribbles()-5);
+					players2.get(i).setShoot(players2.get(i).getShoot()-5);
+					players2.get(i).setSpeed(players2.get(i).getSpeed()-5);
+					players2.get(i).setPass(players2.get(i).getPass()-5);
+
+				}
+			}
+			stop=true;
+		}
+		
+		else if (proba==2) {
+			System.out.println("Pluie");
+			while (i < players1.size() && (stop == false)) {
+
+				if (players1.get(i).getPlayer_temps() == PL) {
+					players1.get(i).setDefense(players1.get(i).getDefense()+5);
+					players1.get(i).setEndurance(players1.get(i).getEndurance()+5);
+					players1.get(i).setDribbles(players1.get(i).getDribbles()+5);
+					players1.get(i).setShoot(players1.get(i).getShoot()+5);
+					players1.get(i).setSpeed(players1.get(i).getSpeed()+5);
+					players1.get(i).setPass(players1.get(i).getPass()+5);
+
+				}
+				else {
+					players1.get(i).setDefense(players1.get(i).getDefense()-5);
+					players1.get(i).setEndurance(players1.get(i).getEndurance()-5);
+					players1.get(i).setDribbles(players1.get(i).getDribbles()-5);
+					players1.get(i).setShoot(players1.get(i).getShoot()-5);
+					players1.get(i).setSpeed(players1.get(i).getSpeed()-5);
+					players1.get(i).setPass(players1.get(i).getPass()-5);
+
+				}
+				stop=true;
+			}
+			stop=false;
+			while (i < players2.size() && (stop == false)) {
+
+				if (players2.get(i).getPlayer_temps() == PL) {
+					players2.get(i).setDefense(players2.get(i).getDefense()+5);
+					players2.get(i).setEndurance(players2.get(i).getEndurance()+5);
+					players2.get(i).setDribbles(players2.get(i).getDribbles()+5);
+					players2.get(i).setShoot(players2.get(i).getShoot()+5);
+					players2.get(i).setSpeed(players2.get(i).getSpeed()+5);
+					players2.get(i).setPass(players2.get(i).getPass()+5);
+
+				}
+				else {
+					players2.get(i).setDefense(players2.get(i).getDefense()-5);
+					players2.get(i).setEndurance(players2.get(i).getEndurance()-5);
+					players2.get(i).setDribbles(players2.get(i).getDribbles()-5);
+					players2.get(i).setShoot(players2.get(i).getShoot()-5);
+					players2.get(i).setSpeed(players2.get(i).getSpeed()-5);
+					players2.get(i).setPass(players2.get(i).getPass()-5);
+
+				}
+				stop=true;
+			}
+		}
+	}
+	
+	
+	
+	
+	}
+
+
+	
+	
