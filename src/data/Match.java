@@ -236,7 +236,8 @@ public class Match {
 		dash.getBallon().setBallPositionxWithBluePlayer(dash.getTeam1().get(10));
 		
 		dash.setGoal(false);
-		dash.setShoot(false);
+		dash.setStop_action(false);
+		dash.setStop_action_shoot(false);
 	}
 
 	public void redEngagement(Dashboard dash, Player player_ball) {
@@ -303,6 +304,7 @@ public class Match {
 		dash.getBallon().setBallPositionxWithRedPlayer(dash.getTeam2().get(10));
 
 		dash.setGoal(false);
-		dash.setShoot(false);
+		dash.setStop_action(false);
+		dash.setStop_action_shoot(false);
 	}
 }

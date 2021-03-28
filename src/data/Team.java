@@ -489,13 +489,13 @@ public class Team {
 			Player p5 = new Player("5", 30, 40, 40, 70, 60, 100, 80, 5, DEF, default_x_defenseur4_bleu,
 					default_y_defenseur4_bleu, false,SO);
 
-			Player p6 = new Player("6", 60, 40, 60, 20, 70, 100, 70, 7, MID, default_x_milieu1_bleu, default_y_milieu1_bleu,
+			Player p6 = new Player("6", 60, 40, 60, 20, 70, 100, 70, 6, MID, default_x_milieu1_bleu, default_y_milieu1_bleu,
 					false,SO);
-			Player p7 = new Player("7", 60, 50, 70, 30, 60, 100, 90, 8, MID, default_x_milieu2_bleu, default_y_milieu2_bleu,
+			Player p7 = new Player("7", 60, 50, 70, 30, 60, 100, 90, 7, MID, default_x_milieu2_bleu, default_y_milieu2_bleu,
 					false,SO);
-			Player p8 = new Player("8", 50, 30, 50, 40, 80, 100, 40, 9, MID, default_x_milieu3_bleu, default_y_milieu3_bleu,
+			Player p8 = new Player("8", 50, 30, 50, 40, 80, 100, 40, 8, MID, default_x_milieu3_bleu, default_y_milieu3_bleu,
 					false,SO);
-			Player p9 = new Player("9", 60, 40, 60, 20, 70, 100, 50, 7, MID, default_x_milieu4_bleu, default_y_milieu4_bleu,
+			Player p9 = new Player("9", 60, 40, 60, 20, 70, 100, 50, 9, MID, default_x_milieu4_bleu, default_y_milieu4_bleu,
 					false,NE);
 
 			Player p10 = new Player("10", 80, 80, 50, 40, 80, 100, 60, 10, ATT, default_x_attaquant1_bleu,

@@ -105,6 +105,8 @@ public class Passe {
 	}
 
 	public void pass(Dashboard dash,Player passeur,Player receveur) {
+		
+		System.out.println("on rentre dans passe");
 
 		int res_x = (dash.getBallon().getPositionx_Ball()) - receveur.getX();
 		int res_y = (dash.getBallon().getPositiony_Ball()) - receveur.getY();
@@ -114,6 +116,8 @@ public class Passe {
 
 		if ((result_x < 6) && (result_y < 6)) {
 			
+			System.out.println("passe fini");
+			
 			dash.setStop_action(true);
 			
 			passeur.setBall(false);
@@ -121,6 +125,8 @@ public class Passe {
 		}
 
 		if (dash.isStop_action() == false) {
+			
+			System.out.println("passe en cours");
 
 			if (dash.getBallon().getPositionx_Ball() > receveur.getX()) {
 

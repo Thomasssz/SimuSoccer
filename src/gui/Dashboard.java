@@ -38,6 +38,9 @@ public class Dashboard extends JPanel {
 	private Match match ;
 	
 	private boolean stop_action = false ;
+	private boolean stop_action_shoot = false ;
+	private boolean stop_action_touche = false ;
+	
 	private boolean goal = false ;
 	private boolean begin = false;
 	private boolean corner = false;
@@ -92,13 +95,6 @@ public class Dashboard extends JPanel {
 		g.drawLine(Surface.getSurfacedroiteBasDroiteX(), Surface.getSurfacedroiteBasDroiteY(), Surface.getSurfacedroiteHautDroiteX(), Surface.getSurfacedroiteHautDroiteY());
 		g.drawLine(Surface.getSurfacedroiteBasGaucheX(), Surface.getSurfacedroiteBasGaucheY(), Surface.getSurfacedroiteBasDroiteX(), Surface.getSurfacedroiteBasDroiteY());
 		
-		g.setColor(Color.ORANGE);
-		
-		g.drawLine(Sortie.getSortieHautGaucheX()+250, Sortie.getSortieHautGaucheY()+2, Sortie.getSortieHautGaucheX()+450, Sortie.getSortieHautDroiteY()+2);
-		g.drawLine(Sortie.getSortieHautGaucheX()+250, Sortie.getSortieHautGaucheY()+2, Sortie.getSortieHautGaucheX()+250, Sortie.getSortieHautDroiteY()+100);
-		g.drawLine(Sortie.getSortieHautGaucheX()+250, Sortie.getSortieHautGaucheY()+100, Sortie.getSortieHautGaucheX()+450, Sortie.getSortieHautDroiteY()+100);
-		g.drawLine(Sortie.getSortieHautGaucheX()+450, Sortie.getSortieHautGaucheY()+2, Sortie.getSortieHautGaucheX()+450, Sortie.getSortieHautDroiteY()+100);
-
 		g.setColor(Color.BLACK);
 		
 		g.drawLine(Goal.getGoalHautGaucheX(), Goal.getGoalHautGaucheY(), Goal.getGoalBasGaucheX(), Goal.getGoalBasGaucheY());
@@ -286,6 +282,24 @@ public class Dashboard extends JPanel {
 	public void setStop_action(boolean stop_action) {
 		this.stop_action = stop_action;
 	}
+	
+	public boolean isStop_action_shoot() {
+		return stop_action_shoot;
+	}
+
+
+	public void setStop_action_shoot(boolean stop_action_shoot) {
+		this.stop_action_shoot = stop_action_shoot;
+	}
+
+	public boolean isStop_action_touche() {
+		return stop_action_touche;
+	}
+
+
+	public void setStop_action_touche(boolean stop_action_touche) {
+		this.stop_action_touche = stop_action_touche;
+	}
 
 
 	public boolean isGoal() {
@@ -348,4 +362,3 @@ public class Dashboard extends JPanel {
 	}
 	
 }
-

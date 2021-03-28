@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -185,7 +186,12 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		rdbtns3.setFont(font);
 		rdbtns3.addActionListener(new SpeedAction3());
 		control.add(rdbtns3);
-
+		
+		ButtonGroup groupe1 = new ButtonGroup();
+        groupe1.add(rdbtns0);
+        groupe1.add(rdbtns1);
+        groupe1.add(rdbtns2);
+        groupe1.add(rdbtns3);
 		
 		dashboard.setPreferredSize(IDEAL_DASHBOARD_DIMENSION);
 		contentPane.add(BorderLayout.WEST, dashboard);

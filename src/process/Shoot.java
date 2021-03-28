@@ -20,7 +20,10 @@ public class Shoot {
 		int result_y = Math.abs(res_y);
 
 		if ((result_x < 6) && (result_y < 6)) {
+			
 			dash.setStop_action(true);
+			dash.setStop_action_shoot(true);
+			dash.setShoot(false);
 			dash.getTeam1().get(index_tireur).setBall(false);
 			
 			if (goal == true) {
@@ -30,7 +33,7 @@ public class Shoot {
 			}
 		}
 
-		if (dash.isStop_action() == false) {
+		if (dash.isStop_action_shoot() == false) {
 
 			if (dash.getBallon().getPositionx_Ball() > aim_x) {
 
@@ -67,6 +70,11 @@ public class Shoot {
 	}
 
 	public void ShootRed(Dashboard dash, int index_tireur, int aim_x, int aim_y, boolean goal) {
+		
+		System.out.println("on rentre dans le tir");
+		
+		System.out.println("aim_x = " + aim_x );
+		System.out.println("aim_y = " + aim_y );
 
 		int res_x = (dash.getBallon().getPositionx_Ball()) - aim_x;
 		int res_y = (dash.getBallon().getPositiony_Ball()) - aim_y;
@@ -75,7 +83,10 @@ public class Shoot {
 		int result_y = Math.abs(res_y);
 
 		if ((result_x < 6) && (result_y < 6)) {
+			
 			dash.setStop_action(true);
+			dash.setStop_action_shoot(true);
+			dash.setShoot(false);
 			dash.getTeam2().get(index_tireur).setBall(false);
 			
 			if (goal == true) {
@@ -85,7 +96,9 @@ public class Shoot {
 			}
 		}
 
-		if (dash.isStop_action() == false) {
+		if (dash.isStop_action_shoot() == false) {
+			
+			System.out.println("on vise");
 
 			if (dash.getBallon().getPositionx_Ball() > aim_x) {
 
