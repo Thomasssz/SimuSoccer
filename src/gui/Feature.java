@@ -12,9 +12,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 import data.Player;
 import data.Team;
+import ihm.components.SportButton;
+import ihm.components.SportLabel;
 
 public class Feature extends JFrame {
 	
@@ -22,58 +25,61 @@ public class Feature extends JFrame {
 	private static ArrayList<Player> players2 = new ArrayList<Player>();
 
 	GridLayout grid = new GridLayout(3, 4);
-
-	private JButton j1 = new JButton("joueur 1");
-	private JButton j2 = new JButton("joueur 2");
-	private JButton j3 = new JButton("joueur 3");
-	private JButton j4 = new JButton("joueur 4");
-	private JButton j5 = new JButton("joueur 5");
-	private JButton j6 = new JButton("joueur 6");
-	private JButton j7 = new JButton("joueur 7");
-	private JButton j8 = new JButton("joueur 8");
-	private JButton j9 = new JButton("joueur 9");
-	private JButton j10 = new JButton("joueur 10");
-	private JButton j11 = new JButton("joueur 11");
-	private JButton j12 = new JButton("joueur 12");
-	private JButton j13 = new JButton("joueur 13");
-	private JButton j14 = new JButton("joueur 14");
-	private JButton j15 = new JButton("joueur 15");
-	private JButton j16 = new JButton("joueur 16");
-	private JButton j17 = new JButton("joueur 17");
-	private JButton j18 = new JButton("joueur 18");
-	private JButton j19 = new JButton("joueur 19");
-	private JButton j20 = new JButton("joueur 20");
-	private JButton j21 = new JButton("joueur 21");
-	private JButton j22 = new JButton("joueur 22");
-	private JPanel panel = new JPanel();
-	private JLabel equipe1 = new JLabel("Team 1 : ");
-	private JLabel equipe2 = new JLabel("Team 2 : ");
+	private JPanel contentPane,equipe_1,equipe_2=new JPanel();
+	private SportButton jtest1 = new SportButton("");
+	private SportButton jtest2 = new SportButton("");
+	private SportButton j1 = new SportButton("Joueur 1");
+	private SportButton j2 = new SportButton("Joueur 2");
+	private SportButton j3 = new SportButton("Joueur 3");
+	private SportButton j4 = new SportButton("Joueur 4");
+	private SportButton j5 = new SportButton("Joueur 5");
+	private SportButton j6 = new SportButton("Joueur 6");
+	private SportButton j7 = new SportButton("Joueur 7");
+	private SportButton j8 = new SportButton("Joueur 8");
+	private SportButton j9 = new SportButton("Joueur 9");
+	private SportButton j10 = new SportButton("Joueur 10");
+	private SportButton j11 = new SportButton("Joueur 11");
+	private SportButton j12 = new SportButton("Joueur 12");
+	private SportButton j13 = new SportButton("Joueur 13");
+	private SportButton j14 = new SportButton("Joueur 14");
+	private SportButton j15 = new SportButton("Joueur 15");
+	private SportButton j16 = new SportButton("Joueur 16");
+	private SportButton j17 = new SportButton("Joueur 17");
+	private SportButton j18 = new SportButton("Joueur 18");
+	private SportButton j19 = new SportButton("Joueur 19");
+	private SportButton j20 = new SportButton("Joueur 20");
+	private SportButton j21 = new SportButton("Joueur 21");
+	private SportButton j22 = new SportButton("Joueur 22");
+	private SportLabel equipe1 = new SportLabel("Team 1 : ");
+	private SportLabel equipe2 = new SportLabel("Team 2 : ");
 
 	public Feature(ArrayList<Player> play1, ArrayList<Player>play2) {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 600,650);
+		setTitle("Characteristics of the players");
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBackground(new Color(28, 28, 28));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
 		players1 = play1 ;
 		players2 = play2 ;
 		
-		JFrame frame = new JFrame();
-		frame.setTitle("Characteristics of the players");
-		frame.setSize(450, 450);
-		frame.setContentPane(panel);
-		JPanel team1 = new JPanel();
-		JPanel team2 = new JPanel();
-		team1.setLayout(grid);
-		team2.setLayout(grid);
+		
 
-		j1.setBackground(Color.CYAN);
-		j2.setBackground(Color.CYAN);
-		j3.setBackground(Color.CYAN);
-		j4.setBackground(Color.CYAN);
-		j5.setBackground(Color.CYAN);
-		j6.setBackground(Color.CYAN);
-		j7.setBackground(Color.CYAN);
-		j8.setBackground(Color.CYAN);
-		j9.setBackground(Color.CYAN);
-		j10.setBackground(Color.CYAN);
-		j11.setBackground(Color.CYAN);
+		j1.setBackground(new Color(0,0,255));
+		j2.setBackground(new Color(0,0,255));
+		j3.setBackground(new Color(0,0,255));
+		j4.setBackground(new Color(0,0,255));
+		j5.setBackground(new Color(0,0,255));
+		j6.setBackground(new Color(0,0,255));
+		j7.setBackground(new Color(0,0,255));
+		j8.setBackground(new Color(0,0,255));
+		j9.setBackground(new Color(0,0,255));
+		j10.setBackground(new Color(0,0,255));
+		j11.setBackground(new Color(0,0,255));
+		jtest1.setBackground(new Color(0,0,255));
 		j12.setBackground(Color.RED);
 		j13.setBackground(Color.RED);
 		j14.setBackground(Color.RED);
@@ -85,6 +91,7 @@ public class Feature extends JFrame {
 		j20.setBackground(Color.RED);
 		j21.setBackground(Color.RED);
 		j22.setBackground(Color.RED);
+		jtest2.setBackground(Color.RED);
 
 		j1.addActionListener(new ActionPlayer1());
 		j2.addActionListener(new ActionPlayer1());
@@ -108,40 +115,72 @@ public class Feature extends JFrame {
 		j20.addActionListener(new ActionPlayer1());
 		j21.addActionListener(new ActionPlayer1());
 		j22.addActionListener(new ActionPlayer1());
+		
+		equipe1=new SportLabel("Characteristics Equipe 1");
+		equipe1.setBackground(new Color(28, 28, 28));
+		equipe1.setPreferredSize(new Dimension(250,30));
+		equipe1.setBounds(150,0,250,30);
+		
+		equipe_1=new JPanel();
+		equipe_1.setPreferredSize(new Dimension(550,250));
+		equipe_1.setBounds(25,40,550,250);
+		Equipe_1();
+		
+		equipe2=new SportLabel("Characteristics Equipe 2");
+		equipe2.setBackground(new Color(28, 28, 28));
+		equipe2.setPreferredSize(new Dimension(250,30));
+		equipe2.setBounds(150,300,250,30);
+		
+		
+		equipe_2=new JPanel();
+		equipe_2.setPreferredSize(new Dimension(550,250));
+		equipe_2.setBounds(25,340,550,250);
+		Equipe_2();
+		
+		contentPane.add(equipe1);
+		contentPane.add(equipe_1);
+		contentPane.add(equipe2);
+		contentPane.add(equipe_2);
 
-		team1.add(equipe1);
-		team1.add(j1);
-		team1.add(j2);
-		team1.add(j3);
-		team1.add(j4);
-		team1.add(j5);
-		team1.add(j6);
-		team1.add(j7);
-		team1.add(j8);
-		team1.add(j9);
-		team1.add(j10);
-		team1.add(j11);
-
-		team2.add(equipe2);
-		team2.add(j12);
-		team2.add(j13);
-		team2.add(j14);
-		team2.add(j15);
-		team2.add(j16);
-		team2.add(j17);
-		team2.add(j18);
-		team2.add(j19);
-		team2.add(j20);
-		team2.add(j21);
-		team2.add(j22);
-
-		panel.add(team1);
-		panel.add(team2);
-	//	panel.add(match);
-
-		frame.setVisible(true);
+		setVisible(true);
 
 	}
+	
+	public void Equipe_1() {
+		equipe_1.setLayout(new GridLayout(3,4));
+		equipe_1.add(j1);
+		equipe_1.add(j2);
+		equipe_1.add(j3);
+		equipe_1.add(j4);
+		equipe_1.add(j5);
+		equipe_1.add(j6);
+		equipe_1.add(j7);
+		equipe_1.add(j8);
+		equipe_1.add(j9);
+		equipe_1.add(j10);
+		equipe_1.add(j11);
+		equipe_1.add(jtest1);
+		
+	}
+	
+	public void Equipe_2() {
+		equipe_2.setLayout(new GridLayout(3,4));
+		equipe_2.add(j12);
+		equipe_2.add(j13);
+		equipe_2.add(j14);
+		equipe_2.add(j15);
+		equipe_2.add(j16);
+		equipe_2.add(j17);
+		equipe_2.add(j18);
+		equipe_2.add(j19);
+		equipe_2.add(j20);
+		equipe_2.add(j21);
+		equipe_2.add(j22);
+		equipe_2.add(jtest2);
+		
+	}
+	
+	
 
 	private class ActionPlayer1 implements ActionListener {
 		public void actionPerformed(ActionEvent e) {

@@ -47,6 +47,7 @@ public class Dashboard extends JPanel {
 	private boolean touche = false;
 	private boolean shoot = false;
 	private boolean mi_temps = false ;
+	private boolean intercepteur = false ;
 	
 	public Dashboard(ArrayList<Player> team1, ArrayList<Player> team2, Ball ballon, Corner testcorner, Touche testtouche, Match match) {
 		this.team1 = team1 ;
@@ -359,6 +360,16 @@ public class Dashboard extends JPanel {
 
 	public void setMi_temps(boolean mi_temps) {
 		this.mi_temps = mi_temps;
+	}
+
+
+	public boolean isIntercepteur() {
+		return intercepteur;
+	}
+
+
+	public void setIntercepteur(boolean intercepteur) {
+		this.intercepteur = intercepteur;
 	}
 	
 }

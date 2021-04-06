@@ -2,6 +2,7 @@ package process;
 
 import java.util.ArrayList;
 
+import data.Ball;
 import data.Player;
 import gui.Dashboard;
 
@@ -9,11 +10,18 @@ public class Passe {
 
 	private int index_of_ball_player;
 
-	private static Player.position DEF = Enum.valueOf(Player.position.class, "DEFENSE");
-	private static Player.temps SO = Enum.valueOf(Player.temps.class, "SOLEIL");
+	private Player passeur = new Player("2", 30, 50, 40, 70, 60, 100, 50, 2,Player.position.DEFENSE, 200, 100, false,Player.temps.SOLEIL);
+	private Player receveur = new Player("3", 20, 40, 40, 70, 60, 100, 60, 3,Player.position.DEFENSE, 200, 265, false,Player.temps.SOLEIL);
+	
+	private Player player_zero = new Player("0", 0, 0, 0, 0, 0, 0, 0, 0,Player.position.MIDDLE, 500, 500, false, Player.temps.PLUIE);
 
-	private Player passeur = new Player("2", 30, 50, 40, 70, 60, 100, 50, 2, DEF, 200, 100, false,SO);
-	private Player receveur = new Player("3", 20, 40, 40, 70, 60, 100, 60, 3, DEF, 200, 265, false,SO);
+	private ArrayList<Player> players1 = null;
+	private ArrayList<Player> players2 = null;
+	private ArrayList<Player> ball_team = null;
+
+	private Player player_ball = null;
+
+	private Player intercepteur = new Player("30", 20, 40, 40, 70, 60, 100, 60, 30,Player.position.DEFENSE, 200, 265, false, Player.temps.SOLEIL);
 
 	public Passe() {
 		super();
@@ -104,9 +112,17 @@ public class Passe {
 
 	}
 
-	public void pass(Dashboard dash,Player passeur,Player receveur) {
+	public void pass(Dashboard dash, Player passeur, Player receveur) {
+
+		if (dash.isIntercepteur() == true) {
+			receveur = intercepteur;
+		}
 		
-		System.out.println("on rentre dans passe");
+		System.out.println("\nPASSEUR = " + passeur.getNumber()) ;
+		
+		System.out.println("\nINTERCEPTEUR = " + intercepteur.getNumber()) ;
+		
+		System.out.println("\nRECEVEUR = " + receveur.getNumber()) ;
 
 		int res_x = (dash.getBallon().getPositionx_Ball()) - receveur.getX();
 		int res_y = (dash.getBallon().getPositiony_Ball()) - receveur.getY();
@@ -115,44 +131,58 @@ public class Passe {
 		int result_y = Math.abs(res_y);
 
 		if ((result_x < 6) && (result_y < 6)) {
-			
+
 			System.out.println("passe fini");
-			
+
 			dash.setStop_action(true);
-			
+			dash.setIntercepteur(false);
+
 			passeur.setBall(false);
 			receveur.setBall(true);
 		}
 
 		if (dash.isStop_action() == false) {
-			
-			System.out.println("passe en cours");
 
-			if (dash.getBallon().getPositionx_Ball() > receveur.getX()) {
+			if ( (player_receipt_ball(dash) == false) && (dash.isIntercepteur() == false) ) { // passe intercepte
 
-				if (dash.getBallon().getPositiony_Ball() <= receveur.getY()) {
+				System.out.println("\n\n\\n\\n\\n\\n") ;
+				System.out.println("INTERCEPTION") ;
+				System.out.println("\n\n\\n\\n\\n\\n") ;
+				dash.setIntercepteur(true);
 
-					dash.getBallon().setPositionx_Ball(dash.getBallon().getPositionx_Ball() - 5);
-					dash.getBallon().setPositiony_Ball(dash.getBallon().getPositiony_Ball() + 5);
+				receveur = intercepteur;
+				
+			} else { // passe normal
 
-				} else if (dash.getBallon().getPositiony_Ball() > receveur.getY()) {
+			//	System.out.println("passe en cours");
 
-					dash.getBallon().setPositionx_Ball(dash.getBallon().getPositionx_Ball() - 5);
-					dash.getBallon().setPositiony_Ball(dash.getBallon().getPositiony_Ball() - 5);
+				if (dash.getBallon().getPositionx_Ball() > receveur.getX()) {
 
-				}
+					if (dash.getBallon().getPositiony_Ball() <= receveur.getY()) {
 
-			} else if (dash.getBallon().getPositionx_Ball() <= receveur.getX()) {
+						dash.getBallon().setPositionx_Ball(dash.getBallon().getPositionx_Ball() - 5);
+						dash.getBallon().setPositiony_Ball(dash.getBallon().getPositiony_Ball() + 5);
 
-				if (dash.getBallon().getPositiony_Ball() <= receveur.getY()) {
+					} else if (dash.getBallon().getPositiony_Ball() > receveur.getY()) {
 
-					dash.getBallon().setPositionx_Ball(dash.getBallon().getPositionx_Ball() + 5);
-					dash.getBallon().setPositiony_Ball(dash.getBallon().getPositiony_Ball() + 5);
+						dash.getBallon().setPositionx_Ball(dash.getBallon().getPositionx_Ball() - 5);
+						dash.getBallon().setPositiony_Ball(dash.getBallon().getPositiony_Ball() - 5);
 
-				} else if (dash.getBallon().getPositiony_Ball() > receveur.getY()) {
+					}
 
-					dash.getBallon().setPositionx_Ball(dash.getBallon().getPositionx_Ball() + 5);
-					dash.getBallon().setPositiony_Ball(dash.getBallon().getPositiony_Ball() - 5);
+				} else if (dash.getBallon().getPositionx_Ball() <= receveur.getX()) {
+
+					if (dash.getBallon().getPositiony_Ball() <= receveur.getY()) {
+
+						dash.getBallon().setPositionx_Ball(dash.getBallon().getPositionx_Ball() + 5);
+						dash.getBallon().setPositiony_Ball(dash.getBallon().getPositiony_Ball() + 5);
+
+					} else if (dash.getBallon().getPositiony_Ball() > receveur.getY()) {
+
+						dash.getBallon().setPositionx_Ball(dash.getBallon().getPositionx_Ball() + 5);
+						dash.getBallon().setPositiony_Ball(dash.getBallon().getPositiony_Ball() - 5);
+
+					}
 
 				}
 
@@ -162,4 +192,275 @@ public class Passe {
 
 	}
 
+	public boolean player_receipt_ball(Dashboard dash) {
+
+		players1 = dash.getTeam1();
+		players2 = dash.getTeam2();
+
+		boolean sucesspass = false;
+
+		ball_team = TeamBall(players1, players2);
+
+		int index_passeur = PlayerBall(ball_team);
+
+		player_ball = ball_team.get(index_passeur);
+		
+		Player close_player = null ;
+
+		if (ball_team.equals(players1)) {
+
+			for (int i = 0; i < players2.size(); i++) {
+
+				close_player = player_near_ball(dash, players2);
+				
+				if ( !(close_player.equals(null)) ) {
+					
+					int defense = close_player.getDefense();
+					int pass = player_ball.getPass();
+
+					if (pass > defense) {
+
+					//	System.out.println("passe bleu reussi");
+						sucesspass = true;
+
+					} else {
+
+						sucesspass = false;
+						
+						intercepteur = close_player ;
+
+						System.out.println("passe bleu raté et intercepte par le " + close_player.getNumber() + "");
+
+					}
+
+				} else {
+
+					sucesspass = true; 
+				}
+
+			}
+
+		} else if (ball_team.equals(players2)) {
+
+			for (int i = 0; i < players1.size(); i++) {
+
+				 close_player = player_near_ball(dash, players1);
+
+				if ( !(close_player.equals(null)) ) {
+
+					int defense = close_player.getDefense();
+					int pass = player_ball.getPass();
+
+					if (pass > defense) {
+
+					//	System.out.println("passe rouge reussi");
+						sucesspass = true;
+
+					} else {
+
+						sucesspass = false;
+
+						intercepteur = close_player;
+
+						System.out.println("passe rouge raté et intercepte par le " + close_player.getNumber() );
+
+					}
+
+				} else {
+
+					sucesspass = true; 
+				}
+
+			}
+
+		}
+
+		return sucesspass;
+	}
+	
+	public boolean player_receipt2_ball(Dashboard dash) {
+
+		players1 = dash.getTeam1();
+		players2 = dash.getTeam2();
+
+		boolean sucesspass = false;
+
+		ball_team = TeamBall(players1, players2);
+
+		int index_passeur = PlayerBall(ball_team);
+
+		player_ball = ball_team.get(index_passeur);
+
+		if (ball_team.equals(players1)) {
+
+			for (int i = 0; i < players2.size(); i++) {
+
+				Player p = players2.get(i);
+				Player possible_intercepteur = player_near_ball(dash, players2);
+
+				if (possible_intercepteur.equals(p) ) {
+					
+					int defense = p.getDefense();
+					int pass = player_ball.getPass();
+
+					if (pass > defense) {
+
+					//	System.out.println("passe bleu reussi");
+						sucesspass = true;
+
+					} else {
+
+						sucesspass = false;
+						
+						intercepteur = p ;
+
+						System.out.println("passe bleu raté et intercepte par le " + p.getNumber() + "");
+
+					}
+
+				} else {
+
+					sucesspass = true; 
+				}
+
+			}
+
+		} else if (ball_team.equals(players2)) {
+
+			for (int i = 0; i < players1.size(); i++) {
+
+				Player p = players1.get(i);
+				Player possible_intercepteur = player_near_ball(dash, players1);
+
+				if (possible_intercepteur.equals(p) ) {
+
+					int defense = p.getDefense();
+					int pass = player_ball.getPass();
+
+					if (pass > defense) {
+
+					//	System.out.println("passe rouge reussi");
+						sucesspass = true;
+
+					} else {
+
+						sucesspass = false;
+
+						intercepteur = p;
+
+						System.out.println("passe rouge raté et intercepte par le " + p.getNumber() );
+
+					}
+
+				} else {
+
+					sucesspass = true; 
+				}
+
+			}
+
+		}
+
+		return sucesspass;
+	}
+
+	public Player player_near_ball(Dashboard dash, ArrayList<Player> team) {
+
+		Ball ball = dash.getBallon();
+
+		int ballon_x = ball.getPositionx_Ball();
+		int ballon_y = ball.getPositiony_Ball();
+
+		Player possible_intercepteur = player_zero ;
+
+		for (int i = 0; i < team.size(); i++) {
+
+			int player_x = team.get(i).getX();
+			int player_y = team.get(i).getY();
+
+			Player player = team.get(i);
+
+			int distance_x = Math.abs(player_x - ballon_x);
+			int distance_y = Math.abs(player_y - ballon_y);
+
+			// System.out.println(" x= " + xp + " y=" + yp + " ");
+			// System.out.println(" " + ecart1 + "<10 " + ecart2 + "<10 ");
+
+			if ((distance_x < 7) && (distance_y < 7)) {
+
+				possible_intercepteur = player ;
+			
+				System.out.println("possible intercepteur : " + possible_intercepteur.getNumber());
+			}
+
+		}
+
+		return possible_intercepteur;
+
+	}
+
+	public ArrayList<Player> TeamBall(ArrayList<Player> players1, ArrayList<Player> players2) {
+
+		int i = 0;
+
+		boolean stop = false;
+
+		while (i < players1.size() && (stop == false)) {
+
+			if (players1.get(i).isBall() == true) {
+
+			//	System.out.println("Blue got the BALL");
+				stop = true;
+				return players1;
+
+			}
+
+			if (players2.get(i).isBall() == true) {
+
+			//	System.out.println("Red got the BALL");
+				stop = true;
+				return players2;
+
+			}
+
+			i++;
+
+		}
+
+		return null;
+
+	}
+	
+
+	public int PlayerBall(ArrayList<Player> players1) {
+
+		int res = 12;
+
+		boolean stop = false;
+		int i = 0;
+
+		while (i < players1.size() && (stop == false)) {
+
+			if (players1.get(i).isBall() == true) {
+
+				stop = true;
+				res = i;
+
+			}
+			i++;
+
+		}
+
+		return res;
+
+	}
+
+/*	public Player getIntercepteur() {
+		return intercepteur;
+	} 
+
+	public void setIntercepteur(Player intercepteur) {
+		this.intercepteur = intercepteur;
+	}
+*/
 }

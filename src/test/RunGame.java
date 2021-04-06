@@ -1,10 +1,17 @@
 package test;
 
-public class RunGame {
+import java.awt.BorderLayout;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import gui.ChronometerGUI;
+
+public class RunGame {
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		ChronometerGUI k=new ChronometerGUI();
 		
-	}
+		}
 
 }

@@ -88,10 +88,10 @@ public class MatchManager {
 
 		}
 
-		doSimulation(dash);
-
 		// conditions pour decider de quelle action effectuer type corner, touche, 6
 		// metres, passes, frappe etc
+		
+		 doSimulation(dash);
 
 		// doCorner(dash);
 
@@ -103,7 +103,7 @@ public class MatchManager {
 		// doMiTemps(dash,chronometergui);
 
 		// doMove(dash);
-		// doPass(dash, passeur, receveur);
+		// doPass(dash);
 	}
 
 	public void doSimulation(Dashboard dash) {
@@ -111,13 +111,13 @@ public class MatchManager {
 		players1 = dash.getTeam1();
 		players2 = dash.getTeam2();
 
+		System.out.println("Test TeamBall de Match Manager");
+		
 		ball_team = TeamBall(players1, players2);
 
 		int index_player_ball = PlayerBall(ball_team);
 
 		player_ball = ball_team.get(index_player_ball);
-
-		System.out.println("index_player_ball = " + index_player_ball);
 
 		if (ball_team.equals(players1)) {
 
@@ -127,7 +127,6 @@ public class MatchManager {
 
 				doBlueShoot(dash);
 			} else {
-				System.out.println("abc = ");
 				doPass(dash);
 			}
 
@@ -139,7 +138,6 @@ public class MatchManager {
 
 				doRedShoot(dash);
 			} else {
-				System.out.println("def = ");
 				doPass(dash);
 			}
 		}
