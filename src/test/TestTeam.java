@@ -27,7 +27,7 @@ public class TestTeam {
 	private static Touche touchetest = new Touche() ;
 	private static Match match = new Match();
 	private static Dashboard dash = new Dashboard(team1, team2, ballon,cornertest,touchetest,match);
-	private static ChronometerGUI gui = new ChronometerGUI("Simu soccer");
+	private static ChronometerGUI gui = new ChronometerGUI();
 	
 	
 

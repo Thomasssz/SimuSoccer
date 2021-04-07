@@ -26,8 +26,7 @@ class EnduranceTest {
 	private Touche touchetest = new Touche() ;
 	private Match match = new Match();
 	private Dashboard dash = new Dashboard(team1, team2, ballon,cornertest,touchetest,match);
-	private ChronometerGUI gui = new ChronometerGUI("Simu soccer");
-			
+	private ChronometerGUI gui = new ChronometerGUI();
 	@Test
 	void testBaisse() {
 		Endurance end = new Endurance();
