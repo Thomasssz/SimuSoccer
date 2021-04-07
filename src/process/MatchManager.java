@@ -54,6 +54,7 @@ public class MatchManager {
 	private int proba = 200;
 
 	private Match match = new Match();
+	@SuppressWarnings("unused")
 	private ChronometerGUI chronometergui;
 
 	public MatchManager(ChronometerGUI chronometergui) {
@@ -612,7 +613,9 @@ public class MatchManager {
 		Player player = ball_team.get(index_player_ball); // joueur qui a la balle
 
 		// recuperer les coordonnées du joueur ayant la balle
+		@SuppressWarnings("unused")
 		int player_x = player.getX();
+		@SuppressWarnings("unused")
 		int player_y = player.getY();
 
 		/*

@@ -1,8 +1,6 @@
 package process;
 
 import java.util.ArrayList;
-import java.util.Random;
-
 import data.Ball;
 import data.Player;
 
@@ -57,6 +55,7 @@ public class Pass {
 		return null;
 	}
 
+	@SuppressWarnings("unused")
 	public static void pass_sequence(Ball ballon, ArrayList<Player> players1, ArrayList<Player> players2) {
 
 		Player ballPlayer = get_Player_Ball(ballon, players1, players2);

@@ -16,7 +16,6 @@ import delimitations.Goal;
 import delimitations.Sortie;
 import delimitations.Surface;
 import delimitations.Touche;
-import process.MatchManager;
 
 /**
  * This class manages the dashboard (minute, second) of chronometer GUI.

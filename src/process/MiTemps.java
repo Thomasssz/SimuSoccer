@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import data.Player;
 import data.Team;
-import delimitations.Sortie;
 import gui.ChronometerGUI;
 import gui.Dashboard;
 

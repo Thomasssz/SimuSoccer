@@ -5,9 +5,7 @@ import java.util.Random;
 
 import data.Ball;
 import data.Player;
-import gui.ChronometerGUI;
 import gui.Dashboard;
-import process.MatchManager;
 import process.Passe;
 import process.Shoot;
 
@@ -19,8 +17,10 @@ public class Corner {
 	private Player receveur = null ;
 
 	private Passe testPass = new Passe();
+	@SuppressWarnings("unused")
 	private Shoot testShoot = new Shoot();
 	
+	@SuppressWarnings("unused")
 	private Player tireur = null ;
 
 	/*

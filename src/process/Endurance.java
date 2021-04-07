@@ -2,8 +2,6 @@ package process;
 
 import java.util.ArrayList;
 
-import chrono.Chronometer;
-import chrono.CyclicCounter;
 import data.Player;
 import gui.ChronometerGUI;
 import gui.Dashboard;

@@ -1,22 +1,15 @@
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
 import chrono.Chronometer;
@@ -49,8 +42,10 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	private MatchManager matchprocess = new MatchManager(this);
 	private ChronometerGUI instance = this;
 	
+	@SuppressWarnings("unused")
 	private static final Dimension IDEAL_MAIN_DIMENSION = new Dimension(1800, 900);
 	private static Font font = new Font(Font.MONOSPACED, Font.BOLD, 20);
+	@SuppressWarnings("unused")
 	private Dimension dim;
 	
 	private int CHRONO_SPEED = 100 ;
@@ -79,9 +74,11 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	SportLabel scoreteam1Label1,scoreteam1Value1,scoreteam2Label1,scoreteam2Value1,minuteLabel1,secondLabel1,minuteValue1,secondValue1,Temps,Acceleration,teamB,teamR;
 
 	
+	@SuppressWarnings("unused")
 	private JPanel endurance,score,temps,start_stop = new JPanel();
 	
 
+	@SuppressWarnings("unused")
 	private JPanel control,dashboardPanel,contentPane,start_acceleration,barre_energie,equipe_1,equipe_2 = new JPanel();
 
 	public ChronometerGUI() {
@@ -225,9 +222,9 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		scoreteam2Label1 = new SportLabel("Red");
 		scoreteam2Label1.setBackground(new Color(28, 28, 28));
 
-		 scoreteam1Value1 = new SportLabel("");
+		 scoreteam1Value1 = new SportLabel(""+match.getScoreteam1()+"");
 		 scoreteam1Value1.setBackground(new Color(28, 28, 28));
-		 scoreteam2Value1 = new SportLabel("");
+		 scoreteam2Value1 = new SportLabel(""+match.getScoreteam2()+"");
 		 scoreteam2Value1.setBackground(new Color(28, 28, 28));
 		 
 		 score.add(scoreteam1Label1);
@@ -315,6 +312,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 
 	private class CharacteristicsAction implements ActionListener { 
 
+		@SuppressWarnings("unused")
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			stop = true;
@@ -387,6 +385,7 @@ public String toStringB() {
 		}
 	
 	public String toStringR0() {
+		@SuppressWarnings("unused")
 		Endurance end=new Endurance();
 		//end.baisse(dashboard, instance);
 		int ji=0;

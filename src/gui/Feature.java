@@ -1,16 +1,12 @@
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -19,6 +15,7 @@ import data.Team;
 import ihm.components.SportButton;
 import ihm.components.SportLabel;
 
+@SuppressWarnings("serial")
 public class Feature extends JFrame {
 	
 	private static ArrayList<Player> players1 = new ArrayList<Player>();

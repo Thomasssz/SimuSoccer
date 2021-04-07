@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import data.Ball;
 import data.Match;
 import data.Player;
-import data.Team;
 import delimitations.Corner;
 import delimitations.Touche;
 import gui.ChronometerGUI;

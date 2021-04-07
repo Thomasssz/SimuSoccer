@@ -5,6 +5,7 @@ import gui.Dashboard;
 
 public class Shoot {
 
+	@SuppressWarnings("unused")
 	private static Player.position DEF = Enum.valueOf(Player.position.class, "DEFENSE");
 
 	public Shoot() {

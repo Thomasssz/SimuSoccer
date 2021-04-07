@@ -1,8 +1,4 @@
 package test;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
@@ -25,8 +21,11 @@ class EnduranceTest {
 	private Corner cornertest = new Corner() ;
 	private Touche touchetest = new Touche() ;
 	private Match match = new Match();
+	@SuppressWarnings("unused")
 	private Dashboard dash = new Dashboard(team1, team2, ballon,cornertest,touchetest,match);
+	@SuppressWarnings("unused")
 	private ChronometerGUI gui = new ChronometerGUI();
+	@SuppressWarnings("unused")
 	@Test
 	void testBaisse() {
 		Endurance end = new Endurance();
