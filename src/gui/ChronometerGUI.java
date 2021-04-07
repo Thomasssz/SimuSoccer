@@ -130,15 +130,15 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		
 		
 		
-		barre_energie.setPreferredSize(new Dimension(490,865));
-		barre_energie.setBounds(1250,20,490,865);
+		//barre_energie.setPreferredSize(new Dimension(490,865));
+		//barre_energie.setBounds(1250,20,490,865);
 		
 		contentPane.add(start_stop);
 		contentPane.add(dashboard);
 		contentPane.add(temps);
 		contentPane.add(start_acceleration);
 		contentPane.add(score);
-		contentPane.add(barre_energie);
+		//contentPane.add(barre_energie);
 		setVisible(true);
 	}
 	
