@@ -24,6 +24,7 @@ public class Feature extends JFrame {
 	GridLayout grid = new GridLayout(3, 4);
 	private JPanel contentPane,equipe_1,equipe_2=new JPanel();
 	private SportButton jtest1 = new SportButton("");
+	private SportButton retour = new SportButton("");
 	private SportButton jtest2 = new SportButton("");
 	private SportButton j1 = new SportButton("Joueur 1");
 	private SportButton j2 = new SportButton("Joueur 2");
@@ -52,7 +53,7 @@ public class Feature extends JFrame {
 
 	public Feature(ArrayList<Player> play1, ArrayList<Player>play2) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600,650);
+		setBounds(10, 100, 600,750);
 		setTitle("Characteristics of the players");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -63,7 +64,11 @@ public class Feature extends JFrame {
 		players1 = play1 ;
 		players2 = play2 ;
 		
-		
+		retour=new SportButton("Return to the game");
+		retour.setBackground(new Color(28, 28, 28));
+		retour.setPreferredSize(new Dimension(250,50));
+		retour.addActionListener(new Retour());
+		retour.setBounds(175,620,250,50);
 
 		j1.setBackground(new Color(0,0,255));
 		j2.setBackground(new Color(0,0,255));
@@ -138,10 +143,22 @@ public class Feature extends JFrame {
 		contentPane.add(equipe_1);
 		contentPane.add(equipe2);
 		contentPane.add(equipe_2);
+		contentPane.add(retour);
 
 		setVisible(true);
 
 	}
+	private class Retour implements ActionListener { 
+
+		@SuppressWarnings("unused")
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			setVisible(false);
+			 
+		}
+
+	}
+	
 	
 	public void Equipe_1() {
 		equipe_1.setLayout(new GridLayout(3,4));

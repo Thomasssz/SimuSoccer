@@ -4,6 +4,8 @@ package gui;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -11,21 +13,24 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import data.Player;
+import ihm.components.SportButton;
 import ihm.components.SportLabel;
 
 @SuppressWarnings("serial")
 public class Player1 extends JFrame {
 	
+	@SuppressWarnings("unused")
 	private String name;
 	private JPanel defense2,dribbles2,speed2,shoot2,energie2,endurance2= new JPanel();
 	private SportLabel label,defense,shoot,speed,dribbles,defense1,dribbles1,shoot1,speed1,energie1,endurance1,energie,endurance;
 	
 	private static ArrayList<Player> team1 = new ArrayList<Player>();
 	private JPanel contentPane=new JPanel();
+	private SportButton retour=new SportButton("");
 	
 	public Player1(ArrayList<Player> player_team, String name) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 400,600);
+		setBounds(1400, 200, 400,600);
 		setTitle("Player");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -33,6 +38,11 @@ public class Player1 extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		retour=new SportButton("Return to charateristics");
+		retour.setBackground(new Color(28, 28, 28));
+		retour.setPreferredSize(new Dimension(250,50));
+		retour.addActionListener(new Retour());
+		retour.setBounds(80,500,250,50);
 		
 		label = new SportLabel("Numero Maillot : "+ name+"");
 		label.setBackground(new Color(28, 28, 28));
@@ -83,8 +93,20 @@ public class Player1 extends JFrame {
 		contentPane.add(speed2);
 		contentPane.add(endurance2);
 		contentPane.add(energie2);
+		contentPane.add(retour);
 		setVisible(true);
 	} 
+	
+	private class Retour implements ActionListener { 
+
+		@SuppressWarnings("unused")
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			setVisible(false);
+			 
+		}
+
+	}
 	
 	public void  Defense1(String name) {
 		defense2.setLayout(new GridLayout(1,2));

@@ -3,14 +3,12 @@ package gui;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import data.Ball;
 import data.Match;
-import data.Player;
 import data.Team;
 import delimitations.Corner;
 import delimitations.Goal;

@@ -23,6 +23,7 @@ public class Endurance {
 		this.team2=team2;
 	}
 	public void baisse(Dashboard dash, ChronometerGUI gui, ArrayList<Player> players1, ArrayList<Player> players2) {
+		System.out.println("oui");
 		int timeminute= gui.getChronometer().getMinute().getValue();
 		int timeseconde= gui.getChronometer().getSecond().getValue();
 			if(timeminute % 10 == 0 && timeseconde == 0 && timeminute!=0) {
@@ -49,7 +50,7 @@ public class Endurance {
 			
 			
 				for(int i = 0; i < players2.size(); i++) { 
-					int endurance = players2.get(i).getEnergie();
+					int endurance = players2.get(i).getEndurance();
 					if(endurance >= 80) {
 						players2.get(i).setEnergie(players2.get(i).getEnergie()-9);
 					}

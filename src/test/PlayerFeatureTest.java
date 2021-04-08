@@ -15,14 +15,15 @@ class PlayerFeatureTest {
 	private String color = "red";
 	private String nameE = "e";
 	Team team = new Team(nameE, team1, color);
-	//team.createteam(team);
+	private String name;
 	
 	@Test
 	void testEnergie() {
-		//Player1 player = new Player1(team1,name);
-		String nom = "1";
+		team.createteams(team);
+		Player1 player = new Player1(team1,name);
+		String nom = "12";
 		int result = 100;
-		//if(player != result) {
+		if(player.Energie(nom)!= result) {
 			fail("nom mal indiqué");
 		}
 		/*for(int i=1; i<23; i++) {
@@ -63,4 +64,4 @@ class PlayerFeatureTest {
 		fail("Not yet implemented");
 	}*/
 
-
+}

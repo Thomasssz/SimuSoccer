@@ -7,8 +7,6 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
-import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -41,6 +39,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	private Touche touchetest = new Touche() ;
 	private Match match = new Match();
 	private Dashboard dashboard = new Dashboard(team1, team2, ballon,cornertest,touchetest,match);
+	@SuppressWarnings("unused")
 	private Energie energie1;
 	private MatchManager matchprocess = new MatchManager(this);
 	private Endurance end=new Endurance(dashboard,this,team1,team2);
@@ -68,15 +67,13 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		return chronometer;
 	}
 	
-	SportButton startButton1,charButton ;
+	SportButton startButton1,charButton,energieButton;
 	
 	private JRadioButton rdbtns0=new JRadioButton("speed 1 (x1)");
 	private JRadioButton rdbtns1=new JRadioButton("speed 2 (x2)");
 	private JRadioButton rdbtns2=new JRadioButton("speed 3 (x4)");
 	private JRadioButton rdbtns3=new JRadioButton("speed 4 (x10)"); 
 	
-	private ButtonGroup button_group = new ButtonGroup();
-
 	SportLabel scoreteam1Label1,scoreteam1Value1,scoreteam2Label1,scoreteam2Value1,minuteLabel1,secondLabel1,minuteValue1,secondValue1,Temps,Acceleration,teamB,teamR;
 
 	
@@ -89,7 +86,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 
 	public ChronometerGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1800,900);
+		setBounds(200, 20, 1300,950);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setBackground(new Color(28, 28, 28));
@@ -103,14 +100,14 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		team1.createteams(team1);
 		team2.createteams(team2);
 
-		energie1=new Energie(team1.getPlayers(),team2.getPlayers());
+		//energie1=new Energie(team1.getPlayers(),team2.getPlayers());
 	
 		dashboard.setPreferredSize(new Dimension(850,590));
 		dashboard.setBounds(320,250,850,590);
 		
 		start_stop=new JPanel();
-		start_stop.setPreferredSize(new Dimension(400,100));
-		start_stop.setBounds(600,10,400,40);
+		start_stop.setPreferredSize(new Dimension(800,100));
+		start_stop.setBounds(300,10,800,40);
 		Start_stop();
 		
 		temps=new JPanel();
@@ -129,17 +126,11 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		Score();
 		
 		
-		
-		//energie1.setPreferredSize(new Dimension(490,865));
-		//energie1.setBounds(1250,20,490,865);
-		energie1.setBounds(1050,20,490,865);
-		
 		contentPane.add(start_stop);
 		contentPane.add(dashboard);
 		contentPane.add(temps);
 		contentPane.add(start_acceleration);
 		contentPane.add(score);
-		contentPane.add(energie1);
 		setVisible(true);
 	}
 	
@@ -199,11 +190,6 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		start_acceleration.add(rdbtns1);
 		start_acceleration.add(rdbtns2);
 		start_acceleration.add(rdbtns3);
-		
-		button_group.add(rdbtns0);
-	    button_group.add(rdbtns1);
-	    button_group.add(rdbtns2);
-	    button_group.add(rdbtns3);
 	}
 	
 	public void Start_stop() {
@@ -219,8 +205,13 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		charButton.setBackground(new Color(28, 28, 28));
 		charButton.addActionListener(new CharacteristicsAction());
 		
+		energieButton = new SportButton("Energie");
+		energieButton.setBackground(new Color(28, 28, 28));
+		energieButton.addActionListener(new EnergieAction());
+		
 		start_stop.add(startButton1);
 		start_stop.add(charButton);
+		start_stop.add(energieButton);
 		}
 	
 	public void Score() {
@@ -272,8 +263,10 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		
 		end.baisse(dashboard, instance, team1.getPlayers(), team2.getPlayers());
 		matchprocess.matchProcess(dashboard,this);
-		energie1.repaint();
+		
+	
 		dashboard.repaint();
+		
 	}
 
 	/**
@@ -338,6 +331,18 @@ public class ChronometerGUI extends JFrame implements Runnable {
 
 	}
 	
+	private class EnergieAction implements ActionListener { 
+
+		@SuppressWarnings("unused")
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			stop = true;
+			energie1=new Energie(team1.getPlayers(),team2.getPlayers());
+			 
+		}
+
+	}
+	
 	private class SpeedAction0 implements ActionListener{
 
 		@Override
@@ -386,27 +391,5 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		
 	}
 
-	
-public String toStringB() {
-		
-		String result = "Energie equipe bleu : \n \n";
-			for(int i = 0; i < team1.getPlayers().size(); i++) { 
-	    			result += "Joueur " + team1.getPlayers().get(i).getNumber() + " = " + team1.getPlayers().get(i).getEnergie() + "% \n";
-	    	}
-			return result;
-		}
-	
-	public String toStringR0() {
-		@SuppressWarnings("unused")
-		//Endurance end=new Endurance();
-		//end.baisse(dashboard, instance);
-		int ji=0;
-		String result = "Joueur " + team2.getPlayers().get(ji).getNumber() + ":"+ team2.getPlayers().get(ji).getEnergie() + "";
-		return result;
-		}
-
-	public static void main(String[] args) {
-		new ChronometerGUI();
-	}
 
 }

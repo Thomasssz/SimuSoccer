@@ -11,60 +11,66 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import data.Player;
-import data.Team;
 import ihm.components.SportButton;
 import ihm.components.SportLabel;
 
-@SuppressWarnings("serial")
-public class Energie extends JPanel {
+public class Energie extends JFrame {
 	
 	private static ArrayList<Player> players1 = new ArrayList<Player>();
 	private static ArrayList<Player> players2 = new ArrayList<Player>();
+	@SuppressWarnings("unused")
 	private static ArrayList<Player> team1 = new ArrayList<Player>();
-	
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane,equipe_1,equipe_2=new JPanel();
 	private SportLabel equipe1,equipe2,j1,j2,j3,j4,j5,j6,j7,j8,j9,j10,j11,j12,j13,j14,j15,j16,j17,j18,j19,j21,j20,j22=new SportLabel("");
+	private SportButton retour;
 
 	public Energie(ArrayList<Player>player1,ArrayList<Player>player2) {
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setBounds(100, 100, 600,650);
-		//setTitle("Energie of the players");
-		//this.contentPane = new JPanel();
-		this.setBorder(new EmptyBorder(5, 5, 5, 5));
-		this.setBackground(new Color(28, 28, 28));
-		//setContentPane(contentPane);
-		this.setLayout(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 500,950);
+		setTitle("Energie of the players");
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBackground(new Color(28, 28, 28));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
 		players1 = player1 ;
 		players2 = player2; 
 		
+		retour=new SportButton("Return to the game");
+		retour.setBackground(new Color(28, 28, 28));
+		retour.setPreferredSize(new Dimension(250,50));
+		retour.addActionListener(new Retour());
+		retour.setBounds(120,10,250,50);
+		
 		equipe1=new SportLabel("Energie Equipe 1");
 		equipe1.setBackground(new Color(28, 28, 28));
 		equipe1.setPreferredSize(new Dimension(250,30));
-		equipe1.setBounds(150,0,250,30);
+		equipe1.setBounds(120,70,250,30);
 		
 		equipe_1=new JPanel();
 		equipe_1.setPreferredSize(new Dimension(550,250));
 		equipe_1.setBackground(new Color(28, 28, 28));
-		equipe_1.setBounds(25,40,550,250);
+		equipe_1.setBounds(0,110,550,360);
 		Equipe_1();
 		
 		equipe2=new SportLabel("Energie Equipe 2");
 		equipe2.setBackground(new Color(28, 28, 28));
 		equipe2.setPreferredSize(new Dimension(250,30));
-		equipe2.setBounds(150,300,250,30);
+		equipe2.setBounds(120,480,250,30);
 		
 		equipe_2=new JPanel();
 		equipe_2.setPreferredSize(new Dimension(550,250));
 		equipe_2.setBackground(new Color(28, 28, 28));
-		equipe_2.setBounds(25,340,550,250);
+		equipe_2.setBounds(0,520,550,360);
 		Equipe_2();
 		
-		this.add(equipe1);
-		this.add(equipe_1);
-		this.add(equipe2);
-		this.add(equipe_2);
-
+		contentPane.add(equipe1);
+		contentPane.add(equipe_1);
+		contentPane.add(equipe2);
+		contentPane.add(equipe_2);
+		contentPane.add(retour);
 		setVisible(true);
 		
 		}
@@ -72,7 +78,6 @@ public class Energie extends JPanel {
 	public void Equipe_1() {
 		System.out.println("array: "+players1);
 		equipe_1.setLayout(new GridLayout(11,1));
-		int test=10;
 		j1=new SportLabel("Name: "+Name(0)+" "+"energie: "+Energie(0)+"");
 		j1.setBackground(new Color(28, 28, 28));
 		j2=new SportLabel("Name: "+Name(1)+" "+"energie: "+Energie(1)+"");
@@ -110,7 +115,6 @@ public class Energie extends JPanel {
 	
 	public void Equipe_2() {
 		equipe_2.setLayout(new GridLayout(11,1));
-		int test=10;
 		j12=new SportLabel("Name: "+Name2(0)+" "+"energie: "+Energie2(0)+"");
 		j12.setBackground(new Color(28, 28, 28));
 		j13=new SportLabel("Name: "+Name2(1)+" "+"energie: "+Energie2(1)+"");
@@ -146,6 +150,14 @@ public class Energie extends JPanel {
 		equipe_2.add(j22);
 	}
 	
+	private class Retour implements ActionListener { 
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			setVisible(false);
+			 
+		}
+
+	}
 	
 	
 	public int Energie(int i) {
