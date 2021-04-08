@@ -78,8 +78,8 @@ public class Match {
 
 	private Team team1 = new Team("team1", players1, "blue");
 	private Team team2 = new Team("team2", players2, "red");
-	private int scoreteam1;
-	private int scoreteam2;
+	private static int scoreteam1;
+	private static int scoreteam2;
 	private int time_match = 90;
 
 	private Ball ball = new Ball(250, 150);
@@ -104,20 +104,29 @@ public class Match {
 		this.team2 = team2;
 	}
 
-	public int getScoreteam1() {
+	public static int getScoreteam1() {
 		return scoreteam1;
 	}
-
-	public void setScoreteam1(int scoreteam1) {
-		this.scoreteam1 = scoreteam1;
+	
+	public static void incrementScore1() {
+		scoreteam1 += 1;
 	}
 
-	public int getScoreteam2() {
+	public static void incrementScore2() {
+		scoreteam2 += 1;
+	}
+
+
+	public static int getScoreteam2() {
 		return scoreteam2;
 	}
 
-	public void setScoreteam2(int scoreteam2) {
-		this.scoreteam2 = scoreteam2;
+	public static void setScoreteam2(int scoreteam2) {
+		Match.scoreteam2 = scoreteam2;
+	}
+	
+	public static void setScroreteam1(int scoreteam1) {
+		Match.scoreteam1 = scoreteam1;
 	}
 
 	public int getTime_match() {

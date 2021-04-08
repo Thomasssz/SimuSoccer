@@ -582,7 +582,6 @@ public class MatchManager {
 		players2 = dash.getTeam2();
 
 		ball_team = TeamBall(players1, players2);
-
 		int index_tireur = PlayerBall(ball_team);
 
 		player_ball = ball_team.getPlayers().get(index_tireur);
@@ -612,18 +611,26 @@ public class MatchManager {
 			}
 
 			if (goal == true) {
-
+			
 				testshoot.ShootBlue(dash, index_tireur, aim_x, aim_y, goal);
-
+				Match.setScroreteam1(Match.getScoreteam1()+1);
 			} else {
 
 				int x_gardien = dash.getTeam2().getPlayers().get(0).getX();
 				int y_gardien = dash.getTeam2().getPlayers().get(0).getY();
+				
+				if((x_gardien == dash.getBallon().getPositionx_Ball()) && (y_gardien == dash.getBallon().getPositiony_Ball())) {
+					testshoot.ShootBlue(dash, index_tireur, x_gardien, y_gardien, goal);
+				}else  {
+					doCorner(dash);
+				}
+				
 
-				testshoot.ShootBlue(dash, index_tireur, x_gardien, y_gardien, goal);
+				
 			}
 
-		} else {
+		} else if (((aim_y >= 165)  && (aim_y <=250 )) || ((aim_y >= 375 )&&(aim_y <= 458))) {
+			doCorner(dash);
 			testshoot.ShootBlue(dash, index_tireur, aim_x, aim_y, goal);
 		}
 
@@ -661,31 +668,37 @@ public class MatchManager {
 			dash.setShoot(true);
 
 		}
+		
 
 		if ((aim_y <= 375) && (aim_y > 250)) {
 
 			System.out.println("tir cadre ");
-
+			
 			if (proba == 200) {
 				goal = probabilite_succes(tireur.getShoot());
 			}
 
 			if (goal == true) {
-
+				
 				System.out.println("but");
 				testshoot.ShootRed(dash, index_tireur, aim_x, aim_y, goal);
+				Match.setScoreteam2(Match.getScoreteam2()+1);
 
 			} else {
 
 				int x_gardien = dash.getTeam1().getPlayers().get(0).getX();
 				int y_gardien = dash.getTeam1().getPlayers().get(0).getY();
 				System.out.println("tir sur gardien");
-
-				testshoot.ShootRed(dash, index_tireur, x_gardien, y_gardien, goal);
+				if((x_gardien == dash.getBallon().getPositionx_Ball()) && (y_gardien == dash.getBallon().getPositiony_Ball())) {
+					testshoot.ShootBlue(dash, index_tireur, x_gardien, y_gardien, goal);
+				}else  {
+					doCorner(dash);
+				}
 			}
 
-		} else {
+		} else if (((aim_y >= 165)  && (aim_y <=250 )) || ((aim_y >= 375 )&&(aim_y <= 458))){
 			System.out.println("tir non cadre");
+			doCorner(dash);
 			testshoot.ShootRed(dash, index_tireur, aim_x, aim_y, goal);
 		}
 
@@ -695,24 +708,20 @@ public class MatchManager {
 		}
 
 	}
-
+	
 	public void shoot(Dashboard dash) {
 		Team team1 = dash.getTeam1();
 		Team team2 = dash.getTeam2();
-
+		
 		ball_team = TeamBall(team1, team2);
-
-		switch (ball_team.getColor()) {
-		case "blue":
-			doBlueShoot(dash);
-		case "red":
-			doRedShoot(dash);
+		
+		switch(ball_team.getColor()) {
+		case "blue" : doBlueShoot(dash);
+		case "red" : doRedShoot(dash);
 		}
-
-		System.out.println("44");
-
-	}
-
+			
+		}
+	
 	public void doCorner(Dashboard dash) {
 
 		System.out.println("on rentre dans le doCorner");
@@ -725,51 +734,42 @@ public class MatchManager {
 
 			cornertest = dash.getTestcorner();
 
-			if (first_choice_corner == 0) {
 
-				Random rand = new Random();
-				int choix_corner = rand.nextInt(4);
 
-				choix_corner += 1; // le tirage se fait entre 1 et 4
-
-				first_choice_corner = choix_corner;
-
-			}
-
-			if (first_choice_corner == 1) {
+			if ((dash.getBallon().getPositionx_Ball() < 75) && ((dash.getBallon().getPositiony_Ball() >= 165) && (dash.getBallon().getPositiony_Ball() <=311))) {
 
 				cornertest.CornerHautGauche(dash);
 
 				if ((dash.isStop_action() == true) && (dash.isStop_action_shoot() == false)) {
 					System.out.println("on est dans la situation ou on fait le tir ");
-					doRedShoot(dash);
+					shoot(dash);
 				}
 
-			} else if (first_choice_corner == 2) {
+			} else if ((dash.getBallon().getPositionx_Ball() > 813) && ((dash.getBallon().getPositiony_Ball() >= 165) && (dash.getBallon().getPositiony_Ball() <=311))) {
 
 				cornertest.CornerHautDroite(dash);
 
 				if ((dash.isStop_action() == true) && (dash.isStop_action_shoot() == false)) {
 					System.out.println("on est dans la situation ou on fait le tir ");
-					doBlueShoot(dash);
+					shoot(dash);
 				}
 
-			} else if (first_choice_corner == 3) {
+			} else if ((dash.getBallon().getPositionx_Ball() < 75) && ((dash.getBallon().getPositiony_Ball() > 311) && (dash.getBallon().getPositiony_Ball() <=458))) {
 
 				cornertest.CornerBasGauche(dash);
 
 				if ((dash.isStop_action() == true) && (dash.isStop_action_shoot() == false)) {
 					System.out.println("on est dans la situation ou on fait le tir ");
-					doRedShoot(dash);
+					shoot(dash);
 				}
 
-			} else if (first_choice_corner == 4) {
+			} else if (((dash.getBallon().getPositionx_Ball() > 813) && ((dash.getBallon().getPositiony_Ball() > 311) && (dash.getBallon().getPositiony_Ball() <=458)))) {
 
 				cornertest.CornerBasDroite(dash);
 
 				if ((dash.isStop_action() == true) && (dash.isStop_action_shoot() == false)) {
 					System.out.println("on est dans la situation ou on fait le tir ");
-					doBlueShoot(dash);
+					shoot(dash);
 				}
 
 			}
