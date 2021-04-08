@@ -29,7 +29,7 @@ class EnduranceTest {
 	@SuppressWarnings("unused")
 	@Test
 	void testBaisse() {
-		Endurance end = new Endurance();
+		//Endurance end = new Endurance();
 		//assertEquals("Erreur", end.baisse(dash, gui), 91);
 		
 	}

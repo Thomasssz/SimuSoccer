@@ -2,13 +2,26 @@ package process;
 
 import java.util.ArrayList;
 
+import data.Ball;
+import data.Match;
 import data.Player;
+import data.Team;
+import delimitations.Corner;
+import delimitations.Touche;
 import gui.ChronometerGUI;
 import gui.Dashboard;
 
 public class Endurance {
-	        
-	
+	      private Dashboard dash;  
+	      private ChronometerGUI gui;
+	      private Team team1;
+	      private Team team2;
+	public Endurance(Dashboard dash, ChronometerGUI gui,Team team1, Team team2) {
+		this.dash=dash;
+		this.gui=gui;
+		this.team1=team1;
+		this.team2=team2;
+	}
 	public void baisse(Dashboard dash, ChronometerGUI gui, ArrayList<Player> players1, ArrayList<Player> players2) {
 		int timeminute= gui.getChronometer().getMinute().getValue();
 		int timeseconde= gui.getChronometer().getSecond().getValue();

@@ -39,7 +39,7 @@ public class TestTeam {
 		training.parcoursListPlayer(training.getPlayers()); //sera affiche if color = blue
 		training.parcoursListPlayer(training.getPlayers()); // sera affiche if color = red*/
 		
-		Endurance endurance = new Endurance();
+		//Endurance endurance = new Endurance();
 		//endurance.baisse(dash, gui);
 		
 	}

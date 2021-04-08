@@ -39,7 +39,9 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	private Touche touchetest = new Touche() ;
 	private Match match = new Match();
 	private Dashboard dashboard = new Dashboard(team1, team2, ballon,cornertest,touchetest,match);
+	private Energie energie1=new Energie(team1.getPlayers(),team2.getPlayers());
 	private MatchManager matchprocess = new MatchManager(this);
+	private Endurance end=new Endurance(dashboard,this,team1,team2);
 	private ChronometerGUI instance = this;
 	
 	@SuppressWarnings("unused")
@@ -124,15 +126,15 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		
 		
 		
-		//barre_energie.setPreferredSize(new Dimension(490,865));
-		//barre_energie.setBounds(1250,20,490,865);
+		//energie1.setPreferredSize(new Dimension(490,865));
+		energie1.setBounds(1250,20,490,865);
 		
 		contentPane.add(start_stop);
 		contentPane.add(dashboard);
 		contentPane.add(temps);
 		contentPane.add(start_acceleration);
 		contentPane.add(score);
-		//contentPane.add(barre_energie);
+		contentPane.add(energie1);
 		setVisible(true);
 	}
 	
@@ -257,7 +259,10 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		// This part is for graphical time printing.
 
 		// The dashboard needs to be reprinted when hour, minute or second values
+		
+		end.baisse(dashboard, instance, team1.getPlayers(), team2.getPlayers());
 		matchprocess.matchProcess(dashboard,this);
+		energie1.repaint();
 		dashboard.repaint();
 	}
 
@@ -383,15 +388,15 @@ public String toStringB() {
 	
 	public String toStringR0() {
 		@SuppressWarnings("unused")
-		Endurance end=new Endurance();
+		//Endurance end=new Endurance();
 		//end.baisse(dashboard, instance);
 		int ji=0;
 		String result = "Joueur " + team2.getPlayers().get(ji).getNumber() + ":"+ team2.getPlayers().get(ji).getEnergie() + "";
 		return result;
 		}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		new ChronometerGUI();
-	}
+	}*/
 
 }
