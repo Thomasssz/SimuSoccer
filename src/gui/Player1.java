@@ -33,6 +33,7 @@ public class Player1 extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
 		label = new SportLabel("Numero Maillot : "+ name+"");
 		label.setBackground(new Color(28, 28, 28));
 		label.setBounds(100,10,200,40);
@@ -42,37 +43,37 @@ public class Player1 extends JFrame {
 		defense2.setPreferredSize(new Dimension(350,60));
 		defense2.setBackground(new Color(28, 28, 28));
 		defense2.setBounds(25,60,350,60);
-		Defense1();
+		Defense1(name);
 		
 		dribbles2=new JPanel();
 		dribbles2.setPreferredSize(new Dimension(350,60));
 		dribbles2.setBackground(new Color(28, 28, 28));
 		dribbles2.setBounds(25,130,350,60);
-		Dribbles1();
+		Dribbles1(name);
 		
 		shoot2=new JPanel();
 		shoot2.setPreferredSize(new Dimension(350,60));
 		shoot2.setBackground(new Color(28, 28, 28));
 		shoot2.setBounds(25,200,350,60);
-		Shoot1();
+		Shoot1(name);
 		
 		speed2=new JPanel();
 		speed2.setPreferredSize(new Dimension(350,60));
 		speed2.setBackground(new Color(28, 28, 28));
 		speed2.setBounds(25,270,350,60);
-		Speed1();
+		Speed1(name);
 		
 		energie2=new JPanel();
 		energie2.setPreferredSize(new Dimension(350,60));
 		energie2.setBackground(new Color(28, 28, 28));
 		energie2.setBounds(25,340,350,60);
-		Energie1();
+		Energie1(name);
 		
 		endurance2=new JPanel();
 		endurance2.setPreferredSize(new Dimension(350,60));
 		endurance2.setBackground(new Color(28, 28, 28));
 		endurance2.setBounds(25,410,350,60);
-		Endurance1();
+		Endurance1(name);
 		
 		  
 		contentPane.add(label);
@@ -85,7 +86,7 @@ public class Player1 extends JFrame {
 		setVisible(true);
 	} 
 	
-	public void  Defense1() {
+	public void  Defense1(String name) {
 		defense2.setLayout(new GridLayout(1,2));
 		defense = new SportLabel("Defense : ");
 		defense.setBackground(new Color(28, 28, 28));
@@ -97,7 +98,7 @@ public class Player1 extends JFrame {
 		
 	}
 	
-	public void  Dribbles1() {
+	public void  Dribbles1(String name) {
 		dribbles2.setLayout(new GridLayout(1,2));
 		dribbles= new SportLabel("Dribbles : ");
 		dribbles.setBackground(new Color(28, 28, 28));
@@ -109,7 +110,7 @@ public class Player1 extends JFrame {
 		
 	}
 	
-	public void Shoot1() {
+	public void Shoot1(String name) {
 		shoot2.setLayout(new GridLayout(1,2));
 		shoot= new SportLabel("Shoot : ");
 		shoot.setBackground(new Color(28, 28, 28));
@@ -120,7 +121,7 @@ public class Player1 extends JFrame {
 		shoot2.add(shoot1);
 	}
 	
-	public void Speed1() {
+	public void Speed1(String name) {
 		speed2.setLayout(new GridLayout(1,2));
 		speed= new SportLabel("Speed : ");
 		speed.setBackground(new Color(28, 28, 28));
@@ -131,7 +132,7 @@ public class Player1 extends JFrame {
 		speed2.add(speed1);
 	}
 	
-	public void Energie1() {
+	public void Energie1(String name) {
 		energie2.setLayout(new GridLayout(1,2));
 		energie= new SportLabel("Energie : ");
 		energie.setBackground(new Color(28, 28, 28));
@@ -142,7 +143,7 @@ public class Player1 extends JFrame {
 		energie2.add(energie1);
 	}
 	
-	public void Endurance1() {
+	public void Endurance1(String name) {
 		endurance2.setLayout(new GridLayout(1,2));
 		endurance= new SportLabel("Endurance : ");
 		endurance.setBackground(new Color(28, 28, 28));
@@ -154,7 +155,6 @@ public class Player1 extends JFrame {
 	}
 	
 public int Energie(String name) {
-		
 		int result = 0;
 			for(int i = 0; i < team1.size(); i++) { 
 	    		if(team1.get(i).getName().equals(name)) {
@@ -169,7 +169,7 @@ public int Endurance(String name) {
 	int result = 0;
 		for(int i = 0; i < team1.size(); i++) { 
     		if(team1.get(i).getName().equals(name)) {
-    			result = team1.get(i).getEnergie();
+    			result = team1.get(i).getEndurance();
     		}
     	}
 		return result;
@@ -198,7 +198,7 @@ public int Endurance(String name) {
 			return result;
 		}
 	
-public int Shoot(String name) {
+	public int Shoot(String name) {
 		
 		int result=0;
 			for(int i = 0; i < team1.size(); i++) { 
@@ -213,22 +213,16 @@ public int Shoot(String name) {
 			
 		}
 
-public int Dribbles(String name) {
+	public int Dribbles(String name) {
 	
 	int result = 0;
 		for(int i = 0; i < team1.size(); i++) { 
     		if(team1.get(i).getName().equals(name)) {
-    			result = team1.get(i).getDribbles();
+    			result += team1.get(i).getDribbles();
     		}
     	}
 		return result;
 	}
-
-
-
-
-	
-	
 	
 
 }

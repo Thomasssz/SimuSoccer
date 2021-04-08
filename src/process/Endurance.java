@@ -7,67 +7,57 @@ import gui.ChronometerGUI;
 import gui.Dashboard;
 
 public class Endurance {
+	        
 	
-	private static ArrayList<Player> team1 = new ArrayList<Player>();
-	private static ArrayList<Player> team2 = new ArrayList<Player>();
-	
-	
-	public void baisse(Dashboard dash, ChronometerGUI gui) {
+	public void baisse(Dashboard dash, ChronometerGUI gui, ArrayList<Player> players1, ArrayList<Player> players2) {
 		int timeminute= gui.getChronometer().getMinute().getValue();
 		int timeseconde= gui.getChronometer().getSecond().getValue();
-		while(timeminute <= 90 && timeseconde == 0) {
-			if(timeminute % 10 == 0) {
-				for(int i = 0; i < team1.size(); i++) { 
-					int endurance = team1.get(0).getEndurance();
+			if(timeminute % 10 == 0 && timeseconde == 0 && timeminute!=0) {
+				for(int i = 0; i < players1.size(); i++) { 
+					int endurance = players1.get(i).getEndurance();
+					System.out.println(endurance);
 					if(endurance >= 80) {
-						team1.get(i).setEnergie(team1.get(i).getEnergie()-9);
-						System.out.println(team1.get(i).getEnergie());
+						players1.get(i).setEnergie(players1.get(i).getEnergie()-9);
 					}
 					else if((endurance >= 60)  && (endurance < 80) ) {
-						team1.get(i).setEnergie(team1.get(i).getEnergie()-10);
-						System.out.println(team1.get(i).getEnergie());
+						players1.get(i).setEnergie(players1.get(i).getEnergie()-10);
 					}
 					else if(endurance < 60 ) {
-						team1.get(i).setEnergie(team1.get(0).getEnergie()-11);
-						System.out.println(team1.get(i).getEnergie());
+						players1.get(i).setEnergie(players1.get(0).getEnergie()-11);
 					}
-					if(team1.get(i).getEnergie() <= 50) {
-						team1.get(i).setSpeed(team1.get(i).getSpeed()-10);
-						team1.get(i).setPass(team1.get(i).getPass()-10);
-						team1.get(i).setDefense(team1.get(i).getEnergie()-10);
-						team1.get(i).setShoot(team1.get(i).getShoot()-10);
-						team1.get(i).setDribbles(team1.get(i).getDribbles()-10);
+					if(players1.get(i).getEnergie() <= 50) {
+						players1.get(i).setSpeed(players1.get(i).getSpeed()-10);
+						players1.get(i).setPass(players1.get(i).getPass()-10);
+						players1.get(i).setDefense(players1.get(i).getEnergie()-10);
+						players1.get(i).setShoot(players1.get(i).getShoot()-10);
+						players1.get(i).setDribbles(players1.get(i).getDribbles()-10);
 					}
 				}
 			
 			
-				for(int i = 0; i < team2.size(); i++) { 
-					int endurance = team2.get(i).getEnergie();
+				for(int i = 0; i < players2.size(); i++) { 
+					int endurance = players2.get(i).getEnergie();
 					if(endurance >= 80) {
-						team2.get(i).setEnergie(team2.get(i).getEnergie()-9);
-						System.out.println(team1.get(i).getEnergie());
+						players2.get(i).setEnergie(players2.get(i).getEnergie()-9);
 					}
 					else if((endurance >= 60)  && (endurance < 80) ) {
-						team2.get(i).setEnergie(team2.get(i).getEnergie()-10);
-						System.out.println(team1.get(i).getEnergie());
+						players2.get(i).setEnergie(players2.get(i).getEnergie()-10);
 					}
 					else if(endurance < 60 ) {
-						team2.get(i).setEnergie(team2.get(i).getEnergie()-11);
-						System.out.println(team1.get(i).getEnergie());
+						players2.get(i).setEnergie(players2.get(i).getEnergie()-11);
 					}
-					if(team2.get(i).getEnergie() <= 50) {
-						team2.get(i).setSpeed(team2.get(i).getSpeed()-10);
-						team2.get(i).setPass(team2.get(i).getPass()-10);
-						team2.get(i).setDefense(team2.get(i).getEnergie()-10);
-						team2.get(i).setShoot(team2.get(i).getShoot()-10);
-						team2.get(i).setDribbles(team2.get(i).getDribbles()-10);
+					if(players2.get(i).getEnergie() <= 50) {
+						players2.get(i).setSpeed(players2.get(i).getSpeed()-10);
+						players2.get(i).setPass(players2.get(i).getPass()-10);
+						players2.get(i).setDefense(players2.get(i).getEnergie()-10);
+						players2.get(i).setShoot(players2.get(i).getShoot()-10);
+						players2.get(i).setDribbles(players2.get(i).getDribbles()-10);
 					}
-				
+
+			
 				}
-			}
-		}
 	 
-	}
+			}
 	
-	
+	}	
 }
