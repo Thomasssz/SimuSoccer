@@ -7,6 +7,8 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -73,6 +75,8 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	private JRadioButton rdbtns1=new JRadioButton("speed 2 (x2)");
 	private JRadioButton rdbtns2=new JRadioButton("speed 3 (x4)");
 	private JRadioButton rdbtns3=new JRadioButton("speed 4 (x10)"); 
+	
+	private ButtonGroup button_group = new ButtonGroup();
 	
 	SportLabel scoreteam1Label1,scoreteam1Value1,scoreteam2Label1,scoreteam2Value1,minuteLabel1,secondLabel1,minuteValue1,secondValue1,Temps,Acceleration,teamB,teamR;
 
@@ -184,6 +188,11 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		rdbtns3.setForeground(Color.white);
 		rdbtns3.addActionListener(new SpeedAction3());
 		rdbtns3.setBackground(new Color(28, 28, 28));
+		
+		button_group.add(rdbtns0);
+		button_group.add(rdbtns1);
+		button_group.add(rdbtns2);
+		button_group.add(rdbtns3);
 
 		start_acceleration.add(Acceleration);
 		start_acceleration.add(rdbtns0);
