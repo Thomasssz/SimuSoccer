@@ -54,7 +54,7 @@ public class Endurance {
 						players2.get(i).setDribbles(players2.get(i).getDribbles()-10);
 					}
 
-			
+		
 				}
 	 
 			}

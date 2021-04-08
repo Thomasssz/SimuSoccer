@@ -213,7 +213,7 @@ public int Endurance(String name) {
 			
 		}
 
-	public int Dribbles(String name) {
+ public int Dribbles(String name) {
 	
 	int result = 0;
 		for(int i = 0; i < team1.size(); i++) { 
