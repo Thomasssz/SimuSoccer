@@ -33,8 +33,8 @@ public class Corner {
 		
 		Ball ballon = dash.getBallon();
 
-		ArrayList<Player> players1 = dash.getTeam1();
-		ArrayList<Player> players2 = dash.getTeam2();
+		ArrayList<Player> players1 = dash.getTeam1().getPlayers();
+		ArrayList<Player> players2 = dash.getTeam2().getPlayers();
 
 		while (receveur_corner != true) {
 
@@ -200,8 +200,8 @@ public class Corner {
 
 		Ball ballon = dash.getBallon();
 
-		ArrayList<Player> players1 = dash.getTeam1();
-		ArrayList<Player> players2 = dash.getTeam2();
+		ArrayList<Player> players1 = dash.getTeam1().getPlayers();
+		ArrayList<Player> players2 = dash.getTeam2().getPlayers();
 
 		while (receveur_corner != true) {
 
@@ -367,8 +367,8 @@ public class Corner {
 
 		Ball ballon = dash.getBallon();
 
-		ArrayList<Player> players2 = dash.getTeam2();
-		ArrayList<Player> players1 = dash.getTeam1();
+		ArrayList<Player> players2 = dash.getTeam2().getPlayers();
+		ArrayList<Player> players1 = dash.getTeam1().getPlayers();
 
 		while (receveur_corner != true) {
 
@@ -532,8 +532,8 @@ public class Corner {
 
 		Ball ballon = dash.getBallon();
 
-		ArrayList<Player> players1 = dash.getTeam1();
-		ArrayList<Player> players2 = dash.getTeam2();
+		ArrayList<Player> players1 = dash.getTeam1().getPlayers();
+		ArrayList<Player> players2 = dash.getTeam2().getPlayers();
 
 		while (receveur_corner != true) {
 

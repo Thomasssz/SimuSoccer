@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import data.Ball;
 import data.Match;
 import data.Player;
+import data.Team;
 import delimitations.Corner;
 import delimitations.Goal;
 import delimitations.Sortie;
@@ -29,8 +30,8 @@ import delimitations.Touche;
  */
 public class Dashboard extends JPanel {
 	
-	private ArrayList<Player> team1 ;
-	private ArrayList<Player> team2 ;
+	private Team team1 ;
+	private Team team2 ;
 	private Ball ballon ;
 	private Corner testcorner ;
 	private Touche testtouche ;
@@ -48,7 +49,7 @@ public class Dashboard extends JPanel {
 	private boolean mi_temps = false ;
 	private boolean intercepteur = false ;
 	
-	public Dashboard(ArrayList<Player> team1, ArrayList<Player> team2, Ball ballon, Corner testcorner, Touche testtouche, Match match) {
+	public Dashboard(Team team1, Team team2, Ball ballon, Corner testcorner, Touche testtouche, Match match) {
 		this.team1 = team1 ;
 		this.team2 = team2 ;
 		this.ballon = ballon ;
@@ -106,52 +107,52 @@ public class Dashboard extends JPanel {
 
         g.setColor(Color.BLUE);
 
-        g.drawRect(team1.get(10).getX(), team1.get(10).getY(), 10, 10);
-        g.drawRect(team1.get(9).getX(), team1.get(9).getY(), 10, 10);
+        g.drawRect(team1.getPlayers().get(10).getX(), team1.getPlayers().get(10).getY(), 10, 10);
+        g.drawRect(team1.getPlayers().get(9).getX(), team1.getPlayers().get(9).getY(), 10, 10);
 
-        g.fillRect(team1.get(10).getX(), team1.get(10).getY(), 10, 10);
-        g.fillRect(team1.get(9).getX(), team1.get(9).getY(), 10, 10);
+        g.fillRect(team1.getPlayers().get(10).getX(), team1.getPlayers().get(10).getY(), 10, 10);
+        g.fillRect(team1.getPlayers().get(9).getX(), team1.getPlayers().get(9).getY(), 10, 10);
 
         // Milieux
 
-        g.drawRect(team1.get(8).getX(), team1.get(8).getY(), 10, 10);
-        g.drawRect(team1.get(7).getX(), team1.get(7).getY(), 10, 10);
-        g.drawRect(team1.get(6).getX(), team1.get(6).getY(), 10, 10);
-        g.drawRect(team1.get(5).getX(), team1.get(5).getY(), 10, 10);
+        g.drawRect(team1.getPlayers().get(8).getX(), team1.getPlayers().get(8).getY(), 10, 10);
+        g.drawRect(team1.getPlayers().get(7).getX(), team1.getPlayers().get(7).getY(), 10, 10);
+        g.drawRect(team1.getPlayers().get(6).getX(), team1.getPlayers().get(6).getY(), 10, 10);
+        g.drawRect(team1.getPlayers().get(5).getX(), team1.getPlayers().get(5).getY(), 10, 10);
 
-        g.fillRect(team1.get(8).getX(), team1.get(8).getY(), 10, 10);
-        g.fillRect(team1.get(7).getX(), team1.get(7).getY(), 10, 10);
-        g.fillRect(team1.get(6).getX(), team1.get(6).getY(), 10, 10);
-        g.fillRect(team1.get(5).getX(), team1.get(5).getY(), 10, 10);
+        g.fillRect(team1.getPlayers().get(8).getX(), team1.getPlayers().get(8).getY(), 10, 10);
+        g.fillRect(team1.getPlayers().get(7).getX(), team1.getPlayers().get(7).getY(), 10, 10);
+        g.fillRect(team1.getPlayers().get(6).getX(), team1.getPlayers().get(6).getY(), 10, 10);
+        g.fillRect(team1.getPlayers().get(5).getX(), team1.getPlayers().get(5).getY(), 10, 10);
 
         // Defenseurs
 
-        g.drawRect(team1.get(4).getX(), team1.get(4).getY(), 10, 10);
-        g.drawRect(team1.get(3).getX(), team1.get(3).getY(), 10, 10);
-        g.drawRect(team1.get(2).getX(), team1.get(2).getY(), 10, 10);
-        g.drawRect(team1.get(1).getX(), team1.get(1).getY(), 10, 10);
+        g.drawRect(team1.getPlayers().get(4).getX(), team1.getPlayers().get(4).getY(), 10, 10);
+        g.drawRect(team1.getPlayers().get(3).getX(), team1.getPlayers().get(3).getY(), 10, 10);
+        g.drawRect(team1.getPlayers().get(2).getX(), team1.getPlayers().get(2).getY(), 10, 10);
+        g.drawRect(team1.getPlayers().get(1).getX(), team1.getPlayers().get(1).getY(), 10, 10);
 
-        g.fillRect(team1.get(4).getX(), team1.get(4).getY(), 10, 10);
-        g.fillRect(team1.get(3).getX(), team1.get(3).getY(), 10, 10);
-        g.fillRect(team1.get(2).getX(), team1.get(2).getY(), 10, 10);
-        g.fillRect(team1.get(1).getX(), team1.get(1).getY(), 10, 10);
+        g.fillRect(team1.getPlayers().get(4).getX(), team1.getPlayers().get(4).getY(), 10, 10);
+        g.fillRect(team1.getPlayers().get(3).getX(), team1.getPlayers().get(3).getY(), 10, 10);
+        g.fillRect(team1.getPlayers().get(2).getX(), team1.getPlayers().get(2).getY(), 10, 10);
+        g.fillRect(team1.getPlayers().get(1).getX(), team1.getPlayers().get(1).getY(), 10, 10);
         // Gardien
 
-        g.drawRect(team1.get(0).getX(), team1.get(0).getY(), 10, 10);
-        g.fillRect(team1.get(0).getX(), team1.get(0).getY(), 10, 10);
+        g.drawRect(team1.getPlayers().get(0).getX(), team1.getPlayers().get(0).getY(), 10, 10);
+        g.fillRect(team1.getPlayers().get(0).getX(), team1.getPlayers().get(0).getY(), 10, 10);
         
         g.setColor(Color.WHITE);
-        g.drawString(Integer.toString(team1.get(0).getNumber()), team1.get(0).getX()+1 , team1.get(0).getY()+10);
-        g.drawString(Integer.toString(team1.get(1).getNumber()), team1.get(1).getX()+1 , team1.get(1).getY()+10);
-        g.drawString(Integer.toString(team1.get(2).getNumber()), team1.get(2).getX()+1 , team1.get(2).getY()+10);
-        g.drawString(Integer.toString(team1.get(3).getNumber()), team1.get(3).getX()+1 , team1.get(3).getY()+10);
-        g.drawString(Integer.toString(team1.get(4).getNumber()), team1.get(4).getX()+1 , team1.get(4).getY()+10);
-        g.drawString(Integer.toString(team1.get(5).getNumber()), team1.get(5).getX()+1 , team1.get(5).getY()+10);
-        g.drawString(Integer.toString(team1.get(6).getNumber()), team1.get(6).getX()+1 , team1.get(6).getY()+10);
-        g.drawString(Integer.toString(team1.get(7).getNumber()), team1.get(7).getX()+1 , team1.get(7).getY()+10);
-        g.drawString(Integer.toString(team1.get(8).getNumber()), team1.get(8).getX()+1 , team1.get(8).getY()+10);
-        g.drawString(Integer.toString(team1.get(9).getNumber()), team1.get(9).getX()+1 , team1.get(9).getY()+10);
-        g.drawString(Integer.toString(team1.get(10).getNumber()), team1.get(10).getX()+1 , team1.get(10).getY()+10);
+        g.drawString(Integer.toString(team1.getPlayers().get(0).getNumber()), team1.getPlayers().get(0).getX()+1 , team1.getPlayers().get(0).getY()+10);
+        g.drawString(Integer.toString(team1.getPlayers().get(1).getNumber()), team1.getPlayers().get(1).getX()+1 , team1.getPlayers().get(1).getY()+10);
+        g.drawString(Integer.toString(team1.getPlayers().get(2).getNumber()), team1.getPlayers().get(2).getX()+1 , team1.getPlayers().get(2).getY()+10);
+        g.drawString(Integer.toString(team1.getPlayers().get(3).getNumber()), team1.getPlayers().get(3).getX()+1 , team1.getPlayers().get(3).getY()+10);
+        g.drawString(Integer.toString(team1.getPlayers().get(4).getNumber()), team1.getPlayers().get(4).getX()+1 , team1.getPlayers().get(4).getY()+10);
+        g.drawString(Integer.toString(team1.getPlayers().get(5).getNumber()), team1.getPlayers().get(5).getX()+1 , team1.getPlayers().get(5).getY()+10);
+        g.drawString(Integer.toString(team1.getPlayers().get(6).getNumber()), team1.getPlayers().get(6).getX()+1 , team1.getPlayers().get(6).getY()+10);
+        g.drawString(Integer.toString(team1.getPlayers().get(7).getNumber()), team1.getPlayers().get(7).getX()+1 , team1.getPlayers().get(7).getY()+10);
+        g.drawString(Integer.toString(team1.getPlayers().get(8).getNumber()), team1.getPlayers().get(8).getX()+1 , team1.getPlayers().get(8).getY()+10);
+        g.drawString(Integer.toString(team1.getPlayers().get(9).getNumber()), team1.getPlayers().get(9).getX()+1 , team1.getPlayers().get(9).getY()+10);
+        g.drawString(Integer.toString(team1.getPlayers().get(10).getNumber()), team1.getPlayers().get(10).getX()+1 , team1.getPlayers().get(10).getY()+10);
         
 
         /* Equipe rouge */
@@ -160,40 +161,40 @@ public class Dashboard extends JPanel {
 
         g.setColor(Color.RED);
 
-        g.drawRect(team2.get(10).getX(), team2.get(10).getY(), 10, 10);
-        g.drawRect(team2.get(9).getX(), team2.get(9).getY(), 10, 10);
+        g.drawRect(team2.getPlayers().get(10).getX(), team2.getPlayers().get(10).getY(), 10, 10);
+        g.drawRect(team2.getPlayers().get(9).getX(), team2.getPlayers().get(9).getY(), 10, 10);
 
-        g.fillRect(team2.get(10).getX(), team2.get(10).getY(), 10, 10);
-        g.fillRect(team2.get(9).getX(), team2.get(9).getY(), 10, 10);
+        g.fillRect(team2.getPlayers().get(10).getX(), team2.getPlayers().get(10).getY(), 10, 10);
+        g.fillRect(team2.getPlayers().get(9).getX(), team2.getPlayers().get(9).getY(), 10, 10);
 
         // Milieux
 
-        g.drawRect(team2.get(8).getX(), team2.get(8).getY(), 10, 10);
-        g.drawRect(team2.get(7).getX(), team2.get(7).getY(), 10, 10);
-        g.drawRect(team2.get(6).getX(), team2.get(6).getY(), 10, 10);
-        g.drawRect(team2.get(5).getX(), team2.get(5).getY(), 10, 10);
+        g.drawRect(team2.getPlayers().get(8).getX(), team2.getPlayers().get(8).getY(), 10, 10);
+        g.drawRect(team2.getPlayers().get(7).getX(), team2.getPlayers().get(7).getY(), 10, 10);
+        g.drawRect(team2.getPlayers().get(6).getX(), team2.getPlayers().get(6).getY(), 10, 10);
+        g.drawRect(team2.getPlayers().get(5).getX(), team2.getPlayers().get(5).getY(), 10, 10);
 
-        g.fillRect(team2.get(8).getX(), team2.get(8).getY(), 10, 10);
-        g.fillRect(team2.get(7).getX(), team2.get(7).getY(), 10, 10);
-        g.fillRect(team2.get(6).getX(), team2.get(6).getY(), 10, 10);
-        g.fillRect(team2.get(5).getX(), team2.get(5).getY(), 10, 10);
+        g.fillRect(team2.getPlayers().get(8).getX(), team2.getPlayers().get(8).getY(), 10, 10);
+        g.fillRect(team2.getPlayers().get(7).getX(), team2.getPlayers().get(7).getY(), 10, 10);
+        g.fillRect(team2.getPlayers().get(6).getX(), team2.getPlayers().get(6).getY(), 10, 10);
+        g.fillRect(team2.getPlayers().get(5).getX(), team2.getPlayers().get(5).getY(), 10, 10);
 
         // Defenseurs
 
-        g.drawRect(team2.get(4).getX(), team2.get(4).getY(), 10, 10);
-        g.drawRect(team2.get(3).getX(), team2.get(3).getY(), 10, 10);
-        g.drawRect(team2.get(2).getX(), team2.get(2).getY(), 10, 10);
-        g.drawRect(team2.get(1).getX(), team2.get(1).getY(), 10, 10);
+        g.drawRect(team2.getPlayers().get(4).getX(), team2.getPlayers().get(4).getY(), 10, 10);
+        g.drawRect(team2.getPlayers().get(3).getX(), team2.getPlayers().get(3).getY(), 10, 10);
+        g.drawRect(team2.getPlayers().get(2).getX(), team2.getPlayers().get(2).getY(), 10, 10);
+        g.drawRect(team2.getPlayers().get(1).getX(), team2.getPlayers().get(1).getY(), 10, 10);
 
-        g.fillRect(team2.get(4).getX(), team2.get(4).getY(), 10, 10);
-        g.fillRect(team2.get(3).getX(), team2.get(3).getY(), 10, 10);
-        g.fillRect(team2.get(2).getX(), team2.get(2).getY(), 10, 10);
-        g.fillRect(team2.get(1).getX(), team2.get(1).getY(), 10, 10);
+        g.fillRect(team2.getPlayers().get(4).getX(), team2.getPlayers().get(4).getY(), 10, 10);
+        g.fillRect(team2.getPlayers().get(3).getX(), team2.getPlayers().get(3).getY(), 10, 10);
+        g.fillRect(team2.getPlayers().get(2).getX(), team2.getPlayers().get(2).getY(), 10, 10);
+        g.fillRect(team2.getPlayers().get(1).getX(), team2.getPlayers().get(1).getY(), 10, 10);
         
         // Gardien
 
-        g.drawRect(team2.get(0).getX(), team2.get(0).getY(), 10, 10);
-        g.fillRect(team2.get(0).getX(), team2.get(0).getY(), 10, 10);
+        g.drawRect(team2.getPlayers().get(0).getX(), team2.getPlayers().get(0).getY(), 10, 10);
+        g.fillRect(team2.getPlayers().get(0).getX(), team2.getPlayers().get(0).getY(), 10, 10);
         
         g.setColor(Color.BLACK);
 		
@@ -201,37 +202,37 @@ public class Dashboard extends JPanel {
 		g.fillOval(ballon.getPositionx_Ball(), ballon.getPositiony_Ball(), 10, 10);
 		
 		g.setColor(Color.WHITE);
-		g.drawString(Integer.toString(team2.get(0).getNumber()), team2.get(0).getX()+1 , team2.get(0).getY()+10);
-	    g.drawString(Integer.toString(team2.get(1).getNumber()), team2.get(1).getX()+1 , team2.get(1).getY()+10);
-	    g.drawString(Integer.toString(team2.get(2).getNumber()), team2.get(2).getX()+1 , team2.get(2).getY()+10);
-	    g.drawString(Integer.toString(team2.get(3).getNumber()), team2.get(3).getX()+1 , team2.get(3).getY()+10);
-	    g.drawString(Integer.toString(team2.get(4).getNumber()), team2.get(4).getX()+1 , team2.get(4).getY()+10);
-	    g.drawString(Integer.toString(team2.get(5).getNumber()), team2.get(5).getX()+1 , team2.get(5).getY()+10);
-	    g.drawString(Integer.toString(team2.get(6).getNumber()), team2.get(6).getX()+1 , team2.get(6).getY()+10);
-	    g.drawString(Integer.toString(team2.get(7).getNumber()), team2.get(7).getX()+1 , team2.get(7).getY()+10);
-	    g.drawString(Integer.toString(team2.get(8).getNumber()), team2.get(8).getX()+1 , team2.get(8).getY()+10);
-	    g.drawString(Integer.toString(team2.get(9).getNumber()), team2.get(9).getX()+1 , team2.get(9).getY()+10);
-	    g.drawString(Integer.toString(team2.get(10).getNumber()), team2.get(10).getX()+1 , team2.get(10).getY()+10);
+		g.drawString(Integer.toString(team2.getPlayers().get(0).getNumber()), team2.getPlayers().get(0).getX()+1 , team2.getPlayers().get(0).getY()+10);
+	    g.drawString(Integer.toString(team2.getPlayers().get(1).getNumber()), team2.getPlayers().get(1).getX()+1 , team2.getPlayers().get(1).getY()+10);
+	    g.drawString(Integer.toString(team2.getPlayers().get(2).getNumber()), team2.getPlayers().get(2).getX()+1 , team2.getPlayers().get(2).getY()+10);
+	    g.drawString(Integer.toString(team2.getPlayers().get(3).getNumber()), team2.getPlayers().get(3).getX()+1 , team2.getPlayers().get(3).getY()+10);
+	    g.drawString(Integer.toString(team2.getPlayers().get(4).getNumber()), team2.getPlayers().get(4).getX()+1 , team2.getPlayers().get(4).getY()+10);
+	    g.drawString(Integer.toString(team2.getPlayers().get(5).getNumber()), team2.getPlayers().get(5).getX()+1 , team2.getPlayers().get(5).getY()+10);
+	    g.drawString(Integer.toString(team2.getPlayers().get(6).getNumber()), team2.getPlayers().get(6).getX()+1 , team2.getPlayers().get(6).getY()+10);
+	    g.drawString(Integer.toString(team2.getPlayers().get(7).getNumber()), team2.getPlayers().get(7).getX()+1 , team2.getPlayers().get(7).getY()+10);
+	    g.drawString(Integer.toString(team2.getPlayers().get(8).getNumber()), team2.getPlayers().get(8).getX()+1 , team2.getPlayers().get(8).getY()+10);
+	    g.drawString(Integer.toString(team2.getPlayers().get(9).getNumber()), team2.getPlayers().get(9).getX()+1 , team2.getPlayers().get(9).getY()+10);
+	    g.drawString(Integer.toString(team2.getPlayers().get(10).getNumber()), team2.getPlayers().get(10).getX()+1 , team2.getPlayers().get(10).getY()+10);
 	
 	}
 
 
-	public ArrayList<Player> getTeam1() {
+	public Team getTeam1() {
 		return team1;
 	}
 
 
-	public void setTeam1(ArrayList<Player> team1) {
+	public void setTeam1(Team team1) {
 		this.team1 = team1;
 	}
 
 
-	public ArrayList<Player> getTeam2() {
+	public Team getTeam2() {
 		return team2;
 	}
 
 
-	public void setTeam2(ArrayList<Player> team2) {
+	public void setTeam2(Team team2) {
 		this.team2 = team2;
 	}
 	

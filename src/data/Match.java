@@ -146,25 +146,25 @@ public class Match {
 
 		if (nb == 1) {
 
-			dash.getTeam1().get(10).setX(430);
-			dash.getTeam1().get(10).setY(300);
-			dash.getTeam1().get(9).setX(430);
-			dash.getTeam1().get(9).setY(330);
-			dash.getTeam1().get(10).setBall(true);
+			dash.getTeam1().getPlayers().get(10).setX(430);
+			dash.getTeam1().getPlayers().get(10).setY(300);
+			dash.getTeam1().getPlayers().get(9).setX(430);
+			dash.getTeam1().getPlayers().get(9).setY(330);
+			dash.getTeam1().getPlayers().get(10).setBall(true);
 
-			dash.getBallon().setBallPositionxWithBluePlayer(dash.getTeam1().get(10));
-			dash.getBallon().setBallPositionyWithBluePlayer(dash.getTeam1().get(10));
+			dash.getBallon().setBallPositionxWithBluePlayer(dash.getTeam1().getPlayers().get(10));
+			dash.getBallon().setBallPositionyWithBluePlayer(dash.getTeam1().getPlayers().get(10));
 
 		} else {
 
-			dash.getTeam2().get(10).setX(450);
-			dash.getTeam2().get(10).setY(300);
-			dash.getTeam2().get(9).setX(450);
-			dash.getTeam2().get(9).setY(330);
-			dash.getTeam2().get(10).setBall(true);
+			dash.getTeam2().getPlayers().get(10).setX(450);
+			dash.getTeam2().getPlayers().get(10).setY(300);
+			dash.getTeam2().getPlayers().get(9).setX(450);
+			dash.getTeam2().getPlayers().get(9).setY(330);
+			dash.getTeam2().getPlayers().get(10).setBall(true);
 
-			dash.getBallon().setBallPositionxWithRedPlayer(dash.getTeam2().get(10));
-			dash.getBallon().setBallPositionxWithBluePlayer(dash.getTeam2().get(10));
+			dash.getBallon().setBallPositionxWithRedPlayer(dash.getTeam2().getPlayers().get(10));
+			dash.getBallon().setBallPositionxWithBluePlayer(dash.getTeam2().getPlayers().get(10));
 
 		}
 
@@ -177,63 +177,63 @@ public class Match {
 		
 		player_ball.setBall(false);
 		
-		dash.getTeam1().get(0).setX(default_x_gardien_bleu);
-		dash.getTeam1().get(0).setY(default_y_gardien_bleu);
+		dash.getTeam1().getPlayers().get(0).setX(default_x_gardien_bleu);
+		dash.getTeam1().getPlayers().get(0).setY(default_y_gardien_bleu);
 		
-		dash.getTeam1().get(1).setX(default_x_defenseur1_bleu);
-		dash.getTeam1().get(1).setY(default_y_defenseur1_bleu);
-		dash.getTeam1().get(2).setX(default_x_defenseur2_bleu);
-		dash.getTeam1().get(2).setY(default_y_defenseur2_bleu);
-		dash.getTeam1().get(3).setX(default_x_defenseur3_bleu);
-		dash.getTeam1().get(3).setY(default_y_defenseur3_bleu);
-		dash.getTeam1().get(4).setX(default_x_defenseur4_bleu);
-		dash.getTeam1().get(4).setY(default_y_defenseur4_bleu);
+		dash.getTeam1().getPlayers().get(1).setX(default_x_defenseur1_bleu);
+		dash.getTeam1().getPlayers().get(1).setY(default_y_defenseur1_bleu);
+		dash.getTeam1().getPlayers().get(2).setX(default_x_defenseur2_bleu);
+		dash.getTeam1().getPlayers().get(2).setY(default_y_defenseur2_bleu);
+		dash.getTeam1().getPlayers().get(3).setX(default_x_defenseur3_bleu);
+		dash.getTeam1().getPlayers().get(3).setY(default_y_defenseur3_bleu);
+		dash.getTeam1().getPlayers().get(4).setX(default_x_defenseur4_bleu);
+		dash.getTeam1().getPlayers().get(4).setY(default_y_defenseur4_bleu);
 		
-		dash.getTeam1().get(5).setX(default_x_milieu1_bleu);
-		dash.getTeam1().get(5).setY(default_y_milieu1_bleu);
-		dash.getTeam1().get(6).setX(default_x_milieu2_bleu);
-		dash.getTeam1().get(6).setY(default_y_milieu2_bleu);
-		dash.getTeam1().get(7).setX(default_x_milieu3_bleu);
-		dash.getTeam1().get(7).setY(default_y_milieu3_bleu);
-		dash.getTeam1().get(8).setX(default_x_milieu4_bleu);
-		dash.getTeam1().get(8).setY(default_y_milieu4_bleu);
+		dash.getTeam1().getPlayers().get(5).setX(default_x_milieu1_bleu);
+		dash.getTeam1().getPlayers().get(5).setY(default_y_milieu1_bleu);
+		dash.getTeam1().getPlayers().get(6).setX(default_x_milieu2_bleu);
+		dash.getTeam1().getPlayers().get(6).setY(default_y_milieu2_bleu);
+		dash.getTeam1().getPlayers().get(7).setX(default_x_milieu3_bleu);
+		dash.getTeam1().getPlayers().get(7).setY(default_y_milieu3_bleu);
+		dash.getTeam1().getPlayers().get(8).setX(default_x_milieu4_bleu);
+		dash.getTeam1().getPlayers().get(8).setY(default_y_milieu4_bleu);
 		
-		dash.getTeam2().get(0).setX(default_x_gardien_rouge);
-		dash.getTeam2().get(0).setY(default_y_gardien_rouge);
+		dash.getTeam2().getPlayers().get(0).setX(default_x_gardien_rouge);
+		dash.getTeam2().getPlayers().get(0).setY(default_y_gardien_rouge);
 		
-		dash.getTeam2().get(1).setX(default_x_defenseur1_rouge);
-		dash.getTeam2().get(1).setY(default_y_defenseur1_rouge);
-		dash.getTeam2().get(2).setX(default_x_defenseur2_rouge);
-		dash.getTeam2().get(2).setY(default_y_defenseur2_rouge);
-		dash.getTeam2().get(3).setX(default_x_defenseur3_rouge);
-		dash.getTeam2().get(3).setY(default_y_defenseur3_rouge);
-		dash.getTeam2().get(4).setX(default_x_defenseur4_rouge);
-		dash.getTeam2().get(4).setY(default_y_defenseur4_rouge);
+		dash.getTeam2().getPlayers().get(1).setX(default_x_defenseur1_rouge);
+		dash.getTeam2().getPlayers().get(1).setY(default_y_defenseur1_rouge);
+		dash.getTeam2().getPlayers().get(2).setX(default_x_defenseur2_rouge);
+		dash.getTeam2().getPlayers().get(2).setY(default_y_defenseur2_rouge);
+		dash.getTeam2().getPlayers().get(3).setX(default_x_defenseur3_rouge);
+		dash.getTeam2().getPlayers().get(3).setY(default_y_defenseur3_rouge);
+		dash.getTeam2().getPlayers().get(4).setX(default_x_defenseur4_rouge);
+		dash.getTeam2().getPlayers().get(4).setY(default_y_defenseur4_rouge);
 		
-		dash.getTeam2().get(5).setX(default_x_milieu1_rouge);
-		dash.getTeam2().get(5).setY(default_y_milieu1_rouge);
-		dash.getTeam2().get(6).setX(default_x_milieu2_rouge);
-		dash.getTeam2().get(6).setY(default_y_milieu2_rouge);
-		dash.getTeam2().get(7).setX(default_x_milieu3_rouge);
-		dash.getTeam2().get(7).setY(default_y_milieu3_rouge);
-		dash.getTeam2().get(8).setX(default_x_milieu4_rouge);
-		dash.getTeam2().get(8).setY(default_y_milieu4_rouge);
+		dash.getTeam2().getPlayers().get(5).setX(default_x_milieu1_rouge);
+		dash.getTeam2().getPlayers().get(5).setY(default_y_milieu1_rouge);
+		dash.getTeam2().getPlayers().get(6).setX(default_x_milieu2_rouge);
+		dash.getTeam2().getPlayers().get(6).setY(default_y_milieu2_rouge);
+		dash.getTeam2().getPlayers().get(7).setX(default_x_milieu3_rouge);
+		dash.getTeam2().getPlayers().get(7).setY(default_y_milieu3_rouge);
+		dash.getTeam2().getPlayers().get(8).setX(default_x_milieu4_rouge);
+		dash.getTeam2().getPlayers().get(8).setY(default_y_milieu4_rouge);
 		
-		dash.getTeam2().get(9).setX(default_x_attaquant1_rouge);
-		dash.getTeam2().get(10).setX(default_x_attaquant2_rouge);
-		dash.getTeam2().get(9).setY(default_y_attaquant1_rouge);
-		dash.getTeam2().get(10).setY(default_y_attaquant2_rouge);
+		dash.getTeam2().getPlayers().get(9).setX(default_x_attaquant1_rouge);
+		dash.getTeam2().getPlayers().get(10).setX(default_x_attaquant2_rouge);
+		dash.getTeam2().getPlayers().get(9).setY(default_y_attaquant1_rouge);
+		dash.getTeam2().getPlayers().get(10).setY(default_y_attaquant2_rouge);
 		
 
-		dash.getTeam1().get(9).setX(430);
-		dash.getTeam1().get(9).setY(330);
-		dash.getTeam1().get(10).setX(430);
-		dash.getTeam1().get(10).setY(300);
+		dash.getTeam1().getPlayers().get(9).setX(430);
+		dash.getTeam1().getPlayers().get(9).setY(330);
+		dash.getTeam1().getPlayers().get(10).setX(430);
+		dash.getTeam1().getPlayers().get(10).setY(300);
 		
-		dash.getTeam1().get(10).setBall(true);   
+		dash.getTeam1().getPlayers().get(10).setBall(true);   
 
-		dash.getBallon().setBallPositionxWithBluePlayer(dash.getTeam1().get(10));
-		dash.getBallon().setBallPositionxWithBluePlayer(dash.getTeam1().get(10));
+		dash.getBallon().setBallPositionxWithBluePlayer(dash.getTeam1().getPlayers().get(10));
+		dash.getBallon().setBallPositionxWithBluePlayer(dash.getTeam1().getPlayers().get(10));
 		
 		dash.setGoal(false);
 		dash.setStop_action(false);
@@ -246,62 +246,62 @@ public class Match {
 		
 		System.out.println("red engagement");
 		
-		dash.getTeam1().get(0).setX(default_x_gardien_bleu);
-		dash.getTeam1().get(0).setY(default_y_gardien_bleu);
+		dash.getTeam1().getPlayers().get(0).setX(default_x_gardien_bleu);
+		dash.getTeam1().getPlayers().get(0).setY(default_y_gardien_bleu);
 		
-		dash.getTeam1().get(1).setX(default_x_defenseur1_bleu);
-		dash.getTeam1().get(1).setY(default_y_defenseur1_bleu);
-		dash.getTeam1().get(2).setX(default_x_defenseur2_bleu);
-		dash.getTeam1().get(2).setY(default_y_defenseur2_bleu);
-		dash.getTeam1().get(3).setX(default_x_defenseur3_bleu);
-		dash.getTeam1().get(3).setY(default_y_defenseur3_bleu);
-		dash.getTeam1().get(4).setX(default_x_defenseur4_bleu);
-		dash.getTeam1().get(4).setY(default_y_defenseur4_bleu);
+		dash.getTeam1().getPlayers().get(1).setX(default_x_defenseur1_bleu);
+		dash.getTeam1().getPlayers().get(1).setY(default_y_defenseur1_bleu);
+		dash.getTeam1().getPlayers().get(2).setX(default_x_defenseur2_bleu);
+		dash.getTeam1().getPlayers().get(2).setY(default_y_defenseur2_bleu);
+		dash.getTeam1().getPlayers().get(3).setX(default_x_defenseur3_bleu);
+		dash.getTeam1().getPlayers().get(3).setY(default_y_defenseur3_bleu);
+		dash.getTeam1().getPlayers().get(4).setX(default_x_defenseur4_bleu);
+		dash.getTeam1().getPlayers().get(4).setY(default_y_defenseur4_bleu);
 		
-		dash.getTeam1().get(5).setX(default_x_milieu1_bleu);
-		dash.getTeam1().get(5).setY(default_y_milieu1_bleu);
-		dash.getTeam1().get(6).setX(default_x_milieu2_bleu);
-		dash.getTeam1().get(6).setY(default_y_milieu2_bleu);
-		dash.getTeam1().get(7).setX(default_x_milieu3_bleu);
-		dash.getTeam1().get(7).setY(default_y_milieu3_bleu);
-		dash.getTeam1().get(8).setX(default_x_milieu4_bleu);
-		dash.getTeam1().get(8).setY(default_y_milieu4_bleu);
+		dash.getTeam1().getPlayers().get(5).setX(default_x_milieu1_bleu);
+		dash.getTeam1().getPlayers().get(5).setY(default_y_milieu1_bleu);
+		dash.getTeam1().getPlayers().get(6).setX(default_x_milieu2_bleu);
+		dash.getTeam1().getPlayers().get(6).setY(default_y_milieu2_bleu);
+		dash.getTeam1().getPlayers().get(7).setX(default_x_milieu3_bleu);
+		dash.getTeam1().getPlayers().get(7).setY(default_y_milieu3_bleu);
+		dash.getTeam1().getPlayers().get(8).setX(default_x_milieu4_bleu);
+		dash.getTeam1().getPlayers().get(8).setY(default_y_milieu4_bleu);
 		
-		dash.getTeam1().get(9).setX(default_x_attaquant1_bleu);
-		dash.getTeam1().get(10).setX(default_x_attaquant2_bleu);
-		dash.getTeam1().get(9).setY(default_y_attaquant1_bleu);
-		dash.getTeam1().get(10).setY(default_y_attaquant2_bleu);
+		dash.getTeam1().getPlayers().get(9).setX(default_x_attaquant1_bleu);
+		dash.getTeam1().getPlayers().get(10).setX(default_x_attaquant2_bleu);
+		dash.getTeam1().getPlayers().get(9).setY(default_y_attaquant1_bleu);
+		dash.getTeam1().getPlayers().get(10).setY(default_y_attaquant2_bleu);
 		
-		dash.getTeam2().get(0).setX(default_x_gardien_rouge);
-		dash.getTeam2().get(0).setY(default_y_gardien_rouge);
+		dash.getTeam2().getPlayers().get(0).setX(default_x_gardien_rouge);
+		dash.getTeam2().getPlayers().get(0).setY(default_y_gardien_rouge);
 		
-		dash.getTeam2().get(1).setX(default_x_defenseur1_rouge);
-		dash.getTeam2().get(1).setY(default_y_defenseur1_rouge);
-		dash.getTeam2().get(2).setX(default_x_defenseur2_rouge);
-		dash.getTeam2().get(2).setY(default_y_defenseur2_rouge);
-		dash.getTeam2().get(3).setX(default_x_defenseur3_rouge);
-		dash.getTeam2().get(3).setY(default_y_defenseur3_rouge);
-		dash.getTeam2().get(4).setX(default_x_defenseur4_rouge);
-		dash.getTeam2().get(4).setY(default_y_defenseur4_rouge);
+		dash.getTeam2().getPlayers().get(1).setX(default_x_defenseur1_rouge);
+		dash.getTeam2().getPlayers().get(1).setY(default_y_defenseur1_rouge);
+		dash.getTeam2().getPlayers().get(2).setX(default_x_defenseur2_rouge);
+		dash.getTeam2().getPlayers().get(2).setY(default_y_defenseur2_rouge);
+		dash.getTeam2().getPlayers().get(3).setX(default_x_defenseur3_rouge);
+		dash.getTeam2().getPlayers().get(3).setY(default_y_defenseur3_rouge);
+		dash.getTeam2().getPlayers().get(4).setX(default_x_defenseur4_rouge);
+		dash.getTeam2().getPlayers().get(4).setY(default_y_defenseur4_rouge);
 		
-		dash.getTeam2().get(5).setX(default_x_milieu1_rouge);
-		dash.getTeam2().get(5).setY(default_y_milieu1_rouge);
-		dash.getTeam2().get(6).setX(default_x_milieu2_rouge);
-		dash.getTeam2().get(6).setY(default_y_milieu2_rouge);
-		dash.getTeam2().get(7).setX(default_x_milieu3_rouge);
-		dash.getTeam2().get(7).setY(default_y_milieu3_rouge);
-		dash.getTeam2().get(8).setX(default_x_milieu4_rouge);
-		dash.getTeam2().get(8).setY(default_y_milieu4_rouge);
+		dash.getTeam2().getPlayers().get(5).setX(default_x_milieu1_rouge);
+		dash.getTeam2().getPlayers().get(5).setY(default_y_milieu1_rouge);
+		dash.getTeam2().getPlayers().get(6).setX(default_x_milieu2_rouge);
+		dash.getTeam2().getPlayers().get(6).setY(default_y_milieu2_rouge);
+		dash.getTeam2().getPlayers().get(7).setX(default_x_milieu3_rouge);
+		dash.getTeam2().getPlayers().get(7).setY(default_y_milieu3_rouge);
+		dash.getTeam2().getPlayers().get(8).setX(default_x_milieu4_rouge);
+		dash.getTeam2().getPlayers().get(8).setY(default_y_milieu4_rouge);
 		
-		dash.getTeam2().get(10).setX(450);
-		dash.getTeam2().get(10).setY(300);
-		dash.getTeam2().get(9).setX(450);
-		dash.getTeam2().get(9).setY(330);
+		dash.getTeam2().getPlayers().get(10).setX(450);
+		dash.getTeam2().getPlayers().get(10).setY(300);
+		dash.getTeam2().getPlayers().get(9).setX(450);
+		dash.getTeam2().getPlayers().get(9).setY(330);
 		
-		dash.getTeam2().get(10).setBall(true);
+		dash.getTeam2().getPlayers().get(10).setBall(true);
 
-		dash.getBallon().setBallPositionxWithRedPlayer(dash.getTeam2().get(10));
-		dash.getBallon().setBallPositionxWithRedPlayer(dash.getTeam2().get(10));
+		dash.getBallon().setBallPositionxWithRedPlayer(dash.getTeam2().getPlayers().get(10));
+		dash.getBallon().setBallPositionxWithRedPlayer(dash.getTeam2().getPlayers().get(10));
 
 		dash.setGoal(false);
 		dash.setStop_action(false);

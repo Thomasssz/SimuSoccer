@@ -562,6 +562,7 @@ public class Team {
 
 	}
 
+
 	public Player recherchenom(ArrayList<Player> players1, String name) {
 		for (int i = 0; i < players1.size(); i++) {
 			if (players1.get(i).getName().equals(name)) {

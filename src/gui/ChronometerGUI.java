@@ -33,8 +33,8 @@ import process.MatchManager;
  **/
 public class ChronometerGUI extends JFrame implements Runnable {
 	private Ball ballon = new Ball();
-	private static ArrayList<Player> team1 = new ArrayList<Player>();
-	private static ArrayList<Player> team2 = new ArrayList<Player>();
+	private static Team team1 = new Team("1", new ArrayList<Player>(), "blue");
+	private static Team team2 = new Team("2", new ArrayList<Player>(), "red");
 	private Corner cornertest = new Corner() ;
 	private Touche touchetest = new Touche() ;
 	private Match match = new Match();
@@ -91,16 +91,13 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		contentPane.setLayout(null);
 		
 		
-		Team blue = new Team("1", team1, "blue");
-		Team red = new Team("2", team2, "red");
+//		Team blue = new Team("1", team1, "blue");
+//		Team red = new Team("2", team2, "red");
 
-		blue.createteams(blue);
-		red.createteams(red);
+		team1.createteams(team1);
+		team2.createteams(team2);
 
-		team1 = blue.getPlayers();
-		team2 = red.getPlayers();
-		
-		
+			
 	
 		dashboard.setPreferredSize(new Dimension(850,590));
 		dashboard.setBounds(320,250,850,590);
@@ -316,7 +313,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			stop = true;
-			Feature Characteristics_window = new Feature(team1,team2);
+			Feature Characteristics_window = new Feature(team1.getPlayers(),team2.getPlayers());
 			
 			charButton.setText("Resume"); 
 			// chronometer.init(); 
@@ -378,8 +375,8 @@ public class ChronometerGUI extends JFrame implements Runnable {
 public String toStringB() {
 		
 		String result = "Energie equipe bleu : \n \n";
-			for(int i = 0; i < team1.size(); i++) { 
-	    			result += "Joueur " + team1.get(i).getNumber() + " = " + team1.get(i).getEnergie() + "% \n";
+			for(int i = 0; i < team1.getPlayers().size(); i++) { 
+	    			result += "Joueur " + team1.getPlayers().get(i).getNumber() + " = " + team1.getPlayers().get(i).getEnergie() + "% \n";
 	    	}
 			return result;
 		}
@@ -389,12 +386,12 @@ public String toStringB() {
 		Endurance end=new Endurance();
 		//end.baisse(dashboard, instance);
 		int ji=0;
-		String result = "Joueur " + team2.get(ji).getNumber() + ":"+ team2.get(ji).getEnergie() + "";
+		String result = "Joueur " + team2.getPlayers().get(ji).getNumber() + ":"+ team2.getPlayers().get(ji).getEnergie() + "";
 		return result;
 		}
 
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		new ChronometerGUI();
-	}*/
+	}
 
 }

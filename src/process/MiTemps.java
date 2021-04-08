@@ -16,8 +16,8 @@ int timeseconde=gui.getChronometer().getSecond().getValue();
   	if((timeminute==2)&&(timeseconde==00)) {    
 		System.out.println("boucle1");
 		   
-	ArrayList<Player> team1=dashboard. getTeam1();
-	ArrayList<Player> team2=dashboard. getTeam2();
+	ArrayList<Player> team1=dashboard. getTeam1().getPlayers();
+	ArrayList<Player> team2=dashboard. getTeam2().getPlayers();
 	Team teamblue	=new Team("blue",team1,"blue");
 	Team teamred	=new Team("red",team2,"red");
 	    

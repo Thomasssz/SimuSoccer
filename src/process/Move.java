@@ -14,8 +14,8 @@ public class Move {
 
 	public void Movement(Dashboard dash, String ball, Player player_ball) {
 
-		team1 = dash.getTeam1();
-		team2 = dash.getTeam2();
+		team1 = dash.getTeam1().getPlayers();
+		team2 = dash.getTeam2().getPlayers();
 
 		if (ball.equals("blue")) {
 

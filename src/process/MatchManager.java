@@ -5,6 +5,7 @@ import java.util.Random;
 
 import data.Match;
 import data.Player;
+import data.Team;
 import delimitations.Corner;
 import delimitations.Sortie;
 import delimitations.Touche;
@@ -42,9 +43,9 @@ public class MatchManager {
 	private Move testmove = new Move();
 	private Player player_ball = null;
 
-	private ArrayList<Player> players1 = null;
-	private ArrayList<Player> players2 = null;
-	private ArrayList<Player> ball_team = null;
+	private Team players1 = null;
+	private Team players2 = null;
+	private Team ball_team = null;
 
 	private Player tireur = null;
 
@@ -118,20 +119,20 @@ public class MatchManager {
 
 		int index_player_ball = PlayerBall(ball_team);
 
-		player_ball = ball_team.get(index_player_ball);
+		player_ball = ball_team.getPlayers().get(index_player_ball);
 
-		if (ball_team.equals(players1)) {
+		
 
 			if (blueShotSituation(player_ball) == true) {
 				dash.setStop_action(false);
 				dash.setShoot(false);
 
-				doBlueShoot(dash);
+				shoot(dash);
 			} else {
 				doPass(dash);
 			}
 
-		} else if (ball_team.equals(players2)) {
+		
 
 			if (redShotSituation(player_ball) == true) {
 				dash.setStop_action(false);
@@ -142,7 +143,7 @@ public class MatchManager {
 				doPass(dash);
 			}
 		}
-	}
+	
 
 	public void doMove(Dashboard dash) {
 
@@ -153,7 +154,7 @@ public class MatchManager {
 
 		int index_player_ball = PlayerBall(ball_team);
 
-		player_ball = ball_team.get(index_player_ball);
+		player_ball = ball_team.getPlayers().get(index_player_ball);
 
 		if (ball_team.equals(players1)) {
 			testmove.Movement(dash, "blue", player_ball);
@@ -172,7 +173,7 @@ public class MatchManager {
 
 		int index_passeur = PlayerBall(ball_team);
 
-		passeur = ball_team.get(index_passeur);
+		passeur = ball_team.getPlayers().get(index_passeur);
 
 		if (receveur1 == null && receveur2 == null && receveur3 == null) {
 
@@ -206,7 +207,7 @@ public class MatchManager {
 
 			int index_new_passeur = PlayerBall(ball_team);
 
-			passeur = ball_team.get(index_new_passeur);
+			passeur = ball_team.getPlayers().get(index_new_passeur);
 
 			receveur1 = closestPlayer(dash, Player.position.DEFENSE);
 			receveur2 = closestPlayer(dash, Player.position.MIDDLE);
@@ -248,13 +249,13 @@ public class MatchManager {
 
 		int index_tireur = PlayerBall(ball_team);
 
-		player_ball = ball_team.get(index_tireur);
+		player_ball = ball_team.getPlayers().get(index_tireur);
 
 		shoot = dash.isShoot();
 
 		if (shoot == false) {
 
-			tireur = dash.getTeam1().get(index_tireur);
+			tireur = dash.getTeam1().getPlayers().get(index_tireur);
 
 			aim_x = 830;
 
@@ -280,8 +281,8 @@ public class MatchManager {
 
 			} else {
 
-				int x_gardien = dash.getTeam2().get(0).getX();
-				int y_gardien = dash.getTeam2().get(0).getY();
+				int x_gardien = dash.getTeam2().getPlayers().get(0).getX();
+				int y_gardien = dash.getTeam2().getPlayers().get(0).getY();
 
 				testshoot.ShootBlue(dash, index_tireur, x_gardien, y_gardien, goal);
 			}
@@ -305,13 +306,13 @@ public class MatchManager {
 
 		int index_tireur = PlayerBall(ball_team);
 
-		player_ball = ball_team.get(index_tireur);
+		player_ball = ball_team.getPlayers().get(index_tireur);
 
 		shoot = dash.isShoot();
 
 		if (shoot == false) {
 
-			tireur = dash.getTeam2().get(index_tireur);
+			tireur = dash.getTeam2().getPlayers().get(index_tireur);
 
 			aim_x = 50;
 
@@ -340,8 +341,8 @@ public class MatchManager {
 
 			} else {
 
-				int x_gardien = dash.getTeam1().get(0).getX();
-				int y_gardien = dash.getTeam1().get(0).getY();
+				int x_gardien = dash.getTeam1().getPlayers().get(0).getX();
+				int y_gardien = dash.getTeam1().getPlayers().get(0).getY();
 				System.out.println("tir sur gardien");
 
 				testshoot.ShootRed(dash, index_tireur, x_gardien, y_gardien, goal);
@@ -358,7 +359,20 @@ public class MatchManager {
 		}
 
 	}
-
+	
+	public void shoot(Dashboard dash) {
+		Team team1 = dash.getTeam1();
+		Team team2 = dash.getTeam2();
+		
+		ball_team = TeamBall(team1, team2);
+		
+		switch(ball_team.getColor()) {
+		case "blue" : doBlueShoot(dash);
+		case "red" : doRedShoot(dash);
+		}
+		
+			
+		}
 	public void doCorner(Dashboard dash) {
 
 		System.out.println("on rentre dans le doCorner");
@@ -578,16 +592,16 @@ public class MatchManager {
 
 	}
 
-	public int PlayerBall(ArrayList<Player> players1) {
+	public int PlayerBall(Team players1) {
 
 		int res = 12;
 
 		boolean stop = false;
 		int i = 0;
 
-		while (i < players1.size() && (stop == false)) {
+		while (i < players1.getPlayers().size() && (stop == false)) {
 
-			if (players1.get(i).isBall() == true) {
+			if (players1.getPlayers().get(i).isBall() == true) {
 
 				stop = true;
 				res = i;
@@ -603,14 +617,14 @@ public class MatchManager {
 
 	public Player closestPlayer(Dashboard dash, Player.position poste) {
 
-		ArrayList<Player> players1 = dash.getTeam1();
-		ArrayList<Player> players2 = dash.getTeam2();
+		Team players1 = dash.getTeam1();
+		Team players2 = dash.getTeam2();
 
-		ArrayList<Player> ball_team = TeamBall(players1, players2); // équipe qui a la balle
+		Team ball_team = TeamBall(players1, players2); // équipe qui a la balle
 
 		int index_player_ball = PlayerBall(ball_team);
 
-		Player player = ball_team.get(index_player_ball); // joueur qui a la balle
+		Player player = ball_team.getPlayers().get(index_player_ball); // joueur qui a la balle
 
 		// recuperer les coordonnées du joueur ayant la balle
 		@SuppressWarnings("unused")
@@ -619,7 +633,7 @@ public class MatchManager {
 		int player_y = player.getY();
 
 		/*
-		 * Player player_min = ball_team.get(1);
+		 * Player player_min = ball_team.getPlayers().get(1);
 		 * 
 		 * float distance_min = 800 ;
 		 * 
@@ -632,13 +646,13 @@ public class MatchManager {
 		 * 
 		 * for (int i = 1; i < ball_team.size(); i++) {
 		 * 
-		 * if (i != index_player_ball && ball_team.get(i).getPosition().equals(poste)) {
-		 * int x = ball_team.get(i).getX(); int y = ball_team.get(i).getY();
+		 * if (i != index_player_ball && ball_team.getPlayers().get(i).getPosition().equals(poste)) {
+		 * int x = ball_team.getPlayers().get(i).getX(); int y = ball_team.getPlayers().get(i).getY();
 		 * 
 		 * float distance = (float) Math.sqrt(Math.pow(player_x - x, 2) +
 		 * Math.pow(player_y - y, 2));
 		 * 
-		 * if (distance < distance_min) { player_min = ball_team.get(i); }
+		 * if (distance < distance_min) { player_min = ball_team.getPlayers().get(i); }
 		 * 
 		 * } }
 		 * 
@@ -658,9 +672,9 @@ public class MatchManager {
 				receveur += 1;
 
 				if (receveur == 1) {
-					player_min = ball_team.get(9);
+					player_min = ball_team.getPlayers().get(9);
 				} else if (receveur == 2) {
-					player_min = ball_team.get(10);
+					player_min = ball_team.getPlayers().get(10);
 				}
 
 				if (!(player_min.equals(player))) {
@@ -679,13 +693,13 @@ public class MatchManager {
 				receveur += 1;
 
 				if (receveur == 1) {
-					player_min = ball_team.get(5);
+					player_min = ball_team.getPlayers().get(5);
 				} else if (receveur == 2) {
-					player_min = ball_team.get(6);
+					player_min = ball_team.getPlayers().get(6);
 				} else if (receveur == 3) {
-					player_min = ball_team.get(7);
+					player_min = ball_team.getPlayers().get(7);
 				} else if (receveur == 4) {
-					player_min = ball_team.get(8);
+					player_min = ball_team.getPlayers().get(8);
 				}
 
 				if (!(player_min.equals(player))) {
@@ -704,13 +718,13 @@ public class MatchManager {
 				receveur += 1;
 
 				if (receveur == 1) {
-					player_min = ball_team.get(1);
+					player_min = ball_team.getPlayers().get(1);
 				} else if (receveur == 2) {
-					player_min = ball_team.get(2);
+					player_min = ball_team.getPlayers().get(2);
 				} else if (receveur == 3) {
-					player_min = ball_team.get(3);
+					player_min = ball_team.getPlayers().get(3);
 				} else if (receveur == 4) {
-					player_min = ball_team.get(4);
+					player_min = ball_team.getPlayers().get(4);
 				}
 
 				if (!(player_min.equals(player))) {
@@ -745,15 +759,15 @@ public class MatchManager {
 		}
 	}
 
-	public ArrayList<Player> TeamBall(ArrayList<Player> players1, ArrayList<Player> players2) {
+	public Team TeamBall(Team players1, Team players2) {
 
 		int i = 0;
 
 		boolean stop = false;
 
-		while (i < players1.size() && (stop == false)) {
+		while (i < players1.getPlayers().size() && (stop == false)) {
 
-			if (players1.get(i).isBall() == true) {
+			if (players1.getPlayers().get(i).isBall() == true) {
 
 				System.out.println("Blue got the BALL");
 				stop = true;
@@ -761,7 +775,7 @@ public class MatchManager {
 
 			}
 
-			if (players2.get(i).isBall() == true) {
+			if (players2.getPlayers().get(i).isBall() == true) {
 
 				System.out.println("Red got the BALL");
 				stop = true;

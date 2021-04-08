@@ -25,7 +25,7 @@ public class Shoot {
 			dash.setStop_action(true);
 			dash.setStop_action_shoot(true);
 			dash.setShoot(false);
-			dash.getTeam1().get(index_tireur).setBall(false);
+			dash.getTeam1().getPlayers().get(index_tireur).setBall(false);
 			
 			if (goal == true) {
 
@@ -88,7 +88,7 @@ public class Shoot {
 			dash.setStop_action(true);
 			dash.setStop_action_shoot(true);
 			dash.setShoot(false);
-			dash.getTeam2().get(index_tireur).setBall(false);
+			dash.getTeam2().getPlayers().get(index_tireur).setBall(false);
 			
 			if (goal == true) {
 

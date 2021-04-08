@@ -12,8 +12,8 @@ public class TestPrototype {
 
 	public static void testMovement(Dashboard dash) {
 		
-		team1 = dash.getTeam1();
-		team2 = dash.getTeam2() ;
+		team1 = dash.getTeam1().getPlayers();
+		team2 = dash.getTeam2().getPlayers();
 		
 		for (int i = 1 ; i <= 10 ; i++) {
 			team1.get(i).setX(team1.get(i).getX() +10 );

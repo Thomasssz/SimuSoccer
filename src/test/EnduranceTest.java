@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import data.Ball;
 import data.Match;
 import data.Player;
+import data.Team;
 import delimitations.Corner;
 import delimitations.Touche;
 import gui.ChronometerGUI;
@@ -14,8 +15,8 @@ import process.Endurance;
 
 class EnduranceTest {
 
-	private static ArrayList<Player> team1 = new ArrayList<Player>();
-	private static ArrayList<Player> team2 = new ArrayList<Player>();
+	private static Team team1 = new Team("1",new ArrayList<Player>(),"blue");
+	private static Team team2 = new Team("2", new ArrayList<Player>(),"red");
 	private Ball ballon = new Ball();
 	
 	private Corner cornertest = new Corner() ;

@@ -5,6 +5,7 @@ import java.util.Random;
 
 import data.Ball;
 import data.Player;
+import data.Team;
 import gui.Dashboard;
 import process.Passe;
 
@@ -23,7 +24,7 @@ public class Touche {
 	 * placent à coté de manière a recevoir la balle.
 	 */
 
-	public void runToucheHautGaucheBleu(Dashboard dash, int x, int y, ArrayList<Player> players) {
+	public void runToucheHautGaucheBleu(Dashboard dash, int x, int y, Team players) {
 
 		Ball ballon = dash.getBallon();
 
@@ -34,7 +35,7 @@ public class Touche {
 
 			int borne = 1;
 
-			Player passeur = players.get(borne);
+			Player passeur = players.getPlayers().get(borne);
 
 			passeur_touche = passeur;
 
@@ -73,10 +74,10 @@ public class Touche {
 				tirage_re = 6;
 			}
 
-			players.get(tirage_re).setX(placeX);
-			players.get(tirage_re).setY(placeY);
+			players.getPlayers().get(tirage_re).setX(placeX);
+			players.getPlayers().get(tirage_re).setY(placeY);
 
-			for (int i = 1; i < players.size(); i++) {
+			for (int i = 1; i < players.getPlayers().size(); i++) {
 
 				if ((i != borne) && (i != tirage_re)) {
 
@@ -94,8 +95,8 @@ public class Touche {
 
 						place_other_y += y;
 
-						players.get(i).setX(place_other_x);
-						players.get(i).setY(place_other_y);
+						players.getPlayers().get(i).setX(place_other_x);
+						players.getPlayers().get(i).setY(place_other_y);
 
 					}
 
@@ -109,14 +110,14 @@ public class Touche {
 
 			}
 
-			receveur = players.get(tirage_re);
+			receveur = players.getPlayers().get(tirage_re);
 		}
 
 		testPass.pass(dash, passeur_touche, receveur);
 
 	}
 
-	public void runToucheBasGaucheBleu(Dashboard dash, int x, int y, ArrayList<Player> players) {
+	public void runToucheBasGaucheBleu(Dashboard dash, int x, int y, Team players) {
 
 		Ball ballon = dash.getBallon();
 
@@ -127,7 +128,7 @@ public class Touche {
 
 			int borne = 4;
 
-			Player passeur = players.get(borne);
+			Player passeur = players.getPlayers().get(borne);
 
 			passeur_touche = passeur;
 
@@ -166,10 +167,10 @@ public class Touche {
 				tirage_re = 8;
 			}
 
-			players.get(tirage_re).setX(placeX);
-			players.get(tirage_re).setY(placeY);
+			players.getPlayers().get(tirage_re).setX(placeX);
+			players.getPlayers().get(tirage_re).setY(placeY);
 
-			for (int i = 0; i < players.size(); i++) {
+			for (int i = 0; i < players.getPlayers().size(); i++) {
 
 				if ((i != borne) && (i != tirage_re)) {
 
@@ -187,8 +188,8 @@ public class Touche {
 
 						place_other_y = y- place_other_y ;
 
-						players.get(i).setX(place_other_x);
-						players.get(i).setY(place_other_y);
+						players.getPlayers().get(i).setX(place_other_x);
+						players.getPlayers().get(i).setY(place_other_y);
 
 					}
 
@@ -202,14 +203,14 @@ public class Touche {
 
 			}
 
-			receveur = players.get(tirage_re);
+			receveur = players.getPlayers().get(tirage_re);
 		}
 
 		testPass.pass(dash, passeur_touche, receveur);
 
 	}
 
-	public void runToucheHautMilieuBleu(Dashboard dash, int x, int y, ArrayList<Player> players) {
+	public void runToucheHautMilieuBleu(Dashboard dash, int x, int y, Team players) {
 
 		Ball ballon = dash.getBallon();
 
@@ -220,7 +221,7 @@ public class Touche {
 
 			int borne = 5;
 
-			Player passeur = players.get(borne);
+			Player passeur = players.getPlayers().get(borne);
 
 			passeur_touche = passeur;
 
@@ -257,10 +258,10 @@ public class Touche {
 				tirage_re = 6;
 			}
 
-			players.get(tirage_re).setX(placeX);
-			players.get(tirage_re).setY(placeY);
+			players.getPlayers().get(tirage_re).setX(placeX);
+			players.getPlayers().get(tirage_re).setY(placeY);
 
-			for (int i = 1; i < players.size(); i++) {
+			for (int i = 1; i < players.getPlayers().size(); i++) {
 
 				if ((i != borne) && (i != tirage_re)) {
 
@@ -278,8 +279,8 @@ public class Touche {
 
 						place_other_y += y;
 
-						players.get(i).setX(place_other_x);
-						players.get(i).setY(place_other_y);
+						players.getPlayers().get(i).setX(place_other_x);
+						players.getPlayers().get(i).setY(place_other_y);
 
 					}
 
@@ -293,14 +294,14 @@ public class Touche {
 
 			}
 
-			receveur = players.get(tirage_re);
+			receveur = players.getPlayers().get(tirage_re);
 		}
 
 		testPass.pass(dash, passeur_touche, receveur);
 
 	}
 
-	public void runToucheBasMilieuBleu(Dashboard dash, int x, int y, ArrayList<Player> players) {
+	public void runToucheBasMilieuBleu(Dashboard dash, int x, int y, Team players) {
 
 		Ball ballon = dash.getBallon();
 
@@ -311,7 +312,7 @@ public class Touche {
 
 			int borne = 8;
 
-			Player passeur = players.get(borne);
+			Player passeur = players.getPlayers().get(borne);
 
 			passeur_touche = passeur;
 
@@ -348,10 +349,10 @@ public class Touche {
 				tirage_re = 7;
 			}
 
-			players.get(tirage_re).setX(placeX);
-			players.get(tirage_re).setY(placeY);
+			players.getPlayers().get(tirage_re).setX(placeX);
+			players.getPlayers().get(tirage_re).setY(placeY);
 
-			for (int i = 0; i < players.size(); i++) {
+			for (int i = 0; i < players.getPlayers().size(); i++) {
 
 				if ((i != borne) && (i != tirage_re)) {
 
@@ -369,8 +370,8 @@ public class Touche {
 
 						place_other_y = y - place_other_y;
 
-						players.get(i).setX(place_other_x);
-						players.get(i).setY(place_other_y);
+						players.getPlayers().get(i).setX(place_other_x);
+						players.getPlayers().get(i).setY(place_other_y);
 
 					}
 
@@ -384,14 +385,14 @@ public class Touche {
 
 			}
 
-			receveur = players.get(tirage_re);
+			receveur = players.getPlayers().get(tirage_re);
 		}
 
 		testPass.pass(dash, passeur_touche, receveur);
 
 	}
 
-	public void runToucheHautDroiteBleu(Dashboard dash, int x, int y, ArrayList<Player> players) {
+	public void runToucheHautDroiteBleu(Dashboard dash, int x, int y, Team players) {
 
 		Ball ballon = dash.getBallon();
 
@@ -402,7 +403,7 @@ public class Touche {
 
 			int borne = 5;
 
-			Player passeur = players.get(borne);
+			Player passeur = players.getPlayers().get(borne);
 
 			passeur_touche = passeur;
 
@@ -441,10 +442,10 @@ public class Touche {
 				tirage_re = 9;
 			}
 
-			players.get(tirage_re).setX(placeX);
-			players.get(tirage_re).setY(placeY);
+			players.getPlayers().get(tirage_re).setX(placeX);
+			players.getPlayers().get(tirage_re).setY(placeY);
 
-			for (int i = 0; i < players.size(); i++) {
+			for (int i = 0; i < players.getPlayers().size(); i++) {
 
 				if ((i != borne) && (i != tirage_re)) {
 
@@ -462,8 +463,8 @@ public class Touche {
 
 						place_other_y += y;
 
-						players.get(i).setX(place_other_x);
-						players.get(i).setY(place_other_y);
+						players.getPlayers().get(i).setX(place_other_x);
+						players.getPlayers().get(i).setY(place_other_y);
 
 					}
 
@@ -477,14 +478,14 @@ public class Touche {
 
 			}
 
-			receveur = players.get(tirage_re);
+			receveur = players.getPlayers().get(tirage_re);
 		}
 
 		testPass.pass(dash, passeur_touche, receveur);
 
 	}
 
-	public void runToucheBasDroiteBleu(Dashboard dash, int x, int y, ArrayList<Player> players) {
+	public void runToucheBasDroiteBleu(Dashboard dash, int x, int y, Team players) {
 
 		Ball ballon = dash.getBallon();
 
@@ -495,7 +496,7 @@ public class Touche {
 
 			int borne = 8;
 
-			Player passeur = players.get(borne);
+			Player passeur = players.getPlayers().get(borne);
 
 			passeur_touche = passeur;
 
@@ -534,10 +535,10 @@ public class Touche {
 				tirage_re = 10;
 			}
 
-			players.get(tirage_re).setX(placeX);
-			players.get(tirage_re).setY(placeY);
+			players.getPlayers().get(tirage_re).setX(placeX);
+			players.getPlayers().get(tirage_re).setY(placeY);
 
-			for (int i = 0; i < players.size(); i++) {
+			for (int i = 0; i < players.getPlayers().size(); i++) {
 
 				if ((i != borne) && (i != tirage_re)) {
 
@@ -555,8 +556,8 @@ public class Touche {
 
 						place_other_y = y - place_other_y ;
 
-						players.get(i).setX(place_other_x);
-						players.get(i).setY(place_other_y);
+						players.getPlayers().get(i).setX(place_other_x);
+						players.getPlayers().get(i).setY(place_other_y);
 
 					}
 
@@ -570,14 +571,14 @@ public class Touche {
 
 			}
 
-			receveur = players.get(tirage_re);
+			receveur = players.getPlayers().get(tirage_re);
 		}
 
 		testPass.pass(dash, passeur_touche, receveur);
 
 	}
 	
-	public void runToucheHautGaucheRouge(Dashboard dash, int x, int y, ArrayList<Player> players) {
+	public void runToucheHautGaucheRouge(Dashboard dash, int x, int y, Team players) {
 
 		Ball ballon = dash.getBallon();
 
@@ -588,7 +589,7 @@ public class Touche {
 
 			int borne = 5;
 
-			Player passeur = players.get(borne);
+			Player passeur = players.getPlayers().get(borne);
 
 			passeur_touche = passeur;
 
@@ -627,10 +628,10 @@ public class Touche {
 				tirage_re = 9;
 			}
 
-			players.get(tirage_re).setX(placeX);
-			players.get(tirage_re).setY(placeY);
+			players.getPlayers().get(tirage_re).setX(placeX);
+			players.getPlayers().get(tirage_re).setY(placeY);
 
-			for (int i = 0; i < players.size(); i++) {
+			for (int i = 0; i < players.getPlayers().size(); i++) {
 
 				if ((i != borne) && (i != tirage_re)) {
 
@@ -648,8 +649,8 @@ public class Touche {
 
 						place_other_y += y;
 
-						players.get(i).setX(place_other_x);
-						players.get(i).setY(place_other_y);
+						players.getPlayers().get(i).setX(place_other_x);
+						players.getPlayers().get(i).setY(place_other_y);
 
 					}
 
@@ -663,14 +664,14 @@ public class Touche {
 
 			}
 
-			receveur = players.get(tirage_re);
+			receveur = players.getPlayers().get(tirage_re);
 		}
 
 		testPass.pass(dash, passeur_touche, receveur);
 
 	}
 
-	public void runToucheBasGaucheRouge(Dashboard dash, int x, int y, ArrayList<Player> players) {
+	public void runToucheBasGaucheRouge(Dashboard dash, int x, int y, Team players) {
 
 		Ball ballon = dash.getBallon();
 
@@ -681,7 +682,7 @@ public class Touche {
 
 			int borne = 8;
 
-			Player passeur = players.get(borne);
+			Player passeur = players.getPlayers().get(borne);
 
 			passeur_touche = passeur;
 
@@ -720,10 +721,10 @@ public class Touche {
 				tirage_re = 10;
 			}
 
-			players.get(tirage_re).setX(placeX);
-			players.get(tirage_re).setY(placeY);
+			players.getPlayers().get(tirage_re).setX(placeX);
+			players.getPlayers().get(tirage_re).setY(placeY);
 
-			for (int i = 0; i < players.size(); i++) {
+			for (int i = 0; i < players.getPlayers().size(); i++) {
 
 				if ((i != borne) && (i != tirage_re)) {
 
@@ -741,8 +742,8 @@ public class Touche {
 
 						place_other_y = y - place_other_y ;
 
-						players.get(i).setX(place_other_x);
-						players.get(i).setY(place_other_y);
+						players.getPlayers().get(i).setX(place_other_x);
+						players.getPlayers().get(i).setY(place_other_y);
 
 					}
 
@@ -756,14 +757,14 @@ public class Touche {
 
 			}
 
-			receveur = players.get(tirage_re);
+			receveur = players.getPlayers().get(tirage_re);
 		}
 
 		testPass.pass(dash, passeur_touche, receveur);
 
 	}
 
-	public void runToucheHautMilieuRouge(Dashboard dash, int x, int y, ArrayList<Player> players) {
+	public void runToucheHautMilieuRouge(Dashboard dash, int x, int y, Team players) {
 
 		Ball ballon = dash.getBallon();
 
@@ -774,7 +775,7 @@ public class Touche {
 
 			int borne = 5;
 
-			Player passeur = players.get(borne);
+			Player passeur = players.getPlayers().get(borne);
 
 			passeur_touche = passeur;
 
@@ -811,10 +812,10 @@ public class Touche {
 				tirage_re = 6;
 			}
 
-			players.get(tirage_re).setX(placeX);
-			players.get(tirage_re).setY(placeY);
+			players.getPlayers().get(tirage_re).setX(placeX);
+			players.getPlayers().get(tirage_re).setY(placeY);
 
-			for (int i = 1; i < players.size(); i++) {
+			for (int i = 1; i < players.getPlayers().size(); i++) {
 
 				if ((i != borne) && (i != tirage_re)) {
 
@@ -832,8 +833,8 @@ public class Touche {
 
 						place_other_y += y;
 
-						players.get(i).setX(place_other_x);
-						players.get(i).setY(place_other_y);
+						players.getPlayers().get(i).setX(place_other_x);
+						players.getPlayers().get(i).setY(place_other_y);
 
 					}
 
@@ -847,14 +848,14 @@ public class Touche {
 
 			}
 
-			receveur = players.get(tirage_re);
+			receveur = players.getPlayers().get(tirage_re);
 		}
 
 		testPass.pass(dash, passeur_touche, receveur);
 
 	}
 
-	public void runToucheBasMilieuRouge(Dashboard dash, int x, int y, ArrayList<Player> players) {
+	public void runToucheBasMilieuRouge(Dashboard dash, int x, int y, Team players) {
 
 		Ball ballon = dash.getBallon();
 
@@ -865,7 +866,7 @@ public class Touche {
 
 			int borne = 8;
 
-			Player passeur = players.get(borne);
+			Player passeur = players.getPlayers().get(borne);
 
 			passeur_touche = passeur;
 
@@ -902,10 +903,10 @@ public class Touche {
 				tirage_re = 7;
 			}
 
-			players.get(tirage_re).setX(placeX);
-			players.get(tirage_re).setY(placeY);
+			players.getPlayers().get(tirage_re).setX(placeX);
+			players.getPlayers().get(tirage_re).setY(placeY);
 
-			for (int i = 0; i < players.size(); i++) {
+			for (int i = 0; i < players.getPlayers().size(); i++) {
 
 				if ((i != borne) && (i != tirage_re)) {
 
@@ -923,8 +924,8 @@ public class Touche {
 
 						place_other_y = y - place_other_y;
 
-						players.get(i).setX(place_other_x);
-						players.get(i).setY(place_other_y);
+						players.getPlayers().get(i).setX(place_other_x);
+						players.getPlayers().get(i).setY(place_other_y);
 
 					}
 
@@ -938,14 +939,14 @@ public class Touche {
 
 			}
 
-			receveur = players.get(tirage_re);
+			receveur = players.getPlayers().get(tirage_re);
 		}
 
 		testPass.pass(dash, passeur_touche, receveur);
 
 	}
 
-	public void runToucheHautDroiteRouge(Dashboard dash, int x, int y, ArrayList<Player> players) {
+	public void runToucheHautDroiteRouge(Dashboard dash, int x, int y, Team players) {
 
 		Ball ballon = dash.getBallon();
 
@@ -956,7 +957,7 @@ public class Touche {
 
 			int borne = 1;
 
-			Player passeur = players.get(borne);
+			Player passeur = players.getPlayers().get(borne);
 
 			passeur_touche = passeur;
 
@@ -995,10 +996,10 @@ public class Touche {
 				tirage_re = 6;
 			}
 
-			players.get(tirage_re).setX(placeX);
-			players.get(tirage_re).setY(placeY);
+			players.getPlayers().get(tirage_re).setX(placeX);
+			players.getPlayers().get(tirage_re).setY(placeY);
 
-			for (int i = 1; i < players.size(); i++) {
+			for (int i = 1; i < players.getPlayers().size(); i++) {
 
 				if ((i != borne) && (i != tirage_re)) {
 
@@ -1016,8 +1017,8 @@ public class Touche {
 
 						place_other_y += y;
 
-						players.get(i).setX(place_other_x);
-						players.get(i).setY(place_other_y);
+						players.getPlayers().get(i).setX(place_other_x);
+						players.getPlayers().get(i).setY(place_other_y);
 
 					}
 
@@ -1031,14 +1032,14 @@ public class Touche {
 
 			}
 
-			receveur = players.get(tirage_re);
+			receveur = players.getPlayers().get(tirage_re);
 		}
 
 		testPass.pass(dash, passeur_touche, receveur);
 
 	}
 
-	public void runToucheBasDroiteRouge(Dashboard dash, int x, int y, ArrayList<Player> players) {
+	public void runToucheBasDroiteRouge(Dashboard dash, int x, int y, Team players) {
 
 		Ball ballon = dash.getBallon();
 
@@ -1049,7 +1050,7 @@ public class Touche {
 
 			int borne = 4;
 
-			Player passeur = players.get(borne);
+			Player passeur = players.getPlayers().get(borne);
 
 			passeur_touche = passeur;
 
@@ -1088,10 +1089,10 @@ public class Touche {
 				tirage_re = 8;
 			}
 
-			players.get(tirage_re).setX(placeX);
-			players.get(tirage_re).setY(placeY);
+			players.getPlayers().get(tirage_re).setX(placeX);
+			players.getPlayers().get(tirage_re).setY(placeY);
 
-			for (int i = 0; i < players.size(); i++) {
+			for (int i = 0; i < players.getPlayers().size(); i++) {
 
 				if ((i != borne) && (i != tirage_re)) {
 
@@ -1109,8 +1110,8 @@ public class Touche {
 
 						place_other_y = y- place_other_y ;
 
-						players.get(i).setX(place_other_x);
-						players.get(i).setY(place_other_y);
+						players.getPlayers().get(i).setX(place_other_x);
+						players.getPlayers().get(i).setY(place_other_y);
 
 					}
 
@@ -1124,7 +1125,7 @@ public class Touche {
 
 			}
 
-			receveur = players.get(tirage_re);
+			receveur = players.getPlayers().get(tirage_re);
 		}
 
 		testPass.pass(dash, passeur_touche, receveur);

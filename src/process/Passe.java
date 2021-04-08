@@ -29,8 +29,8 @@ public class Passe {
 
 	public void testPass(Dashboard dash) {
 
-		ArrayList<Player> team1 = dash.getTeam1();
-		ArrayList<Player> team2 = dash.getTeam2();
+		ArrayList<Player> team1 = dash.getTeam1().getPlayers();
+		ArrayList<Player> team2 = dash.getTeam2().getPlayers();
 
 		ArrayList<Player> team_of_ball_player = null;
 
@@ -194,8 +194,8 @@ public class Passe {
 
 	public boolean player_receipt_ball(Dashboard dash) {
 
-		players1 = dash.getTeam1();
-		players2 = dash.getTeam2();
+		players1 = dash.getTeam1().getPlayers();
+		players2 = dash.getTeam2().getPlayers();
 
 		boolean sucesspass = false;
 
@@ -280,8 +280,8 @@ public class Passe {
 	
 	public boolean player_receipt2_ball(Dashboard dash) {
 
-		players1 = dash.getTeam1();
-		players2 = dash.getTeam2();
+		players1 = dash.getTeam1().getPlayers();
+		players2 = dash.getTeam2().getPlayers();
 
 		boolean sucesspass = false;
 
