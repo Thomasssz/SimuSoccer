@@ -39,7 +39,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	private Touche touchetest = new Touche() ;
 	private Match match = new Match();
 	private Dashboard dashboard = new Dashboard(team1, team2, ballon,cornertest,touchetest,match);
-	private Energie energie1=new Energie(team1.getPlayers(),team2.getPlayers());
+	private Energie energie1;
 	private MatchManager matchprocess = new MatchManager(this);
 	private Endurance end=new Endurance(dashboard,this,team1,team2);
 	private ChronometerGUI instance = this;
@@ -99,7 +99,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		team1.createteams(team1);
 		team2.createteams(team2);
 
-			
+		energie1=new Energie(team1.getPlayers(),team2.getPlayers());
 	
 		dashboard.setPreferredSize(new Dimension(850,590));
 		dashboard.setBounds(320,250,850,590);
@@ -127,7 +127,8 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		
 		
 		//energie1.setPreferredSize(new Dimension(490,865));
-		energie1.setBounds(1250,20,490,865);
+		//energie1.setBounds(1250,20,490,865);
+		energie1.setBounds(1050,20,490,865);
 		
 		contentPane.add(start_stop);
 		contentPane.add(dashboard);

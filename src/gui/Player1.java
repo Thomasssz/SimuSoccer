@@ -154,7 +154,7 @@ public class Player1 extends JFrame {
 		endurance2.add(endurance1);
 	}
 	
-public int Energie(String name) {
+	public int Energie(String name) {
 		int result = 0;
 			for(int i = 0; i < team1.size(); i++) { 
 	    		if(team1.get(i).getName().equals(name)) {
@@ -164,7 +164,7 @@ public int Energie(String name) {
 			return result;
 		}
 
-public int Endurance(String name) {
+	public int Endurance(String name) {
 	
 	int result = 0;
 		for(int i = 0; i < team1.size(); i++) { 
@@ -213,7 +213,7 @@ public int Endurance(String name) {
 			
 		}
 
- public int Dribbles(String name) {
+	public int Dribbles(String name) {
 	
 	int result = 0;
 		for(int i = 0; i < team1.size(); i++) { 
