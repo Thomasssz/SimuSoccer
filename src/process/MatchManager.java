@@ -371,6 +371,7 @@ public class MatchManager {
 		case "red" : doRedShoot(dash);
 		}
 		
+		System.out.println("44");
 			
 		}
 	public void doCorner(Dashboard dash) {
