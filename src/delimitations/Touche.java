@@ -1,8 +1,7 @@
 package delimitations;
 
-import java.util.ArrayList;
-import java.util.Random;
 
+import java.util.Random;
 import data.Ball;
 import data.Player;
 import data.Team;

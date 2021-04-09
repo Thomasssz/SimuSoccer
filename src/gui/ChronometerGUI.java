@@ -29,9 +29,9 @@ import process.Endurance;
 import process.MatchManager;
 
 /**
- * Main GUI class for chronometer.
+ * Main GUI class for chronometer and simulation.
  * 
- * @author Tianxiao.Liu@u-cergy.fr
+ * @author SimuSoccer
  **/
 public class ChronometerGUI extends JFrame implements Runnable {
 	private Ball ballon = new Ball();
@@ -96,15 +96,9 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		contentPane.setBackground(new Color(28, 28, 28));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		
-//		Team blue = new Team("1", team1, "blue");
-//		Team red = new Team("2", team2, "red");
 
 		team1.createteams(team1);
 		team2.createteams(team2);
-
-		//energie1=new Energie(team1.getPlayers(),team2.getPlayers());
 	
 		dashboard.setPreferredSize(new Dimension(850,590));
 		dashboard.setBounds(320,250,850,590);
@@ -223,6 +217,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		start_stop.add(energieButton);
 		}
 	
+	@SuppressWarnings("static-access")
 	public void Score() {
 		score.setLayout(new GridLayout(2,2));
 		score.setBackground(new Color(28, 28, 28));
@@ -248,40 +243,20 @@ public class ChronometerGUI extends JFrame implements Runnable {
 
 	private void updateValues() {
 
-		// this part is for textual score printing.
-
-		/*
-		 * Match scoreteam1 = match.getScore();
-		 * scoreteam1Value.setText(scoreteam1.toString() + " ");
-		 * 
-		 * Match scoreteam2 = match.getScore();
-		 * scoreteam2Value.setText(scoreteam2.toString() + " ");
-		 */
-
-		// This part is for textual time printing.
-
 		CyclicCounter minute = chronometer.getMinute();
 		minuteValue1.setText(minute.toString() + " ");
 
 		CyclicCounter second = chronometer.getSecond();
 		secondValue1.setText(second.toString() + " ");
-
-		// This part is for graphical time printing.
-
-		// The dashboard needs to be reprinted when hour, minute or second values
 		
 		end.baisse(dashboard, instance, team1.getPlayers(), team2.getPlayers());
 		matchprocess.matchProcess(dashboard,this);
 		
-	
+		repaint();
 		dashboard.repaint();
 		
 	}
 
-	/**
-	 * Defines what to do for each time unit (by default 1 second) : it increments
-	 * the chronometer
-	 */
 	@Override
 	public void run() {
 		while (!stop) {
@@ -330,19 +305,13 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			stop = true;
-			Feature Characteristics_window = new Feature(team1.getPlayers(),team2.getPlayers());
-			
-			charButton.setText("Resume"); 
-			// chronometer.init(); 
-			// updateValues();
+			Feature Characteristics_window = new Feature(team1.getPlayers(),team2.getPlayers()); 
 			 
 		}
 
 	}
 	
 	private class EnergieAction implements ActionListener { 
-
-		@SuppressWarnings("unused")
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			stop = true;

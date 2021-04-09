@@ -149,8 +149,6 @@ public class Feature extends JFrame {
 
 	}
 	private class Retour implements ActionListener { 
-
-		@SuppressWarnings("unused")
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			setVisible(false);

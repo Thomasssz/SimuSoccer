@@ -23,7 +23,7 @@ import delimitations.Touche;
  * 
  * There is no algorithmic processing in this class.
  * 
- * @author simu soccer
+ * @author SimuSoccer
  * 
  */
 public class Dashboard extends JPanel {

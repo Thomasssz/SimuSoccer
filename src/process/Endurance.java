@@ -2,20 +2,20 @@ package process;
 
 import java.util.ArrayList;
 
-import data.Ball;
-import data.Match;
 import data.Player;
 import data.Team;
-import delimitations.Corner;
-import delimitations.Touche;
 import gui.ChronometerGUI;
 import gui.Dashboard;
 
 public class Endurance {
-	      private Dashboard dash;  
-	      private ChronometerGUI gui;
-	      private Team team1;
-	      private Team team2;
+	      @SuppressWarnings("unused")
+		private Dashboard dash;  
+	      @SuppressWarnings("unused")
+		private ChronometerGUI gui;
+	      @SuppressWarnings("unused")
+		private Team team1;
+	      @SuppressWarnings("unused")
+		private Team team2;
 	public Endurance(Dashboard dash, ChronometerGUI gui,Team team1, Team team2) {
 		this.dash=dash;
 		this.gui=gui;

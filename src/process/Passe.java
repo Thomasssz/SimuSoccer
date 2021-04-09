@@ -8,9 +8,12 @@ import gui.Dashboard;
 
 public class Passe {
 
+	@SuppressWarnings("unused")
 	private int index_of_ball_player;
 
+	@SuppressWarnings("unused")
 	private Player passeur = new Player("2", 30, 50, 40, 70, 60, 100, 50, 2,Player.position.DEFENSE, 200, 100, false,Player.temps.SOLEIL);
+	@SuppressWarnings("unused")
 	private Player receveur = new Player("3", 20, 40, 40, 70, 60, 100, 60, 3,Player.position.DEFENSE, 200, 265, false,Player.temps.SOLEIL);
 	
 	private Player player_zero = new Player("0", 0, 0, 0, 0, 0, 0, 0, 0,Player.position.MIDDLE, 500, 500, false, Player.temps.PLUIE);
