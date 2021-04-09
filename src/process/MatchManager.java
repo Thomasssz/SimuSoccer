@@ -19,7 +19,7 @@ public class MatchManager {
 	private boolean touche = false;
 	private boolean shoot = false;
 
-	private int first_choice_corner = 0;
+//	private int first_choice_corner = 0;
 	private int first_choice_touche = 0;
 
 	private boolean goal = false;
@@ -33,9 +33,6 @@ public class MatchManager {
 	private Player receveur1 = null;
 	private Player receveur2 = null;
 	private Player receveur3 = null;
-
-	private Player fake_player_touche = new Player("0", 0, 0, 0, 0, 0, 0, 0, 0, Player.position.MIDDLE, 500, 500, false,
-			Player.temps.NEIGE);
 
 	private int aim_x = 0;
 	private int aim_y = 0;
@@ -68,8 +65,6 @@ public class MatchManager {
 	private Match match = new Match();
 	@SuppressWarnings("unused")
 	private ChronometerGUI chronometergui;
-
-	private int first_chance = 15;
 
 	public MatchManager(ChronometerGUI chronometergui) {
 		this.chronometergui = chronometergui;
@@ -207,52 +202,9 @@ public class MatchManager {
 
 		if (dash.isStop_action() == false) {
 
-			if (passeur.getNumber() == 2 || passeur.getNumber() == 5 || passeur.getNumber() == 6
-					|| passeur.getNumber() == 9) {
+			testpasse.pass(dash, passeur, receveur);
 
-				if (first_chance == 15) {
-
-					Random pass = new Random();
-					int pass_chance = pass.nextInt(3);
-					pass_chance += 1;
-
-					first_chance = pass_chance;
-
-				}
-
-				if (first_chance > 100) {
-
-					testpasse.pass(dash, passeur, receveur);
-
-				} else {
-
-					if ((passeur.getNumber() == 2) || (passeur.getNumber() == 6)) {
-
-						fake_player_touche.setX(passeur.getX());
-						fake_player_touche.setY(Sortie.getSortieHautGaucheY());
-
-						testpasse.pass(dash, passeur, fake_player_touche);
-						doTouche(dash,fake_player_touche.getX(),fake_player_touche.getY()) ;
-
-					} else if ((passeur.getNumber() == 5) || (passeur.getNumber() == 9)) {
-
-						fake_player_touche.setX(passeur.getX());
-						fake_player_touche.setY(Sortie.getSortieBasGaucheY());
-
-						testpasse.pass(dash, passeur, fake_player_touche);
-						// doTouche(dash,fake_player_touche.getX(),fake_player_touche.getY()) ;
-
-					}
-
-				}
-
-			} else {
-				testpasse.pass(dash, passeur, receveur);
-			}
-
-		} else
-
-		{
+		} else {
 
 			dash.setStop_action(false);
 
@@ -398,12 +350,14 @@ public class MatchManager {
 				Match.setScoreteam2(Match.getScoreteam2() + 1);
 
 			} else {
-
+				
 				int x_gardien = dash.getTeam1().getPlayers().get(0).getX();
 				int y_gardien = dash.getTeam1().getPlayers().get(0).getY();
 				System.out.println("tir sur gardien");
-				if ((x_gardien == dash.getBallon().getPositionx_Ball())
-						&& (y_gardien == dash.getBallon().getPositiony_Ball())) {
+				
+				testshoot.ShootBlue(dash, index_tireur, x_gardien, y_gardien, goal);
+				
+				if ((x_gardien == dash.getBallon().getPositionx_Ball()) && (y_gardien == dash.getBallon().getPositiony_Ball())) {
 					testshoot.ShootBlue(dash, index_tireur, x_gardien, y_gardien, goal);
 				} else {
 					doCorner(dash);
@@ -412,7 +366,7 @@ public class MatchManager {
 
 		} else if (((aim_y >= 165) && (aim_y <= 250)) || ((aim_y >= 375) && (aim_y <= 458))) {
 			System.out.println("tir non cadre");
-			doCorner(dash);
+		//	doCorner(dash);
 			testshoot.ShootRed(dash, index_tireur, aim_x, aim_y, goal);
 		}
 
@@ -650,120 +604,6 @@ public class MatchManager {
 
 	}
 
-	public void doTouche(Dashboard dash, int touche_x, int touche_y) {
-
-		touche = dash.isTouche();
-
-		if (touche == false) {
-
-			touchetest = dash.getTesttouche();
-
-			players1 = dash.getTeam1();
-			players2 = dash.getTeam2();
-
-			ball_team = TeamBall(players1, players2);
-
-			// partie gauche 75 à 321 partie milieu de 321 à 567 partie droite de 567 à 813
-
-			if ((touche_x <= 321) && (touche_y == Sortie.getSortieHautGaucheY())) {
-
-				System.out.println("Touche Haut Gauche");
-
-				if (ball_team.equals(players1)) {
-					touchetest.runToucheHautGaucheBleu(dash, touche_x, touche_y, ball_team);
-				} else if (ball_team.equals(players2)) {
-					touchetest.runToucheHautGaucheRouge(dash, touche_x, touche_y, ball_team);
-				}
-
-				if ((dash.isStop_action() == true) && (dash.isStop_action_touche()) == false) {
-					doSimulation(dash);
-				}
-
-			} else if ((touche_x > 321) && (touche_x < 567) && (touche_y == Sortie.getSortieHautGaucheY())) {
-
-				System.out.println("Touche Haut Milieu");
-
-				if (ball_team.equals(players1)) {
-					touchetest.runToucheHautMilieuBleu(dash, touche_x, touche_y, ball_team);
-				} else if (ball_team.equals(players2)) {
-					touchetest.runToucheHautMilieuRouge(dash, touche_x, touche_y, ball_team);
-				}
-
-				if ((dash.isStop_action() == true) && (dash.isStop_action_touche()) == false) {
-					doSimulation(dash);
-				}
-
-			} else if ((touche_x >= 567) && (touche_y == Sortie.getSortieHautGaucheY())) {
-
-				System.out.println("Touche Haut Droite");
-
-				if (ball_team.equals(players1)) {
-					touchetest.runToucheHautDroiteBleu(dash, touche_x, touche_y, ball_team);
-				} else if (ball_team.equals(players2)) {
-					touchetest.runToucheHautDroiteRouge(dash, touche_x, touche_y, ball_team);
-				}
-
-				if ((dash.isStop_action() == true) && (dash.isStop_action_touche()) == false) {
-					doSimulation(dash);
-				}
-
-			} else if ((touche_x <= 321) && (touche_y == Sortie.getSortieBasGaucheY())) {
-
-				System.out.println("Touche Bas Gauche");
-
-				if (ball_team.equals(players1)) {
-					touchetest.runToucheBasGaucheBleu(dash, touche_x, touche_y, ball_team);
-				} else if (ball_team.equals(players2)) {
-					touchetest.runToucheBasGaucheRouge(dash, touche_x, touche_y, ball_team);
-				}
-
-				if ((dash.isStop_action() == true) && (dash.isStop_action_touche()) == false) {
-					doSimulation(dash);
-				}
-
-			} else if ((touche_x > 321) && (touche_x < 567) && (touche_y == Sortie.getSortieBasGaucheY())) {
-
-				System.out.println("Touche Bas Milieu");
-
-				if (ball_team.equals(players1)) {
-					touchetest.runToucheBasMilieuBleu(dash, touche_x, touche_y, ball_team);
-				} else if (ball_team.equals(players2)) {
-					touchetest.runToucheBasMilieuRouge(dash, touche_x, touche_y, ball_team);
-				}
-
-				if ((dash.isStop_action() == true) && (dash.isStop_action_touche()) == false) {
-					doSimulation(dash);
-				}
-
-			} else if ((touche_x >= 567) && (touche_y == Sortie.getSortieBasGaucheY())) {
-
-				System.out.println("Touche Bas Droite");
-
-				if (ball_team.equals(players1)) {
-					touchetest.runToucheBasDroiteBleu(dash, touche_x, touche_y, ball_team);
-				} else if (ball_team.equals(players2)) {
-					touchetest.runToucheBasDroiteRouge(dash, touche_x, touche_y, ball_team);
-				}
-
-				if ((dash.isStop_action() == true) && (dash.isStop_action_touche()) == false) {
-					doSimulation(dash);
-				}
-
-			}
-
-		} else {
-			System.out.println("\n\nAucune action de la touche\n\n");
-			doSimulation(dash);
-		}
-
-		if (dash.isStop_action_touche() == true) {
-
-			dash.setTouche(true);
-
-		}
-
-	}
-
 	public int PlayerBall(Team players1) {
 
 		int res = 12;
@@ -949,7 +789,7 @@ public class MatchManager {
 
 			}
 
-			if (players2.getPlayers().get(i).isBall() == true) {
+			else if (players2.getPlayers().get(i).isBall() == true)  {
 
 				System.out.println("Red got the BALL");
 				stop = true;
