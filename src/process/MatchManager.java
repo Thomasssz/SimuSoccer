@@ -119,35 +119,42 @@ public class MatchManager {
 
 	public void doSimulation(Dashboard dash) {
 
-		players1 = dash.getTeam1();
-		players2 = dash.getTeam2();
+        players1 = dash.getTeam1();
+        players2 = dash.getTeam2();
 
-		System.out.println("Test TeamBall de Match Manager");
+    //    System.out.println("Test TeamBall de Match Manager");
 
-		ball_team = TeamBall(players1, players2);
+        ball_team = TeamBall(players1, players2);
 
-		int index_player_ball = PlayerBall(ball_team);
+        int index_player_ball = PlayerBall(ball_team);
 
-		player_ball = ball_team.getPlayers().get(index_player_ball);
+        player_ball = ball_team.getPlayers().get(index_player_ball);
 
-		if (blueShotSituation(player_ball) == true) {
-			dash.setStop_action(false);
-			dash.setShoot(false);
+        if (ball_team.equals(players1)) {
 
-			shoot(dash);
-		} else {
-			doPass(dash);
-		}
+            if (blueShotSituation(player_ball) == true) {
+                dash.setStop_action(false);
+                dash.setShoot(false);
 
-		if (redShotSituation(player_ball) == true) {
-			dash.setStop_action(false);
-			dash.setShoot(false);
+                doBlueShoot(dash);
+            } else {
+            //    Math.random() * ( 1 - 3 );
 
-			doRedShoot(dash);
-		} else {
-			doPass(dash);
-		}
-	}
+                doPass(dash);
+            }
+
+        } else if (ball_team.equals(players2)) {
+
+            if (redShotSituation(player_ball) == true) {
+                dash.setStop_action(false);
+                dash.setShoot(false);
+
+                doRedShoot(dash);
+            } else {
+                doPass(dash);
+            }
+        }
+    }
 
 	public void doMove(Dashboard dash) {
 
@@ -281,7 +288,7 @@ public class MatchManager {
 			if (goal == true) {
 
 				testshoot.ShootBlue(dash, index_tireur, aim_x, aim_y, goal);
-				Match.setScroreteam1(Match.getScoreteam1() + 1);
+				match.setScoreteam1(match.getScoreteam1() + 1);
 			} else {
 
 				int x_gardien = dash.getTeam2().getPlayers().get(0).getX();
@@ -348,7 +355,7 @@ public class MatchManager {
 
 				System.out.println("but");
 				testshoot.ShootRed(dash, index_tireur, aim_x, aim_y, goal);
-				Match.setScoreteam2(Match.getScoreteam2() + 1);
+				match.setScoreteam2(match.getScoreteam2() + 1);
 
 			} else {
 				

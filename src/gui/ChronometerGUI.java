@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
@@ -132,6 +134,9 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		setVisible(true);
 	}
 	
+	
+	
+	
 	public void temps() {
 		temps.setLayout(new GridLayout(1,5));
 		temps.setBackground(new Color(28, 28, 28));
@@ -251,10 +256,16 @@ public class ChronometerGUI extends JFrame implements Runnable {
 
 		CyclicCounter minute = chronometer.getMinute();
 		minuteValue1.setText(minute.toString() + " ");
-
+		
 		CyclicCounter second = chronometer.getSecond();
 		secondValue1.setText(second.toString() + " ");
-		
+		if ((chronometer.getMinute().getValue()==05) && (chronometer.getSecond().getValue()==00)) {
+			@SuppressWarnings("unused")
+			Score scores=new Score();
+			stop=true;
+			JOptionPane.showMessageDialog(null, "Fin du match vous pouvez voir le score finale ");
+			setVisible(false);
+		}
 		end.baisse(dashboard, instance, team1.getPlayers(), team2.getPlayers());
 		matchprocess.matchProcess(dashboard,this);
 		
@@ -262,6 +273,8 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		dashboard.repaint();
 		
 	}
+	
+	
 
 	@Override
 	public void run() {
