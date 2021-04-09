@@ -133,7 +133,7 @@ public class Passe {
 		int result_x = Math.abs(res_x);
 		int result_y = Math.abs(res_y);
 
-		if ((result_x < 6) && (result_y < 6)) {
+		if ((result_x < 10) && (result_y < 10)) {
 
 			System.out.println("passe fini");
 

@@ -78,11 +78,22 @@ public class Match {
 
 	private Team team1 = new Team("team1", players1, "blue");
 	private Team team2 = new Team("team2", players2, "red");
-	private  int scoreteam1;
-	private  int scoreteam2;
-	private int time_match = 90;
-
+	private int scoreteam1;
+	private int scoreteam2;
+	private int time_match=90;
 	private Ball ball = new Ball(250, 150);
+	
+	public Match(Team team1, Team team2, int scoreteam1, int scoreteam2, int time_match, Ball ball) {
+		super();
+		this.team1 = team1;
+		this.team2 = team2;
+		this.scoreteam1 = scoreteam1;
+		this.scoreteam2 = scoreteam2;
+		this.time_match = time_match;
+		this.ball = ball;
+	}
+
+	
 
 	public Team getTeam1() {
 		return team1;

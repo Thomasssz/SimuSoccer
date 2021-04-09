@@ -3,6 +3,7 @@ package process;
 import java.util.ArrayList;
 import java.util.Random;
 
+import data.Ball;
 import data.Match;
 import data.Player;
 import data.Team;
@@ -66,7 +67,8 @@ public class MatchManager {
 	private Match match = new Match();
 
 	private ChronometerGUI chronometergui;
-
+	private boolean but2=true;
+	private boolean but1=true;
 	public MatchManager(ChronometerGUI chronometergui) {
 		this.chronometergui = chronometergui;
 	}
@@ -84,10 +86,9 @@ public class MatchManager {
 		 */
 
 		begin = dash.isBegin();
-
 		players1 = dash.getTeam1();
 		players2 = dash.getTeam2();
-
+		match=new Match(players1,players2,0,0,0,dash.getBallon());
 		if (begin == false) {
 
 			// Temps(players1, players2);
@@ -252,7 +253,7 @@ public class MatchManager {
 	}
 
 	public void doBlueShoot(Dashboard dash) {
-
+		but1=true;
 		players1 = dash.getTeam1();
 		players2 = dash.getTeam2();
 
@@ -286,9 +287,12 @@ public class MatchManager {
 			}
 
 			if (goal == true) {
-
+				
 				testshoot.ShootBlue(dash, index_tireur, aim_x, aim_y, goal);
-				match.setScoreteam1(match.getScoreteam1() + 1);
+				if (but1==true) {
+				dash.getMatch().setScoreteam1(dash.getMatch().getScoreteam1() + 1);
+				but1=false;
+				}
 			} else {
 
 				int x_gardien = dash.getTeam2().getPlayers().get(0).getX();
@@ -315,7 +319,7 @@ public class MatchManager {
 	}
 
 	public void doRedShoot(Dashboard dash) {
-
+		but1=false;
 		players1 = dash.getTeam1();
 		players2 = dash.getTeam2();
 
@@ -355,8 +359,11 @@ public class MatchManager {
 
 				System.out.println("but");
 				testshoot.ShootRed(dash, index_tireur, aim_x, aim_y, goal);
-				match.setScoreteam2(match.getScoreteam2() + 1);
-
+				
+				if(but2==true) {
+				dash.getMatch().setScoreteam2(dash.getMatch().getScoreteam2() + 1);
+				but2=false;
+				}
 			} else {
 				
 				int x_gardien = dash.getTeam1().getPlayers().get(0).getX();

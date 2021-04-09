@@ -40,7 +40,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	private  Team team2 = new Team("2", new ArrayList<Player>(), "red");
 	private Corner cornertest = new Corner() ;
 	private Touche touchetest = new Touche() ;
-	private Match match = new Match();
+	private Match match = new Match(team1,team2,0,0,0,ballon);
 	private Dashboard dashboard = new Dashboard(team1, team2, ballon,cornertest,touchetest,match);
 	@SuppressWarnings("unused")
 	private Energie energie1;
@@ -260,7 +260,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		secondValue1.setText(second.toString() + " ");
 		if ((chronometer.getMinute().getValue()==90) && (chronometer.getSecond().getValue()==00)) {
 			@SuppressWarnings("unused")
-			Score scores=new Score();
+			Score scores=new Score(dashboard);
 			stop=true;
 			JOptionPane.showMessageDialog(null, "Fin du match vous pouvez voir le score finale ");
 			setVisible(false);
@@ -335,7 +335,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			stop = true;
-			Score score=new Score();
+			Score score=new Score(dashboard);
 			 
 		}
 

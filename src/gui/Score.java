@@ -19,7 +19,7 @@ public class Score extends JFrame {
 	private SportButton retour;
 	private JPanel contentPane=new JPanel();
 	
-	public Score() {
+	public Score(Dashboard dash) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(1400, 80, 300,400);
 		setTitle("Score");
@@ -42,11 +42,13 @@ public class Score extends JFrame {
 		scoreteam2Label1.setBackground(new Color(28, 28, 28));
 		scoreteam2Label1.setBounds(50,200,50,50);
 		
-		 scoreteam1Value1 = new SportLabel(""+match.getScoreteam1()+"");
+		 scoreteam1Value1 = new SportLabel(""+dash.getMatch().getScoreteam1()+"");
+		 System.out.println(match.getScoreteam1());
 		 scoreteam1Value1.setBackground(new Color(28, 28, 28));
 		 scoreteam1Value1.setBounds(140,100,50,50);
 		 
-		 scoreteam2Value1 = new SportLabel(""+match.getScoreteam2()+"");
+		 scoreteam2Value1 = new SportLabel(""+dash.getMatch().getScoreteam2()+"");
+		 System.out.println(match.getScoreteam2());
 		 scoreteam2Value1.setBackground(new Color(28, 28, 28));
 		 scoreteam2Value1.setBounds(140,200,50,50);
 		 
