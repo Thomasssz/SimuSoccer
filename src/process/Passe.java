@@ -27,7 +27,7 @@ public class Passe {
 		super();
 	}
 
-	public void testPass(Dashboard dash) {
+/*	public void testPass(Dashboard dash) {
 
 		ArrayList<Player> team1 = dash.getTeam1().getPlayers();
 		ArrayList<Player> team2 = dash.getTeam2().getPlayers();
@@ -110,7 +110,7 @@ public class Passe {
 
 		}
 
-	}
+	} */
 
 	public void pass(Dashboard dash, Player passeur, Player receveur) {
 
