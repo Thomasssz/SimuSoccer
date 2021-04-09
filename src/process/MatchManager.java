@@ -296,7 +296,7 @@ public class MatchManager {
 
 				if ((x_gardien == dash.getBallon().getPositionx_Ball())
 						&& (y_gardien == dash.getBallon().getPositiony_Ball())) {
-					testshoot.ShootBlue(dash, index_tireur, x_gardien, y_gardien, goal);
+					doPass(dash);
 				} else {
 					doCorner(dash);
 				}
@@ -366,7 +366,8 @@ public class MatchManager {
 				testshoot.ShootBlue(dash, index_tireur, x_gardien, y_gardien, goal);
 				
 				if ((x_gardien == dash.getBallon().getPositionx_Ball()) && (y_gardien == dash.getBallon().getPositiony_Ball())) {
-					testshoot.ShootBlue(dash, index_tireur, x_gardien, y_gardien, goal);
+					doPass(dash);
+					
 				} else {
 					doCorner(dash);
 				}
@@ -456,7 +457,7 @@ public class MatchManager {
 
 		} else {
 			System.out.println("\n\nAucune action du corner\n\n");
-			// doSimulation(dash);
+			 doSimulation(dash);
 		}
 
 		if (dash.isStop_action_shoot() == true) {
