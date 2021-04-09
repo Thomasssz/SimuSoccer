@@ -7,6 +7,7 @@ import gui.Dashboard;
 
 public class Match {
 	
+	//initialisation
 	private static int default_x_gardien_bleu = 90;
 	private static int default_y_gardien_bleu = 305;
 
@@ -92,6 +93,7 @@ public class Match {
 		super();
 	}
 
+	//getter et setter
 	public void setTeam1(Team team1) {
 		this.team1 = team1;
 	}

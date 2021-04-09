@@ -14,6 +14,7 @@ import gui.Dashboard;
 
 public class MatchManager {
 
+	//initialisation
 	private boolean begin = false;
 	private boolean corner = false;
 	private boolean touche = false;
@@ -63,7 +64,7 @@ public class MatchManager {
 	private int proba = 200;
 
 	private Match match = new Match();
-	@SuppressWarnings("unused")
+
 	private ChronometerGUI chronometergui;
 
 	public MatchManager(ChronometerGUI chronometergui) {

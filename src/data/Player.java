@@ -2,6 +2,7 @@ package data;
 
 public class Player {
 	
+	//initialisation
 	private String name;
 	private int speed;
 	private int pass;
@@ -28,6 +29,7 @@ public class Player {
 	private temps player_temps;
 	private position player_position;
 
+	//constructeur
 	public Player(String name, int speed, int pass, int dribbles, int defense, int shoot, int energie, int endurance, int number, position player_position,
 			int x, int y, boolean ball,temps player_temps) {
 
@@ -47,6 +49,7 @@ public class Player {
 		this.player_temps=player_temps;
 	}
 
+	//getter et setter
 	public temps getPlayer_temps() {
 		return player_temps;
 	}

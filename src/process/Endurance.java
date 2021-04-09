@@ -8,28 +8,32 @@ import gui.ChronometerGUI;
 import gui.Dashboard;
 
 public class Endurance {
-	      @SuppressWarnings("unused")
-		private Dashboard dash;  
-	      @SuppressWarnings("unused")
-		private ChronometerGUI gui;
-	      @SuppressWarnings("unused")
-		private Team team1;
-	      @SuppressWarnings("unused")
-		private Team team2;
+	    
+	//initialisation
+	private Dashboard dash;  
+	private ChronometerGUI gui;
+	private Team team1;
+	private Team team2;
+		
+	//constructeur
 	public Endurance(Dashboard dash, ChronometerGUI gui,Team team1, Team team2) {
 		this.dash=dash;
 		this.gui=gui;
 		this.team1=team1;
 		this.team2=team2;
 	}
+	
+	//methode qui gere l'influence du temps du match
 	public void baisse(Dashboard dash, ChronometerGUI gui, ArrayList<Player> players1, ArrayList<Player> players2) {
-		System.out.println("oui");
 		int timeminute= gui.getChronometer().getMinute().getValue();
 		int timeseconde= gui.getChronometer().getSecond().getValue();
+		
+		//toutes les 10 minute
 			if(timeminute % 10 == 0 && timeseconde == 0 && timeminute!=0) {
+				
+				//on parcoursl'array liste de l'quipe un et on fait varrier leur caractérisque en fonction de leur endurance
 				for(int i = 0; i < players1.size(); i++) { 
 					int endurance = players1.get(i).getEndurance();
-					System.out.println(endurance);
 					if(endurance >= 80) {
 						players1.get(i).setEnergie(players1.get(i).getEnergie()-9);
 					}
@@ -48,7 +52,7 @@ public class Endurance {
 					}
 				}
 			
-			
+			//idem pour l'équipe 2 
 				for(int i = 0; i < players2.size(); i++) { 
 					int endurance = players2.get(i).getEndurance();
 					if(endurance >= 80) {

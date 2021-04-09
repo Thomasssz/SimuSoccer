@@ -2,23 +2,27 @@ package data;
 
 public class Ball {
 	
+	//initialisation
 	private int positionx_Ball ;
 	private int positiony_Ball ;
 
-	public int getPositionx_Ball() {
-		return positionx_Ball;
-	}
-	
+	//initailisation de la position de la balle
 	public Ball() {
 		
 		positionx_Ball = 440;
 		positiony_Ball = 305 ;
 	}
 
+	//constructeur
 	public Ball(int positionx_Ball, int positiony_Ball) {
 		super();
 		this.positionx_Ball = positionx_Ball;
 		this.positiony_Ball = positiony_Ball;
+	}
+	
+	//getter et setter
+	public int getPositionx_Ball() {
+		return positionx_Ball;
 	}
 
 	public void setPositionx_Ball(int positionx_Ball) {

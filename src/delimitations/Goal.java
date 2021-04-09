@@ -2,6 +2,7 @@ package delimitations;
 
 public class Goal {
 	
+	//initialisation
 	protected static final int Goal_Haut_Gauche_x = 75 ;
 	protected static final int Goal_Haut_Gauche_y = 250;
 	
@@ -15,6 +16,7 @@ public class Goal {
 	protected static final int Goal_Bas_Droit_x = 813 ;
 	protected static final int Goal_Bas_Droit_y = 375 ;
 	
+	//getter et setter
 	public static int getGoalHautGaucheX() {
 		return Goal_Haut_Gauche_x;
 	}

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Team {
 
+	//initialisation
 	private String nameTeam;
 	private ArrayList<Player> players = new ArrayList<>();
 	private String color;
@@ -74,6 +75,7 @@ public class Team {
 	private static int default_x_attaquant2_rouge = 530;
 	private static int default_y_attaquant2_rouge = 350;
 	
+	//getter et setter
 	public  int getDefault_x_gardien_bleu() {
 		return default_x_gardien_bleu;
 	}
@@ -426,7 +428,7 @@ public class Team {
 		Team.default_y_attaquant2_rouge = default_y_attaquant2_rouge;
 	}
 
-
+	//initialisation
 	private static Player.position GOAL = Enum.valueOf(Player.position.class, "GOALKEEPER");
 	private static Player.position DEF = Enum.valueOf(Player.position.class, "DEFENSE");
 	private static Player.position MID = Enum.valueOf(Player.position.class, "MIDDLE");
@@ -435,6 +437,7 @@ public class Team {
 	private static Player.temps NE=Enum.valueOf(Player.temps.class, "NEIGE");
 	private static Player.temps SO=Enum.valueOf(Player.temps.class, "SOLEIL");
 
+	//getter et setter
 	public String getNameTeam() {
 
 		return nameTeam;
@@ -465,6 +468,7 @@ public class Team {
 		return "Team [nameTeam=" + nameTeam + ", players=" + players + ", color=" + color + "]";
 	}
 
+	//constructeur
 	public Team(String nameTeam, ArrayList<Player> players, String color) {
 
 		super();
@@ -473,7 +477,8 @@ public class Team {
 		this.color = color;
 
 	}
-
+	
+	//methode qui remplie les array liste de chaque équipe
 	public void createteams(Team equipe) {
 
 		if (equipe.getColor().equals("blue")) {
@@ -561,26 +566,4 @@ public class Team {
 		}
 
 	}
-
-
-	public Player recherchenom(ArrayList<Player> players1, String name) {
-		for (int i = 0; i < players1.size(); i++) {
-			if (players1.get(i).getName().equals(name)) {
-				return players1.get(i);
-			}
-		}
-		return null;
-	}
-
-	public static void parcoursListPlayer(ArrayList<Player> list) {
-
-		for (Player p : list) {
-
-			p.toString();
-			System.out.println(p);
-
-		}
-
-	}
-
 }

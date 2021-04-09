@@ -2,6 +2,7 @@ package delimitations;
 
 public class Surface {
 	
+	//initialisation
 	protected static final int SurfaceGauche_Haut_Gauche_x = 75 ;
 	protected static final int SurfaceGauche_Haut_Gauche_y = 165 ;
 	
@@ -26,6 +27,7 @@ public class Surface {
 	protected static final int SurfaceDroite_Bas_Droite_x = 813 ;
 	protected static final int SurfaceDroite_Bas_Droite_y = 458 ;
 	
+	//getter et setter
 	public static int getSurfacedroiteHautGaucheX() {
 		return SurfaceDroite_Haut_Gauche_x;
 	}
