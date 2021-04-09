@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -120,17 +119,17 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		start_acceleration.setBounds(200,120,1000,50);
 		Start_acceleration();
 		
-		score=new JPanel();
+		/*score=new JPanel();
 		score.setPreferredSize(new Dimension(600,80));
 		score.setBounds(400,180,600,80);
 		Score();
-		
+		*/
 		
 		contentPane.add(start_stop);
 		contentPane.add(dashboard);
 		contentPane.add(temps);
 		contentPane.add(start_acceleration);
-		contentPane.add(score);
+		//contentPane.add(score);
 		setVisible(true);
 	}
 	
@@ -228,7 +227,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		}
 	
 	@SuppressWarnings("static-access")
-	public void Score() {
+	/*public void Score() {
 		score.setLayout(new GridLayout(2,2));
 		score.setBackground(new Color(28, 28, 28));
 		scoreteam1Label1 = new SportLabel("Blue");
@@ -249,7 +248,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		 score.add(scoreteam2Value1);
 		
 		 
-	}
+	}*/
 
 
 	private void updateValues() {
@@ -259,7 +258,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		
 		CyclicCounter second = chronometer.getSecond();
 		secondValue1.setText(second.toString() + " ");
-		if ((chronometer.getMinute().getValue()==05) && (chronometer.getSecond().getValue()==00)) {
+		if ((chronometer.getMinute().getValue()==90) && (chronometer.getSecond().getValue()==00)) {
 			@SuppressWarnings("unused")
 			Score scores=new Score();
 			stop=true;

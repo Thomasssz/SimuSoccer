@@ -19,7 +19,6 @@ public class Score extends JFrame {
 	private SportButton retour;
 	private JPanel contentPane=new JPanel();
 	
-	@SuppressWarnings("static-access")
 	public Score() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(1400, 80, 300,400);
