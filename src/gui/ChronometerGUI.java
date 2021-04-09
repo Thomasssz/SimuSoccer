@@ -35,8 +35,8 @@ import process.MatchManager;
  **/
 public class ChronometerGUI extends JFrame implements Runnable {
 	private Ball ballon = new Ball();
-	private static Team team1 = new Team("1", new ArrayList<Player>(), "blue");
-	private static Team team2 = new Team("2", new ArrayList<Player>(), "red");
+	private  Team team1 = new Team("1", new ArrayList<Player>(), "blue");
+	private  Team team2 = new Team("2", new ArrayList<Player>(), "red");
 	private Corner cornertest = new Corner() ;
 	private Touche touchetest = new Touche() ;
 	private Match match = new Match();
@@ -69,7 +69,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		return chronometer;
 	}
 	
-	SportButton startButton1,charButton,energieButton;
+	SportButton startButton1,charButton,energieButton,scoreButton;
 	
 	private JRadioButton rdbtns0=new JRadioButton("speed 1 (x1)");
 	private JRadioButton rdbtns1=new JRadioButton("speed 2 (x2)");
@@ -197,7 +197,7 @@ public class ChronometerGUI extends JFrame implements Runnable {
 	
 	public void Start_stop() {
 		
-		start_stop.setLayout(new GridLayout(1,2));
+		start_stop.setLayout(new GridLayout(1,3));
 		start_stop.setBackground(new Color(28, 28, 28));
 		
 		startButton1 = new SportButton("Start");
@@ -212,9 +212,14 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		energieButton.setBackground(new Color(28, 28, 28));
 		energieButton.addActionListener(new EnergieAction());
 		
+		scoreButton = new SportButton("Score");
+		scoreButton.setBackground(new Color(28, 28, 28));
+		scoreButton.addActionListener(new ScoreAction());
+		
 		start_stop.add(startButton1);
 		start_stop.add(charButton);
 		start_stop.add(energieButton);
+		start_stop.add(scoreButton);
 		}
 	
 	@SuppressWarnings("static-access")
@@ -225,7 +230,8 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		scoreteam1Label1.setBackground(new Color(28, 28, 28));
 		scoreteam2Label1 = new SportLabel("Red");
 		scoreteam2Label1.setBackground(new Color(28, 28, 28));
-
+		
+		updateValues();
 		 scoreteam1Value1 = new SportLabel(""+match.getScoreteam1()+"");
 		 scoreteam1Value1.setBackground(new Color(28, 28, 28));
 		 scoreteam2Value1 = new SportLabel(""+match.getScoreteam2()+"");
@@ -306,6 +312,18 @@ public class ChronometerGUI extends JFrame implements Runnable {
 		public void actionPerformed(ActionEvent e) {
 			stop = true;
 			Feature Characteristics_window = new Feature(team1.getPlayers(),team2.getPlayers()); 
+			 
+		}
+
+	}
+	
+	private class ScoreAction implements ActionListener { 
+
+		@SuppressWarnings("unused")
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			stop = true;
+			Score score=new Score();
 			 
 		}
 

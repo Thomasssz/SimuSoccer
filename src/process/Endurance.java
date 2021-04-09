@@ -10,9 +10,13 @@ import gui.Dashboard;
 public class Endurance {
 	    
 	//initialisation
+	@SuppressWarnings("unused")
 	private Dashboard dash;  
+	@SuppressWarnings("unused")
 	private ChronometerGUI gui;
+	@SuppressWarnings("unused")
 	private Team team1;
+	@SuppressWarnings("unused")
 	private Team team2;
 		
 	//constructeur
